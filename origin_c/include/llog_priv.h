@@ -12,8 +12,8 @@
 
 /***************** about log & llog ******************/
 #ifdef DEBUG
-#define log(format,...)		printf("####[%s, %d] " format "\n",__FUNCTION__,__LINE__,##__VA_ARGS__)
-#define llog(format,...)	printf("####[%s, %s, %d] " format "\n",__FILE__,__FUNCTION__,__LINE__,##__VA_ARGS__)
+#define log(format,...)		printf("[%s, %d] " format "\n",__FUNCTION__,__LINE__,##__VA_ARGS__)
+#define llog(format,...)	printf("[%s, %s, %d] " format "\n",__FILE__,__FUNCTION__,__LINE__,##__VA_ARGS__)
 #else
 #define	log(format,...)			/* can't see me ^o^ */
 #define	llog(format,...)		/* can't see me ^o^ */

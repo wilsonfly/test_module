@@ -7,15 +7,16 @@ BIN = a.out
 
 SRC = test.c
 
-ifeq ($(SUPPORT_DEBUG),y)
+#ifeq ($(SUPPORT_DEBUG),y)
 CFLAGS = -DDEBUG
-endif
+#endif
 
 CFLAGS += -I.	\
 		  -I../include
 
-SUPPORT_DEBUG_LEVEL ?= 99
+SUPPORT_DEBUG_LEVEL ?= 0
 CFLAGS += -DDEBUG_LEVEL=$(SUPPORT_DEBUG_LEVEL)
+CFLAGS += -W
 
 main:
 	gcc $(SRC) -o $(BIN) $(CFLAGS)
