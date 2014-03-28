@@ -7,9 +7,11 @@ BIN = a.out
 
 SRC = test.c
 
-#ifeq ($(SUPPORT_DEBUG),y)
+ifeq ($(SUPPORT_DEBUG),n)
+CFLAGS = 
+else
 CFLAGS = -DDEBUG
-#endif
+endif
 
 CFLAGS += -I.	\
 		  -I../include
