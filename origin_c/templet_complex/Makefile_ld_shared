@@ -8,10 +8,10 @@ BUILD_PATH := $(LOCAL_PATH)/../build/
 include $(BUILD_PATH)/config.mk
 
 
-include $(CLEAR_ENV)
-TARGET_MODULE = sample_test
-SRC_FILES = test.c
-include $(BUILD_EXECUTABLE)
+#include $(CLEAR_ENV)
+#TARGET_MODULE = sample_test
+#SRC_FILES = test.c
+#include $(BUILD_EXECUTABLE)
 
 
 #include $(CLEAR_ENV)
@@ -19,13 +19,13 @@ include $(BUILD_EXECUTABLE)
 #SRC_FILES = func_shared.c
 #include $(BUILD_SHARED_LIBRARY)
 
-#include $(CLEAR_ENV)
-#TARGET_MODULE = sample_test_shared
-#SRC_FILES = test_shared.c
-#LINK_SHARED_LIBS = \
+include $(CLEAR_ENV)
+TARGET_MODULE = sample_test_shared
+SRC_FILES = test_shared.c
+LINK_SHARED_LIBS = \
 	-L$(LOCAL_PATH)/ \
 	-lfunc_shared
-#include $(BUILD_EXECUTABLE)
+include $(BUILD_EXECUTABLE)
 
 #include $(CLEAR_ENV)
 #TARGET_MODULE = func_static
