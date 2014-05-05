@@ -60,15 +60,15 @@
 #if DEBUG_LEVEL <= 1
 #undef  log_info
 #undef  llog_info
-#define log_info(format,...)	log(format,##__VA_ARGS__)
-#define llog_info(format,...)	llog(format,##__VA_ARGS__)
+#define log_info(format,...)	log("info:"format,##__VA_ARGS__)
+#define llog_info(format,...)	llog("info:"format,##__VA_ARGS__)
 #endif
 
 #if DEBUG_LEVEL <= 0
 #undef  log_debug
 #undef  llog_debug
-#define log_debug(format,...)	log(format,##__VA_ARGS__)
-#define llog_debug(format,...)	llog(format,##__VA_ARGS__)
+#define log_debug(format,...)	log("debug:"format,##__VA_ARGS__)
+#define llog_debug(format,...)	llog("debug:"format,##__VA_ARGS__)
 #endif
 
 
