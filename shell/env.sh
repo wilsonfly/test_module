@@ -3,7 +3,7 @@
 #  .   /exdata/sunhuasheng/tools/env.sh
 
 
-export PATH=$PATH:/home/huasheng/tools
+export PATH=$PATH:~/tools
 alias 1='cd ..'
 alias 2='cd ../..'
 alias 3='cd ../../..'
