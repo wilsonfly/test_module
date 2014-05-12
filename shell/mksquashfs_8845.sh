@@ -1,5 +1,6 @@
 #!/bin/sh
 
+
 rm rootfs/lib/modules/linux-2.6.35-hi3716Cv200/misc/load
 rm rootfs/lib/modules/linux-2.6.35-hi3716Cv200/misc/rt3070sta.ko
 rm rootfs/lib/modules/linux-2.6.35-hi3716Cv200/misc/rt5572sta.ko
