@@ -1,0 +1,65 @@
+package com.test;
+
+import java.io.File;
+import java.io.IOException;
+
+public class FileTest {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		FileTest demo = new FileTest();
+		demo.testFile();
+		demo.testDir();
+		demo.testFile();
+		
+		public void testFile2() {
+			File f = new File("d:\\aDir\\test.txt");
+		}
+	}
+
+	public void testFile() {
+		// File f = new File("d:\\test.txt");
+		File f = new File("d:\\aDir\\test.txt");
+
+		if (!f.exists()) {
+			try {
+				f.createNewFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} else {
+			System.out.println("file existed");
+		}
+
+		System.out.println("file size:" + f.length());
+		System.out.println("file readable:" + f.canRead());
+	}
+
+	public void testDir() {
+		File d = new File("d:\\aDir");
+		if (d.isDirectory()) {
+			System.out.println("dir exist");
+		} else {
+			d.mkdir();
+			System.out.println("dir create");
+
+		}
+
+		// File l = new File("d:\\aDir");//is ok
+		File l = new File("d:/aDir");// is ok
+
+		if (l.isDirectory()) {
+			File lists[] = l.listFiles();
+			for (int i = 0; i < lists.length; i++) {
+				System.out.println("file name:" + lists[i].getName());
+			}
+		} else {
+			System.out.println("d:\\aDir not dir");
+		}
+	}
+
+}

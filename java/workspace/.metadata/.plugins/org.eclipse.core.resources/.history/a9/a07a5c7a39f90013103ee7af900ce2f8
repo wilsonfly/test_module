@@ -1,0 +1,61 @@
+/*
+ * ×Ö·ûÁ÷²âÊÔ´úÂë
+ */
+package com.test;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class fileTestString {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		fileTestString demo = new fileTestString();
+		demo.testFileReader();
+	}
+
+	public void testFileReader()
+	{
+		FileReader fr = null;
+		FileWriter fw = null;
+		char []c = new char[1024];
+		int n = 0;
+		File f = new File("d:/aDir/string.txt");
+		
+		if(!f.exists())
+		{
+			try {
+				f.createNewFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		try {
+			fr = new FileReader(f);
+			
+			try {
+				while( (n=fr.read(c)) != -1)
+				{
+					System.out.println(c);
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			
+			
+		}
+	}
+}

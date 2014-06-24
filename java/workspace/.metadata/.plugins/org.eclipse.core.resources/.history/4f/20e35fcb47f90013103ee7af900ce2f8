@@ -1,0 +1,86 @@
+package NotePad;
+
+import java.io.*;
+import java.awt.*;
+import java.awt.event.*;
+
+import javax.swing.*;
+
+
+public class MyNotePad extends JFrame implements ActionListener{
+
+	JTextArea jta = null;
+	//菜单条
+	JMenuBar jmb = null;
+	//第一个JMenu
+	JMenu jm1 = null;
+	//第一个JMenuItem
+	JMenuItem jmi1 = null;
+	JMenuItem jmi2 = null;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MyNotePad demo = new MyNotePad();
+		
+	}
+
+	public MyNotePad()
+	{
+		jta = new JTextArea();
+		jmb = new JMenuBar();
+		jm1 = new JMenu("打开(o)");
+		jm1.setMnemonic('F');
+		jmi1 = new JMenuItem("打开", new ImageIcon("images/new.png"));
+		jmi2 = new JMenuItem("保存", new ImageIcon("images/save.png"));
+		
+		jmi1.addActionListener(this);
+		jmi1.setActionCommand("open");
+		
+		
+		this.setJMenuBar(jmb);
+		jmb.add(jm1);
+		jm1.add(jmi1);
+		jm1.add(jmi2);
+		
+		this.add(jta);
+		this.setTitle("MyNotePad");
+		this.setSize(400, 300);
+		this.setVisible(true);
+	}
+
+	//
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		if(e.getActionCommand().equals("open"))
+		{
+			System.out.println("try to open...");
+			
+			JFileChooser jfch = new JFileChooser();
+			jfch.setDialogTitle("请选择文件");
+			jfch.showOpenDialog(null);
+			jfch.showOpenDialog(null);
+			jfch.setVisible(true);
+			
+			//得到选择的文件的绝对路径
+			String filename = jfch.getSelectedFile().getAbsolutePath();
+			//System.out.println("seltect:"+filename);
+			FileReader fr = null;
+			BufferedReader br = null;
+			try {
+				fr = new FileReader(filename);
+				br = new BufferedReader(fr);
+				
+				String s = null;
+				String allCon = null;
+				while( (s=br.readLine()) != null)
+				{
+					allCon = s+"\r\n";
+				}
+				jta.setText(allCon);
+				
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+		}
+	}
+}
