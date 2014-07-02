@@ -11,8 +11,9 @@ fi
 
 build_path="/home/sunhuasheng/project_code/sub_system_8e40a_base/platform/build/tool/"
 input_file=$1
-prefix_name=`echo "$input_file" | cut -d'.' -f1`
-suffix_name=`echo "$input_file" | cut -d'.' -f2`
+suffix_name=${input_file##*.}
+prefix_name=${input_file%".$suffix_name"}
+
 if [ ${suffix_name} == "zip" ]
 then
     output_file="$prefix_name"_sign.zip
