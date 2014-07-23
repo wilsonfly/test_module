@@ -11,6 +11,7 @@ include $(BUILD_PATH)/config.mk
 include $(CLEAR_ENV)
 TARGET_MODULE = sample_test
 SRC_FILES = test.c
+INCLUDE_DIR = -I../include
 include $(BUILD_EXECUTABLE)
 
 
