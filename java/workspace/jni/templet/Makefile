@@ -1,0 +1,41 @@
+##############################################
+# Author:	Wilson Sun                       #
+# history:	2013-05-23 created               #
+##############################################
+
+LOCAL_PATH := $(shell pwd)
+BUILD_PATH := $(LOCAL_PATH)/../build/
+include $(BUILD_PATH)/config.mk
+
+
+include $(CLEAR_ENV)
+TARGET_MODULE = sample_test
+SRC_FILES = test.c
+include $(BUILD_EXECUTABLE)
+
+
+#include $(CLEAR_ENV)
+#TARGET_MODULE = func_shared
+#SRC_FILES = func_shared.c
+#include $(BUILD_SHARED_LIBRARY)
+
+#include $(CLEAR_ENV)
+#TARGET_MODULE = sample_test_shared
+#SRC_FILES = test_shared.c
+#LINK_SHARED_LIBS = \
+	-L$(LOCAL_PATH)/ \
+	-lfunc_shared
+#include $(BUILD_EXECUTABLE)
+
+#include $(CLEAR_ENV)
+#TARGET_MODULE = func_static
+#SRC_FILES = func_static.c
+#include $(BUILD_STATIC_LIBRARY)
+
+#include $(CLEAR_ENV)
+#TARGET_MODULE = sample_test_static
+#SRC_FILES = test_static.c
+#LINK_STATIC_LIBS = \
+	$(LOCAL_PATH)/libfunc_static.a
+#include $(BUILD_EXECUTABLE)
+
