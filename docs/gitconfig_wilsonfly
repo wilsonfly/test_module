@@ -1,0 +1,11 @@
+[user]
+	name = wilsonfly
+	email = wilsonfly.shs@gmail.com
+[color]
+	ui = auto
+
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
