@@ -13,12 +13,15 @@ fi
 
 dir=$1
 echo "dir:$dir"
+count=0
 
 for line in `find $dir -type f`
 do
 	md5sum $line
+    ((count++))
 done
 
+echo "file nums:$count"
 exit
 
 

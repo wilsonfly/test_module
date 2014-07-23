@@ -43,3 +43,9 @@ awk 'BEGIN{a=100;b=100;c=(a""b);print c}'
 ##string connecting
 awk 'BEGIN{a="a";b="b";c=(a""b);print c}'
 awk 'BEGIN{a="a";b="b";c=(a+b);print c}'
+
+##read from a file
+awk -F:= '$1=="BUILD_PRODUCT_IMAGE "' "/home/sunhuasheng/tools/build_id.mk"
+awk -F:= '$1=="BUILD_PRODUCT_IMAGE " {print $1 $2}' "platform/on-project/build_id.mk"
+awk -F:= '$1=="BUILD_PRODUCT_IMAGE " {print $1 $2}' "platform/on-project/build_id.mk" | awk '{print $2}'
+awk -F:= '$1=="BUILD_PRODUCT_IMAGE " {print $2}' "platform/on-project/build_id.mk"
