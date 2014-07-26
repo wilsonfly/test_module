@@ -1,12 +1,12 @@
 #ifndef _SEQUEUE_H_
 #define _SEQUEUE_H_
 
-#define maxsize 3 
+#define MAX_NUM (3+1) 
 typedef int datatype;
 
 typedef struct
 {	
-	datatype data[maxsize];
+	datatype data[MAX_NUM];
 	int front;
 	int rear;
 }sequeue;

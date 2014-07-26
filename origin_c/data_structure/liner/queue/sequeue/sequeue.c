@@ -71,7 +71,7 @@ int sequeue_clear(sequeue *sq)
 
 void sequeue_display(sequeue *sq)
 {
-	if(sq->front == sq->rear)
+	if( sq==NULL || sq->front==sq->rear )
 	{
 		printf("empty queue\n");
 		return;

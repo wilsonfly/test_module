@@ -4,17 +4,25 @@
 
 sequeue * sequeue_create()
 {
-	sequeue *p = (sequeue *)malloc(sizeof(sequeue));
-	p->front = p->rear = 0;
-	return p;
+	sequeue *sq = (sequeue *)malloc(sizeof(sequeue));
+	sq->front = sq->rear = 0;
+	return sq;
+}
+
+int sequeue_destroy(sequeue* sq)
+{
+	if( sq==NULL )
+		return -1;
+	free(sq);
+	return 0;
 }
 
 int sequeue_enqueue(sequeue *sq, datatype x)
 {
-	if( (sq->rear+1) % maxsize == sq->front )
+	if( sq==NULL || (sq->rear+1)%MAX_NUM==sq->front )
 		return -1;
 
-	sq->rear = (sq->rear + 1) % maxsize;
+	sq->rear = (sq->rear + 1) % MAX_NUM;
 	sq->data[sq->rear] = x;
 
 	return 0;
@@ -22,10 +30,10 @@ int sequeue_enqueue(sequeue *sq, datatype x)
 
 int sequeue_dequeue(sequeue *sq, datatype *x)
 {
-	if(sq->front == sq->rear)
+	if( sq==NULL || sq->front==sq->rear )
 		return -1;
 
-	sq->front = (sq->front + 1) % maxsize;
+	sq->front = (sq->front + 1) % MAX_NUM;
 	
 	*x = sq->data[sq->front];
 	
@@ -34,24 +42,31 @@ int sequeue_dequeue(sequeue *sq, datatype *x)
 
 int sequeue_is_empty(sequeue *sq)
 {
+	if( sq==NULL )
+		return -1;
 	return (sq->front == sq->rear);
 }
 
 int sequeue_clear(sequeue *sq)
 {
+	if( sq==NULL )
+		return -1;
 	sq->front = sq->rear;
 	return 0;
 }
 
 void sequeue_display(sequeue *sq)
 {
-	if(sq->front == sq->rear)
+	if( sq==NULL || sq->front==sq->rear )
+	{
+		printf("empty queue\n");
 		return;
-	int i = (sq->front + 1) % maxsize;
+	}
+	int i = (sq->front + 1) % MAX_NUM;
 	while(i != sq->rear)
 	{
 		printf("%d ", sq->data[i]);
-		i = (i + 1) % maxsize;
+		i = (i + 1) % MAX_NUM;
 	}
 	printf("%d\n", sq->data[sq->rear]);
 }

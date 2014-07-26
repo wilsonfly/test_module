@@ -22,6 +22,7 @@ int main()
 	}
 	sequeue_display(sq);
 	
+	sequeue_destroy(sq);
 
 	return 0;
 }
