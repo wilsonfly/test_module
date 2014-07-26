@@ -1,64 +1,92 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int partition( int *data,  int low, int high )
-{
-    int t = 0;
-    t = data[low];
-    while( low < high )
-    {
-        while( low < high && data[high] >= t) 
-        {
-            high--;
-        }
-        data[low] = data[high];
-        while( low < high && data[low] <= t)
-        {
-            low++;
-        }
-        data[high] = data[low];
-    }
-    data[low] = t;
-#if 1
-    printf("the key:%d\n",t);
-    printf("high:%d low:%d\n",high,low);
-    printf("the role:\n");
-    for(t=0;t<8;t++)
-        printf("%d ",data[t]);
-    printf("\n#####################\n");
-#endif
-    return low;
-}
+#define DATA_NUM 10
 
-void sort( int *data, int low, int high )
-{
-    if( low >= high )
-    {
-        return;
-    }
-    int pivot = 0;
-    pivot = partition( data, low, high );
-    sort( data, low, pivot-1 );
-    sort( data, pivot+1, high );
-}
-
-void quit_sort( int *data, int n )
-{
-    if( data==NULL || n<=1 )
-        return;
-    sort(data, 0, n-1 );
-}
+static void print_data(int* data, int num);
+static void quick_sort(int* data, int size);
+static void sort(int* data, int front, int rear);
+static int sort_round(int* data, int front, int rear);
 
 int main()
 {
-    int i = 0;
-    int data[] = {49, 38, 65, 97, 76, 13, 27, 50};
+	int i = 0;
+	int data[DATA_NUM];
 
-    quit_sort(data, sizeof(data)/sizeof(int));
-    for( i = 0; i < sizeof(data)/sizeof(int); i++)
-    {
-        printf( "%d\n", data[i] );
-    }
+	srand(4);
+	for ( i = 0; i < DATA_NUM; i++ )
+	{
+		data[i] = (float)rand()/RAND_MAX*20;
+	}
 
-    return 0;
+	print_data(data,sizeof(data)/sizeof(int));
+
+	quick_sort(data,sizeof(data)/sizeof(int));
+	//sort(data, 0, sizeof(data)/sizeof(int)-1 );
+
+	print_data(data,sizeof(data)/sizeof(int));
+}
+
+static int sort_round(int* data, int front, int rear)
+{
+	printf("begin,front:%d, rear:%d \n", front, rear);
+	if( data==NULL || front<0 || rear<0 )
+		return;
+	if( front >= rear )
+		return;
+
+	int tmp = 0;
+	tmp = data[front];
+	while( front < rear )
+	{
+		while( front<rear && tmp<=data[rear] )
+			rear--;
+
+		data[front] = data[rear];
+
+		while( front<rear && tmp>=data[front] )
+			front++;
+
+		data[rear] = data[front];
+	}
+	data[front] = tmp;
+
+	printf("front:%d,rear:%d,tmp:%d\n", front, rear, tmp);
+	printf("end:");
+	print_data(data, DATA_NUM);
+	return front;/*front==rear, the pivot*/
+}
+
+static void sort(int* data, int front, int rear)
+{
+	if( data==NULL || front<0 || rear<0 )
+		return;
+	if( front >= rear )
+		return;
+
+	int pivot=0;
+
+	pivot = sort_round(data, front, rear);
+	sort(data, front, pivot-1);
+	sort(data, pivot+1, rear);
+}
+
+static void quick_sort(int* data, int size)
+{
+	if( data==NULL || size<=1 )
+		return;
+	sort(data, 0, size-1);
+}
+
+static void print_data(int* data, int num)
+{
+	if( data==NULL || num==0 )
+		return;
+
+	int i = 0;
+	for( i=0; i < num; i++ )
+	{
+		printf( "[%d]%d ", i, data[i]);
+	}
+	printf("\n");
 }
