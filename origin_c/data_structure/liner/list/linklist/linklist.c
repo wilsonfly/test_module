@@ -2,9 +2,6 @@
 #include <stdlib.h>
 #include "linklist.h"
 
-/*
- * linklist_create-create an empty linklist
- * */
 listnode *linklist_create()
 {
 	listnode *p = (listnode *)malloc(sizeof(listnode));
@@ -20,6 +17,8 @@ void linklist_create2(listnode **L)
 
 int linklist_insert(listnode *L, int i, datatype x)
 {
+	if( L==NULL )
+		return -1;
 	listnode *p, *q;
 	p = L;
 	int j = 0;
@@ -42,11 +41,10 @@ int linklist_insert(listnode *L, int i, datatype x)
 		return -1;
 }
 
-/*
- * linklist_order_insert-ascending order
- * */
 void linklist_order_insert(listnode *L, datatype x)
 {
+	if( L==NULL )
+		return ;
 	listnode *p = L, *q;
 	while(p->next && p->next->data < x)
 	{
@@ -61,6 +59,8 @@ void linklist_order_insert(listnode *L, datatype x)
 
 int linklist_delete_at(listnode *L, int i)
 {
+	if( L==NULL )
+		return -1;
 	listnode *p = L;
 	listnode *q;
 	int j = 0;
@@ -81,8 +81,11 @@ int linklist_delete_at(listnode *L, int i)
 	else
 		return -1;
 }
+
 void linklist_delete(listnode *L, datatype x)
 {
+	if( L==NULL )
+		return ;
 	listnode *p = L, *q;
 	while(p->next && p->next->data != x)
 		p = p->next;
@@ -94,12 +97,18 @@ void linklist_delete(listnode *L, datatype x)
 		q = NULL;
 	}
 }
+
 int linklist_is_empty(listnode *L)
 {
+	if( L==NULL )
+		return -1;
 	return (L->next == NULL);
 }
+
 int linklist_clear(listnode *L)
 {
+	if( L==NULL )
+		return -1;
 	listnode *p = L, *q;
 	while(p->next)
 	{
@@ -110,10 +119,16 @@ int linklist_clear(listnode *L)
 		q = NULL;
 	}
 	L->next = NULL;
-	printf("\n");
+	printf(" clear finished!\n");
 }
+
 void linklist_display(listnode *L)
 {
+	if( L==NULL )
+	{
+		printf("empty list\n");
+		return;
+	}
 	listnode *p = L->next;
 	while(p)
 	{
@@ -122,6 +137,11 @@ void linklist_display(listnode *L)
 	}
 	printf("\n");
 }
+
+/*
+ *@brief reverse the linklist
+ * Should be noteced !
+ */
 void linklist_reverse(listnode *L)
 {
 	if(L->next == NULL || L->next->next == NULL)
@@ -140,6 +160,9 @@ void linklist_reverse(listnode *L)
 	}
 
 	q->next = r;
+	/*
 	r = q;
 	L->next = r;
+	*/
+	L->next = q;//same as last two lines
 }
