@@ -5,22 +5,36 @@
 sequeue * sequeue_create()
 {
 	int i = 0;
-	sequeue_p p = (sequeue *)malloc(sizeof(sequeue));
+	sequeue_p sq = (sequeue *)malloc(sizeof(sequeue));
 	for( i=0;i<MAX_NUM;i++ )
-		p->data[i] = malloc(MAX_FILENAME_LEN);
+		sq->data[i] = (datatype)malloc(MAX_FILENAME_LEN);
 
-	p->front = p->rear = 0;
-	p->count = 0;
-	return p;
+	sq->front = sq->rear = 0;
+	sq->count = 0;
+	return sq;
+}
+
+int sequeue_destroy(sequeue* sq)
+{
+	if( sq==NULL )
+		return -1;
+
+	int i = 0;
+	for( i=0;i<MAX_NUM;i++ )
+		free(sq->data[i]);
+
+	free(sq);
+	return 0;
 }
 
 int sequeue_enqueue(sequeue *sq, datatype x)
 {
-	if( (sq->rear+1) % MAX_NUM == sq->front )
+	if( sq==NULL || (sq->rear+1)%MAX_NUM==sq->front )
 		return -1;
 
 	sq->rear = (sq->rear + 1) % MAX_NUM;
 	strncpy(sq->data[sq->rear],x,MAX_FILENAME_LEN);
+	//printf("front:%d, rear:%d\n", sq->front, sq->rear);
 
 	sq->count++;
 	return 0;
@@ -28,7 +42,7 @@ int sequeue_enqueue(sequeue *sq, datatype x)
 
 int sequeue_dequeue(sequeue *sq, datatype *x)
 {
-	if(sq->front == sq->rear)
+	if( sq==NULL || sq->front==sq->rear )
 		return -1;
 
 	sq->front = (sq->front + 1) % MAX_NUM;
@@ -40,11 +54,16 @@ int sequeue_dequeue(sequeue *sq, datatype *x)
 
 int sequeue_is_empty(sequeue *sq)
 {
+	if( sq==NULL )
+		return -1;
 	return (sq->front == sq->rear);
 }
 
 int sequeue_clear(sequeue *sq)
 {
+	if( sq==NULL )
+		return -1;
+
 	sq->front = sq->rear = 0;
 	sq->count = 0;
 	return 0;

@@ -8,6 +8,7 @@
 
 typedef char* datatype;
 
+//sequence queue
 typedef struct
 {	
 	datatype data[MAX_NUM];
