@@ -16,8 +16,10 @@ typedef struct
 }linkqueue;
 
 linkqueue *linkqueue_create();
+int linkqueue_destroy(linkqueue* lq);
 int linkqueue_enqueue(linkqueue *lq, datatype x);
 int linkqueue_dequeue(linkqueue *lq, datatype *x);
 int linkqueue_is_empty(linkqueue *lq);
+void linkqueue_display(linkqueue* lq);
 
 #endif

@@ -12,18 +12,24 @@ int main()
 	linkqueue_enqueue(lq, 31);
 	linkqueue_enqueue(lq, 41);
 
+	linkqueue_display(lq);
 	while(!linkqueue_is_empty(lq))
 	{
 		linkqueue_dequeue(lq, &t);
-		printf("%d \n", t);
+		printf("dequeue:%d \n", t);
 	}
 	
+	linkqueue_display(lq);
 	linkqueue_enqueue(lq, 41);
+	linkqueue_display(lq);
 	while(!linkqueue_is_empty(lq))
 	{
 		linkqueue_dequeue(lq, &t);
-		printf("%d \n", t);
+		printf("dequeue:%d \n", t);
 	}
+	linkqueue_display(lq);
+
+	linkqueue_destroy(lq);
 
 	return 0;
 }

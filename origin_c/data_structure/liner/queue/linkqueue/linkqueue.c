@@ -4,14 +4,31 @@
 
 linkqueue *linkqueue_create()
 {
-	linkqueue *p = (linkqueue *)malloc(sizeof(linkqueue));
-	p->front = p->rear = (listnode *)malloc(sizeof(listnode));
-	p->front->next = NULL;
-	return p;
+	linkqueue *lq = (linkqueue *)malloc(sizeof(linkqueue));
+	lq->front = lq->rear = (listnode *)malloc(sizeof(listnode));
+	lq->front->next = NULL;
+	return lq;
+}
+
+int linkqueue_destroy(linkqueue* lq)
+{
+	if( lq==NULL )
+		return -1;
+	listnode* p = lq->front;
+	listnode* q = NULL;
+	while( p!=NULL && p->next!=NULL )
+	{
+		q = p->next;
+		p->next = p->next->next;
+		free(q);
+	}
+	free(lq->front);
 }
 
 int linkqueue_enqueue(linkqueue *lq, datatype x)
 {
+	if( lq == NULL )
+		return -1;
 	listnode *p = (listnode *)malloc(sizeof(listnode));
 	p->data = x;
 	p->next = NULL;
@@ -23,14 +40,14 @@ int linkqueue_enqueue(linkqueue *lq, datatype x)
 
 int linkqueue_dequeue(linkqueue *lq, datatype *x)
 {
-	if(lq->front->next == NULL)
+	if( lq==NULL || lq->front->next==NULL)
 		return -1;
 	listnode *p, *q;
 	p = lq->front;
 	q = p->next;
 
-	p->next = q->next;
 	*x = q->data;
+	p->next = q->next;
 	free(q);
 	q = NULL;
 	if(lq->front->next == NULL)
@@ -41,6 +58,25 @@ int linkqueue_dequeue(linkqueue *lq, datatype *x)
 
 int linkqueue_is_empty(linkqueue *lq)
 {
+	if( lq==NULL )
+		return -1;
 	return (lq->front->next == NULL);
+}
+
+void linkqueue_display(linkqueue* lq)
+{
+	if( lq==NULL || lq->front==lq->rear )
+	{
+		printf("empty queue\n");
+		return;
+	}
+	listnode* p = lq->front;
+	while( p!=NULL && p->next!=NULL )
+	{
+		printf("%d ", p->next->data);
+		p = p->next;
+	}
+	printf("\n");
+	return ;
 }
 

@@ -12,6 +12,7 @@ typedef struct
 }sequeue;
 
 sequeue * sequeue_create();
+int sequeue_destroy(sequeue* sq);
 int sequeue_enqueue(sequeue *sq, datatype x);
 int sequeue_dequeue(sequeue *sq, datatype *x);
 int sequeue_is_empty(sequeue *sq);
