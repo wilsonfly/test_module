@@ -1,13 +1,13 @@
 #ifndef _SQLIST_H_
 #define _SQLIST_H_
 
-#define maxsize 128
+#define MAX_NUM 128
 typedef int datatype;
 
 typedef struct 
 {
-	datatype data[maxsize];
-	int last;
+	datatype data[MAX_NUM];
+	int last_index;
 }sqlist;
 
 sqlist *sqlist_create();

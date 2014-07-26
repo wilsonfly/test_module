@@ -20,7 +20,7 @@ int main()
 
 	for(i = 0; i < sizeof(b)/sizeof(int); i++)
 	{
-		if(sqlist_insert(L2, 0, b[i]) == -1)
+		if(sqlist_insert(L2, sqlist_length(L2), b[i]) == -1)
 		{
 			printf("insert error!\n");
 		}
@@ -29,14 +29,13 @@ int main()
 	sqlist_display(L2);
 	sqlist_union(L1, L2);
 	sqlist_display(L1);
-	/*
+
 	sqlist_insert(L1, 2, 8);
 	sqlist_display(L1);
 
 	sqlist_delete(L1, 0);
-	sqlist_delete(L1, L1->last);
-
+	sqlist_delete(L1, L1->last_index);
 	sqlist_display(L1);
-*/
+
 	return 0;
 }

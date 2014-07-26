@@ -2,122 +2,119 @@
 #include <stdlib.h>
 #include "sqlist.h"
 
-/*
- * sqlist-create-create an empty sqlist
- * return: the start address of the sqlist
- * */
 sqlist *sqlist_create()
 {
-	sqlist *p = (sqlist *)malloc(sizeof(sqlist));
-	p->last = -1;
-	return p;
+	sqlist *sl = (sqlist *)malloc(sizeof(sqlist));
+	sl->last_index = -1;
+	return sl;
 }
 
-void sqlist_set_empty(sqlist *L)
+void sqlist_set_empty(sqlist *sl)
 {
-	L->last = -1;
+	if( sl==NULL )
+		return;
+	sl->last_index = -1;
 }
 
-/*
- *return: 1 emtpy
- * */
-int sqlist_is_empty(sqlist *L)
+int sqlist_is_empty(sqlist *sl)
 {
-	return (L->last == -1);
-}
-
-int sqlist_length(sqlist *L)
-{
-	return (L->last+1);
-}
-
-/*
- * note: i at [0, last]
- * */
-int sqlist_get(sqlist *L, int i, datatype *x)
-{
-	if(i < 0 || i > L->last)
+	if( sl==NULL )
 		return -1;
-	 *x = L->data[i];
+	return (sl->last_index == -1);
+}
+
+int sqlist_length(sqlist *sl)
+{
+	if( sl==NULL )
+		return 0;
+	return (sl->last_index+1);
+}
+
+int sqlist_get(sqlist *sl, int i, datatype *x)
+{
+	if( sl==NULL || i<0 || i>sl->last_index )
+		return -1;
+	 *x = sl->data[i];
 	 return 0;
 }
 
 /*
- * return: -1 not exist
- * */
-int sqlist_locate(sqlist *L, datatype x)
+ *@brief check if x is in sl
+ *@return exist:index; nonexist:-1
+ **/
+int sqlist_locate(sqlist *sl, datatype x)
 {
+	if( sl==NULL )
+		return -1;
 	int i = 0;
-	while(i <= L->last)
+	while(i <= sl->last_index)
 	{
-		if(x == L->data[i])
+		if(x == sl->data[i])
 			return i;
 		i++;
 	}
 	return -1;
 }
 
-/*
- * sqlist_insert-insert x at i
- * @i-the insert pos
- * note: i [0,last+1]
- * return: -1 error 0 success
- * */
-int sqlist_insert(sqlist *L, int i, datatype x)
+int sqlist_insert(sqlist *sl, int i, datatype x)
 {
-	if(L->last == maxsize - 1)
+	if( sl==NULL || sl->last_index==MAX_NUM-1 )
 		return -1;
-	if(i < 0 || i > L->last+1)
+	if(i < 0 || i > sl->last_index+1)
 		return -1;
-	int j = L->last;
+
+	int j = sl->last_index;
 	while(j >= i)
 	{
-		L->data[j+1] = L->data[j];
+		sl->data[j+1] = sl->data[j];
 		j--;
 	}
 
-	L->data[i] = x;
-	L->last++;
+	sl->data[i] = x;
+	sl->last_index++;
 
 	return 0;
 }
 
 /*
- * note: i at [0, last]
- * */
-int sqlist_delete(sqlist *L, int i)
+ *@brief delete the one at index
+ */
+int sqlist_delete(sqlist *sl, int index)
 {
-	if(i < 0 || i > L->last)
+	if( sl==NULL || index<0 || index>sl->last_index )
 		return -1;
 
-	int j = i+1;
-	while(j <= L->last)
+	int j = index+1;
+	while(j <= sl->last_index)
 	{
-		L->data[j-1] = L->data[j];
+		sl->data[j-1] = sl->data[j];
 		j++;
 	}
-	L->last--;	
+	sl->last_index--;	
 
 	return 0;
 }
 
-void sqlist_display(sqlist *L)
+void sqlist_display(sqlist *sl)
 {
 	int i;
-	for(i = 0; i <= L->last; i++)
-		printf("%d ", L->data[i]);
+	for(i = 0; i <= sl->last_index; i++)
+		printf("%d ", sl->data[i]);
 	printf("\n");
 }
 
-void sqlist_union(sqlist *L1, sqlist *L2)
+/*
+ *@brief insert sl2 into sl1 without the duplicated ones
+ */
+void sqlist_union(sqlist *sl1, sqlist *sl2)
 {
 	int i = 0;
-	while(i <= L2->last)
+	while(i <= sl2->last_index)
 	{	
-		/*L2->data[i] */
-		if( sqlist_locate(L1, L2->data[i]) == -1 )
+		/*sl2->data[i] */
+		if( sqlist_locate(sl1, sl2->data[i]) == -1 )
 		{
-			sqlist_insert(L1, L1->last+1, L2->data[i]);
+			sqlist_insert(sl1, sl1->last_index+1, sl2->data[i]);
 		}
 		i++;
 	}
