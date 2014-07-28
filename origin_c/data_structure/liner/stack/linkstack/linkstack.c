@@ -17,6 +17,9 @@ void linkstack_create2(listnode **lq)
 
 int linkstack_push(listnode *lq, datatype x)
 {
+	if( lq==NULL )
+		return -1;
+
 	listnode *p = lq, *q;
 
 	q = (listnode *)malloc(sizeof(listnode));
@@ -29,6 +32,8 @@ int linkstack_push(listnode *lq, datatype x)
 
 int linkstack_pop(listnode *lq, datatype *x)
 {
+	if( lq==NULL || x==NULL )
+		return -1;
 	listnode *p = lq, *q;
 	if(p->next == NULL)
 		return -1;
@@ -43,8 +48,11 @@ int linkstack_pop(listnode *lq, datatype *x)
 
 int linkstack_top(listnode *lq, datatype *x)
 {
+	if( lq==NULL || x==NULL )
+		return -1;
 	if(lq->next == NULL)
 		return -1;
+
 	*x = lq->next->data;
 
 	return 0;
@@ -52,11 +60,16 @@ int linkstack_top(listnode *lq, datatype *x)
 
 int linkstack_is_empty(listnode *lq)
 {
+	if( lq==NULL )
+		return -1;
 	return (lq->next == NULL);
 }
 
 void linkstack_clear(listnode *lq)
 {
+	if( lq==NULL )
+		return ;
+
 	listnode *p = lq, *q;
 	while(p->next)
 	{
@@ -70,6 +83,11 @@ void linkstack_clear(listnode *lq)
 
 void linkstack_display(listnode *lq)
 {
+	if( lq==NULL || lq->next==NULL )
+	{
+		printf("empty linkstack\n");
+		return ;
+	}
 	listnode *p = lq->next;
 	while(p)
 	{
