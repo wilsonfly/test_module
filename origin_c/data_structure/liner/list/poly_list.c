@@ -28,8 +28,17 @@ listnode * polylist_create(int n, int m, int a[][m])
 	return h;
 }
 
+/*
+ * y1 = ax^0 + bx^1 + cx^8 + dx^16;
+ * y2 = ex^1 + fx^6 + gx^8;
+ * Y = y1 + y2;
+ * Y = ax^0 + (b+3)x^1 + cx^8 + fx^6 + dx^16;
+ */
 void polylist_add(listnode *h1, listnode *h2)
 {
+	if( h1==NULL || h2==NULL )
+		return;
+
 	listnode *p, *q, *r;
 	p = h1->next;
 	q = h2->next;
@@ -71,6 +80,9 @@ void polylist_add(listnode *h1, listnode *h2)
 
 void polylist_display(listnode *h)
 {
+	if( h1==NULL || h2==NULL )
+		return;
+
 	listnode *p = h->next;
 	while(p)
 	{
@@ -93,6 +105,7 @@ void display(int n, int m,  int a[][m])
 	}
 	printf("\n");
 }
+
 int main()
 {
 	int A[][2] = {{5, 0}, {2, 1}, {8, 8}, {3, 16}};
