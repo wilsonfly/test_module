@@ -7,7 +7,7 @@ typedef int datatype;
 typedef struct
 {
 	datatype data[maxsize];
-	int top;
+	int top_index;
 }seqstack;
 
 seqstack * seqstack_create();

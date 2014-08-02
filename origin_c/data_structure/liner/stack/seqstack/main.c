@@ -11,7 +11,7 @@ int main()
 	for(i = 0;i < 5; i++)
 		seqstack_push(sq, a[i]);
 
-	//seqstack_display(sq);
+	seqstack_display(sq);
 
 	while(!seqstack_is_empty(sq))
 	{
