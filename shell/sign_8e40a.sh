@@ -9,7 +9,7 @@ then
 	exit
 fi
 
-build_path="/home/sunhuasheng/project_code/sub_system_8e40a_base/platform/build/tool/"
+build_path="/home/sunhuasheng/project_code/sub_system_8m330_base/platform/build/tool/"
 input_file=$1
 suffix_name=${input_file##*.}
 prefix_name=${input_file%".$suffix_name"}
