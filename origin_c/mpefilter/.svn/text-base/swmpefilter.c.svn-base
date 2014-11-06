@@ -1,0 +1,683 @@
+/** 
+ * @file  swmpefilter.h
+ * @brief DVB MPE[Multiprotocol encapsulation多协议封装] 数据过滤模块
+ * @author Hujinshui/Sunhuasheng
+ * @date 2011-10-28
+ * @version 1.0.0.0
+ */
+
+#include "stdafx.h"
+#include "swmpefilter_priv.h"
+#include "swmpefilter.h"
+#include "swlog.h"
+#include "swthrd.h"
+#include "swled.h"
+#include "hi_adp_boardcfg.h"
+#include "hi_adp_tuner.h"
+
+#ifdef soft_mpesection
+#include "mpesection.h"
+#endif
+
+static bool dvb_recvdata_proc( uint32_t wparam, uint32_t lparam );
+static bool mpefilter_data_proc( uint32_t wparam, uint32_t lparam );
+static int mpesection_proc( uint8_t* section, int size, uint32_t wparam );
+static bool read_file_proc( uint32_t wparam, uint32_t lparam );
+static inline int get_netidx( uint32_t ip, uint32_t port, mpefilter_t* mf);
+static int tuner_init( mpefilter_t* mf,uint32_t freq,uint32_t srate,uint32_t qam,uint32_t mpepid );
+
+
+/**
+ * @brief	模块初始化  
+ * @return  0成功,否则错误码
+ */
+int sw_mpefilter_init( )
+{
+	return 0;
+}
+
+/** 
+ * @brief	模块退出 
+ * @return  无
+ */
+void sw_mpefilter_exit()
+{
+	return;
+}
+
+/** 
+ * @brief 根据url信息,打开一过滤器
+ * @url信息如下
+ *    @dvb://freq=xxx&symbol=xxx&&qam=xxx&&mpepid=xxx
+ *	  @file:///xx/xx/filename&&mpepid=xxx
+ *	  @udp://ip:port&&mpepid=xxx
+ * @return 过滤句柄.
+ */
+HANDLE sw_mpefilter_open( char* url )
+{
+	printf("====[%s] begin\n",__FUNCTION__);
+	int ret = 0;
+
+	mpefilter_t* mf = NULL;
+	mf = malloc(sizeof(mpefilter_t));
+	if( mf == NULL )
+		return NULL;
+	memset( mf, 0, sizeof(mpefilter_t));
+	mf->isexit = false;
+	mf->databuf = malloc(MAX_BUFFER_SIZE);
+	if( mf->databuf )
+	{
+		memset( mf->databuf,0,MAX_BUFFER_SIZE );
+		mf->datastream = dataqueue_create(mf->databuf,MAX_BUFFER_SIZE);
+		dataqueue_set_block( mf->datastream,true ); 
+	}
+#ifdef soft_mpesection
+	char* p = NULL;
+	uint8_t match[16] = {0x3e},mask[16] = {0xff},mask_len = 1;
+	uint16_t pid = 7238;
+	p = strstr( url,"&&mpepid=");
+	if( p )
+	{
+		pid = atoi( p+strlen("&&mpepid="));
+		*p = '\0';
+	}
+	mf->psecfilter = mpesection_create( pid,mpesection_proc,(unsigned long)mf);
+	if( mf->psecfilter == NULL )
+		goto failopen;
+	mpesection_set_filter( mf->psecfilter,match,mask,mask_len);
+#endif
+	//根据相应的url,启动数据接收
+	if( strstr( url,"dvb://" ))
+	{
+		char* p;
+		int freq = 0,srate = 0,qam = 0,mpepid = 0;
+
+		p = strstr( url,"freq=");
+		if( p )	freq = atoi( p+strlen("freq="));
+		p = strstr( url,"&&srate=");
+		if( p ) srate = atoi( p+strlen("&&srate="));
+		p = strstr( url,"&&qam=");
+		if( p ) qam = atoi( p+strlen("&&qam="));
+		p = strstr( url,"&&mpepid=");
+		if( p ) mpepid = atoi( p+strlen("&&mpepid="));
+
+		do
+		{
+			ret = tuner_init( mf,freq,srate,qam,mpepid );
+			if( ret )
+			{
+				printf("[%s,%d]tuner_init failed,try again...\n",__FUNCTION__,__LINE__);
+				sleep(10);
+				//=	goto failopen;
+			}
+		}
+		while(ret);
+
+		mf->ptuner = sw_thrd_open( "dvb_recvdata_proc", 60, 0, 64*1024,(PThreadHandler)dvb_recvdata_proc, (unsigned long)mf, 0 );
+		sw_thrd_resume( mf->ptuner );
+
+	}
+	else if( strstr( url,"udp://" ))
+	{
+	}
+	else if( strstr( url,"file://" ))
+	{
+		mf->fddata.fp = fopen(url+strlen("file://"),"rb");
+		if( mf->fddata.fp == NULL )
+		{
+			printf("====[%s] open media file failed\n",__FUNCTION__);
+			sw_log_error("[sw_mpefilter_open] open file %s failed\n",url+strlen("file://"));
+			goto failopen;
+		}
+		mf->pthrdread = sw_thrd_open( "read_file_proc", 60, 0, 64*1024, (PThreadHandler)read_file_proc, (unsigned long)mf, 0 );
+		sw_thrd_resume( mf->pthrdread );
+	}
+	else
+		printf("====[%s]invalid url\n",__FUNCTION__);
+
+	//启动数据处理线程
+	mf->pthrd = sw_thrd_open( "mpefilter_data_proc", 60, 0, 64*1024, (PThreadHandler)mpefilter_data_proc, (unsigned long)mf, 0 );
+	sw_thrd_resume( mf->pthrd );
+
+	printf("====[%s]   ok\n",__FUNCTION__);
+	return mf;
+
+failopen:
+	if( mf->datastream ) dataqueue_destory(mf->datastream);
+	if( mf->databuf ) free(mf->databuf);
+#ifdef soft_mpesection
+	if( mf->psecfilter ) mpesection_destroy(mf->psecfilter);
+#endif
+	free( mf );
+	return NULL;
+}
+
+/** 
+ * @brief 关闭过滤器
+ * @return 无.
+ */
+void sw_mpefilter_close( HANDLE hmpe )
+{
+	HI_HANDLE channel = 0;
+	HI_HANDLE hfilter = 0;
+	int ret = 0;
+
+	mpefilter_t* mf = (mpefilter_t*)hmpe;
+	if( !mf )
+	{
+		printf("invalid param!\n");
+		return;
+	}
+
+	hfilter = mf->fddata.filter.handle;
+	channel = mf->fddata.filter.channel;
+
+	mf->isexit = true;
+	usleep(200000);//wait for the thrds quit
+
+	if( mf->ptuner ) sw_thrd_close(mf->ptuner, 0);
+	if( mf->pthrd ) sw_thrd_close(mf->pthrd, 0);
+	if( mf->datastream ) dataqueue_destory(mf->datastream);
+	if( mf->databuf ) free(mf->databuf);
+	if( mf->fddata.fp )	fclose(mf->fddata.fp);
+
+#ifdef soft_mpesection
+	if( mf->psecfilter ) mpesection_destroy(mf->psecfilter);
+#endif
+
+	//swflytv launch in swapp,it's quit willnot influence swapp
+	if( !hfilter && !channel )
+	{
+		ret = HI_UNF_DMX_CloseChannel(channel);
+		if( ret )
+		{
+			printf("call HI_UNF_DMX_CloseChannel failed!\n");
+		}	
+		HI_UNF_DMX_DetachFilter(hfilter,channel);
+		HI_UNF_DMX_DestroyFilter(hfilter);
+		HI_UNF_DMX_DestroyChannel(channel);
+		HI_UNF_DMX_DetachTSPort(0);
+		HI_UNF_DMX_DeInit();
+		HIADP_Tuner_DeInit();
+		HI_SYS_DeInit();
+	}
+
+	sw_led_set_state(LED_ID_QAMLOCK, LED_STATE_OFF);
+
+	free( mf );
+
+	printf("====[%s] ok \n",__FUNCTION__);
+	return;
+}
+
+/** 
+ * @brief 设置数据回调处理函数
+ * @param hmpe 过滤器句柄
+ * @param callback 数据回调处理函数
+ * @param wparam 用户参数
+ * @return 0成功,否则错误码
+ */
+int sw_mpefilter_set_datacallback( HANDLE hmpe, data_output callback, unsigned long wparam)
+{
+	mpefilter_t* mf = (mpefilter_t*)hmpe;
+	if( mf )
+	{
+		mf->wparam = wparam;
+		mf->data_callback = callback;
+	}
+
+	return 0;
+}
+
+/** 
+ * @brief 查询有多少路数据
+ × @param hmpe 过滤器句柄
+ * @return 数目
+ */
+int sw_mpefilter_get_counts( HANDLE hmpe )
+{
+	mpefilter_t* mf = (mpefilter_t*)hmpe;
+	return mf->program_count;
+}
+
+/** 
+ * @brief 根据idx来查询数据的来源信息
+ * @param hmpe 过滤器句柄
+ * @param hmpe idx
+ * @param ip[output]
+ * @param port[output]
+ * @return 0成功,否则错误码
+ */
+int sw_mpefilter_get_info_fromidx( HANDLE hmpe ,int idx,unsigned long *ip, unsigned short *port )
+{
+	mpefilter_t* mf = (mpefilter_t*)hmpe;
+	*ip = mf->netinfo[idx].ip;
+	*port = mf->netinfo[idx].port;
+	return 0;
+}
+
+/** 
+ * @brief 根据IP port来获取索引号
+ * @param hmpe 过滤器句柄
+ * @param ip
+ * @param port
+ * @return 索引号
+ */
+int sw_mpefilter_get_idx_fromip( HANDLE hmpe ,unsigned long ip, unsigned short port )
+{
+	mpefilter_t* mf = (mpefilter_t*)hmpe;
+	return get_netidx( ip,port,mf );
+}
+
+/** 
+ * @brief 根据idx来数据的来源信息
+ * @param hmpe 过滤器句柄
+ * @param hmpe idx
+ * @param ip[output]
+ * @param port[output]
+ * @return 0成功,否则错误码
+ */
+int sw_mpefilter_set_infobyidx( HANDLE hmpe ,int idx,unsigned long ip, unsigned short port )
+{
+	mpefilter_t* mf = (mpefilter_t*)hmpe;
+	if( idx>= MAX_CHANNEL_NUM )
+		return -1;
+	mf->netinfo[idx].port = port;
+	mf->netinfo[idx].ip = ip;
+	mf->netinfo[idx].started = true;
+	printf("new channel add,idx %d:%d.%d.%d.%d:%d\n",
+			idx,(int)ip&0xff,(int)(ip>>8)&0xff,(int)(ip>>16)&0xff,(int)(ip>>24)&0xff,port);
+	return 0;
+}
+
+
+/** 
+ * @brief 启动数据索引为idx的过滤
+ * @param hmpe 
+ * @param idx 对应要启动的索引号
+ * @return 0成功,否则错误码
+ */
+int sw_mpefilter_start( HANDLE hmpe ,int idx )
+{
+	mpefilter_t* mf = (mpefilter_t*)hmpe;
+	if( idx>= MAX_CHANNEL_NUM )
+		return -1;
+	mf->netinfo[idx].started = true;
+	return 0;
+}
+
+/** 
+ * @brief 停止数据索引为idx的过滤
+ * @param hmpe 
+ * @param idx 对应要停止的索引号
+ * @return 0成功,否则错误码
+ */
+int sw_mpefilter_stop( HANDLE hmpe ,int idx )
+{
+	mpefilter_t* mf = (mpefilter_t*)hmpe;
+	if( idx>= MAX_CHANNEL_NUM )
+		return -1;
+	mf->netinfo[idx].started = false;
+	return 0;
+}
+
+
+//#define DMX_FILTER_MAX_DEPTH 8
+#define TS_PORT 0
+static int tuner_init( mpefilter_t* mf,uint32_t freq,uint32_t srate,uint32_t qam,uint32_t mpepid )
+{
+	printf("====[%s] begin\n",__FUNCTION__);
+	HI_UNF_DMX_CHAN_ATTR_S stChnAttr;
+	HI_UNF_DMX_FILTER_ATTR_S stFilterAttr;
+	HI_HANDLE hChannel;
+	HI_HANDLE hFilter1;
+	uint8_t g_match[DMX_FILTER_MAX_DEPTH];
+	uint8_t g_mask[DMX_FILTER_MAX_DEPTH];
+	uint8_t g_Negate[DMX_FILTER_MAX_DEPTH];
+	int g_TunerFreq = freq;
+	int g_TunerSrate = srate;
+	int g_TunerQam = qam;
+	int ret;
+
+	HI_SYS_Init();
+	HI_SYS_PreAV(NULL);
+	ret = HIADP_Tuner_Init();
+	if (HI_SUCCESS != ret)
+	{
+		printf("call HIADP_Demux_Init failed.\n");
+		goto TUNER_DEINIT;
+	}
+	printf("====freq:%d,srate:%d,qam:%d\n",g_TunerFreq,g_TunerSrate,g_TunerQam);
+	ret = HIADP_Tuner_Connect(TUNER_USE,g_TunerFreq,g_TunerSrate,g_TunerQam);
+	if (HI_SUCCESS != ret)
+	{
+		printf("call HIADP_Tuner_Connect failed. ret:0x%x\n",ret);
+		goto TUNER_DEINIT;
+	}
+	
+	if ( HIADP_Tuner_IsConnect(TUNER_USE) ) 
+	{
+		printf("Now Tuner is Connect, set qamlock led on......\n");
+		sw_led_set_state(LED_ID_QAMLOCK, LED_STATE_ON);
+	}
+
+	ret |= HI_UNF_DMX_Init();
+	ret |= HI_UNF_DMX_AttachTSPort(0,TS_PORT);
+	if (HI_SUCCESS != ret)
+	{
+		printf("call HIADP_Demux_Init failed!\n");
+		goto TUNER_DEINIT;
+	}
+
+	ret = HI_UNF_DMX_GetChannelDefaultAttr(&stChnAttr);
+	if (HI_SUCCESS != ret)
+	{
+		printf("call HI_UNF_DMX_GetChannelDefaultAttr failed!\n");
+		goto DMX_DEINIT;
+	}
+	stChnAttr.enChannelType = HI_UNF_DMX_CHAN_TYPE_SEC;
+	stChnAttr.enCRCMode = HI_UNF_DMX_CHAN_CRC_MODE_FORBID;
+	stChnAttr.u32BufSize = 1024*1024*3;
+	ret = HI_UNF_DMX_CreateChannel(0,&stChnAttr,&hChannel);
+	if (HI_SUCCESS != ret)
+	{
+		printf("call HI_UNF_DMX_CreateChannel failed!\n");
+		goto DMX_DEINIT;
+	}
+
+	/* set filter attr */
+	memset(&g_mask,0,DMX_FILTER_MAX_DEPTH);
+	memset(&g_match,0,DMX_FILTER_MAX_DEPTH);
+	memset(&g_Negate,0,DMX_FILTER_MAX_DEPTH);
+	stFilterAttr.u32FilterDepth = 1;
+	g_match[0] = 0x3e;//0x47;0x0;//PAT_TABLEID;
+	memcpy(stFilterAttr.au8Mask,g_mask,DMX_FILTER_MAX_DEPTH);
+	memcpy(stFilterAttr.au8Match,g_match,DMX_FILTER_MAX_DEPTH);
+	memcpy(stFilterAttr.au8Negate,g_Negate,DMX_FILTER_MAX_DEPTH);
+
+	ret = HI_UNF_DMX_CreateFilter(0,&stFilterAttr,&hFilter1);
+	if (HI_SUCCESS != ret)
+	{
+		printf("call HI_UNF_DMX_CreateFilter failed!\n");
+		goto CHN_DESTROY;
+	}
+	ret = HI_UNF_DMX_AttachFilter(hFilter1,hChannel);
+	if (HI_SUCCESS != ret)
+	{
+		printf("call HI_UNF_DMX_AttachFilter failed!\n");
+		HI_UNF_DMX_DestroyFilter(hFilter1);
+		goto CHN_DESTROY;
+	}
+//	ret = HI_UNF_DMX_SetChannelPID(hChannel,7238/*PAT_TSPID*/);
+	ret = HI_UNF_DMX_SetChannelPID(hChannel,mpepid/*PAT_TSPID*/);
+	ret |= HI_UNF_DMX_OpenChannel(hChannel);
+	if (HI_SUCCESS != ret)
+	{
+		printf("call HI_UNF_DMX_OpenChannel failed!\n");
+		goto FILTER1_DESTROY;
+	}
+
+	mf->fddata.filter.handle = hFilter1;
+	mf->fddata.filter.channel = hChannel;
+	printf("====tuner_use:%d,ts_port:%d,channel:0x%x,filter:0x%x\n",TUNER_USE,TS_PORT,hChannel,hFilter1);
+
+	printf("====[%s] ok !\n",__FUNCTION__);
+	return 0;
+
+FILTER1_DESTROY:
+	HI_UNF_DMX_DetachFilter(hFilter1,hChannel);
+	HI_UNF_DMX_DestroyFilter(hFilter1);
+CHN_DESTROY:
+	HI_UNF_DMX_DestroyChannel(hChannel);
+DMX_DEINIT:	
+	HI_UNF_DMX_DetachTSPort(0);
+	HI_UNF_DMX_DeInit();
+TUNER_DEINIT:	
+	HIADP_Tuner_DeInit();
+	HI_SYS_DeInit();
+	printf("====[%s] failed!\n",__FUNCTION__);
+	return -1;
+}
+
+static bool dvb_recvdata_proc( uint32_t wparam, uint32_t lparam )
+{
+	HI_UNF_DMX_DATA_S pstBuf[100];
+	HI_HANDLE channel = 0;
+	int ret;
+	int i;
+	unsigned int u32AcquireNum = 100;
+	unsigned int pu32AcquiredNum;
+
+	mpefilter_t* mf = (mpefilter_t*)wparam;
+	channel = mf->fddata.filter.channel;
+	printf("====[%s]hChannel:0x%x \n",__FUNCTION__,channel);
+
+	printf("receive start!\n");
+	while(1)
+	{
+		if( mf->isexit )
+			return false;
+		if(HI_SUCCESS != HI_UNF_DMX_AcquireBuf(channel,u32AcquireNum,&pu32AcquiredNum,pstBuf,5000))
+		{
+			printf("call HI_UNF_DMX_AcquireBuf failed!\n");
+			usleep(10 * 1000);
+			continue;
+		}
+		if( pu32AcquiredNum == 0 )
+		{
+			printf("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\n");
+			usleep(10*1000);
+			continue;
+		}
+
+		for(i=0;i<pu32AcquiredNum;i++)
+		{
+			mpesection_proc(pstBuf[i].pu8Data,pstBuf[i].u32Size,(uint32_t)mf);
+		}
+		ret = HI_UNF_DMX_ReleaseBuf(channel,pu32AcquiredNum,pstBuf);
+		if (HI_SUCCESS != ret)
+		{
+			printf("call HI_UNF_DMX_ReleaseBuf failed!\n");
+		}
+		if( pu32AcquiredNum < 20 )
+		{
+		//	printf("in, pu32QcquiredNum:%d\n",pu32AcquiredNum);
+			usleep(10000);
+		}
+		else
+		{
+		//	printf("out,pu32QcquiredNum:%d\n",pu32AcquiredNum);
+		}
+	}
+	printf("receive over!\n");
+	return HI_SUCCESS;
+}
+
+static bool mpefilter_data_proc( uint32_t wparam, uint32_t lparam )
+{
+	//	printf("====[%s] begin\n",__FUNCTION__);
+	mpefilter_t* mf = (mpefilter_t*)wparam;
+	uint8_t *buf = NULL;
+	uint32_t size = 0;
+	if( mf->isexit )
+		return false;
+	dataqueue_get_readbuf(mf->datastream, &buf, &size);
+	if( size <= 0 )
+	{
+		sw_thrd_delay(40);
+		return true;
+	}
+	mf->data_callback( dq_media_id(buf),buf+dq_payload_offset(buf),dq_payload_size(buf),mf->wparam );
+	dataqueue_read_complete( mf->datastream, buf );
+	return true;
+}
+
+/*
+ * 解析mpe section
+ */
+static int mpesection_proc( uint8_t* section, int size, uint32_t wparam )
+{
+//	printf("====[%s] begin\n",__FUNCTION__);
+	int i = 0,idx = 0;
+	mpefilter_t* mf = (mpefilter_t*)wparam;
+	struct iphdr  *ipheader;
+	uint16_t section_length;
+	uint8_t LLC_SNAP_flag;
+	uint8_t *buf = section;
+	unsigned long int src_ip;
+	unsigned long int dst_ip;
+	char src_s[16];
+	char dst_s[16];
+	uint16_t src_port;
+	uint16_t dst_port;
+
+	if( mf->isexit )
+		return false;
+
+	i = 1;//section_length
+	section_length = buf[i] & 0x0f;
+	section_length = (section_length << 8) + buf[i+1];
+	//	if( section_length != 1357 )
+	//		printf("section_length:%d\n",section_length);
+
+	i = 5;//LLC_SNAP_flag
+	LLC_SNAP_flag = buf[i] & 0x02;
+	LLC_SNAP_flag = LLC_SNAP_flag >> 1;
+	if(LLC_SNAP_flag != 0)
+		return true;
+
+	i = 12;//ip,20 bytes
+	ipheader =(struct iphdr *)&buf[i];
+	src_ip = ipheader->saddr;
+	dst_ip = ipheader->daddr;
+	inet_ntop(AF_INET,&src_ip,src_s,sizeof(src_s));
+	inet_ntop(AF_INET,&dst_ip,dst_s,sizeof(dst_s));
+	//	printf("src_ip:%s,dst_ip:%s\n",src_s,dst_s);
+
+	i = 32;//src port,2 bytes
+	//	printf("%02X,%02X\n",buf[i],buf[i+1]);
+	src_port = buf[i];
+	src_port = (src_port << 8) + buf[i+1];
+
+	i = 34;//dst port,2 bytes,followed by other 4 bytes
+	dst_port = buf[i];
+	dst_port = (dst_port << 8) + buf[i+1];
+	//	printf("dst_port:%d\n",dst_port);
+	i = 40;//sync bytes
+
+#if 1
+	idx = get_netidx( dst_ip,dst_port,mf);
+	if( idx>=0 && mf->datastream && mf->netinfo[idx].started )
+	{
+		unsigned char *databuf = NULL;
+		unsigned int datasize = 0 ;
+		buf += 40;
+		size -= 40;
+		while( size > 4 )
+		{
+			datasize = size-4;
+			dataqueue_get_writebuf(mf->datastream,0,&databuf,&datasize);
+			if( datasize>size-4 )
+				datasize = size-4;
+			if( databuf )
+			{
+				//不做分析处理，原封不动将私有数据部分放进dataqueue
+				memcpy(databuf,(char*)buf,datasize);
+				size -= datasize;
+			}
+			else
+			{
+				printf("########################queue maybe full\n");
+				//=	usleep(200000);   //////////////////////no
+				continue;
+			}
+			dataqueue_write_complete(mf->datastream,idx,0,databuf,datasize,0);	
+		}
+	}
+#else
+	int ret = 0;
+	static unsigned short m_dumpport = 0;
+	static FILE *m_dumpfile = NULL;
+	static unsigned int m_ip = 0;
+
+	if( m_dumpport == 0 )
+	{
+		m_dumpport = dst_port;
+		m_ip = dst_ip;
+		m_dumpfile = fopen("/tmp/test.ts","wb");
+	}
+	if( m_dumpport >0 && m_dumpport == dst_port && m_ip == dst_ip )
+	{
+		int i  = 0, n = 0;
+		uint8_t* data = buf+40;
+		for( ;i<size-44; i++ )
+		{
+			if( *(data+i) == 0x47 )
+			{
+				for( n=i; n<size-44; n += 188 )
+				{
+					if( *(data+n) != 0x47 )
+					{
+						//printf("write 0x%x,0x%x,0x%x,0x%x .n = %d\n",data[n],data[n+1],data[n+2],data[n+3],n);
+						break;
+					}
+				}
+				break;
+			}
+		}
+		//if( buf[40] != 0x47 )
+		//	printf("@@@@write 0x%x,0x%x,0x%x,0x%x\n",buf[40],buf[41],buf[42],buf[43]);
+		ret = fwrite(buf+40,1,size-44,m_dumpfile);
+		//printf("write %d,%d,size %d,ret:%d\n",size-44,htons(m_dumpport),size,ret );
+	}
+#endif
+
+	return 0;
+}
+
+static inline int get_netidx( uint32_t ip, uint32_t port, mpefilter_t* mf)
+{
+	int i = 0;
+	for( ;i<MAX_CHANNEL_NUM;i++)
+	{
+		if( port == mf->netinfo[i].port && ip == mf->netinfo[i].ip )
+		{
+			return i;
+		}
+	}
+	return -1;
+}
+
+//读取文件线程处理函数
+static bool read_file_proc( uint32_t wparam, uint32_t lparam )
+{
+	mpefilter_t* mf = (mpefilter_t*)wparam;
+	uint8_t tsdata[1316];
+	int len = 0;
+
+	while( !feof(mf->fddata.fp) )
+	{
+		if( mf->isexit )
+			return false;
+		len = fread( tsdata,1,sizeof(tsdata),mf->fddata.fp );
+		if( len <=0 )
+			break;
+#ifdef soft_mpesection
+		mpesection_ontsdata( mf->psecfilter,tsdata,len);
+#endif
+	}
+	fseek(mf->fddata.fp,0L,SEEK_SET);
+	return true;
+}
+
+void sw_dvb_porting_tuner_status_callback( int nTnrID, int nStatusType, unsigned long ulStatus, unsigned long usrdata )
+{
+	nTnrID = nTnrID;
+	nStatusType = nStatusType;
+	ulStatus = ulStatus;
+	usrdata = usrdata;
+	printf("do nothing\n");
+	return;
+}
+
+

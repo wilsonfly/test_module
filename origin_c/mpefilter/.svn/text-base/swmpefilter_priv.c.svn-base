@@ -1,0 +1,214 @@
+//数据管理,参考streamqueue
+#include "stdafx.h"
+#include "swsignal.h"
+#include "swmpefilter_priv.h"
+#include "swlog.h"
+#define SQ_ALIGN 8 //必须为2^n
+
+dataqueue_t* dataqueue_create( uint8_t* buf,int size )
+{
+    dataqueue_t *sqobj;
+    sqobj = (dataqueue_t *)malloc(sizeof(dataqueue_t));
+    if (sqobj == NULL) 
+        goto FAIL;
+    memset(sqobj, 0, sizeof(dataqueue_t));
+    sqobj->size = size;
+    sqobj->real_buf = buf; 
+    sqobj->buf = (uint8_t *)((uint32_t)(sqobj->real_buf + SQ_ALIGN - 1) & ~(SQ_ALIGN - 1));
+    sqobj->head = sqobj->buf;
+    sqobj->tail = sqobj->buf;
+
+    sqobj->buf_end = sqobj->buf + size;
+    sqobj->block = true; //注意：默认block
+    sqobj->queueevent = sw_signal_create(0, 1);
+    if (sqobj->queueevent == NULL)
+        goto FAIL;
+    sw_log_info("[SWMEDIA] %s OK!\n", __FUNCTION__);
+    return sqobj;
+
+FAIL:
+    sw_log_error("[SWMEDIA] %s FAILED!\n", __FUNCTION__);
+    if (sqobj != NULL)
+    {
+        free(sqobj);
+    }
+    return NULL;
+}
+
+
+void dataqueue_destory( dataqueue_t *sqobj )
+{
+    sw_log_info("[SWMEDIA] %s\n", __FUNCTION__);
+    if (sqobj != NULL)
+    {
+        sw_signal_give(sqobj->queueevent);
+        sw_signal_destroy(sqobj->queueevent);
+        free(sqobj);
+    }
+}
+
+
+int dataqueue_record_newbegin( dataqueue_t *sqobj )
+{
+    sw_log_info("[SWMEDIA] %s\n", __FUNCTION__);
+    sqobj->new_begin = sqobj->tail;
+    sw_signal_give(sqobj->queueevent); //<attention>
+    return 0;
+}
+
+
+int dataqueue_reset(dataqueue_t *sqobj)
+{
+    sw_log_info("[SWMEDIA] %s\n", __FUNCTION__);
+
+    if (sqobj->new_begin == NULL)
+    {
+        sqobj->head = sqobj->tail;
+    } 
+    else
+    {
+        sqobj->head = sqobj->new_begin;
+        sqobj->new_begin = NULL;
+    }
+    
+    sw_signal_give(sqobj->queueevent); //<attention> 
+    return 0;
+}
+
+
+//根据请求的容量返回足额内存, 注意: 未多返回(缓冲区剩余容量小于请求时仍返回0，但buf为空，size为零。)
+int dataqueue_get_writebuf(dataqueue_t *sqobj, int type_id, uint8_t **buf, uint32_t *size)
+{
+    int need_size;
+    uint8_t *head;
+    SW_UNUSED(type_id);
+
+    //<attention>
+    if (*size <= 0)
+        return -1;
+
+    need_size = DATABLOCK_HEADER_LEN  + *size 
+        + SQ_ALIGN - 1 + DATABLOCK_HEADER_LEN/*为尾部预留一个头的位置*/;
+
+    if (need_size > sqobj->buf_end - sqobj->buf)
+    {
+        int newsize;
+        need_size = sqobj->buf_end - sqobj->buf;
+        newsize = need_size - DATABLOCK_HEADER_LEN
+            - SQ_ALIGN + 1 - DATABLOCK_HEADER_LEN;
+        sw_log_warn("[SWMEDIA] (%s) require size [%d] too big, truncated to %d! \n", __FUNCTION__, *size, newsize);
+        *size = newsize;
+    }
+
+AGAIN:
+    head = sqobj->head;
+    //从头部重新开始
+    if (sqobj->tail >= /*sqobj->*/head && sqobj->tail + need_size >= sqobj->buf_end)
+    {   
+        if (/*sqobj->*/head == sqobj->buf)
+            goto WOF;
+
+        dq_block_size(sqobj->tail) = -1; //用-1标记为需跳转至头
+        sqobj->tail = sqobj->buf;
+        goto AGAIN;
+    }
+
+    //==时不写入保证满时head != tail
+    if (sqobj->tail < /*sqobj->*/head && (sqobj->tail + need_size >= /*sqobj->*/head))
+        goto WOF;
+
+    *buf = sqobj->tail + DATABLOCK_HEADER_LEN;
+    return 0;
+
+WOF: //wait or fail
+    if (sqobj->block && sqobj->new_begin == NULL)
+    {
+        sw_signal_wait(sqobj->queueevent, WAIT_FOREVER);
+        goto AGAIN;
+    } 
+    else
+    {
+        *buf = 0;
+        *size = 0;
+        return 0;
+    }
+}
+
+
+int dataqueue_write_complete(dataqueue_t *sqobj, int type_id, uint32_t timestamp, uint8_t *buf, int size, int skip)
+{
+    int block_size;
+
+    if (buf != sqobj->tail + DATABLOCK_HEADER_LEN )
+    {
+        sw_log_warn("[SWMEDIA] (%s) mismatched GET_BUF and PUT_BUF\n", __FUNCTION__);
+        return -1;
+    }
+
+    block_size = (DATABLOCK_HEADER_LEN + size + skip 
+        + SQ_ALIGN - 1) & ~(SQ_ALIGN - 1);
+    dq_block_size(sqobj->tail) = block_size;
+    dq_payload_offset(sqobj->tail) = DATABLOCK_HEADER_LEN + skip;
+    dq_payload_size(sqobj->tail) = size;
+    dq_media_id(sqobj->tail) = type_id;
+    dq_pts(sqobj->tail) = timestamp << 1; //pts == 2 * timestamp
+
+    sqobj->tail += block_size;
+    return 0;
+}
+
+
+int dataqueue_get_readbuf(dataqueue_t *sqobj, uint8_t **buf, uint32_t *size)
+{
+    if (sqobj->head == sqobj->tail)
+        goto NODATA;
+
+    if (dq_block_size(sqobj->head) == -1) //跳到开头
+    {
+        sqobj->head = sqobj->buf;
+        if (sqobj->head == sqobj->tail)
+            goto NODATA;
+    }
+
+    *buf = sqobj->head;
+    *size = dq_block_size(*buf);
+    return 0;
+
+NODATA:
+    // *data = NULL;
+    *size = 0;
+    // *timestamp = 0;
+    return -1;
+}
+
+
+int dataqueue_read_complete(dataqueue_t *sqobj, uint8_t *buf)
+{
+    int block_size = dq_block_size(sqobj->head);
+    SW_UNUSED(buf);
+    sqobj->head += block_size;
+    //<todo> 被reset打断导致对tail错误修改的情况?
+    sw_signal_give(sqobj->queueevent);
+    return 0;
+}
+
+
+void dataqueue_set_block(dataqueue_t *sqobj, bool block)
+{
+    sqobj->block = block;
+}
+
+
+int dataqueue_get_data_size(dataqueue_t *sqobj)
+{
+    if (sqobj->head <= sqobj->tail)
+        return sqobj->tail - sqobj->head;
+    else
+        return (sqobj->tail - sqobj->buf) + (sqobj->buf_end - sqobj->head + 1);
+}
+
+
+int dataqueue_get_size(dataqueue_t *sqobj)
+{
+    return sqobj->size;
+}

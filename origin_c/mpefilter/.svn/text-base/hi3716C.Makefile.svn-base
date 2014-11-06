@@ -1,0 +1,69 @@
+#hisilicon define, gcc 4.4.0
+TOOL_PREFIX:=arm-hisiv200-linux
+BIN = swflytv
+CC:=$(TOOL_PREFIX)-gcc
+CXX:=$(TOOL_PREFIX)-g++
+LINK:=$(TOOL_PREFIX)-gcc
+AR:=$(TOOL_PREFIX)-ar
+
+PLATFORMROOT:=$(SDKDIR)/target
+PLATFORMROOTSRC=$(PLATFORMROOT)/src
+
+ifndef BINDIR
+BINDIR := $(SWAPIROOT)/libs/$(SW_PLATFORM)
+endif
+
+ifndef BUILD_TARGET_TYPE
+BUILD_TARGET_TYPE := exe
+endif
+
+INCDIR += -I./include\
+        -I$(SDKDIR)/pub/include 
+
+CFLAGS+= -Wall -O2 -fPIC
+
+ifeq ($(findstring y,$(DEBUG)), y)
+CFLAGS += -ggdb
+endif
+
+#CFLAGS += -DSW_PLATFORM_ID=0x80037161
+CFLAGS += -DLINUX -D_REENTRANT -D_GNU_SOURCE -march=armv7-a -mcpu=cortex-a9 -mfloat-abi=softfp -mfpu=vfpv3-d16 -fno-strict-aliasing
+CFLAGS += -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE
+ifeq ($(findstring exe,$(BUILD_TARGET_TYPE)), exe)
+DYN_LINKS_WITH += -lpthread 
+DYN_LINKS_WITH += -lm -lrt -ldl
+ifeq ($(EGLTYPE),higo)
+DYN_LINKS_WITH += -L$(SWAPIROOT)/libs/$(SW_PLATFORM)/sdk/$(SDK_VERSION)/hisi_higo \
+-lhigo \
+-lhigoadp \
+-ltde \
+-lhi_mpi \
+-lhi_ecs \
+-lhi_common \
+-lhipng \
+-ljpge \
+-lhijpeg \
+-lfreetype \
+-lz 
+else
+DYN_LINKS_WITH += -L$(SWAPIROOT)/libs/$(SW_PLATFORM)/sdk/$(SDK_VERSION)/hisi \
+-lhigo \
+-lhigoadp \
+-ltde \
+-lhi_mpi \
+-lhi_ecs \
+-lhi_common \
+-lhipng \
+-ljpge \
+-lhijpeg \
+-lfreetype \
+-lz 
+endif
+
+ifeq ($(findstring 50,$(SDK_VERSION)), 50)
+
+else
+DYN_LINKS_WITH += \
+-lhiflash 
+endif
+endif
