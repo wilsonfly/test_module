@@ -1,0 +1,3 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_1='/home/sunhuasheng/project_code/sub_system_8m330_m321/platform/out/target/tmp'
