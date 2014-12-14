@@ -14,3 +14,5 @@ alias 7='cd ../../../../../../..'
 alias 8='cd ../../../../../../../..'
 alias 9='cd ../../../../../../../../..'
 alias 10='cd ../../../../../../../../../..'
+
+export PYTHONSTARTUP=~/tools/pythonstartup.py
