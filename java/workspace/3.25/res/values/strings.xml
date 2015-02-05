@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">同意条款</string>
+    <string name="app_name">3.25</string>
+    <string name="artcle"> &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;温馨提示：本游戏适合各年龄段的玩家，请您合理安排游戏时间，不要沉迷游戏！
+    当您连续在线2小时间后，系统将自动结束游戏。如果同意该条款请勾选“我同意”复选框，方可进入游戏。</string>
+</resources>

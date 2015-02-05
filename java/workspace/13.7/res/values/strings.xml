@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">服务正在运行中。。。</string>
+    <string name="app_name">15.7</string>
+
+</resources>

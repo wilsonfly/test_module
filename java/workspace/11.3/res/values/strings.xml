@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">11.3</string>
+    <string name="title">自动补全联系人姓名</string>
+    <string name="name">姓名：</string>
+
+</resources>

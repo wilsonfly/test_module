@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">13.5</string>
+	<string name="ticker_text">重要通知</string>
+	<string name="content_title">保护视力</string>
+	<string name="content_text">应用已经运行1分钟，请注意休息！</string>
+	<string name="activity_title">视力保护程序</string>
+</resources>

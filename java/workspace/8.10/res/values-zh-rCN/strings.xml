@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+ <string name="edittext">请输入搜索关键字</string>
+    <string name="itemTitle1">复制</string>
+    <string name="itemTitle2">剪切</string>
+    <string name="itemTitle3">粘贴</string>
+    <string name="app_name">8.10</string>
+</resources>

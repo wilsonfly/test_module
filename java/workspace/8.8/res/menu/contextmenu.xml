@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+	<item android:id="@+id/color1" android:title="红色"></item>
+	<item android:id="@+id/color2" android:title="绿色"></item>
+	<item android:id="@+id/color3" android:title="蓝色"></item>
+	<item android:id="@+id/color4" android:title="橙色"></item>
+	<item android:id="@+id/color5" android:title="恢复默认"></item>
+</menu>

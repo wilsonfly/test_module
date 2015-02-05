@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">日期、时间拾取器</string>
+    <string name="app_name">3.21</string>
+</resources>

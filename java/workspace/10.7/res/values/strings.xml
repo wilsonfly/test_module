@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, MainActivity!</string>
+    <string name="app_name">10.7</string>
+    <string name="preview">预览</string>
+    <string name="takephoto">拍照</string>
+
+</resources>

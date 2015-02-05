@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout 
+	android:id="@+id/tableLayout1"
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent"
+	android:background="@drawable/background" 
+	android:padding="10px"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<!-- 第一行 -->
+	<TableRow 
+		android:id="@+id/tableRow1" 
+		android:layout_width="fill_parent"
+		android:layout_weight="1">
+		<LinearLayout 
+			android:id="@+id/linearLayout1"
+			android:layout_width="wrap_content" 
+			android:layout_height="fill_parent"
+			android:layout_weight="1" 
+			android:background="@drawable/blockbg_big">
+			<TextView 
+				android:id="@+id/textView1" 
+				android:text="@string/time"
+				style="@style/text" 
+				android:layout_width="fill_parent"
+				android:gravity="center" 
+				android:layout_height="fill_parent" />
+		</LinearLayout>
+		<LinearLayout 
+			android:id="@+id/linearLayout2"
+			android:layout_height="fill_parent" 
+			android:layout_weight="1"
+			android:background="@drawable/blockbg_big" 
+			android:padding="40px">
+			<ImageView 
+				android:src="@drawable/img01" 
+				android:id="@+id/imageView1"
+				android:layout_weight="1" 
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent" />
+			<ImageView 
+				android:src="@drawable/img02" 
+				android:id="@+id/imageView2"
+				android:layout_weight="1" 
+				android:layout_marginLeft="50px"
+				android:layout_width="wrap_content" 
+				android:layout_height="fill_parent" />
+			<ImageView 
+				android:src="@drawable/img03a" 
+				android:id="@+id/imageView3"
+				android:layout_weight="1" 
+				android:layout_marginLeft="50px"
+				android:layout_width="wrap_content" 
+				android:layout_height="fill_parent" />
+		</LinearLayout>
+	</TableRow>
+	<!-- 第二行 -->
+	<TableRow 
+		android:id="@+id/tableRow2" 
+		android:layout_width="fill_parent"
+		android:layout_weight="1">
+		<LinearLayout 
+			android:id="@+id/linearLayout3"
+			android:layout_height="fill_parent" 
+			android:layout_weight="1"
+			android:background="@drawable/blockbg_big" 
+			android:padding="40px">
+			<ImageView 
+				android:src="@drawable/img04" 
+				android:id="@+id/imageView4"
+				android:layout_weight="1" 
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent" />
+			<ImageView 
+				android:src="@drawable/img05" 
+				android:id="@+id/imageView5"
+				android:layout_weight="1" 
+				android:layout_marginLeft="40px"
+				android:layout_width="wrap_content" 
+				android:layout_height="fill_parent" />
+			<ImageView 
+				android:src="@drawable/img06" 
+				android:id="@+id/imageView6"
+				android:layout_weight="1" 
+				android:layout_marginLeft="40px"
+				android:layout_width="wrap_content" 
+				android:layout_height="fill_parent" />
+		</LinearLayout>
+		<LinearLayout 
+			android:id="@+id/linearLayout4"
+			android:layout_height="fill_parent" 
+			android:layout_weight="1"
+			android:background="@drawable/blockbg_big">
+			<ImageView 
+				android:src="@drawable/img07" 
+				android:id="@+id/imageView7"
+				android:layout_weight="1" 
+				android:layout_margin="40px"
+				android:layout_width="wrap_content" 
+				android:layout_height="fill_parent" />
+			<TextView 
+				android:id="@+id/textView2" 
+				android:text="转到音乐"
+				android:gravity="center_vertical" 
+				style="@style/text"
+				android:layout_weight="3" 
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent" />
+		</LinearLayout>
+	</TableRow>
+	<!-- 第三行 -->
+	<TableRow 
+		android:id="@+id/tableRow3" 
+		android:layout_width="fill_parent"
+		android:layout_weight="1" 
+		android:background="@drawable/blockbg_big">
+		<LinearLayout 
+			android:id="@+id/linearLayout5"
+			android:layout_height="fill_parent" 
+			android:layout_weight="1"
+			android:layout_marginLeft="20px">
+			<ImageView 
+				android:src="@drawable/email" 
+				android:id="@+id/imageView8"
+				android:layout_marginLeft="20px" 
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent" />
+			<TextView android:id="@+id/textView2" 
+				android:text="电子邮件"
+				android:layout_marginLeft="20px" 
+				android:gravity="center_vertical"
+				style="@style/text" 
+				android:layout_width="wrap_content"
+				android:layout_height="fill_parent" />
+		</LinearLayout>
+	</TableRow>
+</TableLayout>

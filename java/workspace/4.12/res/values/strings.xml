@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">使用Notification在状态栏上显示信息</string>
+    <string name="app_name">4.12</string>
+    <string name="content">今天下午17：10进行羽毛球混双比赛</string>
+
+</resources>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, MainActivity!</string>
+    <string name="app_name">3.28</string>
+    <string name="start">开始</string>
+    <string name="checkbox">让按钮可用</string>
+
+</resources>

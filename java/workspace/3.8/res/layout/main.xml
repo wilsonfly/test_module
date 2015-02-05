@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+ 	android:id="@+id/relativeLayout1" 
+ 	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent" 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+ 	android:background="@drawable/background"
+ >
+ 	<!-- 添加一个居中显示的文本视图textView1 -->
+    <TextView android:text="发现有Widget的新版本，您想现在就安装吗？"
+     android:id="@+id/textView1"
+     android:textSize="24px"
+     android:layout_height="wrap_content"
+     android:layout_width="wrap_content"
+     android:layout_centerInParent="true"
+	/>
+	<!-- 添加一个在button2左侧显示的按钮button1 -->
+    <Button
+     android:text="现在更新" 
+     android:id="@+id/button1" 
+     android:layout_height="wrap_content" 
+     android:layout_width="wrap_content" 
+     android:layout_below="@+id/textView1" 
+     android:layout_toLeftOf="@+id/button2" 
+     />
+     <!-- 添加一个按钮button2，该按钮与textView1的右边界对齐 -->
+    <Button 
+     android:text="以后再说" 
+     android:id="@+id/button2" 
+     android:layout_height="wrap_content" 
+     android:layout_width="wrap_content" 
+     android:layout_alignRight="@+id/textView1"
+     android:layout_below="@+id/textView1" 
+	/>
+ </RelativeLayout>

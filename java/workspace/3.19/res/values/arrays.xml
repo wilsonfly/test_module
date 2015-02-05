@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="ctype">
+    	<item>情景模式</item>
+    	<item>主题模式</item>
+    	<item>手机</item>
+    	<item>程序管理</item>
+    	<item>通话设置</item>
+    	<item>连接功能</item>
+    </string-array>
+</resources>

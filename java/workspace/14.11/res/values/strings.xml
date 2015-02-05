@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, MainActivity!</string>
+    <string name="app_name">14.11</string>
+	<string name="go">GO</string>
+	<string name="bj">北京</string>
+	<string name="sh">上海</string>
+	<string name="gz">广州</string>
+	<string name="heb">哈尔滨</string>
+	<string name="cc">长春</string>
+	<string name="sy">沈阳</string>
+</resources>

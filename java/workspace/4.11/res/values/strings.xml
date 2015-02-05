@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">消息提示框</string>
+    <string name="app_name">4.11</string>
+
+</resources>

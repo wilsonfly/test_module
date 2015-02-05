@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">实现跟踪鼠标状态的图片按钮</string>
+    <string name="app_name">3.23</string>
+</resources>

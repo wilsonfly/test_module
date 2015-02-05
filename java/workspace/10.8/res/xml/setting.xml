@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <CheckBoxPreference 
+	    android:key="bgsound"
+	    android:title="播放背景音乐"
+	    android:summary="选中为播放背景音乐"
+	    android:defaultValue="true"/>
+</PreferenceScreen>

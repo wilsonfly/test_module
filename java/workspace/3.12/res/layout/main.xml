@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/tableLayout1" 
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent"
+	android:background="@drawable/background">
+	<TableRow android:id="@+id/tableRow1" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content">
+	<TextView 
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:inputType="textEmailAddress"
+		android:text="会员昵称："
+		android:height="50px" />
+	<EditText android:id="@+id/nickname" 
+		android:hint="请输入会员昵称"
+		android:layout_width="300px" 
+		android:layout_height="wrap_content"
+		android:singleLine="true"
+		/>
+	</TableRow>
+	<TableRow android:id="@+id/tableRow2" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content">
+	<TextView 
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:inputType="textEmailAddress"
+		android:text="输入密码："
+		android:height="50px" />
+	<EditText android:id="@+id/pwd" 
+		android:layout_width="300px" 
+		android:inputType="textPassword"
+		android:layout_height="wrap_content"
+		/>
+		
+	</TableRow>	
+	<TableRow android:id="@+id/tableRow3" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content">
+	<TextView 
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:inputType="textEmailAddress"
+		android:text="确认密码："
+		android:height="50px" />
+	<EditText android:id="@+id/repwd" 
+		android:layout_width="300px" 
+		android:layout_height="wrap_content"
+		android:inputType="textPassword"
+		/>
+	</TableRow>
+	<TableRow android:id="@+id/tableRow4" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content">
+	<TextView 
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" 
+		android:inputType="textEmailAddress"
+		android:text="E-mail："
+		android:height="50px" />
+	<EditText android:id="@+id/email" 
+		android:layout_width="300px" 
+		android:layout_height="wrap_content"
+		android:inputType="textEmailAddress"
+		/>
+	
+	</TableRow>	
+	<LinearLayout
+	android:orientation="horizontal" 
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content" >
+	<Button android:text="注册" 
+		android:id="@+id/button1" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"/>
+	<Button android:text="重置" 
+		android:id="@+id/button2" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"/>
+	</LinearLayout>
+</TableLayout>

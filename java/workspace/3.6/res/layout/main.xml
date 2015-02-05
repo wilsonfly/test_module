@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout android:id="@+id/tableLayout1"
+	android:layout_width="fill_parent" 
+	android:layout_height="fill_parent"
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:background="@drawable/background_a"
+	android:gravity="center_vertical"
+	android:stretchColumns="0,3"	
+	>
+	<!-- 第一行 -->
+	<TableRow android:id="@+id/tableRow1" 
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+		<TextView/>
+		<TextView android:text="用户名：" 
+			android:id="@+id/textView1" 
+			android:layout_width="wrap_content"
+			android:textSize="24px" 
+			android:layout_height="wrap_content"
+			/>
+		<EditText android:id="@+id/editText1" 
+			android:textSize="24px" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content" android:minWidth="200px"/>
+		<TextView />
+	</TableRow>
+	<!-- 第二行 -->	
+	<TableRow android:id="@+id/tableRow2" 
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+		<TextView/>
+		<TextView android:text="密    码：" 
+			android:id="@+id/textView2" 
+			android:textSize="24px" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"/>
+		<EditText android:layout_height="wrap_content" 
+			android:layout_width="wrap_content" 
+			android:textSize="24px" 
+			android:id="@+id/editText2" 
+			android:inputType="textPassword"/>
+		<TextView />
+	</TableRow>
+	<!-- 第3行 -->
+	<TableRow android:id="@+id/tableRow3" 
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content">
+		<TextView/>
+		<Button android:text="登录" 
+			android:id="@+id/button1" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"/>
+		<Button android:text="退出" 
+			android:id="@+id/button2" 
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"/>
+		<TextView />
+	</TableRow>
+</TableLayout>
+

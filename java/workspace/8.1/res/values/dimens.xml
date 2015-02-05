@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="title">36px</dimen>
+    <dimen name="padding">6pt</dimen>
+    <dimen name="introduce">24px</dimen>
+    <dimen name="titlePadding">20px</dimen>
+</resources>

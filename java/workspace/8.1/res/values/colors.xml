@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="title">#ff0</color>
+    <color name="introduce">#7e8</color>
+    <color name="company">#f70</color>
+     <color name="url">#9f60</color>   
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="horizontal" 
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content" >
+	<Button android:text="登录" 
+		android:id="@+id/login" 
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"/>
+	<ImageButton 
+		android:id="@+id/login1" 
+		android:layout_width="wrap_content" 
+		android:src="@drawable/login" 
+		android:onClick="myClick"
+		android:background="#000"
+		android:layout_height="wrap_content">
+	</ImageButton>
+</LinearLayout>

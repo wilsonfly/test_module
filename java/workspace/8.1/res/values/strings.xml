@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">8.1</string>
+	<string name="title">关于泡泡龙</string>
+    <string name="company">开发公司：吉林省明日科技有限公司</string>
+    <string name="url">公司网址：http://www.mingribook.com</string>
+	<string name="introduce">&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;泡泡龙游戏是一款十分流行的益智游戏。
+	    它可以从下方中央的弹珠发射台射出彩珠，当有多于3个同色弹珠相连时，
+	    这些弹珠将会爆掉，否则该弹珠被连接到指向的位置，直到泡泡下压越过下方的警戒线，游戏结束。</string>
+</resources>

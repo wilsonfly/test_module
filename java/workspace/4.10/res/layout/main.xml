@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal"
+    android:id="@+id/llayout"
+    
+    >
+    <ImageSwitcher
+        android:id="@+id/imageSwitcher1"
+        android:layout_weight="2"
+        android:paddingTop="30px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+    </ImageSwitcher>
+    <Gallery
+        android:id="@+id/gallery1"
+        android:spacing="5px"
+        android:layout_weight="1"
+        android:unselectedAlpha="0.6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+</LinearLayout>
