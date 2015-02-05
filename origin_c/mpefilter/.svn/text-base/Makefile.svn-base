@@ -1,0 +1,48 @@
+#模块名称和版本号
+NAME := swflytv
+
+BUILD_TARGET_TYPE := dll
+SUPPORT_BOOT_IN_APP :=y 
+
+BINDIR := $(SWAPIROOT)/libs/$(SW_PLATFORM)
+
+#头文件搜索路径
+CFLAGS +=  -I./include \
+		   -I$(SWAPIROOT)/include \
+		   -I$(SWAPIROOT)/include/swos \
+
+#源码文件
+SRC = swflytv.c swmpefilter.c swmpefilter_priv.c 
+SRC += \
+	src/bcmindexer.c \
+	src/bvlc.c  \
+	src/dvbpsi.c \
+	src/psi.c  \
+	src/swtsfragment.c \
+	src/tsindexer.c  \
+	src/tsparser.c \
+	src/hi_adp_tuner.c
+#	src/mpesection.c \
+
+DYN_LINKS_WITH += -L$(SWAPIROOT)/libs/$(SW_PLATFORM) \
+	-lswos \
+	-lswutil \
+	-lswcfglib \
+	-lswlog \
+	-lswmem \
+	-lswparameter \
+	-lswflash \
+	-lswled \
+	-lswreg \
+	-lswsys \
+
+DYN_LINKS_WITH += -L$(SWAPIROOT)/libs/$(SW_PLATFORM)/sdk/$(SDK_VERSION)\
+	-lswe2prom \
+	-lswgpio \
+
+
+#核心规则
+-include $(SWAPIROOT)/build/porting.Makefile
+
+copy:
+	cp $(BINDIR)/lib$(NAME).so $(RELEASEDIR)/rootfs/usr/lib/

@@ -1,0 +1,441 @@
+/** 
+ * @file   swflytv.c
+ * @brief  FLYTV模块
+ * @author Hujinshui/Sunhuasheng
+ * @date 2011-10-28
+ * @version 1.0.0.0
+ */
+
+#include "stdafx.h"
+#include "swmpefilter.h"
+#include "swtsfragment.h"
+#include <dirent.h>
+#include "hi_adp_tuner.h"
+
+//频道信息
+typedef struct channelinfo{
+	//频道IP
+	uint32_t ip;
+	//频道端口
+	uint16_t port;
+	//频道名
+	uint8_t channelname[128];
+	//频道ID
+	uint8_t channelid[128];
+}channelinfo_t;
+
+static channelinfo_t m_channels[MAX_CHANNEL_NUM] = 
+{
+};
+
+static HANDLE m_tsfragment[MAX_CHANNEL_NUM];
+static HANDLE m_hmpe = NULL;
+static int m_channel_count = 0;
+static char program_cfg_file[] = "/tmp/udisk1/flytv_config/flytv_program.conf";
+static char program_cfg_file_bk[] = "/etc/flytv_config/flytv_program.conf";
+static char segment_cfg_file[]="/tmp/udisk1/flytv_config/flytv_segment.conf";
+static int data_callback_proc( int idx, unsigned char *buf, unsigned int size, unsigned long lParam );
+static int create_path( char* fullpath );
+static int sw_recutil_createpath( char *path );
+static int sw_recutil_deletedir( char *file );
+static int load_config( void );
+static int get_dvburl(char* buf,unsigned int size);
+
+
+
+/**
+ * @brief	模块初始化
+ * @return  0成功,否则错误码
+ */
+int sw_flytv_init( )
+{
+	int ret = 0;
+#ifdef X86
+	char url[256] = "file:///home/huasheng/7238.ts&&mpepid=7238";
+#else
+	char url[256] = "file:///mnt/7238.ts&&mpepid=7238";
+#endif
+#if 0
+//	char url_dvb[256] = "dvb://freq=123&&srate=6875&&qam=64&&mpeid=7238";
+	char url_dvb[256] = "dvb://freq=123&&srate=6875&&qam=2&&mpeid=7238";
+#else
+	char url_dvb[URL_SIZE];
+	ret = get_dvburl(url_dvb,URL_SIZE);
+	if( ret )
+	{
+		printf("[%s,%d]get_dvburl failed\n",__FUNCTION__,__LINE__);
+		return -1;
+	}
+#endif
+
+	if( sw_mpefilter_init() != 0 )
+	{
+		printf("[%s] failed\n",__FUNCTION__);
+		return -1;
+	}
+
+	m_hmpe = sw_mpefilter_open(url_dvb);
+	if( m_hmpe )
+	{
+		sw_mpefilter_set_datacallback( m_hmpe,(data_output)data_callback_proc,0 );
+		memset(m_tsfragment,0,sizeof(m_tsfragment));
+	}
+	else
+	{
+		printf("call sw_mpefilter_open failed!\n");
+		return -1;
+	}
+
+	ret = load_config();
+	if( ret )
+	{
+		printf("load_config failed\n");
+		return -1;
+	}
+
+	return 0;
+
+}
+
+/** 
+ * @brief	模块退出 
+ * @return  无
+ */
+void sw_flytv_exit()
+{
+	sw_mpefilter_close( m_hmpe );
+	sw_mpefilter_exit();
+	m_hmpe = NULL;
+	
+	return;
+}
+
+/** 
+ * @brief 启动服务
+ * @return 0成功,否则错误码
+ */
+int sw_flytv_start( )
+{
+	int i = 0;
+	for( ;i<m_channel_count;i++ )
+		sw_mpefilter_start( m_hmpe,i );	
+	return 0;
+}
+
+/** 
+ * @brief 停止服务
+ * @return 0成功,否则错误码
+ */
+int sw_flytv_stop( )
+{
+	int i = 0;
+	for( ;i<m_channel_count;i++ )
+		sw_mpefilter_stop( m_hmpe,i );	
+	printf("====[%s] ok\n",__FUNCTION__);
+	return 0;
+
+}
+
+/** 
+ * @brief chunk the ts
+ * @return 0成功,否则错误码
+ */
+static int data_callback_proc( int idx, unsigned char *buf, unsigned int size, unsigned long lParam )
+{
+//	printf("====[%s] begin,idx:%d\n",__FUNCTION__,idx);
+	char path[128];
+	char outputpath[256];
+	mpefilter_t* mf = (mpefilter_t*)m_hmpe;
+
+	if( size % 188 )
+	{
+		printf("[%s,%d]idx:%d,not ts,size:%d\n",__FUNCTION__,__LINE__,idx,size);
+//		return 0;
+	}
+	if( idx >= MAX_CHANNEL_NUM || idx < 0 )
+	{
+		printf("[%s,%d]wrong idx\n",__FUNCTION__,__LINE__);
+		return 0;
+	}
+
+	if( m_tsfragment[idx] == NULL )
+	{
+#if  0
+		sprintf( path,"/tmp/server-root/live/%s",m_channels[idx].channelname );
+		create_path( path );
+		sprintf( outputpath,"%s/%s",path,m_channels[idx].channelid );
+#else
+		sprintf( path,"/tmp/server-root/live/%s",m_channels[idx].channelid );
+		create_path( path );
+		sprintf( outputpath,"%s/%s",path,m_channels[idx].channelname );
+#endif
+
+		m_tsfragment[idx] = sw_tsfragment_open( outputpath, outputpath, 5, 10,true );
+
+		mf->program_count++;
+	}
+
+	if( m_tsfragment[idx] )
+		sw_tsfragment_ondata( m_tsfragment[idx],buf,size );
+
+	return 0;
+}
+
+/** 
+ * @brief load the ip/port/chname/chid of program
+ * @return 0成功,否则错误码
+ */
+static int load_config( void )
+{
+	FILE* fp = NULL;
+	char buf[1024*2];
+	char* p = NULL;
+	char ip_tmp[32];
+	int port_tmp;
+	int i = 0;
+
+	fp = fopen(program_cfg_file,"r");
+	if( fp == NULL )
+	{
+		printf("open config file:%s failed,try the bakeup one\n",program_cfg_file);
+		fp = fopen(program_cfg_file_bk,"r");
+		if( fp == NULL )
+		{
+			printf("open config file:%s failed\n",program_cfg_file_bk);
+			return -1;
+		}
+	}
+	while( !feof(fp) )
+	{
+		if( fgets(buf,256,fp) == NULL)
+			break;
+		p = buf;
+		p = strstr(buf,"ip=");
+		if( p == NULL || buf[0] == '#' )
+		{
+		//	printf("====pass one line\n");
+			continue;
+		}
+		sscanf(p+strlen("ip="),"%[0-9.]",ip_tmp);
+		m_channels[i].ip = inet_addr(ip_tmp);	
+
+		p = strstr(buf,"port=");
+		sscanf(p+strlen("port="),"%d",&port_tmp);
+		m_channels[i].port = port_tmp;
+
+		p = strstr(buf,"chname=");
+		sscanf(p+strlen("chname="),"%[^,]",m_channels[i].channelname);
+	//	printf("chname:%s\n",m_channels[i].channelname);
+
+		p = strstr(buf,"chid=");
+		sscanf(p+strlen("chid="),"%s",m_channels[i].channelid);
+
+		sw_mpefilter_set_infobyidx( m_hmpe,i,m_channels[i].ip,m_channels[i].port );
+
+		i++;
+	}
+	m_channel_count = i;
+	fclose(fp);
+	return 0;
+}
+
+/** 
+ * @brief mkdir -p
+ * @param fullpath 
+ * @return 
+ */
+static int create_path( char* fullpath )
+{
+	char path[64];
+	char* p = NULL;
+	char* tmp = NULL;
+	strncpy(path,fullpath,sizeof(path));
+
+
+	printf("creating path:%s\n",path);
+	if( access(path, F_OK) == 0 )
+	{
+	//	printf("path:%s already exit,delete it first\n",path);
+		sw_recutil_deletedir( path ); //delete the ts file left in last launch
+	}
+
+	if( path[0] == '/' )
+		p = path + 1; //pass the root dir '/'
+	else
+		p = path;
+
+	while( p < path+strlen(path) )
+	{
+		if ((tmp = strchr(p,'/')) != NULL)
+			*tmp = '\0'; //有则置零截断
+		if( access(path, F_OK) )
+		{
+			if( sw_recutil_createpath(path) != 0 )
+			{
+				printf("===========createpath failed\n");
+				return -1;
+			}
+			printf("create path:%s\n",path);
+		}
+		if( tmp == NULL )
+			return 0;
+		p = tmp + 1;
+		strncpy(path,fullpath,sizeof(path));
+	}
+	return 0;
+}
+
+static int sw_recutil_createpath( char *path )
+{
+	DIR *dir = NULL;
+	char buf[MAX_PATH_LEN];
+	int ret = -1;
+
+	if( !path )
+	{
+		printf( "[%s]Path is null\n", __FUNCTION__ );
+		return SW_ERROR;
+	}
+
+	memset(buf, 0, sizeof(buf));
+	strncpy(buf, path, sizeof(buf)-1);
+	if( '/'!=*(char*)(path+strlen(path)-1) )
+		strcat(buf, "/");
+
+	dir = opendir( buf );
+	if( !dir )
+		ret = mkdir( buf, S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH);
+	/*closedir( dir );*/
+	return ret;
+}
+
+int sw_recutil_deletedir( char *file )
+{
+	DIR *dp = NULL;
+	struct  dirent *dirp = NULL;
+	char buf[MAX_PATH_LEN];
+	struct stat filestat;
+	bool add_slash = false;
+
+	if( !file )
+	{
+		printf( "[%s]Invalid file\n", __FUNCTION__ );
+		return SW_ERROR;
+	}
+
+	memset(buf, 0, sizeof(buf));
+	strncpy(buf, file, sizeof(buf)-1);
+	if( '/'!=*(char*)(file+strlen(file)-1) )
+	{
+		strcat(buf, "/");
+		add_slash = true;
+	}
+
+	if((dp=opendir(buf))==NULL)
+		return -1;
+
+	while((dirp=readdir(dp))!=NULL)
+	{
+		memset( buf, 0, sizeof(buf));
+		strncpy( buf, file, sizeof(buf) );
+		if( add_slash )
+			strcat( buf, "/" );
+		strcat( buf, dirp->d_name);
+
+		/*printf( "buf=%s ", buf );     */
+		if( lstat(buf, &filestat) < 0 )
+		{
+			printf("[%s]lstat error\n", __FUNCTION__ );
+			continue;
+		}
+		if( !S_ISDIR(filestat.st_mode) )
+		{
+			/*printf( "is not directory\n" );       */
+			/*if(strstr(dirp->d_name, file) != NULL)*/
+			remove(buf);
+		}
+		else
+		{
+			/*printf( "is directory\n" );       */
+			/*sw_recutil_deldir( buf );*/
+		}
+	}
+	closedir(dp);
+
+	if( rmdir(file) < 0 )
+		return -1;
+
+	return 0;
+}
+
+static int get_dvburl(char* url,unsigned int size)
+{
+	int freq = 0,srate = 0,qam = 0,mpepid = 0;
+	char* p;
+	char buf[64];
+	FILE* fp;
+	
+	fp = fopen(segment_cfg_file,"r");
+	if( fp == NULL )
+	{
+		printf("[%s,%d]read %s failed\n",__FUNCTION__,__LINE__,segment_cfg_file);
+		return -1;
+	}
+
+	fread(buf,size,1,fp);
+
+	p = strstr(buf,"flytv_freq=");
+	if( p )
+	freq = atoi(p+strlen("flytv_freq="));
+
+	p = strstr(buf,"flytv_bitrate=");
+	if( p )
+	srate = atoi(p+strlen("flytv_bitrate="));
+
+	p = strstr(buf,"flytv_qam=");
+	if( p )
+	qam = atoi(p+strlen("flytv_qam="));
+
+	p = strstr(buf,"flytv_mpepid=");
+	if( p )
+	mpepid = atoi(p+strlen("flytv_mpepid="));
+
+//	printf("freq:%d,srate:%d,qam:%d,mpepid:%d\n",freq,srate,qam,mpepid);
+
+	sprintf(url,"dvb://freq=%d&&srate=%d&&qam=%d&&mpepid=%d",freq,srate,qam,mpepid);
+	printf("get_dvburl==>%s\n",url);
+
+	fclose(fp);
+	return 0;
+
+}
+
+int sw_flytv_main()
+{
+    int ret = 0;
+    do 
+    {
+        ret = sw_flytv_init();
+        if( ret )
+        {
+            printf("[flytv_%s,%d]sw_flytv_init failed,try again\n",__FUNCTION__,__LINE__);
+            sleep(30);
+        }
+    }
+    while(ret);
+
+	while(1)
+	{
+		sleep(30);
+		if( ! HIADP_Tuner_IsConnect(TUNER_USE) )
+		{
+			printf("Tuner disconnect ......\n");
+			sw_flytv_stop();
+			sw_flytv_exit();
+			break;
+		}
+	}
+
+	return 0;
+}
+

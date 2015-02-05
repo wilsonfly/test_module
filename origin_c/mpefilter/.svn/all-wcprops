@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/project8000-solutions/!svn/ver/3033/3716C_flytv/trunk/swapi/src/porting/hi3716C/swmpefilter
+END
+swflytv.c
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/project8000-solutions/!svn/ver/2984/3716C_flytv/trunk/swapi/src/porting/hi3716C/swmpefilter/swflytv.c
+END
+hi3716C.Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/project8000-solutions/!svn/ver/1218/3716C_flytv/trunk/swapi/src/porting/hi3716C/swmpefilter/hi3716C.Makefile
+END
+swmpefilter.c
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/project8000-solutions/!svn/ver/2994/3716C_flytv/trunk/swapi/src/porting/hi3716C/swmpefilter/swmpefilter.c
+END
+swmpefilter_priv.c
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/project8000-solutions/!svn/ver/1218/3716C_flytv/trunk/swapi/src/porting/hi3716C/swmpefilter/swmpefilter_priv.c
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/project8000-solutions/!svn/ver/3033/3716C_flytv/trunk/swapi/src/porting/hi3716C/swmpefilter/Makefile
+END

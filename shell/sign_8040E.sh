@@ -3,22 +3,33 @@
 if [ $# -eq 0 ]
 then
 	echo "invalid params !!!"
-	echo "input the orgin zip name, such as:"
+	echo "input the name of orgin zip/apk, such as:"
 	echo "./sign.sh disabl_serial.zip"
+	echo "./sign.sh SWSetting.apk"
 	exit
 fi
 
-build_path="/home/sunhuasheng/projects_code/sub_system_8040E_tmiptv/build"
-input_zip=$1
-prefix_name=`echo "$input_zip" | cut -d'.' -f1`
-#prefix_name=`echo "$input_zip" | cut -d".zip" -f1`
-output_zip="$prefix_name"_sign.zip
+build_path="/home/sunhuasheng/project_code/sub_system_8040e_310/build"
+input_file=$1
+suffix_name=${input_file##*.}
+prefix_name=${input_file%".$suffix_name"}
 
-echo "input : $input_zip"
-echo "output: $output_zip"
+if [ ${suffix_name} == "zip" ]
+then
+    output_file="$prefix_name"_sign.zip
+    cmd="java -Xmx2048m -jar $build_path/linux-x86/framework/signapk.jar -w $build_path/ota/security/testkey.x509.pem $build_path/ota/security/testkey.pk8 $input_file $output_file"
+else if [ ${suffix_name} == "apk" ]
+then
+    output_file="$prefix_name"_sign.apk
+    cmd="java -jar $build_path/linux-x86/framework/signapk.jar $build_path/ota/security/platform.x509.pem $build_path/ota/security/platform.pk8  $input_file $output_file"
+else
+    echo "Invalid param,need *.zip/*.apk "
+    exit
+fi
+fi
 
-#set -v
-cmd="java -jar $build_path/linux-x86/framework/signapk.jar -w $build_path/ota/security/testkey.x509.pem $build_path/ota/security/testkey.pk8  $input_zip $output_zip"
+echo "input : $input_file"
+echo "output: $output_file"
 
 echo $cmd
 $cmd
