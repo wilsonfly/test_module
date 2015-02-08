@@ -1,0 +1,25 @@
+package com.wilsonflying.testbuttons;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+
+public class MainActivity extends Activity {
+
+	@Override
+	public void onCreate(Bundle savedInstanceState){
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.my_layout);
+		RadioGroup sex=(RadioGroup)findViewById(R.id.radiogroup);
+		sex.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+				// TODO Auto-generated method stub
+				RadioButton button=(RadioButton)findViewById(checkedId);
+				
+			}
+		});
+	}
+}
