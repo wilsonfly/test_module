@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.io.BufferedReader"/>
-<fullyQualifiedTypeName name="java.io.BufferedWriter"/>
-<fullyQualifiedTypeName name="com.wilsonflying.R.layout"/>
 <fullyQualifiedTypeName name="com.wilsonflying.writeui.R.drawable"/>
 <fullyQualifiedTypeName name="android.R.color"/>
 <fullyQualifiedTypeName name="android.util.TypedValue"/>
@@ -46,7 +43,6 @@
 <fullyQualifiedTypeName name="com.example.testrelativelayout.R"/>
 <fullyQualifiedTypeName name="com.example.testrelativelayout.R.layout"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testrelativelayout.R.layout"/>
-<fullyQualifiedTypeName name="android.os.Bundle"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testcombinedlayout.R.layout"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testcombinedlayout.MainActivity"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testcombinedlayout.R.id"/>
@@ -54,10 +50,14 @@
 <fullyQualifiedTypeName name="android.R.string"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="com.mingrisoft.MainActivity"/>
-<fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="android.widget.Button"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testrelativelayout.R.id"/>
-<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testrelativelayout.MainActivity"/>
 <fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="android.os.Bundle"/>
+<fullyQualifiedTypeName name="com.wisonflying.testlistview.R"/>
+<fullyQualifiedTypeName name="com.wisonflying.testlistview.R.layout"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="android.widget.AdapterView.OnItemClickListener"/>
 </qualifiedTypeNameHistroy>

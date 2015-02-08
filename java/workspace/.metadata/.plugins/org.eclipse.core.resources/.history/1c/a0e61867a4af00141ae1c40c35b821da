@@ -1,0 +1,28 @@
+package com.wilsonflying.testlistview;
+
+import com.wisonflying.testlistview.R;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.ListView;
+
+public class MainActivity extends Activity {
+
+	@Override
+	public void onCreate(Bundle param){
+		super.onCreate(param);
+		setContentView(R.layout.my_layout);
+		
+		final ListView listView=(ListView)findViewById(R.id.listView1);
+		listView.addHeaderView(line());		//设置header view
+
+	}
+	
+	private View line() {
+		ImageView image=new ImageView(this);	//创建一个图像视图
+		image.setImageResource(R.drawable.line1);	//设置要显示的图片
+		return image;
+	}
+}

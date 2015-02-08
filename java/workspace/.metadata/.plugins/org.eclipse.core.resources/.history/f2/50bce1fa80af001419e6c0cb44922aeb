@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="app_name">radiogroup_checkbox</string>
+	<string name="who">County</string>
+	<string name="china">China</string>
+		<string name="america">America</string>
+		<string name="china">China</string>
+		<string name="china">China</string>
+			<string name="china">China</string>
+			
+</resources>

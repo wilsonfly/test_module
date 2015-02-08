@@ -19,7 +19,7 @@ public class MainActivity extends Activity {
 	@Override
 	public void onCreate(Bundle param) {
 		super.onCreate(param);
-		setContentView(R.layout.main);
+		setContentView(R.layout.my_layout);
 
 		LinearLayout layout = (LinearLayout) findViewById(R.id.main_layout);
 		//layout.setLayoutDirection(LayoutDirection.LTR);//针对布局本身而言，所在位置是偏左还是偏右
@@ -33,6 +33,9 @@ public class MainActivity extends Activity {
 
 			LayoutParams lparam = new LayoutParams(250, 150);
 			img[i].setLayoutParams(lparam);
+			img[i].setX(30*i);
+			img[i].setY(200);
+		
 			layout.addView(img[i]);
 		}
 

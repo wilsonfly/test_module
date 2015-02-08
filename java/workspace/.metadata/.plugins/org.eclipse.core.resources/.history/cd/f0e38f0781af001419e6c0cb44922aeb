@@ -1,0 +1,14 @@
+<resources>
+
+    <string name="app_name">radiogroup_checkbox</string>
+    <string name="who">County</string>
+    <string name="china">China</string>
+    <string name="america">America</string>
+    <string name="others">Others</string>
+    <string name="how">How many people</string>
+    <string name="less">30以下</string>
+    <string name="thirty">30-39</string>
+    <string name="fourty">40-49</string>
+    <string name="fifty">50-59</string>
+
+</resources>

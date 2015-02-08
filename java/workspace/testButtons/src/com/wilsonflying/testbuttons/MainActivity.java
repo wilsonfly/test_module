@@ -8,7 +8,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.RadioGroup.OnCheckedChangeListener;
+//import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -24,22 +24,26 @@ public class MainActivity extends Activity {
 
 		// radiobutton
 		final RadioGroup sex = (RadioGroup) findViewById(R.id.radiogroup);
-
-		sex.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-
+		final RadioButton radio_man = (RadioButton)findViewById(R.id.radiobutton1);
+		
+		sex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+			
 			@Override
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
-				// TODO Auto-generated method stub
-				RadioButton button = (RadioButton) findViewById(checkedId);
-				Toast.makeText(MainActivity.this, "选择的是" + button.getText(),
-						Toast.LENGTH_SHORT).show();
-				Log.i("testbuttons", "选择的是" + button.getText());
+
+					// TODO Auto-generated method stub
+					RadioButton button = (RadioButton) findViewById(checkedId);
+					Toast.makeText(MainActivity.this, "选择的是" + button.getText(),
+							Toast.LENGTH_SHORT).show();
+
+					if(checkedId==radio_man.getId()){
+						Log.i("testbuttons", "选择的是" + radio_man.getText());
+					}
 			}
 		});
-
-		// Imagebutton
-		Button button = (Button) findViewById(R.id.button_radiobutton);
-		button.setOnClickListener(new OnClickListener() {
+		
+		Button button_radio = (Button) findViewById(R.id.button_radiobutton);
+		button_radio.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
@@ -61,8 +65,11 @@ public class MainActivity extends Activity {
 		final CheckBox button_music = (CheckBox) findViewById(R.id.checkbox_music);
 		final CheckBox button_painting = (CheckBox) findViewById(R.id.checkbox_pinting);
 		button_sport.setOnCheckedChangeListener(checkbox_listener);
+		button_music.setOnCheckedChangeListener(checkbox_listener);
+		button_painting.setOnCheckedChangeListener(checkbox_listener);
+
 		Button button_checkbox = (Button)findViewById(R.id.button_checkbox);
-		button.setOnClickListener(new OnClickListener() {
+		button_checkbox.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
@@ -85,14 +92,15 @@ public class MainActivity extends Activity {
 				.show();
 	}
 
-	public android.widget.CompoundButton.OnCheckedChangeListener checkbox_listener = new OnCheckedChangeListener() {
+	public OnCheckedChangeListener checkbox_listener = new OnCheckedChangeListener() {
 
 		@Override
 		public void onCheckedChanged(CompoundButton buttonView,
 				boolean isChecked) {
 			// TODO Auto-generated method stub
 			if (isChecked)
-				Toast.makeText(MainActivity.this, "选择的是：" + buttonView.getText(), Toast.LENGTH_SHORT);
+				Toast.makeText(MainActivity.this, "选择的是：" + buttonView.getText(), Toast.LENGTH_SHORT).show();
 		}
 	};
+	
 }
