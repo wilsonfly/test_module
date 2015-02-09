@@ -12,5 +12,7 @@
         android:dividerHeight="3px"
         android:footerDividersEnabled="false"
         android:headerDividersEnabled="false" />
+    
+    
 
 </LinearLayout>

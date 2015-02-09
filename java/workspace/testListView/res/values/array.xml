@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
         <string-array name="theStringArray">
-    	<item>情景模式</item>
-    	<item>主题模式</item>
-    	<item>连接功能</item>
+    	<item>士大夫</item>
+    	<item>企鹅</item>
+    	<item>方法</item>
     </string-array>
 </resources>

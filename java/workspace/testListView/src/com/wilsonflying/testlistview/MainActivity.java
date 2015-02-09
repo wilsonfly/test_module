@@ -19,9 +19,16 @@ public class MainActivity extends Activity {
 		super.onCreate(param);
 		setContentView(R.layout.my_layout);
 
-		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+		//方法一：
+		String[] theStringArray=new String[]{"item1","item2","item3","item4"};
+		ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_activated_1,theStringArray);
+		//方法二：
+		/*
+		  ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+		 
 				this, R.array.theStringArray,
 				android.R.layout.simple_list_item_checked);
+		*/
 
 		final ListView listView = (ListView) findViewById(R.id.listView1);
 		listView.addHeaderView(line()); // 设置header view

@@ -12,9 +12,12 @@ public final class R {
     }
     public static final class drawable {
         public static final int background_001=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int login=0x7f020002;
-        public static final int my_icon=0x7f020003;
+        public static final int button_state=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int login=0x7f020003;
+        public static final int my_icon=0x7f020004;
+        public static final int start_a=0x7f020005;
+        public static final int start_b=0x7f020006;
     }
     public static final class id {
         public static final int button_checkbox=0x7f06000a;
@@ -23,6 +26,7 @@ public final class R {
         public static final int checkbox_pinting=0x7f060009;
         public static final int checkbox_sport=0x7f060007;
         public static final int imagebutton=0x7f060005;
+        public static final int imagebutton2=0x7f06000b;
         public static final int linearlayout_no1=0x7f060000;
         public static final int linearlayout_no2=0x7f060006;
         public static final int radiobutton1=0x7f060002;

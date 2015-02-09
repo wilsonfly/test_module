@@ -1,0 +1,19 @@
+package com.wilsonflying.testlistview3;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.ListView;
+
+public class MainActivity extends Activity {
+
+	@Override
+	public void onCreate(Bundle param){
+		super.onCreate(param);
+		setContentView(R.layout.my_layout);
+		
+		int[] imageId = new int[]{R.drawable.img001_s,R.drawable.img002_s,R.drawable.img003_s};
+		String[] str = new String[]{"item1", "item2", "item3"};
+		
+		ListView lv = findViewById(R.id.listview);
+	}
+}

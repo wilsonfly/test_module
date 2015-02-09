@@ -86,4 +86,10 @@
             android:text="提交" />
     </LinearLayout>
 
+    <ImageButton 
+        android:id="@+id/imagebutton2"
+        android:src="@drawable/button_state"
+        android:background="#0000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </LinearLayout>
