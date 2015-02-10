@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.wilsonflying.testframelayout.R"/>
-<fullyQualifiedTypeName name="android.widget.FrameLayout"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testframelayout.R.layout"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testFramelayout.Ameng"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testFramelayout.MainActivity"/>
 <fullyQualifiedTypeName name="android.view.View.OnTouchListener"/>
@@ -44,7 +41,6 @@
 <fullyQualifiedTypeName name="com.wilsonflying.testchronometer.R.layout"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testchronometer.R.id"/>
 <fullyQualifiedTypeName name="android.widget.Chronometer"/>
-<fullyQualifiedTypeName name="android.view.View"/>
 <fullyQualifiedTypeName name="android.util.Log"/>
 <fullyQualifiedTypeName name="android.os.SystemClock"/>
 <fullyQualifiedTypeName name="android.os.Bundle"/>
@@ -60,4 +56,8 @@
 <fullyQualifiedTypeName name="com.wilsonflying.testlistview3.R.layout"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testlistview3.R.id"/>
 <fullyQualifiedTypeName name="android.widget.ListView"/>
+<fullyQualifiedTypeName name="android.widget.CheckBox"/>
+<fullyQualifiedTypeName name="android.widget.ImageButton"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testbuttons.R.id"/>
+<fullyQualifiedTypeName name="android.view.View"/>
 </qualifiedTypeNameHistroy>

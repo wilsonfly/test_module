@@ -8,6 +8,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 //import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.RadioButton;
@@ -16,6 +17,9 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
+
+	private  CheckBox checkbox_showButton;
+	private ImageButton imagebutton_enter;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -61,13 +65,20 @@ public class MainActivity extends Activity {
 		});
 
 		// checkbox
-		final CheckBox button_sport = (CheckBox) findViewById(R.id.checkbox_sport);
-		final CheckBox button_music = (CheckBox) findViewById(R.id.checkbox_music);
-		final CheckBox button_painting = (CheckBox) findViewById(R.id.checkbox_pinting);
-		button_sport.setOnCheckedChangeListener(checkbox_listener);
-		button_music.setOnCheckedChangeListener(checkbox_listener);
-		button_painting.setOnCheckedChangeListener(checkbox_listener);
+		final CheckBox checkbox_sport = (CheckBox) findViewById(R.id.checkbox_sport);
+		final CheckBox checkbox_music = (CheckBox) findViewById(R.id.checkbox_music);
+		final CheckBox checkbox_painting = (CheckBox) findViewById(R.id.checkbox_pinting);
+		//final CheckBox checkbox_showButton = (CheckBox) findViewById(R.id.checkbox_showbutton);
+		checkbox_showButton = (CheckBox) findViewById(R.id.checkbox_showbutton);
+		imagebutton_enter = (ImageButton) findViewById(R.id.imagebutton_enter);
+		
+		checkbox_sport.setOnCheckedChangeListener(checkbox_listener);
+		checkbox_music.setOnCheckedChangeListener(checkbox_listener);
+		checkbox_painting.setOnCheckedChangeListener(checkbox_listener);
+		checkbox_showButton.setOnCheckedChangeListener(checkbox_listener);
+		imagebutton_enter.setVisibility(View.INVISIBLE);
 
+		
 		Button button_checkbox = (Button)findViewById(R.id.button_checkbox);
 		button_checkbox.setOnClickListener(new OnClickListener() {
 			
@@ -75,12 +86,12 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				String hobit="";
-				if(button_sport.isChecked())//需将button_sport定义为final
-					hobit+=button_sport.getText().toString()+" ";
-				if(button_music.isChecked())//需将button_sport定义为final
-					hobit+=button_music.getText().toString()+" ";
-				if(button_painting.isChecked())//需将button_sport定义为final
-					hobit+=button_painting.getText().toString()+" ";
+				if(checkbox_sport.isChecked())//需将checkbox_sport定义为final
+					hobit+=checkbox_sport.getText().toString()+" ";
+				if(checkbox_music.isChecked())//需将checkbox_sport定义为final
+					hobit+=checkbox_music.getText().toString()+" ";
+				if(checkbox_painting.isChecked())//需将checkbox_sport定义为final
+					hobit+=checkbox_painting.getText().toString()+" ";
 				Toast.makeText(MainActivity.this, hobit, Toast.LENGTH_SHORT).show();
 			}
 		});
@@ -98,6 +109,15 @@ public class MainActivity extends Activity {
 		public void onCheckedChanged(CompoundButton buttonView,
 				boolean isChecked) {
 			// TODO Auto-generated method stub
+			if(buttonView.getId()==checkbox_showButton.getId()){
+				if(isChecked){
+					imagebutton_enter.setVisibility(View.VISIBLE);
+				}
+				else{
+					imagebutton_enter.setVisibility(View.INVISIBLE);
+				}
+				imagebutton_enter.invalidate();
+			}
 			if (isChecked)
 				Toast.makeText(MainActivity.this, "选择的是：" + buttonView.getText(), Toast.LENGTH_SHORT).show();
 		}

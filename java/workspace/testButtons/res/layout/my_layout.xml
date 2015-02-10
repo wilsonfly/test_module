@@ -57,10 +57,11 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
 
-        <TextView 
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="爱好："/>
+            android:text="爱好：" />
+
         <CheckBox
             android:id="@+id/checkbox_sport"
             android:layout_width="wrap_content"
@@ -86,10 +87,31 @@
             android:text="提交" />
     </LinearLayout>
 
-    <ImageButton 
-        android:id="@+id/imagebutton2"
-        android:src="@drawable/button_state"
-        android:background="#0000"
+    <LinearLayout
+        android:id="@+id/linearlayout2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/imagebutton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#0000"
+            android:src="@drawable/button_state" />
+
+        <CheckBox
+            android:id="@+id/checkbox_showbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="显示一个button" />
+
+        <ImageButton
+            android:id="@+id/imagebutton_enter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#0000"
+            android:src="@drawable/button_state" />
+    </LinearLayout>
+
 </LinearLayout>

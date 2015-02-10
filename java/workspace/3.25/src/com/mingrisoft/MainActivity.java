@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
 				}else{
 					imageButton.setVisibility(View.INVISIBLE);		//设置进入按钮不显示
 				}
-				imageButton.invalidate();	//重绘ImageButton				
+				imageButton.invalidate();	//重绘ImageButton		
 			}
 		});
 		//为进入按钮添加单击事件监听器

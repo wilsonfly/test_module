@@ -24,9 +24,12 @@ public final class R {
         public static final int button_radiobutton=0x7f060004;
         public static final int checkbox_music=0x7f060008;
         public static final int checkbox_pinting=0x7f060009;
+        public static final int checkbox_showbutton=0x7f06000d;
         public static final int checkbox_sport=0x7f060007;
         public static final int imagebutton=0x7f060005;
-        public static final int imagebutton2=0x7f06000b;
+        public static final int imagebutton2=0x7f06000c;
+        public static final int imagebutton_enter=0x7f06000e;
+        public static final int linearlayout2=0x7f06000b;
         public static final int linearlayout_no1=0x7f060000;
         public static final int linearlayout_no2=0x7f060006;
         public static final int radiobutton1=0x7f060002;
