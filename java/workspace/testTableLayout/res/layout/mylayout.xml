@@ -6,7 +6,6 @@
     android:background="@drawable/background_001"
     android:gravity="center_vertical"
     android:stretchColumns="0,3" 
-    
     >
 
     <TableRow

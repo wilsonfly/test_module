@@ -38,7 +38,7 @@ public class MainActivity extends Activity {
 		text2.setTextSize(TypedValue.COMPLEX_UNIT_PX, 80);
 		text2.setTextColor(Color.rgb(5, 5, 5));
 		LayoutParams params = new LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-		params.gravity = Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL;
+		params.gravity = Gravity.CENTER_HORIZONTAL | Gravity.CENTER_VERTICAL;//没有居中，比较奇怪？？？？？
 		text2.setLayoutParams(params);
 		
 		text2.setOnClickListener(new OnClickListener() {

@@ -20,6 +20,7 @@ public class MainActivity extends Activity {
 
 	private  CheckBox checkbox_showButton;
 	private ImageButton imagebutton_enter;
+	private Button button_tobeshow;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -71,6 +72,7 @@ public class MainActivity extends Activity {
 		//final CheckBox checkbox_showButton = (CheckBox) findViewById(R.id.checkbox_showbutton);
 		checkbox_showButton = (CheckBox) findViewById(R.id.checkbox_showbutton);
 		imagebutton_enter = (ImageButton) findViewById(R.id.imagebutton_enter);
+		button_tobeshow = (Button) findViewById(R.id.button_tobeshow);
 		
 		checkbox_sport.setOnCheckedChangeListener(checkbox_listener);
 		checkbox_music.setOnCheckedChangeListener(checkbox_listener);
@@ -112,9 +114,11 @@ public class MainActivity extends Activity {
 			if(buttonView.getId()==checkbox_showButton.getId()){
 				if(isChecked){
 					imagebutton_enter.setVisibility(View.VISIBLE);
+					button_tobeshow.setEnabled(true);
 				}
 				else{
 					imagebutton_enter.setVisibility(View.INVISIBLE);
+					button_tobeshow.setEnabled(false);
 				}
 				imagebutton_enter.invalidate();
 			}
@@ -122,5 +126,9 @@ public class MainActivity extends Activity {
 				Toast.makeText(MainActivity.this, "Ñ¡ÔñµÄÊÇ£º" + buttonView.getText(), Toast.LENGTH_SHORT).show();
 		}
 	};
+	
+	public void fun_onclick(View v){
+		Toast.makeText(MainActivity.this, "clicked", Toast.LENGTH_SHORT).show();
+	}
 	
 }
