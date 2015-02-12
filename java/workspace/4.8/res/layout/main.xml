@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    android:id="@+id/llayout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:id="@+id/llayout"
-    
-    >
+    android:orientation="vertical" >
 
     <Gallery
         android:id="@+id/gallery1"
-        android:spacing="5px"
-        android:unselectedAlpha="0.6"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:spacing="5px"
+        android:unselectedAlpha="0.6" />
 
 </LinearLayout>

@@ -114,7 +114,7 @@ public class MainActivity extends Activity {
 			public void onRatingChanged(RatingBar ratingBar, float rating,
 					boolean fromUser) {
 				// TODO Auto-generated method stub
-				Toast.makeText(MainActivity.this, "ÆÀ·Ö£º"+rating+"¿ÅÐÇ", Toast.LENGTH_SHORT);
+				Toast.makeText(MainActivity.this, "ÆÀ·Ö£º"+rating+"¿ÅÐÇ", Toast.LENGTH_SHORT).show();
 			}
 		});
 	}

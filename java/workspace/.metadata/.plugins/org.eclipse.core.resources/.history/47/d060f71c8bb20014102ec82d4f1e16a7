@@ -1,0 +1,16 @@
+package com.wilsonflying.testimageswitcher;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+public class MainActivity extends Activity {
+
+	@Override
+	public void onCreate(Bundle param){
+		super.onCreate(param);
+		setContentView(R.layout.my_layout);
+		
+		int[] imgId = new int[]{1,2};
+		
+	}
+}

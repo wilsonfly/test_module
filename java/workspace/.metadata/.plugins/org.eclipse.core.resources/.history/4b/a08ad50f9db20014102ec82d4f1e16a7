@@ -1,0 +1,18 @@
+package com.wilsonflying.testgridview;
+
+import com.wilsonflying.testimageswitcher.R;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+public class MainActivity extends Activity {
+	int[] imgId = new int[]{R.drawable.img01,R.drawable.img02,R.drawable.img03,R.drawable.img04,R.drawable.img05,R.drawable.img06,R.drawable.img07,R.drawable.img08,R.drawable.img09,R.drawable.img10,R.drawable.img11,R.drawable.img12};
+
+	
+	@Override
+	public void onCreate(Bundle param){
+		super.onCreate(param);
+		String title = new String[]{"ͼƬ1","ͼƬ2","ͼƬ3","ͼƬ3","ͼƬ4","ͼƬ5","ͼƬ6","ͼƬ7","ͼƬ8","ͼƬ9","ͼƬ10","ͼƬ11","ͼƬ12"};
+		
+	}
+}
