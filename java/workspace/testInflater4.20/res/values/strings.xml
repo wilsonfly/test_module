@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">带图标的、带多个单选列表项的列表对话框</string>
+    <string name="app_name">testInflater4.20</string>
+
+</resources>
