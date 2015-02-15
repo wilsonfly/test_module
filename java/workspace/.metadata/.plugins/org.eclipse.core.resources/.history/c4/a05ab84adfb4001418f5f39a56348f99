@@ -1,0 +1,23 @@
+package com.wilsonflying.testnewactivity;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+public class AddviewActivity extends Activity {
+
+	@Override
+	public void onCreate(Bundle param){
+		super.onCreate(param);
+		
+		LinearLayout ll = new LinearLayout(AddviewActivity.this);
+		ll.setPadding(30, 20, 30, 20);
+		
+		TextView tv = new TextView(AddviewActivity.this);
+		tv.setText("在AddviewActivity中显示的信息");
+		tv.setTextSize(25);
+		ll.addView(tv);
+		setContentView(ll);
+	}
+}

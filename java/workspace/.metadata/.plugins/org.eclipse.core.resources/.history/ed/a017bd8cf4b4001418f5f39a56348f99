@@ -1,0 +1,41 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wilsonflying.testnewactivity"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="20" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.wilsonflying.testnewactivity.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.wilsonflying.testnewactivity.NewActivity"
+            android:icon="@drawable/ic_launcher"
+            android:label="新activity" >
+        </activity>
+        <activity
+            android:name="com.wilsonflying.testnewactivity.AddviewActivity"
+            android:icon="@drawable/ic_launcher"
+            android:label="新activity，addview" >
+        </activity>
+        <activity
+            android:name="com.wilsonflying.testnewactivity.RegistActivity"
+            android:icon="@drawable/ic_launcher"
+            android:label="regist activiy" >
+        </activity>
+    </application>
+
+</manifest>
