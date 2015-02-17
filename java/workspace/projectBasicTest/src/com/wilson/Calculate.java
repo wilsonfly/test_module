@@ -20,8 +20,8 @@ public class Calculate {
 		System.out.println("-1>>9:" + (-1>>9));
 		
 		//Âß¼­ÓÒÒÆ£¬ÓÃ0²¹¸ßÎ»
-		System.out.println("4>>>1:" + (4>>1));
-		System.out.println("-4>>>1:" + (-4>>1));
+		System.out.println("4>>>1:" + (4>>>1));
+		System.out.println("-4>>>1:" + (-4>>>1));
 		
 		System.out.println("math.floor(-4.7):" + Math.floor(-4.7));
 		System.out.println("math.ceil(-4.7):" + Math.ceil(-4.7));
