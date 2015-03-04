@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <string name="app_name">6.1</string>
-	<string name="title">请输入个人信息</string>
-	<string name="username">用户名：</string>
-	<string name="password">密    码：</string>
-	<string name="ok">提交</string>
-</resources>

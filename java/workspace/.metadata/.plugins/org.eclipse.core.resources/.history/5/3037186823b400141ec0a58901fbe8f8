@@ -1,7 +1,0 @@
-package com.wilsonflying.testnotification;
-
-import android.app.Activity;
-
-public class contentActivity extends Activity {
-
-}
