@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="app_name">SWTest</string>
+    <string name="specialChoice">请选择是否配置专网信息:</string>
+    <string name="specilal">配置专网信息</string>
+    <string name="nospecial">不配置专网信息</string>
+    <string name="specialConfig">请配置专网信息:</string>
+    <string name="specialroute">专网路由:</string>
+    <string name="ethspecial">有线专网</string>
+    <string name="pppoespecial">PPPOE专网</string>
+    <string name="checkEth">请选择有线的连接方式:</string>
+    <string name="ethStatic">有线静态</string>
+    <string name="ethdhcp">有线动态</string>
+    <string name="ethpppoe">有线PPPOE</string>
+    <string name="ethtile">请输入静态网络信息：</string>
+    <string name="ip">IP地址：</string>
+    <string name="netmask">子网掩码：</string>
+    <string name="gateway">网关：</string>
+    <string name="dns1">主DNS:</string>
+    <string name="dns2">备用DNS:</string>
+    <string name="ok">确定</string>
+    <string name="cancel">取消</string>
+    <string name="checkNetInfo">网络信息输入不正确，请检查!</string>
+    <string name="tip">正在配置网络信息，请稍候!</string>
+    <string name="resultOK">网络配置成功!</string>
+    <string name="resultNOK">网络配置失败!</string>
+    <string name="ipConfict">IP冲突!</string>
+    <string name="getiptip">正在获取IP，请稍候!</string>
+    <string name="ethdhcptile">获取到的网络信息如下：</string>
+    <string name="retry">重试</string>
+    <string name="back">返回</string>
+    <string name="ethpppoetitle">请输入PPPOE用户名和密码:</string>
+    <string name="name">用户名：</string>
+    <string name="pass">密码:</string>
+    <string name="ethpppoeinfo">PPPOE的网络信息如下：</string>
+    <string name="dialinfo">正在拨号,请稍候......</string>
+    <string name="dialsuccess">拨号成功!</string>
+    <string name="dialfailed">拨号失败!</string>
+    <string name="userorpassfailed">用户名或密码错误!</string>
+    <string name="standard">制式：</string>
+    <string name="screen_top">上边距：</string>
+    <string name="screen_botoom">下边距：</string>
+    <string name="screen_left">左边距：</string>
+    <string name="screen_right">右边距：</string>
+    <string name="screen">请设置你所需要的制式和切边 ：</string>
+    <string name="realpower">真待机</string>
+    <string name="falsepower">假待机</string>
+    <string name="shutdown">关机</string>
+    <string name="reboot">重启</string>
+    <string name="notresponsekeytest">屏蔽按键测试:</string>
+    <string name="homekey">不响应Home键</string>
+    <string name="powerkey">不响应Power键</string>
+    <string name="settingkey">不响应设置键</string>
+    <string name="home_power_settingkey">同时屏蔽Home、Power、设置键</string>
+    <string name="lockallkey">不响应所有按键</string>
+    <string name="checkWifi">请选择无线的连接方式:</string>
+    <string name="wifiStatic">无线静态</string>
+    <string name="wifidhcp">无线动态</string>
+    <string name="wifipppoe">无线PPPOE</string>
+    <string name="network_wifi_failed">连接失败！</string>
+    <string name="wifi_remembered">已保存</string>
+    <string name="wifi_not_in_range">不在范围內</string>
+    <!-- Do not translate.  Concise terminology for wifi with WEP security -->
+    <string name="wifi_security_short_wep">WEP</string>
+    <!-- Do not translate.  Concise terminology for wifi with WPA security -->
+    <string name="wifi_security_short_wpa">WPA</string>
+    <!-- Do not translate.  Concise terminology for wifi with WPA2 security -->
+    <string name="wifi_security_short_wpa2">WPA2</string>
+    <!-- Do not translate.  Concise terminology for wifi with both WPA/WPA2 security -->
+    <string name="wifi_security_short_wpa_wpa2">WPA/WPA2</string>
+    <!-- Do not translate.  Concise terminology for wifi with unknown PSK type -->
+    <string name="wifi_security_short_psk_generic">@string/wifi_security_short_wpa_wpa2</string>
+    <!-- Do not translate.  Concise terminology for wifi with 802.1x EAP security -->
+    <string name="wifi_security_short_eap">802.1x</string>
+
+    <!-- Used in Wi-Fi settings dialogs when Wi-Fi does not have any security. -->
+    <string name="wifi_security_none">开放</string>
+    <!-- Do not translate.  Terminology for wifi with WEP security -->
+    <string name="wifi_security_wep">WEP</string>
+    <!-- Do not translate.  Terminology for wifi with WPA security -->
+    <string name="wifi_security_wpa">WPA PSK</string>
+    <!-- Do not translate.  Terminology for wifi with WPA2 security -->
+    <string name="wifi_security_wpa2">WPA2 PSK</string>
+    <!-- Do not translate.  Terminology for wifi with both WPA/WPA2 security, or unknown -->
+    <string name="wifi_security_wpa_wpa2">WPA/WPA2 PSK</string>
+    <!-- Do not translate.  Terminology for wifi with unknown PSK type -->
+    <string name="wifi_security_psk_generic">@string/wifi_security_wpa_wpa2</string>
+    <!-- Do not translate.  Concise terminology for wifi with 802.1x EAP security -->
+    <string name="wifi_security_eap">802.1x EAP</string>
+    <string name="wifi_disabled_password_failure">认证失败</string>
+    <!-- Status for networks disabled for unknown reason -->
+    <string name="wifi_disabled_generic">不可用</string>
+    <!-- Status for networked disabled from a DNS or DHCP failure -->
+    <string name="wifi_disabled_network_failure">避免不可用的网络连接</string>
+    <string name="wifi_wps_available_first_item">保护网络可用</string>
+    <string name="wifi_wps_available_second_item">\u0020(保护网络可用)</string>
+    <string name="wifi_secured_first_item">通过<xliff:g id="wifi_security_short">%1$s</xliff:g> 进行保护</string>
+    <string name="wifi_secured_second_item">, 通过<xliff:g id="wifi_security_short">%1$s</xliff:g> 进行保护</string>
+
+    <string-array name="wifi_status">
+        <item></item>
+        <item>Searching···</item>
+        <item>Connecting···</item>
+        <item>Authenticate···</item>
+        <item>Obtaining IP Address···</item>
+        <item>Connect</item>
+        <item>Pause</item>
+        <item>Disconnecting···</item>
+        <item>Disconnect</item>
+        <item>Fail</item>
+    </string-array>
+    <string-array name="wifi_status_with_ssid">
+        <item></item>
+        <item>Searching···</item>
+        <item>Connect<xliff:g id="NETWORK_NAME">%1$s</xliff:g>···</item>
+        <item>Using <xliff:g id="NETWORK_NAME">%1$s</xliff:g> To Authenticate···</item>
+        <item>From <xliff:g id="NETWORK_NAME">%1$s</xliff:g>To Get IP Address···</item>
+        <item>Connecting<xliff:g id="NETWORK_NAME">%1$s</xliff:g></item>
+        <item>Pause</item>
+        <item>Disconnecting<xliff:g id="NETWORK_NAME">%1$s</xliff:g></item>
+        <item>Disconnect</item>
+        <item>Fail</item>
+    </string-array>
+    <string-array name="wifi_security">
+        <item>Open</item>
+        <item>WEP</item>
+        <item>WPA/WPA2 PSK</item>
+        <item>802.1x EAP</item>
+    </string-array>
+    <string-array name="wifi_signal">
+        <item>Weak</item>
+        <item>General</item>
+        <item>Strong</item>
+        <item>Very Good</item>
+    </string-array>
+
+    <string name="write_swdb_param">设置SWDB参数</string>
+    <string name="read_swdb_param">读取SWDB参数</string>
+    <string name="param_name">参数名：</string>
+    <string name="param_value">参数值：</string>
+
+</resources>

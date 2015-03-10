@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
+        android:text="@string/notresponsekeytest"
+        android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/homekey"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:text="@string/homekey"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/powerkey"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:text="@string/powerkey"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/settingkey"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:text="@string/settingkey"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/threekey"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:text="@string/home_power_settingkey"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/lockallkey"
+        android:layout_width="500dp"
+        android:layout_height="wrap_content"
+        android:text="@string/lockallkey"
+        android:textSize="20dp" />
+
+</LinearLayout>

@@ -1,0 +1,156 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="400dp"
+        android:orientation="horizontal" >
+
+        <ProgressBar
+            android:id="@+id/progress"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:text="@string/tip"
+            android:textSize="25dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="400dp"
+        android:textSize="25dp" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_columnSpan="2"
+            android:layout_marginBottom="20dp"
+            android:layout_row="0"
+            android:text="@string/ethtile"
+            android:textSize="25dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:text="@string/ip"
+            android:textSize="20dp" />
+
+        <net.sunniwell.app.test.base.view.SWEditText
+            android:id="@+id/ip"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="1"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="2"
+            android:text="@string/netmask"
+            android:textSize="20dp" />
+
+        <net.sunniwell.app.test.base.view.SWEditText
+            android:id="@+id/mask"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="2"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="3"
+            android:text="@string/gateway"
+            android:textSize="20dp" />
+
+        <net.sunniwell.app.test.base.view.SWEditText
+            android:id="@+id/gateway"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="3"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="4"
+            android:text="@string/dns1"
+            android:textSize="20dp" />
+
+        <net.sunniwell.app.test.base.view.SWEditText
+            android:id="@+id/dns1"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="4"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="5"
+            android:text="@string/dns2"
+            android:textSize="20dp" />
+
+        <net.sunniwell.app.test.base.view.SWEditText
+            android:id="@+id/dns2"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="5"
+            android:textSize="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_columnSpan="2"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="20dp"
+            android:layout_row="6"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/ok"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/ok"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/cancel"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:text="@string/cancel"
+                android:textSize="20dp" />
+        </LinearLayout>
+    </GridLayout>
+
+</RelativeLayout>
