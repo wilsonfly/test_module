@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@id/button_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="点我没有用，尝试按返回"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@id/button_longclick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="此按钮可区分是长按还是短按"
+        android:textSize="25sp" />
+
+</LinearLayout>

@@ -15,6 +15,18 @@
         android:id="@+id/button_newactivity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="启动一个activity" />
+        android:text="action_view启动一个activity" />
+
+    <Button
+        android:id="@+id/button_thirdactivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="自定义action启动一个activity" />
+
+    <Button
+        android:id="@+id/button_webactivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="启动网页" />
 
 </LinearLayout>

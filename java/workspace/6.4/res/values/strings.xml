@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <string name="app_name">6.4</string>
-	<string name="button">转到下一个Activity</string>
-	<string name="text">第二个Activity</string>
-</resources>

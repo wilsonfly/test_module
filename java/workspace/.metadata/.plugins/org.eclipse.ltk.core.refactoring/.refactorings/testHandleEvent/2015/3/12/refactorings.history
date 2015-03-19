@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.wilsonflying.handleevent&apos; to &apos;com.wilsonflying.testhandleevent&apos;&#x0D;&#x0A;- Original project: &apos;testHandleEvent&apos;&#x0D;&#x0A;- Original element: &apos;testHandleEvent/src/com.wilsonflying.handleevent&apos;&#x0D;&#x0A;- Renamed element: &apos;testHandleEvent/src/com.wilsonflying.testhandleevent&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.wilsonflying.handleevent&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.wilsonflying.handleevent" name="com.wilsonflying.testhandleevent" qualified="false" references="true" stamp="1426777714869" textual="false" version="1.0"/>
+</session>

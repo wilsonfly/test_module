@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <string name="button">单击该按钮</string>
-    <string name="app_name">7.3</string>
-    <string name="short_click">短时间单击</string>
-	<string name="long_click">长时间单击</string>
-</resources>
