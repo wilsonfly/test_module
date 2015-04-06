@@ -1,0 +1,69 @@
+package com.wilsonflying.testthread;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.Toast;
+
+public class MainActivity extends Activity implements Runnable {
+
+	private Thread thread;
+	private int count;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.layout_main);
+		
+		Button button_start = (Button) findViewById(R.id.button_start);
+		button_start.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				thread = new Thread(MainActivity.this);
+				thread.start();
+				button_start.setEnabled(false);
+			}
+		});
+		
+		Button button_stop = (Button) findViewById(R.id.button_stop);
+		button_stop.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				thread.interrupt();
+				thread = null;
+				Toast.makeText(MainActivity.this, "即将停止线程", Toast.LENGTH_SHORT).show();
+				button_stop.setEnabled(false);
+			}
+		});
+	}
+	
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		try {
+			Thread.sleep(2*1000);
+			count++;
+			Toast.makeText(MainActivity.this, "thread is running,count:"+count, Toast.LENGTH_SHORT).show();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	protected void onDestroy() {
+		// TODO Auto-generated method stub
+		if(!Thread.currentThread().isInterrupted()){
+			thread.interrupt();
+			thread = null;
+		}
+		super.onDestroy();
+	}
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">电源管理</string>
+    <string name="power_title">温馨提示</string>
+    <string name="power_message">确定要待机吗？</string>
+    <string name="yes">确认</string>
+    <string name="no">取消</string>
+    <string name="tip">待机中，请稍候……</string>
+
+</resources>

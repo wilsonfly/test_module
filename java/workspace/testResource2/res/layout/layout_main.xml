@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/str1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="赤" />
+
+    <TextView
+        android:id="@+id/str2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="橙" />
+
+    <TextView
+        android:id="@+id/str3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="黄"
+        android:textColor="@color/color8" />
+
+    <TextView
+        android:id="@+id/str4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="绿"
+        android:textColor="@color/color8" />
+
+    <TextView
+        android:id="@+id/str5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="青"
+        android:textColor="@color/color8" />
+
+    <TextView
+        android:id="@+id/str6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="蓝" />
+
+    <TextView
+        android:id="@+id/str7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="紫" />
+
+</LinearLayout>

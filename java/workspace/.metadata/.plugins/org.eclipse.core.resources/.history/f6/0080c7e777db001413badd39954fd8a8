@@ -1,0 +1,37 @@
+package com.wilsonflying.testcontentresolver;
+
+
+import com.wilsonflying.testcontenresolver.R;
+
+import android.app.Activity;
+import android.content.ContentResolver;
+import android.database.Cursor;
+import android.os.Bundle;
+import android.provider.Contacts;
+import android.widget.TextView;
+
+public class MainActivity extends Activity {
+
+	private String[] columns = {Contacts._ID};
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.layout_main);
+		
+		TextView tv = (TextView) findViewById(R.id.text);
+		tv.setText(getQueryData());
+	}
+	
+	private String getQueryData(){
+		StringBuilder sb = new StringBuilder();
+		ContentResolver resolver = getContentResolver();
+		Cursor cursor = resolver.query(Contacts.CONTENT_URI, null, null, null, null);
+		while(cursor.moveToNext()){
+			int idIndex = cursor.getColumnIndex(Contacts._ID);
+		}
+		
+		return sb.toString();
+	}
+}

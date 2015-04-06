@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="title">#ff0</color>
+    <color name="body">#7e8</color>
+    <color name="autho">#f70</color>
+    <color name="email">#9f60</color>
+
+</resources>

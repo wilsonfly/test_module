@@ -1,0 +1,13 @@
+package com.wilsonflying.testthread;
+
+import android.app.Activity;
+
+public class MainActivity extends Activity implements Runnable {
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+
+	}
+
+}

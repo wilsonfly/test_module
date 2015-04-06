@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;button_stat_1.xml&apos; to &apos;button_stat_1.xml&apos;&#x0D;&#x0A;- Original project: &apos;testStatlist&apos;&#x0D;&#x0A;- Destination element: &apos;button_stat_1.xml&apos;&#x0D;&#x0A;- Original element: &apos;button_stat_1.xml&apos;" description="Copy file" element1="res/drawable-mdpi/button_stat_1.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1428150649825" target="/testStatlist/res/drawable-mdpi/button_stat_1.xml" units="0" version="1.0"/>
+</session>
