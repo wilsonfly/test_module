@@ -2,6 +2,8 @@
 <section name="Workbench">
 	<list key="installedFeatures">
 		<item value="com.android.ide.eclipse.adt.package.feature:23.0.2.1259578"/>
+		<item value="com.collabnet.subversion.merge.feature:3.0.12"/>
+		<item value="net.java.dev.jna:3.4.0.t20120117_1605"/>
 		<item value="org.eclipse.cdt.gdb:7.0.0.201202111925"/>
 		<item value="org.eclipse.cdt:8.0.2.201202111925"/>
 		<item value="org.eclipse.egit.import:2.2.0.201212191850-r"/>
@@ -12,6 +14,11 @@
 		<item value="org.eclipse.jgit:2.2.0.201212191850-r"/>
 		<item value="org.eclipse.platform:4.2.1.v20130118-173121-9MF7GHYdG0B5kx4E_SkfZV-1mNjVATf67ZAb7"/>
 		<item value="org.eclipse.rcp:4.2.2.v20130129-152330-7IARAABrMQkGSvMgQnUlz-DQz00h"/>
+		<item value="org.tigris.subversion.clientadapter.feature:1.8.3"/>
+		<item value="org.tigris.subversion.clientadapter.javahl.feature:1.7.8.1"/>
+		<item value="org.tigris.subversion.clientadapter.svnkit.feature:1.7.8.1"/>
+		<item value="org.tigris.subversion.subclipse:1.8.18"/>
+		<item value="org.tmatesoft.svnkit:1.7.8.r9538_v20130107_2001"/>
 	</list>
 	<section name="ExternalProjectImportWizard">
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>

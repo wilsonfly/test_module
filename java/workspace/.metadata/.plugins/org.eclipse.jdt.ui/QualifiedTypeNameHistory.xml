@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.regex.Pattern"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="java.util.regex.Matcher"/>
-<fullyQualifiedTypeName name="android.content.Intent"/>
-<fullyQualifiedTypeName name="android.os.Bundle"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testhandleevent.R.layout"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testhandleevent.R"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testhandleevent.R.id"/>
-<fullyQualifiedTypeName name="android.view.KeyEvent"/>
 <fullyQualifiedTypeName name="android.view.accessibility.AccessibilityManager.TouchExplorationStateChangeListener"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testhandleevent.MainActivity"/>
 <fullyQualifiedTypeName name="android.view.View.OnLongClickListener"/>
@@ -27,7 +18,6 @@
 <fullyQualifiedTypeName name="com.wilsonflying.teststatlist.R.id"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testxml.R.layout"/>
 <fullyQualifiedTypeName name="android.view.LayoutInflater"/>
-<fullyQualifiedTypeName name="android.widget.TextView"/>
 <fullyQualifiedTypeName name="android.widget.Filterable"/>
 <fullyQualifiedTypeName name="android.widget.FilterQueryProvider"/>
 <fullyQualifiedTypeName name="java.io.FileReader"/>
@@ -53,11 +43,21 @@
 <fullyQualifiedTypeName name="com.wilsonflying.playmp3.R.layout"/>
 <fullyQualifiedTypeName name="android.widget.Button"/>
 <fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
-<fullyQualifiedTypeName name="java.lang.Runnable"/>
-<fullyQualifiedTypeName name="android.media.MediaPlayer"/>
 <fullyQualifiedTypeName name="com.wilsonflying.playmp3.MainActivity"/>
 <fullyQualifiedTypeName name="com.wilsonflying.playmp3.R.raw"/>
 <fullyQualifiedTypeName name="android.media.MediaPlayer.OnCompletionListener"/>
-<fullyQualifiedTypeName name="java.lang.Thread"/>
 <fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="android.media.MediaPlayer"/>
+<fullyQualifiedTypeName name="java.lang.Runnable"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testhandler.R.id"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testhandler.R.drawable"/>
+<fullyQualifiedTypeName name="android.os.Handler"/>
+<fullyQualifiedTypeName name="android.widget.TextView"/>
+<fullyQualifiedTypeName name="android.widget.ImageView"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="android.os.Bundle"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="android.os.Message"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testhandler.R"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testhandler.R.layout"/>
 </qualifiedTypeNameHistroy>
