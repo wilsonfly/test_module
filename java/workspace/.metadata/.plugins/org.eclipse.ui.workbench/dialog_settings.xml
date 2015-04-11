@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="org.eclipse.ui.internal.dialogs.WorkbenchEditorsDialog">
+		<item value="0" key="sort"/>
+		<item value="false" key="allPersp"/>
+		<list key="bounds">
+			<item value="361"/>
+			<item value="16"/>
+			<item value="878"/>
+			<item value="605"/>
+		</list>
+		<list key="columns">
+			<item value="278"/>
+			<item value="558"/>
+		</list>
+	</section>
 	<section name="FileSystemImportWizard">
 	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="1023" key="dialogWidth"/>
-		<item value="509" key="dialogHeight"/>
+		<item value="1200" key="dialogWidth"/>
+		<item value="608" key="dialogHeight"/>
 		<list key="orderedProviders">
 		</list>
 		<list key="textArray">

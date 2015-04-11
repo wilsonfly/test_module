@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="android.view.Gravity"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testresource2.R.dimen"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testresource2.R.layout"/>
 <fullyQualifiedTypeName name="com.wilsonflying.teststatlist.R.layout"/>
 <fullyQualifiedTypeName name="com.wilsonflying.teststatlist.MainActivity"/>
 <fullyQualifiedTypeName name="com.wilsonflying.teststatlist.R.id"/>
@@ -47,17 +44,20 @@
 <fullyQualifiedTypeName name="com.wilsonflying.testhandler2.R.drawable"/>
 <fullyQualifiedTypeName name="java.lang.Runnable"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testHandlerLooper.MainActivity.MyRunnable"/>
-<fullyQualifiedTypeName name="android.widget.TextView"/>
-<fullyQualifiedTypeName name="java.lang.Thread"/>
 <fullyQualifiedTypeName name="android.R"/>
 <fullyQualifiedTypeName name="android.R.id"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testHandlerLooper.MainActivity.Person"/>
 <fullyQualifiedTypeName name="android.os.Message"/>
 <fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
 <fullyQualifiedTypeName name="android.widget.Button"/>
-<fullyQualifiedTypeName name="android.widget.Toast"/>
-<fullyQualifiedTypeName name="android.os.Handler"/>
 <fullyQualifiedTypeName name="android.os.Handler.Callback"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testHandlerLooper.R"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testHandlerLooper.R.id"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testlooper.MainActivity.MyThread"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="android.os.Looper"/>
+<fullyQualifiedTypeName name="android.widget.TextView"/>
+<fullyQualifiedTypeName name="android.os.HandlerThread"/>
+<fullyQualifiedTypeName name="android.os.Handler"/>
 </qualifiedTypeNameHistroy>

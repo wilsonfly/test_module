@@ -16,3 +16,6 @@
 1428311126481	Delete resource '12.1'
 1428420110355	Delete resource '12.2'
 1428424389946	Delete resource '12.5'
+1428635506288	Delete resource 'testHandler3'
+1428635620163	Delete resource 'testHandler3'
+1428635629475	Rename Java project 'testHandler4'
