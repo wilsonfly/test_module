@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <string name="hello">Hello World, MainActivity!</string>
-    <string name="app_name">12.9</string>
-	<string name="adText">有了编程词典，学编程就这么简单！</string>
-</resources>

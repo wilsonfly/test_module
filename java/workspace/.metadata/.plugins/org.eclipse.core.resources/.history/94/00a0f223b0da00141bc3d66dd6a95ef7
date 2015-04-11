@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <dimen name="size_title">30sp</dimen>
-    <dimen name="size_body">20sp</dimen>
-    <dimen name="size_author">10sp</dimen>
-    <dimen name="size_email">10sp</dimen>
-
-</resources>

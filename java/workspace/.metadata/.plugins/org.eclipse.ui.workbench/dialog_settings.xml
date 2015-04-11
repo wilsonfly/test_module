@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="FileSystemImportWizard">
+	</section>
 	<section name="org.eclipse.ui.internal.dialogs.WorkbenchEditorsDialog">
 		<item value="0" key="sort"/>
 		<item value="false" key="allPersp"/>
@@ -14,11 +16,9 @@
 			<item value="558"/>
 		</list>
 	</section>
-	<section name="FileSystemImportWizard">
-	</section>
 	<section name="org.eclipse.ui.internal.QuickAccess">
-		<item value="1200" key="dialogWidth"/>
-		<item value="608" key="dialogHeight"/>
+		<item value="1025" key="dialogWidth"/>
+		<item value="556" key="dialogHeight"/>
 		<list key="orderedProviders">
 		</list>
 		<list key="textArray">

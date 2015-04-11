@@ -30,7 +30,9 @@ public class HandlerThreadActivity extends Activity {
 			@Override
 			public void handleMessage(Message msg) {
 				// TODO Auto-generated method stub
+				
 				System.out.println("UI thread:"+Thread.currentThread());
+				
 				Toast.makeText(getApplicationContext(), "in handlerThread", Toast.LENGTH_SHORT).show();
 			}
 			
