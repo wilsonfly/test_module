@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.wilsonflying.testservice.tiemIntentService&apos; to &apos;timeIntentService&apos;&#x0D;&#x0A;- Original project: &apos;testService&apos;&#x0D;&#x0A;- Original element: &apos;com.wilsonflying.testservice.tiemIntentService&apos;&#x0D;&#x0A;- Renamed element: &apos;com.wilsonflying.testservice.timeIntentService&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;tiemIntentService&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.wilsonflying.testservice{tiemIntentService.java[tiemIntentService" matchStrategy="1" name="timeIntentService" qualified="false" references="true" similarDeclarations="false" stamp="1428821967587" textual="false" version="1.0"/>
+</session>
