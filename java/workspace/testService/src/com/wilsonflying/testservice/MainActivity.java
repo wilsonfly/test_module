@@ -21,9 +21,38 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Log.i("in mainactivity", "onclick");
-//				startService(new Intent(getApplicationContext(), timeIntentService.class));
-				startService(new Intent(MainActivity.this, timeIntentService.class));
+				startService(new Intent(getApplicationContext(), timeIntentService.class));
+				
+			}
+		});
+		
+		Button button2 = (Button) findViewById(R.id.button2);
+		button2.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				startService(new Intent(getApplicationContext(), timeService.class));				
+			}
+		});
+		
+		Button button3 = (Button) findViewById(R.id.button3);
+		button3.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				stopService(new Intent(getApplicationContext(), timeService.class));				
+			}
+		});
+		
+		Button button4 = (Button) findViewById(R.id.button4);
+		button4.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				startService(new Intent(getApplicationContext(), timeService2.class));				
 			}
 		});
 	}
