@@ -1,0 +1,27 @@
+package com.wilsonflying.playsound;
+
+import java.util.HashMap;
+
+import com.mingrisoft.R;
+
+import android.app.Activity;
+import android.media.SoundPool;
+import android.os.Bundle;
+import android.widget.Button;
+
+public class MainActivity extends Activity {
+
+	private SoundPool soundpool;
+	private HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		
+		Button button1 = (Button) findViewById(R.id.button1);
+		Button button2 = (Button) findViewById(R.id.button2);
+		Button button3 = (Button) findViewById(R.id.button3);
+
+	}
+}

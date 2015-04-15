@@ -17,31 +17,31 @@ import android.widget.SeekBar.OnSeekBarChangeListener;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-	private MediaPlayer player; // MediaPlayer¶ÔÏó
-	private boolean isPause = false; // ÊÇ·ñÔİÍ£
-	private File file; // Òª²¥·ÅµÄÒôÆµÎÄ¼ş
-	private TextView hint; // ÉùÃ÷ÏÔÊ¾ÌáÊ¾ĞÅÏ¢µÄÎÄ±¾¿ò
+	private MediaPlayer player; // MediaPlayerå¯¹è±¡
+	private boolean isPause = false; // æ˜¯å¦æš‚åœ
+	private File file; // è¦æ’­æ”¾çš„éŸ³é¢‘æ–‡ä»¶
+	private TextView hint; // å£°æ˜æ˜¾ç¤ºæç¤ºä¿¡æ¯çš„æ–‡æœ¬æ¡†
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		final Button button1 = (Button) findViewById(R.id.button1); // »ñÈ¡²¥·Å°´Å¥
-		final Button button2 = (Button) findViewById(R.id.button2); // »ñÈ¡¡°ÔİÍ£/¼ÌĞø¡±°´Å¥
-		final Button button3 = (Button) findViewById(R.id.button3); // »ñÈ¡¡°Í£Ö¹¡±°´Å¥
-		hint = (TextView) findViewById(R.id.hint); // »ñÈ¡ÓÃ»§ÏÔÊ¾ÌáÊ¾ĞÅÏ¢µÄÎÄ±¾¿ò		
+		final Button button1 = (Button) findViewById(R.id.button1); // è·å–æ’­æ”¾æŒ‰é’®
+		final Button button2 = (Button) findViewById(R.id.button2); // è·å–â€œæš‚åœ/ç»§ç»­â€æŒ‰é’®
+		final Button button3 = (Button) findViewById(R.id.button3); // è·å–â€œåœæ­¢â€æŒ‰é’®
+		hint = (TextView) findViewById(R.id.hint); // è·å–ç”¨æˆ·æ˜¾ç¤ºæç¤ºä¿¡æ¯çš„æ–‡æœ¬æ¡†		
 
-		/**************************µ÷ÕûÒôÁ¿*****************************************/
-		final AudioManager am = (AudioManager) MainActivity.this.getSystemService(Context.AUDIO_SERVICE);	//»ñÈ¡ÒôÆµ¹ÜÀíÀàµÄ¶ÔÏó
-		//ÉèÖÃµ±Ç°µ÷ÕûÒôÁ¿´óĞ¡Ö»ÊÇÕë¶ÔÃ½ÌåÒôÀÖ
+		/**************************è°ƒæ•´éŸ³é‡*****************************************/
+		final AudioManager am = (AudioManager) MainActivity.this.getSystemService(Context.AUDIO_SERVICE);	//è·å–éŸ³é¢‘ç®¡ç†ç±»çš„å¯¹è±¡
+		//è®¾ç½®å½“å‰è°ƒæ•´éŸ³é‡å¤§å°åªæ˜¯é’ˆå¯¹åª’ä½“éŸ³ä¹
 		MainActivity.this.setVolumeControlStream(AudioManager.STREAM_MUSIC);
-		SeekBar seekbar = (SeekBar) findViewById(R.id.seekBar1);					//»ñÈ¡ÍÏ¶¯Ìõ
-		seekbar.setMax(am.getStreamMaxVolume(AudioManager.STREAM_MUSIC));//ÉèÖÃÍÏ¶¯ÌõµÄ×î´óÖµ
-		int progress=am.getStreamVolume(AudioManager.STREAM_MUSIC);	//»ñÈ¡µ±Ç°µÄÒôÁ¿
-		seekbar.setProgress(progress);	//ÉèÖÃÍÏ¶¯ÌõµÄÄ¬ÈÏÖµÎªµ±Ç°ÒôÁ¿
-		final TextView tv=(TextView)findViewById(R.id.volume);	//»ñÈ¡ÏÔÊ¾µ±Ç°ÒôÁ¿µÄTextView×é¼ş
-		tv.setText("µ±Ç°ÒôÁ¿£º"+progress);						//ÏÔÊ¾µ±Ç°ÒôÁ¿
-		//ÎªÍÏ¶¯Ìõ×é¼şÌí¼ÓOnSeekBarChangeListener¼àÌıÆ÷
+		SeekBar seekbar = (SeekBar) findViewById(R.id.seekBar1);					//è·å–æ‹–åŠ¨æ¡
+		seekbar.setMax(am.getStreamMaxVolume(AudioManager.STREAM_MUSIC));//è®¾ç½®æ‹–åŠ¨æ¡çš„æœ€å¤§å€¼
+		int progress=am.getStreamVolume(AudioManager.STREAM_MUSIC);	//è·å–å½“å‰çš„éŸ³é‡
+		seekbar.setProgress(progress);	//è®¾ç½®æ‹–åŠ¨æ¡çš„é»˜è®¤å€¼ä¸ºå½“å‰éŸ³é‡
+		final TextView tv=(TextView)findViewById(R.id.volume);	//è·å–æ˜¾ç¤ºå½“å‰éŸ³é‡çš„TextViewç»„ä»¶
+		tv.setText("å½“å‰éŸ³é‡ï¼š"+progress);						//æ˜¾ç¤ºå½“å‰éŸ³é‡
+		//ä¸ºæ‹–åŠ¨æ¡ç»„ä»¶æ·»åŠ OnSeekBarChangeListenerç›‘å¬å™¨
 		seekbar.setOnSeekBarChangeListener(new OnSeekBarChangeListener() {
 			@Override
 			public void onStopTrackingTouch(SeekBar seekBar) {}
@@ -49,98 +49,98 @@ public class MainActivity extends Activity {
 			public void onStartTrackingTouch(SeekBar seekBar) {}
 			@Override
 			public void onProgressChanged(SeekBar seekBar, int progress,boolean fromUser) {
-				tv.setText("µ±Ç°ÒôÁ¿£º"+progress);						//ÏÔÊ¾¸Ä±äºóµÄÒôÁ¿
-				am.setStreamVolume(AudioManager.STREAM_MUSIC, progress, AudioManager.FLAG_PLAY_SOUND);	//ÉèÖÃ¸Ä±äºóµÄÒôÁ¿
+				tv.setText("å½“å‰éŸ³é‡ï¼š"+progress);						//æ˜¾ç¤ºæ”¹å˜åçš„éŸ³é‡
+				am.setStreamVolume(AudioManager.STREAM_MUSIC, progress, AudioManager.FLAG_PLAY_SOUND);	//è®¾ç½®æ”¹å˜åçš„éŸ³é‡
 			}
 		});
 		/***********************************************************************************/	
 		
 
-		file = new File("/sdcard/ninan.mp3"); // »ñÈ¡Òª²¥·ÅµÄÎÄ¼ş
-		if (file.exists()) { // Èç¹ûÎÄ¼ş´æÔÚ
+		file = new File("/sdcard/ninan.mp3"); // è·å–è¦æ’­æ”¾çš„æ–‡ä»¶
+		if (file.exists()) { // å¦‚æœæ–‡ä»¶å­˜åœ¨
 			player = MediaPlayer
-					.create(this, Uri.parse(file.getAbsolutePath())); // ´´½¨MediaPlayer¶ÔÏó
+					.create(this, Uri.parse(file.getAbsolutePath())); // åˆ›å»ºMediaPlayerå¯¹è±¡
 		} else {
-			hint.setText("Òª²¥·ÅµÄÒôÆµÎÄ¼ş²»´æÔÚ£¡");
+			hint.setText("è¦æ’­æ”¾çš„éŸ³é¢‘æ–‡ä»¶ä¸å­˜åœ¨ï¼");
 			button1.setEnabled(false);
 			return;
 		}
-		// ÎªMediaPlayer¶ÔÏóÌí¼ÓÍê³ÉÊÂ¼ş¼àÌıÆ÷
+		// ä¸ºMediaPlayerå¯¹è±¡æ·»åŠ å®Œæˆäº‹ä»¶ç›‘å¬å™¨
 		player.setOnCompletionListener(new OnCompletionListener() {
 
 			@Override
 			public void onCompletion(MediaPlayer mp) {
-				play(); // ÖØĞÂ¿ªÊ¼²¥·Å
+				play(); // é‡æ–°å¼€å§‹æ’­æ”¾
 			}
 		});
-		// Îª¡°²¥·Å¡±°´Å¥Ìí¼Óµ¥»÷ÊÂ¼ş¼àÌıÆ÷
+		// ä¸ºâ€œæ’­æ”¾â€æŒ‰é’®æ·»åŠ å•å‡»äº‹ä»¶ç›‘å¬å™¨
 		button1.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				play();//¿ªÊ¼²¥·ÅÒôÀÖ
+				play();//å¼€å§‹æ’­æ”¾éŸ³ä¹
 				if (isPause) {
-					button2.setText("ÔİÍ£");
-					isPause = false;		//ÉèÖÃÔİÍ£±ê¼Ç±äÁ¿µÄÖµÎªfalse
+					button2.setText("æš‚åœ");
+					isPause = false;		//è®¾ç½®æš‚åœæ ‡è®°å˜é‡çš„å€¼ä¸ºfalse
 				}
-				button2.setEnabled(true); // ¡°ÔİÍ£/¼ÌĞø¡±°´Å¥¿ÉÓÃ
-				button3.setEnabled(true); // ¡°Í£Ö¹¡±°´Å¥¿ÉÓÃ
-				button1.setEnabled(false); // ¡°²¥·Å¡±°´Å¥²»¿ÉÓÃ
+				button2.setEnabled(true); // â€œæš‚åœ/ç»§ç»­â€æŒ‰é’®å¯ç”¨
+				button3.setEnabled(true); // â€œåœæ­¢â€æŒ‰é’®å¯ç”¨
+				button1.setEnabled(false); // â€œæ’­æ”¾â€æŒ‰é’®ä¸å¯ç”¨
 			}
 		});
-		// Îª¡°ÔİÍ£/¼ÌĞø¡±°´Å¥Ìí¼Óµ¥»÷ÊÂ¼ş¼àÌıÆ÷
+		// ä¸ºâ€œæš‚åœ/ç»§ç»­â€æŒ‰é’®æ·»åŠ å•å‡»äº‹ä»¶ç›‘å¬å™¨
 		button2.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				if (player.isPlaying() && !isPause) {
-					player.pause(); // ÔİÍ£²¥·Å;
+					player.pause(); // æš‚åœæ’­æ”¾;
 					isPause = true;
-					((Button) v).setText("¼ÌĞø");
-					hint.setText("ÔİÍ£²¥·ÅÒôÆµ...");
-					button1.setEnabled(true); // ¡°²¥·Å¡±°´Å¥¿ÉÓÃ
+					((Button) v).setText("ç»§ç»­");
+					hint.setText("æš‚åœæ’­æ”¾éŸ³é¢‘...");
+					button1.setEnabled(true); // â€œæ’­æ”¾â€æŒ‰é’®å¯ç”¨
 				} else {
-					player.start(); // ¼ÌĞø²¥·Å
-					((Button) v).setText("ÔİÍ£");
-					hint.setText("¼ÌĞø²¥·ÅÒôÆµ...");
+					player.start(); // ç»§ç»­æ’­æ”¾
+					((Button) v).setText("æš‚åœ");
+					hint.setText("ç»§ç»­æ’­æ”¾éŸ³é¢‘...");
 					isPause = false;
-					button1.setEnabled(false); // ¡°²¥·Å¡±°´Å¥²»¿ÉÓÃ
+					button1.setEnabled(false); // â€œæ’­æ”¾â€æŒ‰é’®ä¸å¯ç”¨
 				}
 			}
 		});
-		// Îª¡°Í£Ö¹¡±°´Å¥Ìí¼Óµ¥»÷ÊÂ¼ş¼àÌıÆ÷
+		// ä¸ºâ€œåœæ­¢â€æŒ‰é’®æ·»åŠ å•å‡»äº‹ä»¶ç›‘å¬å™¨
 		button3.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				player.stop(); // Í£Ö¹²¥·Å;
-				hint.setText("Í£Ö¹²¥·ÅÒôÆµ...");
-				button2.setEnabled(false); // ¡°ÔİÍ£/¼ÌĞø¡±°´Å¥²»¿ÉÓÃ
-				button3.setEnabled(false); // ¡°Í£Ö¹¡±°´Å¥²»¿ÉÓÃ
-				button1.setEnabled(true); // ¡°²¥·Å¡±°´Å¥¿ÉÓÃ
+				player.stop(); // åœæ­¢æ’­æ”¾;
+				hint.setText("åœæ­¢æ’­æ”¾éŸ³é¢‘...");
+				button2.setEnabled(false); // â€œæš‚åœ/ç»§ç»­â€æŒ‰é’®ä¸å¯ç”¨
+				button3.setEnabled(false); // â€œåœæ­¢â€æŒ‰é’®ä¸å¯ç”¨
+				button1.setEnabled(true); // â€œæ’­æ”¾â€æŒ‰é’®å¯ç”¨
 			}
 		});
 	}
 
-	// ²¥·ÅÒôÀÖµÄ·½·¨
+	// æ’­æ”¾éŸ³ä¹çš„æ–¹æ³•
 	private void play() {
 		try {
 			player.reset();
-			player.setDataSource(file.getAbsolutePath()); // ÖØĞÂÉèÖÃÒª²¥·ÅµÄÒôÆµ
-			player.prepare(); // Ô¤¼ÓÔØÒôÆµ
-			player.start(); // ¿ªÊ¼²¥·Å
-			hint.setText("ÕıÔÚ²¥·ÅÒôÆµ...");
+			player.setDataSource(file.getAbsolutePath()); // é‡æ–°è®¾ç½®è¦æ’­æ”¾çš„éŸ³é¢‘
+			player.prepare(); // é¢„åŠ è½½éŸ³é¢‘
+			player.start(); // å¼€å§‹æ’­æ”¾
+			hint.setText("æ­£åœ¨æ’­æ”¾éŸ³é¢‘...");
 		} catch (Exception e) {
-			e.printStackTrace(); // Êä³öÒì³£ĞÅÏ¢
+			e.printStackTrace(); // è¾“å‡ºå¼‚å¸¸ä¿¡æ¯
 		}
 	}
 
 	@Override
 	protected void onDestroy() {
 		if(player.isPlaying()){
-			player.stop();	//Í£Ö¹ÒôÆµµÄ²¥·Å
+			player.stop();	//åœæ­¢éŸ³é¢‘çš„æ’­æ”¾
 		}
-		player.release();	//ÊÍ·Å×ÊÔ´
+		player.release();	//é‡Šæ”¾èµ„æº
 		super.onDestroy();
 	}
 	

@@ -17,174 +17,174 @@ import android.widget.Button;
 import android.widget.ListView;
 
 public class MainActivity extends Activity {
-	private MediaPlayer mediaPlayer; // ÉùÃ÷MediaPlayer¶ÔÏó
-	private List<String> audioList = new ArrayList<String>(); // Òª²¥·ÅµÄÒôÆµÁĞ±í
-	private int currentItem = 0; // µ±Ç°²¥·Å¸èÇúµÄË÷Òı
-	private Button pause; // ÉùÃ÷Ò»¸ö¡°ÔİÍ£¡±°´Å¥¶ÔÏó
+	private MediaPlayer mediaPlayer; // å£°æ˜MediaPlayerå¯¹è±¡
+	private List<String> audioList = new ArrayList<String>(); // è¦æ’­æ”¾çš„éŸ³é¢‘åˆ—è¡¨
+	private int currentItem = 0; // å½“å‰æ’­æ”¾æ­Œæ›²çš„ç´¢å¼•
+	private Button pause; // å£°æ˜ä¸€ä¸ªâ€œæš‚åœâ€æŒ‰é’®å¯¹è±¡
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		mediaPlayer = new MediaPlayer(); // ÊµÀı»¯Ò»¸öMediaPlayer¶ÔÏó
-		Button play = (Button) findViewById(R.id.play); // »ñÈ¡¡°²¥·Å¡±°´Å¥
-		Button stop = (Button) findViewById(R.id.stop); // »ñÈ¡¡°Í£Ö¹¡±°´Å¥
-		pause = (Button) findViewById(R.id.pause); // »ñÈ¡¡°ÔİÍ£/¼ÌĞø¡±°´Å¥
-		Button pre = (Button) findViewById(R.id.pre); // »ñÈ¡¡°ÉÏÒ»Ê×¡±°´Å¥
-		Button next = (Button) findViewById(R.id.next); // »ñÈ¡¡°ÏÂÒ»Ê×¡±°´Å¥
-		audioList(); // Ê¹ÓÃListView×é¼şÏÔÊ¾SD¿¨ÉÏµÄÈ«²¿ÒôÆµÎÄ¼ş
-		// ÎªMediaPlayerÌí¼ÓÍê³ÉÊÂ¼ş¼àÌıÆ÷
+		mediaPlayer = new MediaPlayer(); // å®ä¾‹åŒ–ä¸€ä¸ªMediaPlayerå¯¹è±¡
+		Button play = (Button) findViewById(R.id.play); // è·å–â€œæ’­æ”¾â€æŒ‰é’®
+		Button stop = (Button) findViewById(R.id.stop); // è·å–â€œåœæ­¢â€æŒ‰é’®
+		pause = (Button) findViewById(R.id.pause); // è·å–â€œæš‚åœ/ç»§ç»­â€æŒ‰é’®
+		Button pre = (Button) findViewById(R.id.pre); // è·å–â€œä¸Šä¸€é¦–â€æŒ‰é’®
+		Button next = (Button) findViewById(R.id.next); // è·å–â€œä¸‹ä¸€é¦–â€æŒ‰é’®
+		audioList(); // ä½¿ç”¨ListViewç»„ä»¶æ˜¾ç¤ºSDå¡ä¸Šçš„å…¨éƒ¨éŸ³é¢‘æ–‡ä»¶
+		// ä¸ºMediaPlayeræ·»åŠ å®Œæˆäº‹ä»¶ç›‘å¬å™¨
 		mediaPlayer.setOnCompletionListener(new OnCompletionListener() {
 
 			@Override
 			public void onCompletion(MediaPlayer mp) {
-				nextMusic(); // ²¥·ÅÏÂÒ»Ê×
+				nextMusic(); // æ’­æ”¾ä¸‹ä¸€é¦–
 			}
 		});
-		// Í£Ö¹
+		// åœæ­¢
 		stop.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				if (mediaPlayer.isPlaying()) {
-					mediaPlayer.stop(); // Í£Ö¹²¥·ÅÒôÆµ
+					mediaPlayer.stop(); // åœæ­¢æ’­æ”¾éŸ³é¢‘
 				}
-				pause.setEnabled(false); // ÉèÖÃ¡°ÔİÍ£¡±°´Å¥²»¿ÉÓÃ
+				pause.setEnabled(false); // è®¾ç½®â€œæš‚åœâ€æŒ‰é’®ä¸å¯ç”¨
 			}
 		});
-		// Îª¡°²¥·Å¡±°´Å¥Ìí¼Óµ¥»÷ÊÂ¼ş¼àÌıÆ÷
+		// ä¸ºâ€œæ’­æ”¾â€æŒ‰é’®æ·»åŠ å•å‡»äº‹ä»¶ç›‘å¬å™¨
 		play.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				playMusic(audioList.get(currentItem)); // µ÷ÓÃplayMusic()·½·¨²¥·ÅÒôÀÖ
+				playMusic(audioList.get(currentItem)); // è°ƒç”¨playMusic()æ–¹æ³•æ’­æ”¾éŸ³ä¹
 
 			}
 		});
-		// Îª¡°ÔİÍ£¡±°´Å¥Ìí¼Óµ¥»÷ÊÂ¼ş¼àÌıÆ÷
+		// ä¸ºâ€œæš‚åœâ€æŒ‰é’®æ·»åŠ å•å‡»äº‹ä»¶ç›‘å¬å™¨
 		pause.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				if (mediaPlayer.isPlaying()) {
-					mediaPlayer.pause(); // ÔİÍ£ÊÓÆµµÄ²¥·Å
-					((Button) v).setText("¼ÌĞø");
+					mediaPlayer.pause(); // æš‚åœè§†é¢‘çš„æ’­æ”¾
+					((Button) v).setText("ç»§ç»­");
 				} else {
-					mediaPlayer.start();	//¼ÌĞø²¥·Å
-					((Button) v).setText("ÔİÍ£");
+					mediaPlayer.start();	//ç»§ç»­æ’­æ”¾
+					((Button) v).setText("æš‚åœ");
 				}
 			}
 		});
-		// Îª¡°ÏÂÒ»Ê×¡±°´Å¥Ìí¼Óµ¥»÷ÊÂ¼ş¼àÌıÆ÷
+		// ä¸ºâ€œä¸‹ä¸€é¦–â€æŒ‰é’®æ·»åŠ å•å‡»äº‹ä»¶ç›‘å¬å™¨
 		next.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				nextMusic(); // ²¥·ÅÏÂÒ»Ê×
+				nextMusic(); // æ’­æ”¾ä¸‹ä¸€é¦–
 			}
 		});
-		// Îª¡°ÉÏÒ»Ê×¡±°´Å¥Ìí¼Óµ¥»÷ÊÂ¼ş¼àÌıÆ÷
+		// ä¸ºâ€œä¸Šä¸€é¦–â€æŒ‰é’®æ·»åŠ å•å‡»äº‹ä»¶ç›‘å¬å™¨
 		pre.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				preMusic(); // ²¥·ÅÉÏÒ»Ê×
+				preMusic(); // æ’­æ”¾ä¸Šä¸€é¦–
 			}
 		});
 	}
 
-	// Ê¹ÓÃListView×é¼şÏÔÊ¾SD¿¨ÉÏµÄÈ«²¿ÒôÆµÎÄ¼ş
+	// ä½¿ç”¨ListViewç»„ä»¶æ˜¾ç¤ºSDå¡ä¸Šçš„å…¨éƒ¨éŸ³é¢‘æ–‡ä»¶
 	private void audioList() {
-		getFiles("/sdcard/"); // »ñÈ¡SD¿¨ÉÏµÄÈ«²¿ÒôÆµÎÄ¼ş
+		getFiles("/sdcard/"); // è·å–SDå¡ä¸Šçš„å…¨éƒ¨éŸ³é¢‘æ–‡ä»¶
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-				android.R.layout.simple_list_item_1, audioList); // ´´½¨Ò»¸öÊÊÅäÆ÷
-		ListView listview = (ListView) findViewById(R.id.list); // »ñÈ¡²¼¾Ö¹ÜÀíÆ÷ÖĞÌí¼ÓµÄListView×é¼ş
-		listview.setAdapter(adapter); // ½«ÊÊÅäÆ÷ÓëListView¹ØÁª
-		// µ±µ¥»÷ÁĞ±íÏîÊ±²¥·ÅÒôÀÖ
+				android.R.layout.simple_list_item_1, audioList); // åˆ›å»ºä¸€ä¸ªé€‚é…å™¨
+		ListView listview = (ListView) findViewById(R.id.list); // è·å–å¸ƒå±€ç®¡ç†å™¨ä¸­æ·»åŠ çš„ListViewç»„ä»¶
+		listview.setAdapter(adapter); // å°†é€‚é…å™¨ä¸ListViewå…³è”
+		// å½“å•å‡»åˆ—è¡¨é¡¹æ—¶æ’­æ”¾éŸ³ä¹
 		listview.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> listView, View view,
 					int position, long id) {
-				currentItem = position; // ½«µ±Ç°ÁĞ±íÏîµÄË÷ÒıÖµ¸³Öµ¸øcurrentItem
-				playMusic(audioList.get(currentItem)); // µ÷ÓÃplayMusic()·½·¨²¥·ÅÒôÀÖ
+				currentItem = position; // å°†å½“å‰åˆ—è¡¨é¡¹çš„ç´¢å¼•å€¼èµ‹å€¼ç»™currentItem
+				playMusic(audioList.get(currentItem)); // è°ƒç”¨playMusic()æ–¹æ³•æ’­æ”¾éŸ³ä¹
 			}
 		});
 	}
 
 	private void getFiles(String url) {
-		File files = new File(url); // ´´½¨ÎÄ¼ş¶ÔÏó
+		File files = new File(url); // åˆ›å»ºæ–‡ä»¶å¯¹è±¡
 		File[] file = files.listFiles();
 		try {
-			for (File f : file) { // Í¨¹ıforÑ­»·±éÀú»ñÈ¡µ½µÄÎÄ¼şÊı×é
-				if (f.isDirectory()) { // Èç¹ûÊÇÄ¿Â¼£¬Ò²¾ÍÊÇÎÄ¼ş¼Ğ
-					getFiles(f.getAbsolutePath()); // µİ¹éµ÷ÓÃ
+			for (File f : file) { // é€šè¿‡forå¾ªç¯éå†è·å–åˆ°çš„æ–‡ä»¶æ•°ç»„
+				if (f.isDirectory()) { // å¦‚æœæ˜¯ç›®å½•ï¼Œä¹Ÿå°±æ˜¯æ–‡ä»¶å¤¹
+					getFiles(f.getAbsolutePath()); // é€’å½’è°ƒç”¨
 				} else {
-					if (isAudioFile(f.getPath())) { // Èç¹ûÊÇÒôÆµÎÄ¼ş
-						audioList.add(f.getPath()); // ½«ÎÄ¼şµÄÂ·¾¶Ìí¼Óµ½list¼¯ºÏÖĞ
+					if (isAudioFile(f.getPath())) { // å¦‚æœæ˜¯éŸ³é¢‘æ–‡ä»¶
+						audioList.add(f.getPath()); // å°†æ–‡ä»¶çš„è·¯å¾„æ·»åŠ åˆ°listé›†åˆä¸­
 					}
 				}
 			}
 		} catch (Exception e) {
-			e.printStackTrace(); // Êä³öÒì³£ĞÅÏ¢
+			e.printStackTrace(); // è¾“å‡ºå¼‚å¸¸ä¿¡æ¯
 		}
 	}
 
-	private static String[] imageFormatSet = new String[] { "mp3", "wav", "3gp" }; // ºÏ·¨µÄÒôÆµÎÄ¼ş¸ñÊ½
+	private static String[] imageFormatSet = new String[] { "mp3", "wav", "3gp" }; // åˆæ³•çš„éŸ³é¢‘æ–‡ä»¶æ ¼å¼
 
-	// ÅĞ¶ÏÊÇ·ñÎªÒôÆµÎÄ¼ş
+	// åˆ¤æ–­æ˜¯å¦ä¸ºéŸ³é¢‘æ–‡ä»¶
 	private static boolean isAudioFile(String path) {
-		for (String format : imageFormatSet) { // ±éÀúÊı×é
-			if (path.contains(format)) { // ÅĞ¶ÏÊÇ·ñÎªÓĞºÏ·¨µÄÒôÆµÎÄ¼ş
+		for (String format : imageFormatSet) { // éå†æ•°ç»„
+			if (path.contains(format)) { // åˆ¤æ–­æ˜¯å¦ä¸ºæœ‰åˆæ³•çš„éŸ³é¢‘æ–‡ä»¶
 				return true;
 			}
 		}
 		return false;
 	}
 
-	// ²¥·ÅÒôÀÖ
+	// æ’­æ”¾éŸ³ä¹
 	void playMusic(String path) {
 		try {
 			if (mediaPlayer.isPlaying()) {
-				mediaPlayer.stop(); // Í£Ö¹µ±Ç°ÒôÆµµÄ²¥·Å
+				mediaPlayer.stop(); // åœæ­¢å½“å‰éŸ³é¢‘çš„æ’­æ”¾
 			}
-			mediaPlayer.reset(); // ÖØÖÃMediaPlayer
-			mediaPlayer.setDataSource(path); // Ö¸¶¨Òª²¥·ÅµÄÒôÆµÎÄ¼ş
-			mediaPlayer.prepare(); // Ô¤¼ÓÔØÒôÆµÎÄ¼ş
-			mediaPlayer.start(); // ²¥·ÅÒôÆµ
-			pause.setText("ÔİÍ£");
-			pause.setEnabled(true); // ÉèÖÃ¡°ÔİÍ£¡±°´Å¥¿ÉÓÃ
+			mediaPlayer.reset(); // é‡ç½®MediaPlayer
+			mediaPlayer.setDataSource(path); // æŒ‡å®šè¦æ’­æ”¾çš„éŸ³é¢‘æ–‡ä»¶
+			mediaPlayer.prepare(); // é¢„åŠ è½½éŸ³é¢‘æ–‡ä»¶
+			mediaPlayer.start(); // æ’­æ”¾éŸ³é¢‘
+			pause.setText("æš‚åœ");
+			pause.setEnabled(true); // è®¾ç½®â€œæš‚åœâ€æŒ‰é’®å¯ç”¨
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	// ÏÂÒ»Ê×
+	// ä¸‹ä¸€é¦–
 	void nextMusic() {
-		if (++currentItem >= audioList.size()) {// µ±¶ÔcurrentItem½øĞĞ+1²Ù×÷ºó£¬Èç¹ûÆäÖµ´óÓÚµÈÓÚÒôÆµÎÄ¼şµÄ×ÜÊı
+		if (++currentItem >= audioList.size()) {// å½“å¯¹currentItemè¿›è¡Œ+1æ“ä½œåï¼Œå¦‚æœå…¶å€¼å¤§äºç­‰äºéŸ³é¢‘æ–‡ä»¶çš„æ€»æ•°
 			currentItem = 0;
 		}
-		playMusic(audioList.get(currentItem)); // µ÷ÓÃplayMusic()·½·¨²¥·ÅÒôÀÖ
+		playMusic(audioList.get(currentItem)); // è°ƒç”¨playMusic()æ–¹æ³•æ’­æ”¾éŸ³ä¹
 	}
 
-	// ÉÏÒ»Ê×
+	// ä¸Šä¸€é¦–
 	void preMusic() {
-		if (--currentItem >= 0) { // µ±¶ÔcurrentItem½øĞĞ-1²Ù×÷ºó£¬Èç¹ûÆäÖµ´óÓÚµÈÓÚ0
-			if (currentItem >= audioList.size()) { // Èç¹ûcurrentItemµÄÖµ´óÓÚµÈÓÚÒôÆµÎÄ¼şµÄ×ÜÊı
+		if (--currentItem >= 0) { // å½“å¯¹currentItemè¿›è¡Œ-1æ“ä½œåï¼Œå¦‚æœå…¶å€¼å¤§äºç­‰äº0
+			if (currentItem >= audioList.size()) { // å¦‚æœcurrentItemçš„å€¼å¤§äºç­‰äºéŸ³é¢‘æ–‡ä»¶çš„æ€»æ•°
 				currentItem = 0;
 			}
 		} else {
-			currentItem = audioList.size() - 1; // currentItemµÄÖµÉèÖÃÎªÒôÆµÎÄ¼ş×ÜÊı-1
+			currentItem = audioList.size() - 1; // currentItemçš„å€¼è®¾ç½®ä¸ºéŸ³é¢‘æ–‡ä»¶æ€»æ•°-1
 		}
-		playMusic(audioList.get(currentItem)); // µ÷ÓÃplayMusic()·½·¨²¥·ÅÒôÀÖ
+		playMusic(audioList.get(currentItem)); // è°ƒç”¨playMusic()æ–¹æ³•æ’­æ”¾éŸ³ä¹
 	}
 
 	@Override
 	protected void onDestroy() {
 		if (mediaPlayer.isPlaying()) {
-			mediaPlayer.stop(); // Í£Ö¹ÒôÀÖµÄ²¥·Å
+			mediaPlayer.stop(); // åœæ­¢éŸ³ä¹çš„æ’­æ”¾
 		}
-		mediaPlayer.release(); // ÊÍ·Å×ÊÔ´
+		mediaPlayer.release(); // é‡Šæ”¾èµ„æº
 		super.onDestroy();
 	}
 

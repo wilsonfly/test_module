@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;bg_playing.jpg&apos; to &apos;drawable-mdpi&apos;&#x0D;&#x0A;- Original project: &apos;10.4&apos;&#x0D;&#x0A;- Destination element: &apos;drawable-mdpi&apos;&#x0D;&#x0A;- Original element: &apos;bg_playing.jpg&apos;" description="Copy file" element1="res/drawable-mdpi/bg_playing.jpg" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1429112272175" target="/testMediaPlayer4/res/drawable-mdpi" units="0" version="1.0"/>
+</session>
