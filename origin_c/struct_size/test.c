@@ -4,6 +4,10 @@
 
 int main()
 {
+
+    //sizeof('a') == sizeof(int)
+	log("sizeof('a'):%d, sizeof(char):%d, sizeof(int):%d", sizeof('a'), sizeof(char), sizeof(int));
+
 	int size = 0;
 #pragma pack () 
 //#pragma pack (0)  
