@@ -49,7 +49,10 @@ set backupcopy=yes                  " overwrite the original file
 set encoding=utf-8
 set termencoding=utf-8
 set fileencoding=utf-8
-set fileencodings=gb2312,utf-8,gbk
+
+"abnormal to show Chinese
+"set fileencodings=gb2312,utf-8,gbk
+set fileencodings=utf-8,gb2312,gbk
 set fileformat=unix
 
 set background=dark
@@ -147,7 +150,7 @@ let g:Tlist_Enable_Fold_Column = 0
 let g:Tlist_Auto_Highlight_Tag = 1
 let g:Tlist_GainFocus_On_ToggleOpen = 1
 nmap <Leader>t :TlistToggle<cr>
-nmap  <F2> :TlistToggle<cr>
+nmap  <F3> :TlistToggle<cr>
 set tags=tags;
 
 " nerdtree

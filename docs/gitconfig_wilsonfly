@@ -9,3 +9,12 @@
 	ci = commit
 	st = status
 	br = branch
+[core]
+	editor = vim
+[merge]
+	ff = false
+[gui]
+	encoding = utf-8
+[i18n]
+	commitencoding = utf-8
+	logoutputencoding = gb
