@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy 4 elements to &apos;raw&apos;&#x0D;&#x0A;- Original project: &apos;10.2&apos;&#x0D;&#x0A;- Destination element: &apos;raw&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     ding.wav&#x0D;&#x0A;     enter.wav&#x0D;&#x0A;     chimes.wav&#x0D;&#x0A;     notify.wav" description="Copy files" element1="res/raw/ding.wav" element2="res/raw/enter.wav" element3="res/raw/chimes.wav" element4="res/raw/notify.wav" files="4" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1429108546065" target="/testMediaPlayer2/res/raw" units="0" version="1.0"/>
-</session>

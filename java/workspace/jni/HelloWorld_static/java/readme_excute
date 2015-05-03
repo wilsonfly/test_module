@@ -1,7 +1,0 @@
-
-##generate the .class .h
-#javac  HelloWorld.java
-#javah  HelloWorld
-
-#run the program
-java -Djava.library.path=../jni HelloWorld

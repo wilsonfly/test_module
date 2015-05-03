@@ -1,0 +1,33 @@
+package com.wilsonflying.playMusic;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.app.Activity;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.widget.Button;
+
+public class MainActivity extends Activity {
+
+	private MediaPlayer mediaPlayer;
+	private List<String> audioList = new ArrayList<String>();
+	private int currentIndex;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.my_layout);
+		
+		Button button_pre = (Button) findViewById(R.id.button_pre);
+		Button button_play  =  (Button) findViewById(R.id.button_play);
+		Button button_pause = (Button) findViewById(R.id.button_pause);
+		Button button_stop = (Button) findViewById(R.id.button_stop);
+		Button button_next = (Button) findViewById(R.id.button_next);
+		
+		mediaPlayer = new MediaPlayer();
+		
+		
+	}
+}
