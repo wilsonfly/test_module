@@ -3,7 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-    <com.mingrisoft.DrawView
+    <com.mingrisoft.DrawView
         android:id="@+id/drawView1"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

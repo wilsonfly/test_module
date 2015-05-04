@@ -1,0 +1,80 @@
+package com.wilsonflying.magnifier;
+
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Shader.TileMode;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.OvalShape;
+import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
+
+public class MainActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.my_layout);
+	}
+	
+	public class MyView extends View{
+
+		private Bitmap bitmap_source;
+		private Bitmap bitmap_magnifier;
+		private int FACTOR = 2;
+		private int RADIUS = 60;
+		private ShapeDrawable drawable;
+		private int m_left = 0;
+		private int m_top = 0;
+		private Matrix matrix = new Matrix();
+		
+		
+		public MyView(Context context) {
+			super(context);
+			// TODO Auto-generated constructor stub
+			bitmap_source = new BitmapFactory().decodeResource(getResources(), R.drawable.pic_code);
+			bitmap_magnifier = new BitmapFactory().decodeResource(getResources(), R.drawable.magnifier);
+			
+			Bitmap bitmap = Bitmap.createScaledBitmap(bitmap_source, bitmap_source.getWidth()*FACTOR, bitmap_source.getHeight()*FACTOR, true);
+			BitmapShader shader = new BitmapShader(bitmap, TileMode.CLAMP, TileMode.CLAMP);
+			
+			drawable = new ShapeDrawable(new OvalShape());
+			drawable.getPaint().setShader(shader);
+			
+//			m_left = RADIUS - bitmap_magnifier.getWidth()/2;
+//			m_top = RADIUS - bitmap_magnifier.getHeight()/2;
+		}
+		
+		@Override
+		protected void onDraw(Canvas canvas) {
+			// TODO Auto-generated method stub
+			canvas.drawBitmap(bitmap_source, 0, 0, null);
+			canvas.drawBitmap(bitmap_magnifier, m_left, m_top, null);
+			drawable.draw(canvas); 
+			
+			super.onDraw(canvas);
+		}
+		
+		@Override
+		public boolean onTouchEvent(MotionEvent event) {
+			// TODO Auto-generated method stub
+//			return super.onTouchEvent(event);
+			int x = (int) event.getX();
+			int y = (int) event.getY();
+//			matrix.setTranslate(RADIUS - x * FACTOR, RADIUS - y * FACTOR);
+			drawable.getPaint().getShader().setLocalMatrix(matrix);
+			drawable.setBounds(x - RADIUS, y - RADIUS, x + RADIUS, y + RADIUS);
+			m_left = x - bitmap_magnifier.getWidth() / 2;
+			m_top = y - bitmap_magnifier.getHeight() / 2;
+			invalidate();
+			return true;
+		}
+	}
+	
+}

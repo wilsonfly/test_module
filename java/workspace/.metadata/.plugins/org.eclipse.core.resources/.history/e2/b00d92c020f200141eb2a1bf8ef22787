@@ -1,0 +1,7 @@
+package com.wilsonflying.DefineMyView;
+
+import android.view.View;
+
+public class MyView extends View {
+
+}

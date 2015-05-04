@@ -1,0 +1,7 @@
+package com.wilsonflying.scrawl;
+
+import android.view.View;
+
+public class MyDrawView extends View {
+
+}
