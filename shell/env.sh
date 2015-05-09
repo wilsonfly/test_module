@@ -4,6 +4,7 @@
 
 
 export PATH=$PATH:~/tools
+export PATH=$PATH:~/project/config/homebrew/bin
 alias ll='ls -la'
 alias 1='cd ..'
 alias 2='cd ../..'
