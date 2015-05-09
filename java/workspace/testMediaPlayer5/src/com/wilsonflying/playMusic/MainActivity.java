@@ -29,7 +29,7 @@ public class MainActivity extends Activity {
 	private List<String> audioList = new ArrayList<String>();
 	private int currentIndex = 0;
 	private final String EXTERNAL_PATH = "/sdcard";
-	private String[] audioFmtSet = new String[]{".mp3", ".mav", ".3gp"};
+	private String[] audioFmtSet = new String[]{".mp3", ".mav", ".3gp"};//不严谨的，起码需要判断后缀
 	Button button_pause;
 	
 	@Override
@@ -181,9 +181,11 @@ public class MainActivity extends Activity {
 		File[] files = file.listFiles();
 		
 		if(files == null){
+			Log.i("huasheng", "Find null dir:"+file);
 			return;
 		}
-		
+//		Log.i("huasheng", "Enter dir:"+file);
+
 		for(File f:files){
 			if(f.isDirectory()){
 				getFiles(f.getAbsolutePath());

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 4 elements to &apos;drawable-mdpi&apos;&#x0A;- Original project: &apos;9.19&apos;&#x0A;- Destination element: &apos;drawable-mdpi&apos;&#x0A;- Original elements:&#x0A;     pig1.png&#x0A;     pig3.png&#x0A;     pig4.png&#x0A;     pig2.png" description="Copy files" element1="res/drawable-mdpi/pig1.png" element2="res/drawable-mdpi/pig3.png" element3="res/drawable-mdpi/pig4.png" element4="res/drawable-mdpi/pig2.png" files="4" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1431167814041" target="/testPicture7/res/drawable-mdpi" units="0" version="1.0"/>
+</session>
