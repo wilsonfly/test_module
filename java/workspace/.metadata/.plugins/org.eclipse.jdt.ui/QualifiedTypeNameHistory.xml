@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="android.graphics.Color"/>
-<fullyQualifiedTypeName name="android.graphics.Canvas"/>
 <fullyQualifiedTypeName name="com.wilsonflying.scrawl.R"/>
 <fullyQualifiedTypeName name="com.wilsonflying.scrawl.R.layout"/>
 <fullyQualifiedTypeName name="com.wilsonflying.scrawl.MyDrawView"/>
@@ -48,8 +46,6 @@
 <fullyQualifiedTypeName name="com.wilsonflying.brower.R"/>
 <fullyQualifiedTypeName name="com.wilsonflying.brower.R.layout"/>
 <fullyQualifiedTypeName name="android.widget.EditText"/>
-<fullyQualifiedTypeName name="android.widget.Button"/>
-<fullyQualifiedTypeName name="android.webkit.WebView"/>
 <fullyQualifiedTypeName name="android.app.AlertDialog"/>
 <fullyQualifiedTypeName name="android.app.AlertDialog.Builder"/>
 <fullyQualifiedTypeName name="com.wilsonflying.browser.R.id"/>
@@ -57,7 +53,11 @@
 <fullyQualifiedTypeName name="android.content.DialogInterface.OnClickListener"/>
 <fullyQualifiedTypeName name="android.content.DialogInterface"/>
 <fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="com.wilsonflying.weather.R.layout"/>
 <fullyQualifiedTypeName name="android.webkit.WebChromeClient"/>
 <fullyQualifiedTypeName name="android.webkit.WebViewClient"/>
+<fullyQualifiedTypeName name="android.widget.Button"/>
 <fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="android.webkit.WebView"/>
+<fullyQualifiedTypeName name="com.wilsonflying.weather.R.id"/>
 </qualifiedTypeNameHistroy>
