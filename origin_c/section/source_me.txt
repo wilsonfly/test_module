@@ -1,3 +1,11 @@
+echo "link *.so"
 gcc -shared -Wall -fPIC extern_foo.c -o libextern_foo.so
 gcc test.c -lextern_foo -L. -o a.out
 nm a.out
+
+echo 
+echo "link *.a"
+gcc extern_foo.c -c -o extern_foo.o
+ar crs libextern_foo.a extern_foo.o
+gcc test.c libextern_foo.a -o b.out
+nm b.out

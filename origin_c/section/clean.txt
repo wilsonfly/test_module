@@ -1,0 +1,1 @@
+rm *.out; rm lib*; rm *.o
