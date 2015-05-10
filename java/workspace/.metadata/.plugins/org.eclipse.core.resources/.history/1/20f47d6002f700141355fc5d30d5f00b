@@ -1,0 +1,20 @@
+package com.wilsonflying.loadUrl;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.webkit.WebView;
+
+public class MainActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.my_layout);
+		
+//		WebView webview = (WebView) findViewById(R.id.webview);
+//		webview.loadUrl("http://www.baidu.com");
+		
+		
+	}
+}

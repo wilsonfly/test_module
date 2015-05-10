@@ -1,0 +1,7 @@
+package com.wilsonflying.browser;
+
+import android.app.Activity;
+
+public class MainActivity extends Activity {
+
+}

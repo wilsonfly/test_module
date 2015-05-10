@@ -1,22 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.wilsonflying.addView.R.layout"/>
-<fullyQualifiedTypeName name="android.graphics.Shader"/>
-<fullyQualifiedTypeName name="android.graphics.LinearGradient"/>
-<fullyQualifiedTypeName name="com.wilsonflying.addView.MainActivity.MyView"/>
-<fullyQualifiedTypeName name="android.graphics.RadialGradient"/>
-<fullyQualifiedTypeName name="android.graphics.SweepGradient"/>
-<fullyQualifiedTypeName name="com.wilsonflying.DefineMyView.R.layout"/>
-<fullyQualifiedTypeName name="android.graphics.Paint.Align"/>
-<fullyQualifiedTypeName name="android.graphics.Path"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
-<fullyQualifiedTypeName name="android.graphics.Path.Direction"/>
-<fullyQualifiedTypeName name="com.wilsonflying.drawRobot.R.layout"/>
-<fullyQualifiedTypeName name="android.graphics.Paint"/>
-<fullyQualifiedTypeName name="android.graphics.Rect"/>
-<fullyQualifiedTypeName name="com.wilsonflying.drawRobot.R"/>
-<fullyQualifiedTypeName name="com.wilsonflying.drawRobot.R.id"/>
-<fullyQualifiedTypeName name="com.wilsoonflying.drawRobot.MainActivity.MyView"/>
 <fullyQualifiedTypeName name="android.graphics.Color"/>
 <fullyQualifiedTypeName name="android.graphics.Canvas"/>
 <fullyQualifiedTypeName name="com.wilsonflying.scrawl.R"/>
@@ -49,8 +32,6 @@
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="android.util.Log"/>
 <fullyQualifiedTypeName name="android.os.Environment"/>
-<fullyQualifiedTypeName name="android.widget.Button"/>
-<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
 <fullyQualifiedTypeName name="android.widget.ImageView"/>
 <fullyQualifiedTypeName name="com.wilsonflying.autoanim.R.id"/>
 <fullyQualifiedTypeName name="android.graphics.drawable.AnimationDrawable"/>
@@ -60,4 +41,23 @@
 <fullyQualifiedTypeName name="com.wilsonflying.autoanim.R.drawable"/>
 <fullyQualifiedTypeName name="android.view.animation.Animation.AnimationListener"/>
 <fullyQualifiedTypeName name="com.wilsonflying.autoanim.R.anim"/>
+<fullyQualifiedTypeName name="com.wilsonflying.loadUrl.R.layout"/>
+<fullyQualifiedTypeName name="android.widget.CheckBox"/>
+<fullyQualifiedTypeName name="android.widget.CompoundButton.OnCheckedChangeListener"/>
+<fullyQualifiedTypeName name="com.wilsonflying.loadUrl.R.id"/>
+<fullyQualifiedTypeName name="com.wilsonflying.brower.R"/>
+<fullyQualifiedTypeName name="com.wilsonflying.brower.R.layout"/>
+<fullyQualifiedTypeName name="android.widget.EditText"/>
+<fullyQualifiedTypeName name="android.widget.Button"/>
+<fullyQualifiedTypeName name="android.webkit.WebView"/>
+<fullyQualifiedTypeName name="android.app.AlertDialog"/>
+<fullyQualifiedTypeName name="android.app.AlertDialog.Builder"/>
+<fullyQualifiedTypeName name="com.wilsonflying.browser.R.id"/>
+<fullyQualifiedTypeName name="com.wilsonflying.browser.R.drawable"/>
+<fullyQualifiedTypeName name="android.content.DialogInterface.OnClickListener"/>
+<fullyQualifiedTypeName name="android.content.DialogInterface"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="android.webkit.WebChromeClient"/>
+<fullyQualifiedTypeName name="android.webkit.WebViewClient"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
 </qualifiedTypeNameHistroy>

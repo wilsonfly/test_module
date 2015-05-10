@@ -1,0 +1,25 @@
+package com.wilsonflying.browser;
+
+import com.wilsonflying.browser.R;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+
+public class MainActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.my_layout);
+		
+		Button button_forward = (Button) findViewById(R.id.button_forward);
+		Button button_back = (Button) findViewById(R.id.button_back);
+		EditText edit_url = (EditText) findViewById(R.id.edittext);
+		Button button_go = (Button) findViewById(R.id.button_go);
+		
+		
+	}
+}
