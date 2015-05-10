@@ -1,0 +1,3 @@
+gcc -shared -Wall -fPIC extern_foo.c -o libextern_foo.so
+gcc test.c -lextern_foo -L. -o a.out
+nm a.out
