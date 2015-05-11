@@ -8,12 +8,10 @@
 <stringAttribute key="com.android.ide.eclipse.adt.target" value="AUTO"/>
 <booleanAttribute key="com.android.ide.eclipse.adt.wipedata" value="false"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/14.5"/>
-<listEntry value="/14.5/AndroidManifest.xml"/>
+<listEntry value="/testWebView14.5"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="4"/>
-<listEntry value="1"/>
 </listAttribute>
-<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="14.5"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="testWebView14.5"/>
 </launchConfiguration>

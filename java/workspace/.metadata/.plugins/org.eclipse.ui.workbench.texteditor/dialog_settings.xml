@@ -6,12 +6,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="pic" key="selection"/>
+		<item value="base64" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="base64"/>
 			<item value="pic"/>
 			<item value="code"/>
 			<item value="pic_co"/>
@@ -19,7 +20,6 @@
 			<item value="drawable"/>
 			<item value="infla"/>
 			<item value="inflat"/>
-			<item value="clear"/>
 		</list>
 		<list key="replacehistory">
 		</list>
