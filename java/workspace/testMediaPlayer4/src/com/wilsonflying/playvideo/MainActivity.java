@@ -37,7 +37,7 @@ public class MainActivity extends Activity {
 				// TODO Auto-generated method stub
 				player.reset();
 				try {
-					player.setDataSource("/sdcard/2.76M-MPEG4-AAC.mp4");
+					player.setDataSource("/storage/sdcard/Movies/mingrisoft.mp4");
 					player.setDisplay(surface.getHolder());
 					player.prepare();
 					player.start();

@@ -22,7 +22,8 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.layout_main);
 		
 		videoView = (VideoView) findViewById(R.id.video);
-		file = new File("/sdcard/2.76M-MPEG4-AAC.mp4");
+//		file = new File("/sdcard/2.76M-MPEG4-AAC.mp4");
+		file = new File("/storage/sdcard/Movies/mingrisoft.mp4");
 		
 		MediaController mc = new MediaController(getApplicationContext());
 		

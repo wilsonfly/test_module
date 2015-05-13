@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android" >
-    <group android:id="@+id/setting" android:checkableBehavior="all">
-    <item android:id="@+id/bgsound" android:title="播放背景音乐" android:checked="true"></item>
-	</group>
-</menu>

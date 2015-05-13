@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;mingrisoft.mp4&apos; to &apos;raw&apos;&#x0A;- Original project: &apos;10.9&apos;&#x0A;- Destination element: &apos;raw&apos;&#x0A;- Original element: &apos;mingrisoft.mp4&apos;" description="Copy file" element1="res/raw/mingrisoft.mp4" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1431532238928" target="/testMediaPlayer6/res/raw" units="0" version="1.0"/>
+</session>
