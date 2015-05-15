@@ -28,5 +28,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="启动网页" />
+    
+        <Button
+        android:id="@+id/button_forthactivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="自定义action启动一个activity-new" />
 
 </LinearLayout>

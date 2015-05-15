@@ -35,6 +35,13 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
+        <activity 
+            android:name=".ForthActivity">
+            <intent-filter >
+                <action android:name="com.wilsonflying.testintent.intent.action.ForthActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
