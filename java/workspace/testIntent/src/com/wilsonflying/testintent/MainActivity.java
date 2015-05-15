@@ -46,7 +46,7 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				Intent intent = new Intent();
-				intent.setAction("my_action");
+				intent.setAction("my_action");//不需要指定完整的包名+类名即隐式intent。
 				startActivity(intent);
 			}
 		});
@@ -60,6 +60,17 @@ public class MainActivity extends Activity {
 				Intent intent = new Intent();
 				intent.setAction(Intent.ACTION_VIEW);
 				intent.setData(Uri.parse("http://www.baidu.com"));
+				startActivity(intent);
+			}
+		});
+        
+        Button button_forth = (Button) findViewById(R.id.button_forthactivity);
+        button_forth.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent("com.wilsonflying.testintent.intent.action.ForthActivity");//不需要指定完整的包名+类名即隐式intent。
 				startActivity(intent);
 			}
 		});
