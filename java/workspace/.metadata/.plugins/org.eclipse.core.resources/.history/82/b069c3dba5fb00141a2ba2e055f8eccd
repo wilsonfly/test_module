@@ -1,0 +1,34 @@
+package com.wilsonflying.testListActivity;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.RadioButton;
+
+public class AtyTestRadioGroup extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.layout_aty_test_radiogroup);
+		
+		final RadioButton radioButton_good = (RadioButton) findViewById(R.id.button_good);
+		findViewById(R.id.button_submit).setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				if(radioButton_good.isChecked()){
+					new AlertDialog.Builder(AtyTestRadioGroup.this).setTitle("判断结果选").setMessage("回答正确").setPositiveButton("关闭", null).show();
+				}else{
+					new AlertDialog.Builder(AtyTestRadioGroup.this).setTitle("判断结果选").setMessage("那就不对了").setPositiveButton("关闭", null).show();
+
+				}
+			}
+		});
+		
+	}
+}

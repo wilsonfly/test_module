@@ -62,7 +62,7 @@ public class MyDrawView extends View {
 		canvas.save(Canvas.ALL_SAVE_FLAG);
 		canvas.restore();//save 又 restore??
 		
-		super.onDraw(canvas);
+//		super.onDraw(canvas);
 	}
 	
 	@Override

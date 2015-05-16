@@ -1,0 +1,23 @@
+package com.wilsonflying.testListActivity;
+
+import android.content.Context;
+
+public class ListCellData {
+
+	public ListCellData(Context context, String controlName) {
+		// TODO Auto-generated constructor stub
+		this.context = context;
+		this.controlName = controlName;
+	}
+	
+	private Context context;
+	public Context getContext() {
+		return context;
+	}
+	
+	private String controlName;
+	public String getControlName() {
+		return controlName;
+	}
+	
+}

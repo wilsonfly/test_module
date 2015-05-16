@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
-//3.24 ¿ÉÒÔ²Î¿¼
+//3.24 å¯ä»¥å‚è€ƒ
 public class MainActivity extends Activity {
 
 	@Override

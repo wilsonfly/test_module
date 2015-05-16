@@ -1,0 +1,64 @@
+package com.wilsonflying.testListActivity;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
+
+public class Aty_testTimer extends Activity {
+
+	private Timer timer = null;
+	private TimerTask task = null;
+	private int count = 0;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.layout_aty_template);
+
+	}
+
+	@Override
+	protected void onResume() {
+		// TODO Auto-generated method stub
+		startTimer();
+		super.onResume();
+	}
+	
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		stopTimer();
+		super.onPause();
+	}
+	
+	public void startTimer(){
+		if(timer == null){
+			timer = new Timer();
+			task = new TimerTask() {
+				
+				@Override
+				public void run() {
+					// TODO Auto-generated method stub
+					count++;
+					Log.i("huasheng", "count :"+count);
+				}
+			};
+
+			timer.schedule(task, 1000, 2000);
+		}
+	}
+	
+	public void stopTimer(){
+		if(timer != null){
+			timer.cancel();
+			task.cancel();
+			
+			timer = null;
+			task = null;
+		}
+	}
+}

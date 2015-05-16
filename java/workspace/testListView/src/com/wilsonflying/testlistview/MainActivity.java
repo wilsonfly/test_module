@@ -19,10 +19,10 @@ public class MainActivity extends Activity {
 		super.onCreate(param);
 		setContentView(R.layout.my_layout);
 
-		//·½·¨Ò»£º
+		//æ–¹æ³•ä¸€ï¼š
 		String[] theStringArray=new String[]{"item1","item2","item3","item4"};
 		ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_activated_1,theStringArray);
-		//·½·¨¶ş£º
+		//æ–¹æ³•äºŒï¼š
 		/*
 		  ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
 		 
@@ -31,14 +31,14 @@ public class MainActivity extends Activity {
 		*/
 
 		final ListView listView = (ListView) findViewById(R.id.listView1);
-		listView.addHeaderView(line()); // ÉèÖÃheader view
+		listView.addHeaderView(line()); // è®¾ç½®header view
 		listView.setAdapter(adapter);
 		listView.addFooterView(line());
 		listView.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View arg1, int pos,
 					long id) {
-				String result = parent.getItemAtPosition(pos).toString(); // »ñÈ¡Ñ¡ÔñÏîµÄÖµ
+				String result = parent.getItemAtPosition(pos).toString(); //è·å–é€‰æ‹©é¡¹çš„å€¼
 				Toast.makeText(MainActivity.this, result, Toast.LENGTH_SHORT)
 						.show();
 			}
@@ -48,8 +48,8 @@ public class MainActivity extends Activity {
 	}
 
 	private View line() {
-		ImageView image = new ImageView(this); // ´´½¨Ò»¸öÍ¼ÏñÊÓÍ¼
-		image.setImageResource(R.drawable.line1); // ÉèÖÃÒªÏÔÊ¾µÄÍ¼Æ¬
+		ImageView image = new ImageView(this); 
+		image.setImageResource(R.drawable.line1);
 		return image;
 	}
 }
