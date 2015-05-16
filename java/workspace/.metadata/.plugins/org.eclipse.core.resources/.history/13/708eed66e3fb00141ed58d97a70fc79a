@@ -49,7 +49,7 @@ public class MainActivity extends  Activity {
 			}
 
 			Custom cus = getItem(position);
-			ImageView img = (ImageView) ll.findViewById(R.id.imageview);//!!!注意这个地方应该是用ll.findviewbyid
+			ImageView img = (ImageView) ll.findViewById(R.id.imageview);
 			TextView name = (TextView) ll.findViewById(R.id.text1);
 			TextView des = (TextView) ll.findViewById(R.id.text2);
 			

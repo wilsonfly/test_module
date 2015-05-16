@@ -41,21 +41,29 @@ public class MainActivity extends  Activity {
 			// TODO Auto-generated method stub
 			LinearLayout ll = null;
 			
-			if(convertView != null){
-				ll = (LinearLayout) convertView;
-			}else
-			{
-				ll = (LinearLayout) LayoutInflater.from(getApplicationContext()).inflate(R.layout.custom_layout, null);
-			}
+//			if(convertView != null){
+//				ll = (LinearLayout) convertView;
+//			}else
+//			{
+//				ll = (LinearLayout) LayoutInflater.from(getApplicationContext()).inflate(R.layout.custom_layout, null);
+//			}
+			ll = (LinearLayout) LayoutInflater.from(MainActivity.this).inflate(R.layout.custom_layout, null);
 
 			Custom cus = getItem(position);
-			ImageView img = (ImageView) ll.findViewById(R.id.imageview);//!!!注意这个地方应该是用ll.findviewbyid
-			TextView name = (TextView) ll.findViewById(R.id.text1);
-			TextView des = (TextView) ll.findViewById(R.id.text2);
+			ImageView img = (ImageView) ll.findViewById(R.id.imageview);
+			TextView name = (TextView) findViewById(R.id.text1);
+			TextView des = (TextView) findViewById(R.id.text2);
 			
-			img.setImageResource(cus.imgid);
-			name.setText(cus.getName());
-			des.setText(cus.getDescription());
+//			img.setImageResource(R.drawable.bluesee);
+//			name.setText(cus.getName());
+//			des.setText(cus.getDescription());
+			
+//			img.setImageResource(cus.imgid);
+			if(name == null){
+				System.out.println("name is null .....");
+			}
+//			name.setText("hello");
+//			des.setText(cus.description);
 			
 			return ll;
 		}
