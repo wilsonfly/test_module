@@ -25,10 +25,12 @@ public final class R {
         public static final int textview=0x7f060000;
     }
     public static final class layout {
-        public static final int layout_aty_template=0x7f030000;
-        public static final int layout_aty_test_radiogroup=0x7f030001;
-        public static final int layout_aty_testtimer=0x7f030002;
-        public static final int layout_test_autocomplete_textview=0x7f030003;
+        public static final int layout_aty_complexlinearlayout=0x7f030000;
+        public static final int layout_aty_complexlinearlayout2=0x7f030001;
+        public static final int layout_aty_template=0x7f030002;
+        public static final int layout_aty_test_radiogroup=0x7f030003;
+        public static final int layout_aty_testtimer=0x7f030004;
+        public static final int layout_test_autocomplete_textview=0x7f030005;
     }
     public static final class string {
         public static final int app_name=0x7f040000;

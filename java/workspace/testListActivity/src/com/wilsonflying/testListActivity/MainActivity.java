@@ -26,6 +26,8 @@ public class MainActivity extends ListActivity {
 		adapter.add(new ListCellData(this, "test AutoCompleteTextView", new Intent(this,Aty_testAutoCompleteTextView.class)));
 		adapter.add(new ListCellData(this, "test RadioGroup", new Intent(this,Aty_testRadioGroup.class)));
 		adapter.add(new ListCellData(this, "test Timer", new Intent(this,Aty_testTimer.class)));
+		adapter.add(new ListCellData(this, "test linearLayout", new Intent(this,Aty_testComplexLinearLayout.class)));
+		adapter.add(new ListCellData(this, "test linearLayout 2", new Intent(this,Aty_testComplexLinearLayout2.class)));
 		
 	}
 

@@ -26,6 +26,8 @@
         <activity android:name="com.wilsonflying.testListActivity.Aty_testRadioGroup"></activity>
         <activity android:name="com.wilsonflying.testListActivity.Aty_testTimer"></activity>
         <activity android:name="com.wilsonflying.testListActivity.Aty_testAutoCompleteTextView"></activity>
+        <activity android:name="com.wilsonflying.testListActivity.Aty_testComplexLinearLayout"></activity>
+        <activity android:name="com.wilsonflying.testListActivity.Aty_testComplexLinearLayout2"></activity>
     </application>
 
 </manifest>
