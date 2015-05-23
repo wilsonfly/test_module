@@ -5,26 +5,26 @@
     android:orientation="vertical" >
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editText_ext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/hint_write" />
 
     <Button
-        android:id="@+id/button_read"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/button_text_read" />
-
-    <Button
-        android:id="@+id/button_write"
+        android:id="@+id/button_write_ext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_text_write" />
 
+    <Button
+        android:id="@+id/button_read_ext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_text_read" />
+
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView_ext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/hint_read" />

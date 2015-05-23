@@ -23,6 +23,7 @@ public class MainActivity extends ListActivity {
 		
 		adapter.add(new ListCellData(this, "Read Asset", new Intent(this, testAsset.class)));
 		adapter.add(new ListCellData(this, "Read Raw", new Intent(this, testRaw.class)));
+		adapter.add(new ListCellData(this, "ReadWrite Internal", new Intent(this, testInternal.class)));
 		adapter.add(new ListCellData(this, "ReadWrite External", new Intent(this, testExternal.class)));
 	
 	}

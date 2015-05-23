@@ -26,6 +26,7 @@
         </activity>
         <activity android:name="com.wilsonflying.testreadwritefile.testAsset"></activity>
         <activity android:name="testRaw"></activity>
+        <activity android:name="testInternal"></activity>
         <activity android:name="testExternal"></activity>
         </application>
 

@@ -417,14 +417,15 @@ int id action_menu_presenter 0x7f0a0006
 int id action_mode_bar 0x7f0a003d
 int id action_mode_bar_stub 0x7f0a003c
 int id action_mode_close_button 0x7f0a0025
-int id action_settings 0x7f0a0053
+int id action_settings 0x7f0a0055
 int id activity_chooser_view_content 0x7f0a0026
 int id alertTitle 0x7f0a0030
 int id always 0x7f0a0019
 int id beginning 0x7f0a0020
 int id buttonPanel 0x7f0a0036
 int id button_read 0x7f0a004f
-int id button_write 0x7f0a0052
+int id button_read_ext 0x7f0a0053
+int id button_write_ext 0x7f0a0052
 int id checkbox 0x7f0a0038
 int id collapseActionView 0x7f0a001a
 int id contentPanel 0x7f0a0031
@@ -435,7 +436,7 @@ int id default_activity_button 0x7f0a0029
 int id dialog 0x7f0a001e
 int id disableHome 0x7f0a000d
 int id dropdown 0x7f0a001f
-int id editText 0x7f0a0051
+int id editText_ext 0x7f0a0051
 int id edit_query 0x7f0a0042
 int id end 0x7f0a0021
 int id expand_activities_button 0x7f0a0027
@@ -481,6 +482,7 @@ int id submit_area 0x7f0a004b
 int id tabMode 0x7f0a000c
 int id textSpacerNoButtons 0x7f0a0033
 int id textView 0x7f0a0050
+int id textView_ext 0x7f0a0054
 int id title 0x7f0a002c
 int id title_template 0x7f0a002f
 int id topPanel 0x7f0a002e

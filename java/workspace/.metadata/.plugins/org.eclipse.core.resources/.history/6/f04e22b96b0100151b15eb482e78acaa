@@ -1,0 +1,31 @@
+package com.wilsonflying.testreadwritefile;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class testInternal extends Activity {
+
+	private static String FILE_NAME = "myfile.txt"
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.layout_aty_test_external);
+		
+		EditText edit = (EditText) findViewById(R.id.editText_ext);
+		TextView text = (TextView) findViewById(R.id.textView_ext);
+		
+		findViewById(R.id.button_write_ext).setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+	}
+}
