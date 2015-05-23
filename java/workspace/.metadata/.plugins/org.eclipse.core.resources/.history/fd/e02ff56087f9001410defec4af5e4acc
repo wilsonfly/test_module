@@ -1,6 +1,0 @@
-package com.wilsonflying.playVideoByUri;
-
-
-public class MainActivity extends MediaRouterJellybeanMr1 {
-
-}
