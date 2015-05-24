@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="entries">
+        <item >C</item>
+        <item >C++</item>
+        <item >Java</item>
+        <item >Python</item>
+    </string-array>
+    <string-array name=""></string-array>
+</resources>

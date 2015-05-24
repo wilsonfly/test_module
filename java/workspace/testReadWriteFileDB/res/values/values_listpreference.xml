@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listpre_entries">
+        <item >C</item>
+        <item >C++</item>
+        <item >Java</item>
+        <item >Python</item>
+    </string-array>
+    <string-array name="listpre_entryValues">
+        <item >C的相关配置</item>
+        <item >C++的相关配置</item>
+        <item >Java的相关配置</item>
+        <item >Python的相关配置</item>
+    </string-array>
+</resources>

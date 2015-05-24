@@ -1,0 +1,15 @@
+package com.wilsonflying.testreadwrite;
+
+import android.app.Activity;
+import android.graphics.LinearGradient;
+import android.os.Bundle;
+import android.widget.LinearLayout;
+
+public class testSharedPreferenceActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+	}
+}

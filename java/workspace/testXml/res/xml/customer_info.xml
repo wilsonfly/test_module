@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<customers>
+
+    <customer
+        name="fuxiaodou"
+        email="xxxx@163.com"
+        tel="136********" />
+    <customer
+        name="one"
+        email="xxx@gmail.com"
+        tel="186********" />
+    <customer
+        name="two"
+        email="xxx@sina.com"
+        tel="130********" />
+
+</customers>

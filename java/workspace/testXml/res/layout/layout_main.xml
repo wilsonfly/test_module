@@ -4,11 +4,35 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <Button
+        android:id="@+id/button_xmlrp_cust"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="使用xmlResourceParser解析[xml目录]中的 customer_info.xml" />
+
+    <Button
+        android:id="@+id/button_xmlrp_lan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="使用xmlResourceParser解析[xml目录]中的 language_info.xml" />
+
+    <Button
+        android:id="@+id/button_doc_cust"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="使用DocumentBuilder解析[assets目录]中的 customer_info.xml" />
+
+    <Button
+        android:id="@+id/button_doc_lan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="使用DocumentBuilder解析[assets目录]中的 language_info.xml" />
+
     <TextView
         android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="正在读取XML文件..."
-        android:textSize="28sp" />
+        android:textSize="12sp" />
 
 </LinearLayout>

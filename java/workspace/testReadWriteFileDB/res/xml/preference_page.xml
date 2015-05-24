@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <CheckBoxPreference
+        android:key="@string/key_checkbox"
+        android:summaryOff="proxy已关闭"
+        android:summaryOn="proxy已启动"
+        android:title="是否要打开proxy？" />
+
+    <ListPreference
+        android:entries="@array/listpre_entries"
+        android:entryValues="@array/listpre_entryValues"
+        android:key="@string/key_list"
+        android:summary="选择编程语言环境" />
+
+    <EditTextPreference
+        android:dialogMessage="此处需要proxy将用来下载sdk"
+        android:dialogTitle="proxy地址"
+        android:key="@string/key_edit"
+        android:summary="点击进入proxy配置页面"
+        android:title="配置proxy地址" />
+
+</PreferenceScreen>
