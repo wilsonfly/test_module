@@ -243,11 +243,10 @@ public class MainActivity extends Activity {
 					languages.appendChild(lan2);
 					languages.appendChild(lan3);
 					
-					newxml.appendChild(languages);
+					newxml.adoptNode(languages);
 					
 					TransformerFactory tfactory = TransformerFactory.newInstance();
 					Transformer tf = tfactory.newTransformer();
-					tf.setOutputProperty("encoding", "utf-8");
 					StringWriter sw = new StringWriter();
 					tf.transform(new DOMSource(newxml), new StreamResult(sw));
 					

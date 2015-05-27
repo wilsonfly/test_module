@@ -2,17 +2,10 @@ package com.wilsonflying.testxml;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.StringWriter;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -243,24 +236,9 @@ public class MainActivity extends Activity {
 					languages.appendChild(lan2);
 					languages.appendChild(lan3);
 					
-					newxml.appendChild(languages);
-					
-					TransformerFactory tfactory = TransformerFactory.newInstance();
-					Transformer tf = tfactory.newTransformer();
-					tf.setOutputProperty("encoding", "utf-8");
-					StringWriter sw = new StringWriter();
-					tf.transform(new DOMSource(newxml), new StreamResult(sw));
-					
-					tv.setText(sw.toString());
 					
 					
 				} catch (ParserConfigurationException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (TransformerConfigurationException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (TransformerException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}

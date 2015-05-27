@@ -28,12 +28,6 @@
         android:layout_height="wrap_content"
         android:text="使用DocumentBuilder解析[assets目录]中的 language_info.xml" />
 
-    <Button
-        android:id="@+id/button_create_xml"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="创建xml" />
-
     <TextView
         android:id="@+id/text"
         android:layout_width="wrap_content"

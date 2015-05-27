@@ -243,7 +243,7 @@ public class MainActivity extends Activity {
 					languages.appendChild(lan2);
 					languages.appendChild(lan3);
 					
-					newxml.appendChild(languages);
+					newxml.adoptNode(languages);
 					
 					TransformerFactory tfactory = TransformerFactory.newInstance();
 					Transformer tf = tfactory.newTransformer();
