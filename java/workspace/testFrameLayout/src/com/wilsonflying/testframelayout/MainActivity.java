@@ -35,31 +35,7 @@ public class MainActivity extends Activity {
 			}
 		});
 		
-		//TODO:相应遥控器按键还有问题，目前这个Listener 完全不管用
-		am.setOnKeyListener(new OnKeyListener() {
-			
-			@Override
-			public boolean onKey(View v, int keyCode, KeyEvent event) {
-				// TODO Auto-generated method stub
-				am.bitmapX = event.KEYCODE_X;
-				am.bitmapY = event.KEYCODE_Y;
-				if(event.getAction() == KeyEvent.ACTION_DOWN){
-					if(keyCode == KeyEvent.KEYCODE_DPAD_LEFT)
-						am.bitmapX -= 3;
-					if(keyCode == KeyEvent.KEYCODE_DPAD_RIGHT)
-						am.bitmapX += 3;
-					if(keyCode == KeyEvent.KEYCODE_DPAD_DOWN)
-						am.bitmapY += 3;
-					if(keyCode == KeyEvent.KEYCODE_DPAD_UP)
-						am.bitmapY -= 3;
-					Log.d("huasheng", "in action_down");
-				}
-				Log.d("huasheng", "in action_down");
-
-				am.invalidate();
-				return true;
-			}
-		});
+	
 		
 		framelayout.addView(am);
 	}

@@ -6,12 +6,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value=" " key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="android:text=&quot;@string/hello_world&quot;"/>
 			<item value="process"/>
 			<item value="nm"/>
 			<item value="base64"/>
@@ -19,9 +20,9 @@
 			<item value="code"/>
 			<item value="pic_co"/>
 			<item value="bitmap"/>
-			<item value="drawable"/>
 		</list>
 		<list key="replacehistory">
+			<item value=" "/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

@@ -1,0 +1,39 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wilsonflying.testframelayout2.MainActivity" >
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@color/color_chi"
+        android:textColor="@color/color_chi"
+        android:gravity="center"
+        android:text="@string/hello_world" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@color/color_huang"
+        android:gravity="center"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@color/color_qing"
+        android:gravity="center"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@color/color_zi"
+        android:gravity="center"
+        android:text="TextView" />
+
+</FrameLayout>
