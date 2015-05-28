@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.wilsonflying.testreadwritefile.R.id"/>
-<fullyQualifiedTypeName name="android.view.View.OnLongClickListener"/>
-<fullyQualifiedTypeName name="android.widget.AdapterView.OnItemLongClickListener"/>
-<fullyQualifiedTypeName name="android.app.AlertDialog"/>
-<fullyQualifiedTypeName name="android.app.AlertDialog.Builder"/>
 <fullyQualifiedTypeName name="android.content.DialogInterface"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testreadwritefile.testDB"/>
 <fullyQualifiedTypeName name="android.widget.EditText"/>
-<fullyQualifiedTypeName name="android.widget.TextView"/>
 <fullyQualifiedTypeName name="android.widget.Button"/>
 <fullyQualifiedTypeName name="android.content.SharedPreferences"/>
 <fullyQualifiedTypeName name="android.content.SharedPreferences.Editor"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testreadwrite.testSharedPreference"/>
 <fullyQualifiedTypeName name="android.graphics.LinearGradient"/>
-<fullyQualifiedTypeName name="android.widget.LinearLayout"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testreadwrite.R.layout"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testreadwrite.R"/>
 <fullyQualifiedTypeName name="android.content.DialogInterface.OnClickListener"/>
@@ -29,7 +22,6 @@
 <fullyQualifiedTypeName name="android.preference.ListPreference"/>
 <fullyQualifiedTypeName name="android.preference.EditTextPreference"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testreadwrite.R.string"/>
-<fullyQualifiedTypeName name="android.content.Context"/>
 <fullyQualifiedTypeName name="android.database.sqlite.SQLiteDatabase"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testcontentwriter.R.id"/>
 <fullyQualifiedTypeName name="java.net.URI"/>
@@ -60,4 +52,12 @@
 <fullyQualifiedTypeName name="com.wilsonflying.testframelayout2.R.id"/>
 <fullyQualifiedTypeName name="android.view.View"/>
 <fullyQualifiedTypeName name="android.os.Handler"/>
+<fullyQualifiedTypeName name="android.view.LayoutInflater"/>
+<fullyQualifiedTypeName name="android.content.Context"/>
+<fullyQualifiedTypeName name="android.widget.LinearLayout"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testcustomedwidget.R"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testcustomedwidget.R.layout"/>
+<fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testcustomedwidget.R.id"/>
+<fullyQualifiedTypeName name="android.widget.TextView"/>
 </qualifiedTypeNameHistroy>

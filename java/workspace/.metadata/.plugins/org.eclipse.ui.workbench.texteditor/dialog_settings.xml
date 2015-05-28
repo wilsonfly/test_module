@@ -6,12 +6,13 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value=" " key="selection"/>
+		<item value="textView" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="textView"/>
 			<item value="android:text=&quot;@string/hello_world&quot;"/>
 			<item value="process"/>
 			<item value="nm"/>
@@ -19,7 +20,6 @@
 			<item value="pic"/>
 			<item value="code"/>
 			<item value="pic_co"/>
-			<item value="bitmap"/>
 		</list>
 		<list key="replacehistory">
 			<item value=" "/>
@@ -29,7 +29,7 @@
 		<item value="265" key="DIALOG_WIDTH"/>
 		<item value="1|.Helvetica Neue DeskInterface|11.0|0|COCOA|1|.HelveticaNeueDeskInterface-Regular" key="DIALOG_FONT_NAME"/>
 		<item value="399" key="DIALOG_HEIGHT"/>
-		<item value="923" key="DIALOG_X_ORIGIN"/>
-		<item value="61" key="DIALOG_Y_ORIGIN"/>
+		<item value="925" key="DIALOG_X_ORIGIN"/>
+		<item value="154" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>
