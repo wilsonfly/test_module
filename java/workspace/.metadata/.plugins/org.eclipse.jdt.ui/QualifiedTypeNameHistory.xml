@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="android.content.DialogInterface"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testreadwritefile.testDB"/>
-<fullyQualifiedTypeName name="android.widget.EditText"/>
-<fullyQualifiedTypeName name="android.widget.Button"/>
-<fullyQualifiedTypeName name="android.content.SharedPreferences"/>
-<fullyQualifiedTypeName name="android.content.SharedPreferences.Editor"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testreadwrite.testSharedPreference"/>
 <fullyQualifiedTypeName name="android.graphics.LinearGradient"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testreadwrite.R.layout"/>
@@ -60,4 +54,10 @@
 <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testcustomedwidget.R.id"/>
 <fullyQualifiedTypeName name="android.widget.TextView"/>
+<fullyQualifiedTypeName name="java.io.InputStreamReader"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.lang.StringBuffer"/>
+<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+<fullyQualifiedTypeName name="org.json.JSONObject"/>
+<fullyQualifiedTypeName name="org.json.JSONArray"/>
 </qualifiedTypeNameHistroy>
