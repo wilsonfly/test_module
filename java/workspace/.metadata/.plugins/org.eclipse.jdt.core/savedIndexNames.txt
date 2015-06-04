@@ -1,7 +1,4 @@
 INDEX VERSION 1.126+/Users/cindy/project/.wilsonflying/test_module/java/workspace/.metadata/.plugins/org.eclipse.jdt.core
-2532588080.index
-3779014108.index
-4241688023.index
 910213689.index
 1270315800.index
-2607456475.index
+3779014108.index

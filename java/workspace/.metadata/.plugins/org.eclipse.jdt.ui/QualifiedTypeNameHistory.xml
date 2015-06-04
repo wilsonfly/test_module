@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.wilsonflying.testreadwrite.testSharedPreference"/>
-<fullyQualifiedTypeName name="android.graphics.LinearGradient"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testreadwrite.R.layout"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testreadwrite.R"/>
-<fullyQualifiedTypeName name="android.content.DialogInterface.OnClickListener"/>
-<fullyQualifiedTypeName name="android.content.Intent"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testreadwrite.testSharedPreferenceActivity"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testreadwrite.R.xml"/>
 <fullyQualifiedTypeName name="android.preference.PreferenceManager"/>
 <fullyQualifiedTypeName name="android.preference.CheckBoxPreference"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testreadwrite.MyPreferenceActivity"/>
@@ -51,7 +43,6 @@
 <fullyQualifiedTypeName name="android.widget.LinearLayout"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testcustomedwidget.R"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testcustomedwidget.R.layout"/>
-<fullyQualifiedTypeName name="java.lang.RuntimeException"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testcustomedwidget.R.id"/>
 <fullyQualifiedTypeName name="android.widget.TextView"/>
 <fullyQualifiedTypeName name="java.io.InputStreamReader"/>
@@ -60,4 +51,13 @@
 <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 <fullyQualifiedTypeName name="org.json.JSONObject"/>
 <fullyQualifiedTypeName name="org.json.JSONArray"/>
+<fullyQualifiedTypeName name="android.graphics.Bitmap"/>
+<fullyQualifiedTypeName name="android.graphics.Rect"/>
+<fullyQualifiedTypeName name="android.content.res.TypedArray"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testcustomedwidget2.R"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testcustomedwidget2.R.style"/>
+<fullyQualifiedTypeName name="android.graphics.BitmapFactory"/>
+<fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testcustomedwidget2.R.styleable"/>
+<fullyQualifiedTypeName name="com.wilsonflying.icontext_ext.R.styleable"/>
 </qualifiedTypeNameHistroy>

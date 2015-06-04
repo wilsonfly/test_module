@@ -1,7 +1,0 @@
-package com.wilsonflying.widget;
-
-import android.widget.LinearLayout;
-
-public class LabelText extends LinearLayout {
-
-}
