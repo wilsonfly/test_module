@@ -1,0 +1,22 @@
+package com.wilsonflying.testadapter;
+
+import java.util.ArrayList;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+public class Aty_listview extends Activity {
+
+	private ArrayList<cellData_listview> adapter;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		
+		setContentView(R.layout.layout_listview);
+		
+		adapter.add(new cellData_listview("李雷", "男", 20));
+		adapter.add(new cellData_listview("韩梅梅", "女", 18));
+	}
+}

@@ -42,14 +42,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="提交" />
-    </LinearLayout>
-
     <ImageButton
         android:id="@+id/imagebutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="myclick"
         android:src="@drawable/login" />
+    </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/linearlayout_no2"
@@ -91,7 +91,7 @@
         android:id="@+id/linearlayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:orientation="vertical" >
 
         <ImageButton
             android:id="@+id/imagebutton2"

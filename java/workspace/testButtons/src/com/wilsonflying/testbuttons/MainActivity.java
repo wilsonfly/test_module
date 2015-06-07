@@ -38,11 +38,11 @@ public class MainActivity extends Activity {
 
 					// TODO Auto-generated method stub
 					RadioButton button = (RadioButton) findViewById(checkedId);
-					Toast.makeText(MainActivity.this, "Ñ¡ÔñµÄÊÇ" + button.getText(),
+					Toast.makeText(MainActivity.this, "é€‰æ‹©çš„æ˜¯" + button.getText(),
 							Toast.LENGTH_SHORT).show();
 
 					if(checkedId==radio_man.getId()){
-						Log.i("testbuttons", "Ñ¡ÔñµÄÊÇ" + radio_man.getText());
+						Log.i("testbuttons", "é€‰æ‹©çš„æ˜¯" + radio_man.getText());
 					}
 			}
 		});
@@ -53,12 +53,12 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				for (int i = 0; i < sex.getChildCount(); i++) {//Ðè½«sex¶¨ÒåÎªfinal
+				for (int i = 0; i < sex.getChildCount(); i++) {//éœ€å°†sexå®šä¹‰ä¸ºfinal
 					RadioButton radiobutton = (RadioButton) sex.getChildAt(i);
 					if (radiobutton.isChecked()) {
-						Log.i("testbuttons", "¼´½«Ìá½»Ñ¡Ôñ£º" + radiobutton.getText());
+						Log.i("testbuttons", "å³å°†æäº¤é€‰æ‹©ï¼š" + radiobutton.getText());
 						Toast.makeText(MainActivity.this,
-								"¼´½«Ìá½»Ñ¡Ôñ£º" + radiobutton.getText(),
+								"å³å°†æäº¤é€‰æ‹©ï¼š" + radiobutton.getText(),
 								Toast.LENGTH_SHORT).show();
 					}
 				}
@@ -88,20 +88,20 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				String hobit="";
-				if(checkbox_sport.isChecked())//Ðè½«checkbox_sport¶¨ÒåÎªfinal
+				if(checkbox_sport.isChecked())//éœ€å°†checkbox_sportå®šä¹‰ä¸ºfinal
 					hobit+=checkbox_sport.getText().toString()+" ";
-				if(checkbox_music.isChecked())//Ðè½«checkbox_sport¶¨ÒåÎªfinal
+				if(checkbox_music.isChecked())//éœ€å°†checkbox_sportå®šä¹‰ä¸ºfinal
 					hobit+=checkbox_music.getText().toString()+" ";
-				if(checkbox_painting.isChecked())//Ðè½«checkbox_sport¶¨ÒåÎªfinal
+				if(checkbox_painting.isChecked())//éœ€å°†checkbox_sportå®šä¹‰ä¸ºfinal
 					hobit+=checkbox_painting.getText().toString()+" ";
 				Toast.makeText(MainActivity.this, hobit, Toast.LENGTH_SHORT).show();
 			}
 		});
 	}
 
-	// ´Ë½Ó¿ÚÊÇonCreate ½Ó¿ÚÍâ±ß
+	// æ­¤æŽ¥å£æ˜¯onCreate
 	public void myclick(View v) {
-		Toast.makeText(MainActivity.this, "µã»÷ÁËImageButton", Toast.LENGTH_SHORT)
+		Toast.makeText(MainActivity.this, "ç‚¹å‡»äº†ImageButton", Toast.LENGTH_SHORT)
 				.show();
 	}
 
@@ -123,7 +123,7 @@ public class MainActivity extends Activity {
 				imagebutton_enter.invalidate();
 			}
 			if (isChecked)
-				Toast.makeText(MainActivity.this, "Ñ¡ÔñµÄÊÇ£º" + buttonView.getText(), Toast.LENGTH_SHORT).show();
+				Toast.makeText(MainActivity.this, "é€‰æ‹©çš„æ˜¯ï¼š" + buttonView.getText(), Toast.LENGTH_SHORT).show();
 		}
 	};
 	

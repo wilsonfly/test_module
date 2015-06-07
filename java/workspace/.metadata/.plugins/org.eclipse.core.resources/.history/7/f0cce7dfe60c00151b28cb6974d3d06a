@@ -1,0 +1,5 @@
+package com.wilsonflying.testviewpager;
+
+public class ViewPagerAdapter {
+
+}

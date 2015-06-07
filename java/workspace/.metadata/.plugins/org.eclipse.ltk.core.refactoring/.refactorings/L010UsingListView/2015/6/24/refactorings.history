@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;drawable-mdpi&apos;&#x0A;- Original project: &apos;L010UsingListView&apos;&#x0A;- Destination element: &apos;drawable-mdpi&apos;&#x0A;- Original elements:&#x0A;     img1.jpeg&#x0A;     img2.jpeg" description="Copy files" element1="res/drawable-hdpi/img1.jpeg" element2="res/drawable-hdpi/img2.jpeg" files="2" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1433684214141" target="/testAdapter/res/drawable-mdpi" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 6 elements to &apos;drawable-mdpi&apos;&#x0A;- Original project: &apos;ViewPagerDemo&apos;&#x0A;- Destination element: &apos;drawable-mdpi&apos;&#x0A;- Original elements:&#x0A;     login_point_selected.png&#x0A;     login_point.png&#x0A;     guide_2.jpg&#x0A;     guide_1.jpg&#x0A;     guide_3.jpg&#x0A;     welcome_android.jpg" description="Copy files" element1="res/drawable-hdpi/login_point_selected.png" element2="res/drawable-hdpi/login_point.png" element3="res/drawable-hdpi/guide_2.jpg" element4="res/drawable-hdpi/guide_1.jpg" element5="res/drawable-hdpi/guide_3.jpg" element6="res/drawable-hdpi/welcome_android.jpg" files="6" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1433663591570" target="/testViewPager/res/drawable-mdpi" units="0" version="1.0"/>
+</session>

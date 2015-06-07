@@ -43,7 +43,7 @@ public class MainActivity extends Activity {
 
 		@Override
 		protected void onProgressUpdate(Integer... values) {
-			setProgress(values[0] * 2500);//´Õ10, 4*2500
+			setProgress(values[0] * 2500);//å‡‘10, 4*2500
 			super.onProgressUpdate(values);
 		}
 
