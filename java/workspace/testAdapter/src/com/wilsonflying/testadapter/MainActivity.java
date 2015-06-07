@@ -20,7 +20,8 @@ public class MainActivity extends ListActivity {
         adapter = new ArrayAdapter<ListCellData>(MainActivity.this, android.R.layout.simple_list_item_1);
         setListAdapter(adapter);
         
-        adapter.add(new ListCellData("测试ListView", new Intent(MainActivity.this, Aty_listview.class)));
+        adapter.add(new ListCellData("测试ListView,显示文本", new Intent(MainActivity.this, Aty_listview.class)));
+        adapter.add(new ListCellData("测试ListView,显示图片及文本", new Intent(MainActivity.this, Aty_listview_ext.class)));
     }
 
     @Override

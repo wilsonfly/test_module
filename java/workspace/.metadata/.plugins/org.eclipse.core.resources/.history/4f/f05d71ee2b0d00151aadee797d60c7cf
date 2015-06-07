@@ -1,0 +1,18 @@
+package com.wilsonflying.testadapter;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.ListView;
+
+public class Aty_listview_ext extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.layout_listview_ext);
+		
+		ListView lv = (ListView) findViewById(R.id.listview_ext);
+		lv.setAdapter(new ListView_ext_adapter(Aty_listview_ext.this));
+	}
+}

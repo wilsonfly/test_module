@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name="Aty_listview"></activity>
+        <activity android:name="Aty_listview_ext"></activity>
     </application>
 
 </manifest>

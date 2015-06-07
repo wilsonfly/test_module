@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="android.graphics.BitmapFactory"/>
-<fullyQualifiedTypeName name="java.lang.RuntimeException"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testcustomedwidget2.R.styleable"/>
-<fullyQualifiedTypeName name="com.wilsonflying.icontext_ext.R.styleable"/>
 <fullyQualifiedTypeName name="android.os.AsyncTask"/>
 <fullyQualifiedTypeName name="java.net.URLConnection"/>
 <fullyQualifiedTypeName name="java.net.URL"/>
@@ -13,7 +9,6 @@
 <fullyQualifiedTypeName name="java.lang.StringBuffer"/>
 <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
 <fullyQualifiedTypeName name="java.lang.Float"/>
-<fullyQualifiedTypeName name="android.widget.TextView"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testasynctask2.R.id"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testasynctask2.MainActivity"/>
 <fullyQualifiedTypeName name="android.support.v4.view.PagerAdapter"/>
@@ -46,18 +41,23 @@
 <fullyQualifiedTypeName name="com.wilsonflying.testadapter.ListCellData"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="android.widget.ArrayAdapter"/>
-<fullyQualifiedTypeName name="android.widget.ListView"/>
 <fullyQualifiedTypeName name="android.R"/>
 <fullyQualifiedTypeName name="android.R.layout"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testadapter.Aty_listview"/>
-<fullyQualifiedTypeName name="android.widget.Toast"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testadapter.cellData_listview"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testadapter.R.drawable"/>
 <fullyQualifiedTypeName name="android.widget.LinearLayout"/>
 <fullyQualifiedTypeName name="android.view.LayoutInflater"/>
 <fullyQualifiedTypeName name="android.content.Context"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testadapter.R.layout"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testadapter.cellData_listview_ext"/>
 <fullyQualifiedTypeName name="android.widget.ImageView"/>
+<fullyQualifiedTypeName name="android.widget.TextView"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testadapter.R"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testadapter.R.drawable"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testadapter.R.layout"/>
+<fullyQualifiedTypeName name="android.widget.ListView"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testadapter.R.id"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testadapter.listview_ext_adapter"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testadapter.ListView_ext_adapter"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testadapter.Aty_listview_ext"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testadapter.cellData_listview"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testadapter.cellData_listview_ext"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
 </qualifiedTypeNameHistroy>
