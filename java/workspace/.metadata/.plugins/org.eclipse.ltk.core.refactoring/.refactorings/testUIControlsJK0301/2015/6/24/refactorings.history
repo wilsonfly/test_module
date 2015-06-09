@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;cn.eoe.uicontrols&apos; to &apos;com.wilsonflying.uicontrols&apos;&#x0A;- Original project: &apos;testUIControlsJK0301&apos;&#x0A;- Original element: &apos;testUIControlsJK0301/src/cn.eoe.uicontrols&apos;&#x0A;- Renamed element: &apos;testUIControlsJK0301/src/com.wilsonflying.uicontrols&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;cn.eoe.uicontrols&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;cn.eoe.uicontrols" name="com.wilsonflying.uicontrols" qualified="false" references="true" stamp="1433866714897" textual="false" version="1.0"/>
+</session>

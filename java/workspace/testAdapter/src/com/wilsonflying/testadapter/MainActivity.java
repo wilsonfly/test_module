@@ -22,6 +22,7 @@ public class MainActivity extends ListActivity {
         
         adapter.add(new ListCellData("测试ListView,显示文本", new Intent(MainActivity.this, Aty_listview.class)));
         adapter.add(new ListCellData("测试ListView,显示图片及文本", new Intent(MainActivity.this, Aty_listview_ext.class)));
+        adapter.add(new ListCellData("测试ListActiviy,显示图片及文本", new Intent(MainActivity.this, Aty_listview_listActivity.class)));
     }
 
     @Override

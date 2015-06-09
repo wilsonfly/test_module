@@ -52,7 +52,7 @@ public class ListView_ext_adapter extends BaseAdapter {
 			ll = (LinearLayout) convertView;
 		}else
 		{
-//			LayoutInflater inflater = LayoutInflater.from(this);//需要一个context，this则是一个listview_ext_adapter
+//			LayoutInflater inflater = LayoutInflater.from(this);//需要一个view的context，而this只是一个listview_ext_adapter
 			LayoutInflater inflater = LayoutInflater.from(getTheContext());
 			ll = (LinearLayout) inflater.inflate(R.layout.layout_celldata_listview_ext, null);
 		}

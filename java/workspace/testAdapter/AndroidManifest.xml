@@ -24,6 +24,7 @@
         </activity>
         <activity android:name="Aty_listview"></activity>
         <activity android:name="Aty_listview_ext"></activity>
+        <activity android:name="Aty_listview_listActivity"></activity>
     </application>
 
 </manifest>

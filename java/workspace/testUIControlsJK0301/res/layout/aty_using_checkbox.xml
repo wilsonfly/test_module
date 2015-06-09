@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="中午你打算吃什么？"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <CheckBox
+        android:id="@+id/cbRB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="肉饼" />
+
+    <CheckBox
+        android:id="@+id/cbHSR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="红烧肉盖饭" />
+
+    <CheckBox
+        android:id="@+id/cbHSPG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="红烧排骨盖饭" />
+
+    <CheckBox
+        android:id="@+id/cbDoufu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="豆腐盖饭" />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="提交" />
+
+</LinearLayout>

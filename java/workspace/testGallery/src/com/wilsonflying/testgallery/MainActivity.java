@@ -78,7 +78,7 @@ public class MainActivity extends Activity {
 			
 			@Override
 			public void onItemClick(AdapterView<?>parent, View view, int position, long id){
-				Toast.makeText(MainActivity.this, "µã»÷ÁËµÚ"+String.valueOf(position)+"ÕÅÍ¼Æ¬", Toast.LENGTH_SHORT).show();
+				Toast.makeText(MainActivity.this, "ç‚¹å‡»äº†ç¬¬"+String.valueOf(position)+"å¼ å›¾ç‰‡", Toast.LENGTH_SHORT).show();
 			}
 			
 		});
