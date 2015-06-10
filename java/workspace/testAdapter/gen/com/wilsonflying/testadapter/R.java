@@ -1919,13 +1919,14 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f09003d;
         public static final int action_mode_bar_stub=0x7f09003c;
         public static final int action_mode_close_button=0x7f090025;
-        public static final int action_settings=0x7f090055;
+        public static final int action_settings=0x7f090059;
         public static final int activity_chooser_view_content=0x7f090026;
         public static final int alertTitle=0x7f090030;
         public static final int always=0x7f090019;
         public static final int beginning=0x7f090020;
+        public static final int btn_add=0x7f090056;
         public static final int buttonPanel=0x7f090036;
-        public static final int button_bottom=0x7f090054;
+        public static final int button_bottom=0x7f090057;
         public static final int checkbox=0x7f090038;
         public static final int collapseActionView=0x7f09001a;
         public static final int contentPanel=0x7f090031;
@@ -1938,6 +1939,8 @@ containing a value of this type.
         public static final int dropdown=0x7f09001f;
         public static final int edit_query=0x7f090042;
         public static final int end=0x7f090021;
+        public static final int et_name=0x7f090054;
+        public static final int et_sex=0x7f090055;
         public static final int expand_activities_button=0x7f090027;
         public static final int expanded_menu=0x7f090037;
         public static final int home=0x7f090000;
@@ -1949,7 +1952,8 @@ containing a value of this type.
         public static final int listMode=0x7f09000a;
         public static final int list_item=0x7f09002a;
         public static final int listview=0x7f090052;
-        public static final int listview_ext=0x7f090053;
+        public static final int listview_ext=0x7f090058;
+        public static final int ll_info=0x7f090053;
         public static final int middle=0x7f090022;
         public static final int multiply=0x7f090014;
         public static final int never=0x7f09001c;
@@ -2052,10 +2056,11 @@ containing a value of this type.
         public static final int layout_listview=0x7f03001a;
         public static final int layout_listview_ext=0x7f03001b;
         public static final int layout_listview_listactivity=0x7f03001c;
-        public static final int select_dialog_item_material=0x7f03001d;
-        public static final int select_dialog_multichoice_material=0x7f03001e;
-        public static final int select_dialog_singlechoice_material=0x7f03001f;
-        public static final int support_simple_spinner_dropdown_item=0x7f030020;
+        public static final int layout_listview_multi=0x7f03001d;
+        public static final int select_dialog_item_material=0x7f03001e;
+        public static final int select_dialog_multichoice_material=0x7f03001f;
+        public static final int select_dialog_singlechoice_material=0x7f030020;
+        public static final int support_simple_spinner_dropdown_item=0x7f030021;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;

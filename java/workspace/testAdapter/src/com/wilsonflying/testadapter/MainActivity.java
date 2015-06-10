@@ -21,7 +21,8 @@ public class MainActivity extends ListActivity {
         setListAdapter(adapter);
         
         adapter.add(new ListCellData("测试ListView,显示文本", new Intent(MainActivity.this, Aty_listview.class)));
-        adapter.add(new ListCellData("测试ListView,显示图片及文本", new Intent(MainActivity.this, Aty_listview_ext.class)));
+        adapter.add(new ListCellData("测试ListView,显示文本,可增/删", new Intent(MainActivity.this, Aty_listview_ext.class)));
+        adapter.add(new ListCellData("测试ListView,显示图片及文本", new Intent(MainActivity.this, Aty_listview_Multi.class)));
         adapter.add(new ListCellData("测试ListActiviy,显示图片及文本", new Intent(MainActivity.this, Aty_listview_listActivity.class)));
     }
 

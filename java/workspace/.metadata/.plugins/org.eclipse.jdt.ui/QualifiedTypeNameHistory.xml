@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.StringBuffer"/>
-<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
-<fullyQualifiedTypeName name="java.lang.Float"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testasynctask2.R.id"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testasynctask2.MainActivity"/>
 <fullyQualifiedTypeName name="android.support.v4.view.PagerAdapter"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="android.support.v4.view.ViewPager"/>
@@ -12,7 +7,6 @@
 <fullyQualifiedTypeName name="android.support.v4.view.ViewPager.OnPageChangeListener"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testviewpager.R.drawable"/>
 <fullyQualifiedTypeName name="android.widget.Button"/>
-<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testviewpager.R.id"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testviewpager.R.layout"/>
 <fullyQualifiedTypeName name="android.os.Handler"/>
@@ -39,17 +33,11 @@
 <fullyQualifiedTypeName name="android.view.LayoutInflater"/>
 <fullyQualifiedTypeName name="android.content.Context"/>
 <fullyQualifiedTypeName name="android.widget.ImageView"/>
-<fullyQualifiedTypeName name="android.widget.TextView"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testadapter.R"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testadapter.R.drawable"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testadapter.R.layout"/>
 <fullyQualifiedTypeName name="android.widget.ListView"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testadapter.R.id"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testadapter.listview_ext_adapter"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testadapter.Aty_listview_ext"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testadapter.cellData_listview"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testadapter.cellData_listview_ext"/>
-<fullyQualifiedTypeName name="android.widget.Toast"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testadapter.Aty_listview_listActivity"/>
 <fullyQualifiedTypeName name="android.R.id"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testadapter.ListView_ext_adapter"/>
@@ -60,4 +48,16 @@
 <fullyQualifiedTypeName name="android.widget.ArrayAdapter"/>
 <fullyQualifiedTypeName name="android.R"/>
 <fullyQualifiedTypeName name="android.R.layout"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testadapter.R.id"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="android.widget.TextView"/>
+<fullyQualifiedTypeName name="android.widget.EditText"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testadapter.cellData_listview"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testadapter.cellData_listview_ext"/>
+<fullyQualifiedTypeName name="android.app.AlertDialog"/>
+<fullyQualifiedTypeName name="android.app.AlertDialog.Builder"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testadapter.Aty_listview_ext"/>
+<fullyQualifiedTypeName name="android.content.DialogInterface.OnClickListener"/>
+<fullyQualifiedTypeName name="android.content.DialogInterface"/>
 </qualifiedTypeNameHistroy>
