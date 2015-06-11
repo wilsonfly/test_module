@@ -58,7 +58,7 @@ public class LabelEditText extends LinearLayout {
 			throw new RuntimeException("只支持labelPositon为left或者top");
 		}
 		
-		textView = (TextView) findViewById(R.id.tv);
+		textView = (TextView) ll.findViewById(R.id.tv);//ll这个布局中查找id
 		textView.setTextSize(labelFontSize);
 		textView.setText(labelText);
 	}

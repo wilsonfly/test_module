@@ -150,26 +150,26 @@ public class MainActivity extends Activity {
 			/*******************Matix,Rotate,Translate,Scale,Skew*******************/
 			paint.reset();
 			Bitmap bm2 = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);
-			canvas.drawBitmap(bm2, 250, 250, paint);
+			canvas.drawBitmap(bm2, 250, 750, paint);
 			Matrix matrix = new Matrix();
 			matrix.setRotate(30);
 //			matrix.setRotate(30,250,250);
-			matrix.postTranslate(330, 250);
+			matrix.postTranslate(330, 750);
 			canvas.drawBitmap(bm2, matrix, paint);
 			
 			//缩放
 			matrix.setScale(1.5f, 1.5f);//需要加上f，否则默认为double则报错类型不匹配
-			matrix.postTranslate(360, 250);
+			matrix.postTranslate(360, 750);
 			canvas.drawBitmap(bm2, matrix, paint);
 			
 			//平移
-			matrix.setTranslate(420, 250);
+			matrix.setTranslate(420, 750);
 			canvas.drawBitmap(bm2, matrix, paint);
 			
 			//倾斜
 			matrix.reset();
 			matrix.setSkew(1f, 0);
-			matrix.postTranslate(460, 250);
+			matrix.postTranslate(460, 750);
 			canvas.drawBitmap(bm2, matrix, paint);
 //			matrix.setSkew(1.5f, 0, 490, 250);
 
