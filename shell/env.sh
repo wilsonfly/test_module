@@ -6,6 +6,7 @@
 export PATH=$PATH:~/tools
 export PATH=$PATH:~/project/config/homebrew/bin
 export PATH=$PATH:~/Applications/adt-bundle-mac-x86_64-20140702/sdk/platform-tools
+export PATH=$PATH:~/Applications/ndk/android-ndk-r10d
 alias ll='ls -la'
 alias 1='cd ..'
 alias 2='cd ../..'
