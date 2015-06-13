@@ -1,0 +1,39 @@
+package com.wilsonflying.testjni;
+
+import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.view.View;
+import android.widget.TextView;
+
+
+public class MainActivity extends ActionBarActivity {
+
+	TextView textView;
+	
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        TextView textView = (TextView) findViewById(R.id.tv);
+//        textView.setText(stringFromJNI());
+    }
+
+    public native String stringFromJNI();
+
+    static {
+    	System.loadLibrary("native_fun");
+    }
+    
+    public void onClickFun(View v){
+    	switch (v.getId()) {
+		case R.id.btn_readString:
+			textView.setText(stringFromJNI());
+			break;
+
+		default:
+			break;
+		}
+    }
+}

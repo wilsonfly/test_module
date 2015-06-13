@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="android.support.v4.view.ViewPager"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testviewpager.ViewPagerAdapter"/>
-<fullyQualifiedTypeName name="android.support.v4.view.ViewPager.OnPageChangeListener"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testviewpager.R.drawable"/>
-<fullyQualifiedTypeName name="android.widget.Button"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testviewpager.R.id"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testviewpager.R.layout"/>
-<fullyQualifiedTypeName name="android.os.Handler"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testviewpager.Welcome"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testviewpager.MainActivity"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testviewpager.Guide"/>
@@ -49,9 +42,6 @@
 <fullyQualifiedTypeName name="android.R.layout"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testadapter.R.id"/>
 <fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
-<fullyQualifiedTypeName name="android.widget.TextView"/>
-<fullyQualifiedTypeName name="android.widget.EditText"/>
-<fullyQualifiedTypeName name="android.widget.Toast"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testadapter.cellData_listview"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testadapter.cellData_listview_ext"/>
 <fullyQualifiedTypeName name="android.app.AlertDialog"/>
@@ -60,4 +50,14 @@
 <fullyQualifiedTypeName name="android.content.DialogInterface.OnClickListener"/>
 <fullyQualifiedTypeName name="android.content.DialogInterface"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="android.widget.TextView"/>
+<fullyQualifiedTypeName name="android.app.Activity"/>
+<fullyQualifiedTypeName name="android.widget.EditText"/>
+<fullyQualifiedTypeName name="java.lang.Double"/>
+<fullyQualifiedTypeName name="android.os.Handler"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testjni.MainActivity"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testjni.R.id"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testjni.AccessNative"/>
 </qualifiedTypeNameHistroy>

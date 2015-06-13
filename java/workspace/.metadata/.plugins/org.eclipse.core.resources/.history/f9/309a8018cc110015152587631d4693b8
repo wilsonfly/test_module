@@ -1,0 +1,40 @@
+package com.wilsonflying.testjni;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
+
+public class MainActivity extends Activity {
+
+	TextView textView;
+	
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        textView = (TextView) findViewById(R.id.tv);
+//        textView.setText(stringFromJNI());
+    }
+
+    public native String stringFromJNI();
+
+    static {
+    	System.loadLibrary("native_fun");
+    }
+    
+    public void onClickFun(View v){
+    	switch (v.getId()) {
+		case R.id.btn_readString:
+//			textView.setText(stringFromJNI());
+			textView.setText(new AccessNative().readStringFromJNI());
+			break;
+
+		default:
+			break;
+		}
+    }
+}
