@@ -1,7 +1,0 @@
-package com.wilsonflying.testadapter;
-
-import android.app.ListActivity;
-
-public class ListCellData extends ListActivity {
-
-}

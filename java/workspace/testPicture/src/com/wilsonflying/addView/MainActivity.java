@@ -1,8 +1,11 @@
 package com.wilsonflying.addView;
 
+import java.io.InputStream;
+
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.Bitmap.Config;
 import android.graphics.BitmapFactory;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
@@ -142,34 +145,34 @@ public class MainActivity extends Activity {
 			Bitmap bm = BitmapFactory.decodeResource(getResources(), R.drawable.bluesee);
 
 			canvas.drawBitmap(bm, 10, 250, paint);
-			Rect src = new Rect(10, 250, 50, 280);
-			Rect dst = new Rect(100, 250, 260, 280);
-			canvas.drawBitmap(bm, src, dst, paint);//??没有挖去成功
+			Rect src = new Rect(10, 250, 210, 450);
+			Rect dst = new Rect(600, 250, 800, 450);
+			canvas.drawBitmap(bm, src, dst, paint);//挖取部分，但是位置跟大小跟预期不一致？？
 			/*******************Bitmap*******************/
 
 			/*******************Matix,Rotate,Translate,Scale,Skew*******************/
 			paint.reset();
 			Bitmap bm2 = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);
-			canvas.drawBitmap(bm2, 250, 750, paint);
+			canvas.drawBitmap(bm2, 0, 750, paint);
 			Matrix matrix = new Matrix();
 			matrix.setRotate(30);
 //			matrix.setRotate(30,250,250);
-			matrix.postTranslate(330, 750);
+			matrix.postTranslate(200, 750);
 			canvas.drawBitmap(bm2, matrix, paint);
 			
 			//缩放
 			matrix.setScale(1.5f, 1.5f);//需要加上f，否则默认为double则报错类型不匹配
-			matrix.postTranslate(360, 750);
+			matrix.postTranslate(300, 750);
 			canvas.drawBitmap(bm2, matrix, paint);
 			
 			//平移
-			matrix.setTranslate(420, 750);
+			matrix.setTranslate(500, 750);
 			canvas.drawBitmap(bm2, matrix, paint);
 			
 			//倾斜
 			matrix.reset();
 			matrix.setSkew(1f, 0);
-			matrix.postTranslate(460, 750);
+			matrix.postTranslate(700, 750);
 			canvas.drawBitmap(bm2, matrix, paint);
 //			matrix.setSkew(1.5f, 0, 490, 250);
 
@@ -179,9 +182,10 @@ public class MainActivity extends Activity {
 			paint.reset();
 			paint.setStyle(Style.STROKE);
 			paint.setStrokeWidth(2);
-			RectF rectf = new RectF(550, 250, 750, 350);
+			RectF rectf = new RectF(0, 1000, 250, 1200);
 			canvas.drawRoundRect(rectf, 10, 10, paint);
 			
+			paint.reset();
 			paint.setStyle(Style.FILL);
 			Bitmap bm3 = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);
 			BitmapShader bs = new BitmapShader(bm3, TileMode.REPEAT, TileMode.MIRROR);
@@ -189,6 +193,22 @@ public class MainActivity extends Activity {
 			canvas.drawRoundRect(rectf, 10, 10, paint);
 			/*******************BitmapShader*******************/
 
+			/*******************BitmapFactory.decodeStream*******************/
+			InputStream is = getResources().openRawResource(R.drawable.ic_launcher);
+			BitmapFactory.Options opt = new BitmapFactory.Options();
+			opt.inSampleSize = 2;
+			Bitmap bm4 = BitmapFactory.decodeStream(is, null, opt);
+			canvas.drawBitmap(bm4, 300, 1000, paint);
+			
+			int w = bm4.getWidth();
+			int h = bm4.getHeight();
+			int[] pixels = new int[w*h];
+			bm4.getPixels(pixels, 0, w, 0, 0, w, h);
+			Bitmap bm5 = Bitmap.createBitmap(pixels, w, h, Config.ARGB_8888);
+//			Bitmap bm5 = Bitmap.createBitmap(pixels, w, h, Config.ARGB_4444);
+			canvas.drawBitmap(bm5, 400, 1000, paint);
+			/*******************BitmapFactory.decodeStream*******************/
+	
 			
 			super.onDraw(canvas);
 		}

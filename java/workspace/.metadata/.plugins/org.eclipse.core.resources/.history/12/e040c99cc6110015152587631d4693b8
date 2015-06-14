@@ -1,7 +1,0 @@
-package com.wilsonflying.testjni;
-
-public class AccessNative {
-
-	public native String readStringFromJNI();
-	public native String readStringFromJNI(String str);
-}

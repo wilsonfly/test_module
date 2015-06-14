@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;assets&apos;&#x0A;- Original project: &apos;FirstFragment&apos;&#x0A;- Destination element: &apos;assets&apos;&#x0A;- Original elements:&#x0A;     m0&#x0A;     m1&#x0A;     m2" description="Copy files" element1="assets/m0" element2="assets/m1" element3="assets/m2" files="3" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1434286969956" target="/testFragment/assets" units="0" version="1.0"/>
+</session>

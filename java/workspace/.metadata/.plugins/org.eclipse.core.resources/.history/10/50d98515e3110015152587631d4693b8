@@ -1,8 +1,0 @@
-package com.wilsonflying.testjni;
-
-public class AccessNative {
-
-	public native String readStringFromJNI();
-	public native String putStringFromJNI(String str);
-	public native int getSum(int x, int y);
-}

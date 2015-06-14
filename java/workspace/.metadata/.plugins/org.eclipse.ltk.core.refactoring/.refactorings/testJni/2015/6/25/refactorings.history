@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;AccessNative.java&apos; to &apos;testJni2/src/com.wilsonflying.testjni2&apos;&#x0A;- Original project: &apos;testJni&apos;&#x0A;- Destination element: &apos;testJni2/src/com.wilsonflying.testjni2&apos;&#x0A;- Original element: &apos;com.wilsonflying.testjni.AccessNative.java&apos;" description="Copy compilation unit" destination="=testJni2/src&lt;com.wilsonflying.testjni2" element1="/src&lt;com.wilsonflying.testjni{AccessNative.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1434262038108" units="1" version="1.0"/>
+</session>

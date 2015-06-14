@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;testJni2/jni/testJni2.cpp&apos; to &apos;testJni2.c&apos;" description="Rename resource &apos;testJni2.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="jni/testJni2.cpp" name="testJni2.c" stamp="1434263645462" updateReferences="true"/>
+</session>

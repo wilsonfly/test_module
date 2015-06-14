@@ -6,20 +6,20 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="drawLinesExt" key="selection"/>
+		<item value="onClick_ShowArgument" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="onClick_ShowArgument"/>
+			<item value="handler"/>
+			<item value="scale"/>
 			<item value="drawLinesExt"/>
 			<item value="data"/>
 			<item value="textView"/>
 			<item value="android:text=&quot;@string/hello_world&quot;"/>
 			<item value="process"/>
-			<item value="nm"/>
-			<item value="base64"/>
-			<item value="pic"/>
 		</list>
 		<list key="replacehistory">
 			<item value=" "/>
