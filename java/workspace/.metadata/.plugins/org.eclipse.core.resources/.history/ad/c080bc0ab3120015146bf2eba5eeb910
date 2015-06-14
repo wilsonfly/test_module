@@ -1,0 +1,7 @@
+package com.wilsonflying.independentFragment;
+
+import android.app.Fragment;
+
+public class BottomFragment extends Fragment {
+
+}
