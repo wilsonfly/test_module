@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;drawable-mdpi&apos;&#x0A;- Original project: &apos;FirstActionBar&apos;&#x0A;- Destination element: &apos;drawable-mdpi&apos;&#x0A;- Original elements:&#x0A;     open.png&#x0A;     search.png&#x0A;     save.png" description="Copy files" element1="res/drawable-hdpi/open.png" element2="res/drawable-hdpi/search.png" element3="res/drawable-hdpi/save.png" files="3" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1434386593728" target="/testActionBar/res/drawable-mdpi" units="0" version="1.0"/>
+</session>
