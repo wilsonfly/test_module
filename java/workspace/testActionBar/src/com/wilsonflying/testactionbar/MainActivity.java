@@ -1,7 +1,7 @@
 package com.wilsonflying.testactionbar;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,14 +11,14 @@ import android.widget.Button;
 import android.widget.Toast;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends ActionBarActivity {
 
 	private Button btnShowActionBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
      
-        getWindow().requestFeature(Window.FEATURE_ACTION_BAR);//需要在setcontent之前，否则报错
+//        getWindow().requestFeature(Window.FEATURE_ACTION_BAR);//需要在setcontent之前，否则报错
         setContentView(R.layout.activity_main);
         
         btnShowActionBar = (Button) findViewById(R.id.btn_showActionBar);
@@ -27,15 +27,24 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				if(getActionBar() == null){
-					return;
-				}
-				if(getActionBar().isShowing() == true){
-					getActionBar().hide();
-					btnShowActionBar.setText("显示actionBar");
+////				if(getActionBar() == null){
+////					return;
+////				}
+//				if(getActionBar().isShowing() == true){
+////					getActionBar().hide();
+//					getSupportActionBar().hide();
+//					btnShowActionBar.setText("显示actionBar");
+//				}else{
+////					getActionBar().show();
+//					getSupportActionBar().show();
+//					btnShowActionBar.setText("隐藏actionBar");
+//				}
+				if(getSupportActionBar().isShowing() == true){
+					getSupportActionBar().hide();
+					btnShowActionBar.setText("隐藏actionbar");
 				}else{
-					getActionBar().show();
-					btnShowActionBar.setText("隐藏actionBar");
+					getSupportActionBar().show();
+					btnShowActionBar.setText("显示actionbar");
 				}
 					
 			}

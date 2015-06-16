@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.wilsonflying.testadapter.R.drawable"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testadapter.R.layout"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testadapter.listview_ext_adapter"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testadapter.Aty_listview_listActivity"/>
@@ -60,4 +59,5 @@
 <fullyQualifiedTypeName name="android.widget.Toast"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testactionbar.MainActivity"/>
 <fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="android.support.v7.app.ActionBarActivity"/>
 </qualifiedTypeNameHistroy>
