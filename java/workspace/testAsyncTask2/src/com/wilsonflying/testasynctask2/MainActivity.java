@@ -112,7 +112,7 @@ public class MainActivity extends ActionBarActivity {
 			
 			
 			
-		}.execute(url);
+		}.execute(url);//再此传的参，可以传送多个参数
     }
     
 }
