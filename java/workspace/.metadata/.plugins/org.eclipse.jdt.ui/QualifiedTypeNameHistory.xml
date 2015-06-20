@@ -1,22 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.wilsonflying.testadapter.cellData_listview"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testadapter.cellData_listview_ext"/>
-<fullyQualifiedTypeName name="android.app.AlertDialog"/>
-<fullyQualifiedTypeName name="android.app.AlertDialog.Builder"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testadapter.Aty_listview_ext"/>
-<fullyQualifiedTypeName name="android.content.DialogInterface.OnClickListener"/>
-<fullyQualifiedTypeName name="android.content.DialogInterface"/>
-<fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="android.widget.EditText"/>
-<fullyQualifiedTypeName name="java.lang.Double"/>
-<fullyQualifiedTypeName name="android.os.Handler"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testjni.MainActivity"/>
-<fullyQualifiedTypeName name="android.util.Log"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testjni.R.id"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testjni.AccessNative"/>
-<fullyQualifiedTypeName name="com.wilsonflying.addView.R.drawable"/>
-<fullyQualifiedTypeName name="android.graphics.BitmapFactory.Options"/>
 <fullyQualifiedTypeName name="android.graphics.Bitmap"/>
 <fullyQualifiedTypeName name="android.graphics.BitmapFactory"/>
 <fullyQualifiedTypeName name="android.graphics.Bitmap.Config"/>
@@ -31,16 +14,11 @@
 <fullyQualifiedTypeName name="com.wilsonflying.testfragment.R.layout"/>
 <fullyQualifiedTypeName name="android.view.View"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testfragment2.BottomFragment"/>
-<fullyQualifiedTypeName name="android.os.Bundle"/>
-<fullyQualifiedTypeName name="android.app.FragmentManager"/>
-<fullyQualifiedTypeName name="android.app.FragmentTransaction"/>
-<fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testfragment2.R.id"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testfragment2.R.layout"/>
 <fullyQualifiedTypeName name="com.wilsonflying.independentFragment.TopFragment.onTopButtonClickLister"/>
 <fullyQualifiedTypeName name="com.wilsonflying.independentFragment.MainActivity"/>
 <fullyQualifiedTypeName name="com.wilsonflying.independentFragment.R.layout"/>
-<fullyQualifiedTypeName name="android.widget.TextView"/>
 <fullyQualifiedTypeName name="com.wilsonflying.independentFragment.BottomFragment"/>
 <fullyQualifiedTypeName name="com.wilsonflying.independentFragment.R.id"/>
 <fullyQualifiedTypeName name="android.view.Window"/>
@@ -60,4 +38,26 @@
 <fullyQualifiedTypeName name="com.wilsonflying.testsynctask3.UpdatePogressBar.MyTask"/>
 <fullyQualifiedTypeName name="android.os.AsyncTask.Status"/>
 <fullyQualifiedTypeName name="android.os.AsyncTask"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testfragmentpageradapter.R.layout"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testfragmentpageradapter.R.id"/>
+<fullyQualifiedTypeName name="android.R.integer"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="android.os.Bundle"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testfragmentpageradapter.MainActivity.MyFragment"/>
+<fullyQualifiedTypeName name="android.support.v4.view.ViewPager"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testfragmentpageradapter.MainActivity.MyFragmentPagerAdapter"/>
+<fullyQualifiedTypeName name="android.R.bool"/>
+<fullyQualifiedTypeName name="android.app.FragmentTransaction"/>
+<fullyQualifiedTypeName name="android.support.v4.app.FragmentPagerAdapter"/>
+<fullyQualifiedTypeName name="android.support.v4.app.Fragment"/>
+<fullyQualifiedTypeName name="android.widget.TextView"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testfragmentbackstack.MainActivity.MyFragment"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testfragmentbackstack.R.id"/>
+<fullyQualifiedTypeName name="android.app.Fragment"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="android.app.FragmentManager"/>
+<fullyQualifiedTypeName name="android.widget.EditText"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testfragmentbackstack.R.layout"/>
 </qualifiedTypeNameHistroy>
