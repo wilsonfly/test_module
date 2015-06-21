@@ -1921,17 +1921,19 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f0b003d;
         public static final int action_mode_bar_stub=0x7f0b003c;
         public static final int action_mode_close_button=0x7f0b0025;
-        public static final int action_settings=0x7f0b005b;
+        public static final int action_settings=0x7f0b005e;
         public static final int activity_chooser_view_content=0x7f0b0026;
         public static final int alertTitle=0x7f0b0030;
         public static final int always=0x7f0b0019;
         public static final int beginning=0x7f0b0020;
         public static final int buttonPanel=0x7f0b0036;
-        public static final int button_open_prefer=0x7f0b0055;
+        public static final int button_open_prefer=0x7f0b0058;
         public static final int button_read=0x7f0b004f;
         public static final int button_read_ext=0x7f0b0053;
-        public static final int button_submit=0x7f0b005a;
+        public static final int button_read_ext_pic=0x7f0b0056;
+        public static final int button_submit=0x7f0b005d;
         public static final int button_write_ext=0x7f0b0052;
+        public static final int button_write_ext_pic=0x7f0b0055;
         public static final int checkbox=0x7f0b0038;
         public static final int collapseActionView=0x7f0b001a;
         public static final int contentPanel=0x7f0b0031;
@@ -1942,8 +1944,8 @@ containing a value of this type.
         public static final int dialog=0x7f0b001e;
         public static final int disableHome=0x7f0b000d;
         public static final int dropdown=0x7f0b001f;
-        public static final int editName=0x7f0b0058;
-        public static final int editSex=0x7f0b0059;
+        public static final int editName=0x7f0b005b;
+        public static final int editSex=0x7f0b005c;
         public static final int editText_ext=0x7f0b0051;
         public static final int edit_query=0x7f0b0042;
         public static final int end=0x7f0b0021;
@@ -1954,6 +1956,7 @@ containing a value of this type.
         public static final int icon=0x7f0b002b;
         public static final int ifRoom=0x7f0b001b;
         public static final int image=0x7f0b0028;
+        public static final int iv_ext_pic=0x7f0b0057;
         public static final int listMode=0x7f0b000a;
         public static final int list_item=0x7f0b002a;
         public static final int middle=0x7f0b0022;
@@ -1994,8 +1997,8 @@ containing a value of this type.
         public static final int title=0x7f0b002c;
         public static final int title_template=0x7f0b002f;
         public static final int topPanel=0x7f0b002e;
-        public static final int tvName=0x7f0b0056;
-        public static final int tvSex=0x7f0b0057;
+        public static final int tvName=0x7f0b0059;
+        public static final int tvSex=0x7f0b005a;
         public static final int up=0x7f0b0001;
         public static final int useLogo=0x7f0b0013;
         public static final int withText=0x7f0b001d;
@@ -2058,14 +2061,15 @@ containing a value of this type.
         public static final int abc_simple_dropdown_hint=0x7f030018;
         public static final int layout_aty_test_asset=0x7f030019;
         public static final int layout_aty_test_external=0x7f03001a;
-        public static final int layout_aty_test_raw=0x7f03001b;
-        public static final int layout_aty_test_sharedreference_activity=0x7f03001c;
-        public static final int layout_list_db_cell=0x7f03001d;
-        public static final int layout_test_db=0x7f03001e;
-        public static final int select_dialog_item_material=0x7f03001f;
-        public static final int select_dialog_multichoice_material=0x7f030020;
-        public static final int select_dialog_singlechoice_material=0x7f030021;
-        public static final int support_simple_spinner_dropdown_item=0x7f030022;
+        public static final int layout_aty_test_external_picture=0x7f03001b;
+        public static final int layout_aty_test_raw=0x7f03001c;
+        public static final int layout_aty_test_sharedreference_activity=0x7f03001d;
+        public static final int layout_list_db_cell=0x7f03001e;
+        public static final int layout_test_db=0x7f03001f;
+        public static final int select_dialog_item_material=0x7f030020;
+        public static final int select_dialog_multichoice_material=0x7f030021;
+        public static final int select_dialog_singlechoice_material=0x7f030022;
+        public static final int support_simple_spinner_dropdown_item=0x7f030023;
     }
     public static final class menu {
         public static final int main=0x7f0f0000;

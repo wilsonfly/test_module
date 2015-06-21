@@ -25,6 +25,7 @@ public class MainActivity extends ListActivity {
 		adapter.add(new ListCellData(this, "Read Raw", new Intent(this, testRaw.class)));
 		adapter.add(new ListCellData(this, "ReadWrite Internal", new Intent(this, testInternal.class)));
 		adapter.add(new ListCellData(this, "ReadWrite External", new Intent(this, testExternal.class)));
+		adapter.add(new ListCellData(this, "ReadWrite Picture in External", new Intent(this, testExternalPicture.class)));
 		adapter.add(new ListCellData(this, "ReadWrite sharedPreference", new Intent(this, testSharedPreference.class)));
 		adapter.add(new ListCellData(this, "ReadWrite DB", new Intent(this, testDB.class)));
 		adapter.add(new ListCellData(this, "test PreferenceActivity", new Intent(this, testSharedPreferenceActivity.class)));

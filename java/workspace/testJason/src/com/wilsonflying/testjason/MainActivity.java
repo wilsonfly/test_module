@@ -13,6 +13,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -34,6 +35,7 @@ public class MainActivity extends ActionBarActivity {
 			isr.close();
 			
 			JSONObject root = new JSONObject(builder.toString());
+			builder.setLength(0);
 			System.out.println("cat:"+root.getString("cat"));
 			
 			JSONArray array = root.getJSONArray("languages");
@@ -44,7 +46,9 @@ public class MainActivity extends ActionBarActivity {
 				System.out.println("ide:"+obj.getString("ide"));
 				System.out.println("name:"+obj.getString("name"));
 				
+				builder.append("id:" + obj.getInt("id")+" ide:"+obj.getString("ide") +" name:"+obj.getString("name") +"\n");
 			}
+			Toast.makeText(MainActivity.this, builder.toString(), Toast.LENGTH_SHORT).show();
 			
 		} catch (UnsupportedEncodingException e) {
 			// TODO Auto-generated catch block
@@ -88,7 +92,7 @@ public class MainActivity extends ActionBarActivity {
         	root.put("languages", array);
         	
         	System.out.println(root.toString());
-        	
+        	Toast.makeText(MainActivity.this, root.toString(), Toast.LENGTH_SHORT).show();
         	
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block

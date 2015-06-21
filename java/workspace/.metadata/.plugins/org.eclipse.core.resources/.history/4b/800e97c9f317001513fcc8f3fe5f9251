@@ -1,0 +1,54 @@
+package com.wilsonflying.testjasonwriter;
+
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+
+
+public class MainActivity extends Activity {
+	private final String JASONFILE = "/sdcard/testJasonWriter.jason";
+	private List<Product> products;
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        findViewById(R.id.btn_write).setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try {
+					FileOutputStream fo = new FileOutputStream(JASONFILE);
+					products = new ArrayList<Product>();
+					products.add(new Product(1, "电脑", (float)8888.88));
+					products.add(new Product(2, "微波炉", (float)666.66));
+					products.add(new Product(3, "洗衣机", (float)1234.56));
+					
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
+		});
+        
+        findViewById(R.id.btn_read).setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
+    }
+
+
+}

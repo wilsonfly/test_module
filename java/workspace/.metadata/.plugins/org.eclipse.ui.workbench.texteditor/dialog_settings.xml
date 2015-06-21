@@ -6,20 +6,20 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="action_view" key="selection"/>
+		<item value="characters" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="action_view_cl"/>
-			<item value="action_view"/>
-			<item value="action"/>
-			<item value="onClick_ShowArgument"/>
-			<item value="handler"/>
-			<item value="scale"/>
-			<item value="drawLinesExt"/>
-			<item value="data"/>
+			<item value="characters"/>
+			<item value="buffer"/>
+			<item value="getCurrentPath"/>
+			<item value="onFileBrowserListener"/>
+			<item value="onFileItemClick"/>
+			<item value="OnFileBrowserListener"/>
+			<item value="getExtName"/>
+			<item value="FileListAdapter"/>
 		</list>
 		<list key="replacehistory">
 			<item value=" "/>

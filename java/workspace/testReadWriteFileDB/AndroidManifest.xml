@@ -28,6 +28,7 @@
         <activity android:name="testRaw"></activity>
         <activity android:name="testInternal"></activity>
         <activity android:name="testExternal"></activity>
+        <activity android:name="testExternalPicture"></activity>
         <activity android:name="testSharedPreference"></activity>
         <activity android:name="testDB"></activity>
         <activity android:name="com.wilsonflying.testreadwrite.testSharedPreferenceActivity"></activity>

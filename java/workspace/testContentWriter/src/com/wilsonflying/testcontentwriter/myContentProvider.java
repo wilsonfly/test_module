@@ -18,7 +18,12 @@ public class myContentProvider extends ContentProvider {
 		// TODO Auto-generated method stub
 //		db = SQLiteDatabase.openOrCreateDatabase("myprovider2.db", null);
 		db = getContext().openOrCreateDatabase("myprovider.db", Context.MODE_PRIVATE, null);
-		db.execSQL("CREATE TABLE userInfo(_id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL)");
+		try {
+			
+			db.execSQL("CREATE TABLE userInfo(_id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT NOT NULL)");
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 		return false;
 	}
 

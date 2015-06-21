@@ -58,8 +58,9 @@ public class MainActivity extends Activity implements OnBackStackChangedListener
 			
 			EditText et = (EditText) view.findViewById(R.id.et);
 //			et.setText("say something here:" + Math.random()*100);
-			et.setText("say something here:" + Math.abs(new Random().nextLong()));
-			
+//			et.clearComposingText();
+//			et.setText("");
+			et.setText("say something here:" + Math.abs(new Random().nextLong()));//TODO:实际测试效果是,多个页面显示内容叠加起来了！！！
 			return view;
 		}
 	}
