@@ -1,8 +1,8 @@
 package com.wilsonflying.testjni2;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends Activity {
 
 
 	private TextView textView;
@@ -89,7 +89,36 @@ public class MainActivity extends ActionBarActivity {
 		case R.id.btn_getMemVar:
 			new AccessNative().GetMemVar();
 			break;
+		case R.id.btn_updateIntArray:
+			int[] array = new int[]{1,2,3,4,5};
+			int[] result = new int[5];
+			result = new AccessNative().updateIntArray(array);
+//			Toast.makeText(MainActivity.this, "orgin:"+array.toString()+" updated:"+result.toString(), Toast.LENGTH_SHORT).show();
+//			Toast.makeText(MainActivity.this, "orgin:"+String.valueOf(array)+" updated:"+String.valueOf(result), Toast.LENGTH_SHORT).show();
 			
+			String str_orgin = "";
+			String str_result = "";
+			for (int i = 0; i < array.length; i++) {
+				str_orgin += array[i];
+				str_result += result[i];
+			}
+			Toast.makeText(MainActivity.this, "orgin:"+ str_orgin+" updated:"+str_result, Toast.LENGTH_SHORT).show();
+			
+			break;
+		case R.id.btn_calculteIntArray:
+			int[] array2 = new int[]{1,2,3,4,5};
+			int[] result2 = new int[5];
+			result2 = new AccessNative().calculateIntArray(array2);
+			
+			String str_orgin2 = "";
+			String str_result2 = "";
+			for (int i = 0; i < array2.length; i++) {
+				str_orgin2 += array2[i];
+				str_result2 += result2[i];
+			}
+			Toast.makeText(MainActivity.this, "orgin:"+ str_orgin2+" updated:"+str_result2, Toast.LENGTH_SHORT).show();
+			
+			break;
 		default:
 			break;
 		}

@@ -1,0 +1,21 @@
+package com.wilsonflying.testanimationraymenu;
+
+import com.wilsonflying.testanimationproperty.R;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+
+
+public class MainActivity extends Activity {
+	private int[] resId = {
+			R.drawable.a,R.drawable.b,R.drawable.c,R.drawable.d,R.drawable.e,R.drawable.f	
+		};
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+}

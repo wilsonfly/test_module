@@ -1,0 +1,33 @@
+package com.wilsonflying.testanimationraymenu;
+
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ObjectAnimator;
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+
+public class MainActivity extends Activity {
+	private int[] resId = { R.drawable.a, R.drawable.b, R.drawable.c,
+			R.drawable.d, R.drawable.e, R.drawable.f };
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+	}
+	
+	public void onSettingClick(View view){
+		ObjectAnimator anim = ObjectAnimator.ofFloat(view, "ranslationY", 0F, 1F);
+		anim.setDuration(1000);
+		anim.start();
+		anim.addListener(new AnimatorListenerAdapter() {
+			@Override
+			public void onAnimationEnd(Animator animation) {
+				// TODO Auto-generated method stub
+				super.onAnimationEnd(animation);
+			}
+		});
+	}
+
+}

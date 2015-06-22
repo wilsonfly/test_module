@@ -1,0 +1,55 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.wilsonflying.testanimationproperty.MainActivity" >
+
+
+    <Button
+        android:id="@+id/btn_tweenMove"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onBtnClick"
+        android:text="TweenAnimation" />
+
+    <Button
+        android:id="@+id/btn_move"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onBtnClick"
+        android:text="动起来" />
+
+    <Button
+        android:id="@+id/btn_move2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onBtnClick"
+        android:text="动起来" />
+    <Button
+        android:id="@+id/btn_move3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onBtnClick"
+        android:text="动起来" />
+    <Button
+        android:id="@+id/btn_move4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onBtnClick"
+        android:text="动起来" />
+    <Button
+        android:id="@+id/btn_move5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onBtnClick"
+        android:text="动起来" />
+
+    
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher" />
+    
+</LinearLayout>

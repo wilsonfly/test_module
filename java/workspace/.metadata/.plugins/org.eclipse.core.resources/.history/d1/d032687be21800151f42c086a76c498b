@@ -1,0 +1,7 @@
+package com.wilsonflying.testfragment2;
+
+import android.app.ListFragment;
+
+public class LeftFragment extends ListFragment {
+
+}

@@ -6,22 +6,23 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="characters" key="selection"/>
-		<item value="true" key="casesensitive"/>
+		<item value="getListView" key="selection"/>
+		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="characters"/>
-			<item value="buffer"/>
-			<item value="getCurrentPath"/>
-			<item value="onFileBrowserListener"/>
-			<item value="onFileItemClick"/>
-			<item value="OnFileBrowserListener"/>
-			<item value="getExtName"/>
-			<item value="FileListAdapter"/>
+			<item value="getListView"/>
+			<item value="detailfragment"/>
+			<item value="getShownIndex"/>
+			<item value="wrap_content"/>
+			<item value="toast"/>
+			<item value="iv"/>
+			<item value="mOrder"/>
+			<item value="source"/>
 		</list>
 		<list key="replacehistory">
+			<item value="50dp"/>
 			<item value=" "/>
 		</list>
 	</section>
@@ -29,7 +30,7 @@
 		<item value="265" key="DIALOG_WIDTH"/>
 		<item value="1|.Helvetica Neue DeskInterface|11.0|0|COCOA|1|.HelveticaNeueDeskInterface-Regular" key="DIALOG_FONT_NAME"/>
 		<item value="399" key="DIALOG_HEIGHT"/>
-		<item value="925" key="DIALOG_X_ORIGIN"/>
-		<item value="154" key="DIALOG_Y_ORIGIN"/>
+		<item value="1015" key="DIALOG_X_ORIGIN"/>
+		<item value="132" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

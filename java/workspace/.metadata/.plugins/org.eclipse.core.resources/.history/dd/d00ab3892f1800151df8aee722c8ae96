@@ -1,0 +1,17 @@
+package com.wilsonflying.testcontentwriter2;
+
+import java.security.Provider;
+
+import android.content.UriMatcher;
+
+public class ReginContentProvider extends Provider {
+
+	private UriMatcher mUriMatcher;
+	private final String AUTHORITY = "com.wilsonflying.regincontentprovider";
+	
+	protected ReginContentProvider(String name, double version, String info) {
+		super(name, version, info);
+		// TODO Auto-generated constructor stub
+	}
+
+}

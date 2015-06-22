@@ -1,0 +1,51 @@
+package com.wilsonflying.testanimationraymenu;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ObjectAnimator;
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+public class MainActivity extends Activity implements OnClickListener {
+	private int[] resId = { R.drawable.a, R.drawable.b, R.drawable.c,
+			R.drawable.d, R.drawable.e, R.drawable.f };
+	List<ImageView> list = new ArrayList<ImageView>();
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		
+		for (int i = 0; i < resId.length; i++) {
+			ImageView iv = new ImageView(this);
+			iv.setImageResource(resId[i]);
+			iv.setOnClickListener(this);
+		}
+	}
+	
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.iv_a:
+			for (int i = 1; i < resId.length; i++) {
+				ObjectAnimator anim = ObjectAnimator.ofFloat(list.get(i), "translationY", 0f, 50f*i);
+				anim.setDuration(300);
+				anim.start();
+			}
+			break;
+
+		default:
+			Toast.makeText(MainActivity.this, "onclick id:"+v.getId(), Toast.LENGTH_SHORT).show();
+			break;
+		}
+	}
+
+}

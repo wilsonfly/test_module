@@ -9,19 +9,19 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 public class DetailFragment extends Fragment {
-	// ´´½¨Ò»¸öDetailFragmentµÄĞÂÊµÀı£¬ÆäÖĞ°üÀ¨Òª´«µİµÄÊı¾İ°ü
+	// åˆ›å»ºä¸€ä¸ªDetailFragmentçš„æ–°å®ä¾‹ï¼Œå…¶ä¸­åŒ…æ‹¬è¦ä¼ é€’çš„æ•°æ®åŒ…
 	public static DetailFragment newInstance(int index) {
 		DetailFragment f = new DetailFragment();
 
-		// ½«index×÷ÎªÒ»¸ö²ÎÊı´«µİ
-		Bundle bundle = new Bundle(); // ÊµÀı»¯Ò»¸öBundle¶ÔÏó
-		bundle.putInt("index", index); // ½«Ë÷ÒıÖµÌí¼Óµ½Bundle¶ÔÏóÖĞ
-		f.setArguments(bundle); // ½«bundle¶ÔÏó×÷ÎªFragmentµÄ²ÎÊı±£´æ
+		// å°†indexä½œä¸ºä¸€ä¸ªå‚æ•°ä¼ é€’
+		Bundle bundle = new Bundle(); // å®ä¾‹åŒ–ä¸€ä¸ªBundleå¯¹è±¡
+		bundle.putInt("index", index); // å°†ç´¢å¼•å€¼æ·»åŠ åˆ°Bundleå¯¹è±¡ä¸­
+		f.setArguments(bundle); // å°†bundleå¯¹è±¡ä½œä¸ºFragmentçš„å‚æ•°ä¿å­˜
 		return f;
 	}
 
 	public int getShownIndex() {
-		return getArguments().getInt("index", 0); // »ñÈ¡ÒªÏÔÊ¾µÄÁĞ±íÏîË÷Òı
+		return getArguments().getInt("index", 0); // è·å–è¦æ˜¾ç¤ºçš„åˆ—è¡¨é¡¹ç´¢å¼•
 	}
 
 	@Override
@@ -31,12 +31,12 @@ public class DetailFragment extends Fragment {
 			return null;
 		}
 
-		ScrollView scroller = new ScrollView(getActivity()); // ´´½¨Ò»¸ö¹ö¶¯ÊÓÍ¼
-		TextView text = new TextView(getActivity()); // ´´½¨Ò»¸öÎÄ±¾¿ò¶ÔÏó
+		ScrollView scroller = new ScrollView(getActivity()); // åˆ›å»ºä¸€ä¸ªæ»šåŠ¨è§†å›¾
+		TextView text = new TextView(getActivity()); // åˆ›å»ºä¸€ä¸ªæ–‡æœ¬æ¡†å¯¹è±¡
 
-		text.setPadding(10, 10, 10, 10); // ÉèÖÃÄÚ±ß¾à
-		scroller.addView(text); // ½«ÎÄ±¾¿ò¶ÔÏóÌí¼Óµ½¹ö¶¯ÊÓÍ¼ÖĞ
-		text.setText(Data.DETAIL[getShownIndex()]); // ÉèÖÃÎÄ±¾¿òÖĞÒªÏÔÊ¾µÄÎÄ±¾
+		text.setPadding(10, 10, 10, 10); // è®¾ç½®å†…è¾¹è·
+		scroller.addView(text); // å°†æ–‡æœ¬æ¡†å¯¹è±¡æ·»åŠ åˆ°æ»šåŠ¨è§†å›¾ä¸­
+		text.setText(Data.DETAIL[getShownIndex()]); // è®¾ç½®æ–‡æœ¬æ¡†ä¸­è¦æ˜¾ç¤ºçš„æ–‡æœ¬
 		return scroller;
 	}
 }

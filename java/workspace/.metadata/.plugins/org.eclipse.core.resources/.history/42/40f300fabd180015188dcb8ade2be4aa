@@ -1,0 +1,42 @@
+package com.wilsonflying.testanimationproperty;
+
+import android.animation.ObjectAnimator;
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.animation.AnimationUtils;
+import android.view.animation.TranslateAnimation;
+import android.widget.ImageView;
+import android.widget.Toast;
+
+
+public class MainActivity extends Activity implements OnClickListener {
+
+	private ImageView mImageView;
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+        mImageView = (ImageView) findViewById(R.id.iv);
+        mImageView.setOnClickListener(this);
+    }
+
+    public void onBtnClick(View view){
+//    	TranslateAnimation anim = new TranslateAnimation(0, 200, 0, 0);
+//    	anim.setDuration(1000);
+//    	anim.setFillAfter(true);
+//    	mImageView.startAnimation(anim);
+    	
+    	ObjectAnimator.ofFloat(mImageView, "translationX", 0F, 200F).setDuration(1000).start();
+    }
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		Toast.makeText(MainActivity.this, "onClick", Toast.LENGTH_SHORT).show();
+	}
+ 
+}

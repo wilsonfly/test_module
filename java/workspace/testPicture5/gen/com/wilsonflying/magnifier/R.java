@@ -15,6 +15,7 @@ public final class R {
         public static final int magnifier=0x7f020001;
         public static final int pic_code=0x7f020002;
         public static final int source=0x7f020003;
+        public static final int source_large=0x7f020004;
     }
     public static final class id {
         public static final int framelayout=0x7f060000;

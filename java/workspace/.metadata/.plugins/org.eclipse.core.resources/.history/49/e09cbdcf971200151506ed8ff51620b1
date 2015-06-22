@@ -1,7 +1,0 @@
-package com.wilsonflying.testfragment;
-
-import android.app.Fragment;
-
-public class RightFragment extends Fragment {
-
-}

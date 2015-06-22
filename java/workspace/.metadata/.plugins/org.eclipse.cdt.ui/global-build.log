@@ -205,3 +205,839 @@ Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersi
 [mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
 
 **** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Install        : libtestJni2.so => libs/arm64-v8a/libtestJni2.so
+[x86_64] Install        : libtestJni2.so => libs/x86_64/libtestJni2.so
+[mips64] Install        : libtestJni2.so => libs/mips64/libtestJni2.so
+[armeabi-v7a] Install        : libtestJni2.so => libs/armeabi-v7a/libtestJni2.so
+[armeabi] Install        : libtestJni2.so => libs/armeabi/libtestJni2.so
+[x86] Install        : libtestJni2.so => libs/x86/libtestJni2.so
+[mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Install        : libtestJni2.so => libs/arm64-v8a/libtestJni2.so
+[x86_64] Install        : libtestJni2.so => libs/x86_64/libtestJni2.so
+[mips64] Install        : libtestJni2.so => libs/mips64/libtestJni2.so
+[armeabi-v7a] Install        : libtestJni2.so => libs/armeabi-v7a/libtestJni2.so
+[armeabi] Install        : libtestJni2.so => libs/armeabi/libtestJni2.so
+[x86] Install        : libtestJni2.so => libs/x86/libtestJni2.so
+[mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Install        : libtestJni2.so => libs/arm64-v8a/libtestJni2.so
+[x86_64] Install        : libtestJni2.so => libs/x86_64/libtestJni2.so
+[mips64] Install        : libtestJni2.so => libs/mips64/libtestJni2.so
+[armeabi-v7a] Install        : libtestJni2.so => libs/armeabi-v7a/libtestJni2.so
+[armeabi] Install        : libtestJni2.so => libs/armeabi/libtestJni2.so
+[x86] Install        : libtestJni2.so => libs/x86/libtestJni2.so
+[mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[arm64-v8a] SharedLibrary  : libtestJni2.so
+[arm64-v8a] Install        : libtestJni2.so => libs/arm64-v8a/libtestJni2.so
+[x86_64] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[x86_64] SharedLibrary  : libtestJni2.so
+[x86_64] Install        : libtestJni2.so => libs/x86_64/libtestJni2.so
+[mips64] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[mips64] SharedLibrary  : libtestJni2.so
+[mips64] Install        : libtestJni2.so => libs/mips64/libtestJni2.so
+[armeabi-v7a] Compile thumb  : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[armeabi-v7a] SharedLibrary  : libtestJni2.so
+[armeabi-v7a] Install        : libtestJni2.so => libs/armeabi-v7a/libtestJni2.so
+[armeabi] Compile thumb  : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[armeabi] SharedLibrary  : libtestJni2.so
+[armeabi] Install        : libtestJni2.so => libs/armeabi/libtestJni2.so
+[x86] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[x86] SharedLibrary  : libtestJni2.so
+[x86] Install        : libtestJni2.so => libs/x86/libtestJni2.so
+[mips] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[mips] SharedLibrary  : libtestJni2.so
+[mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[arm64-v8a] SharedLibrary  : libtestJni2.so
+[arm64-v8a] Install        : libtestJni2.so => libs/arm64-v8a/libtestJni2.so
+[x86_64] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[x86_64] SharedLibrary  : libtestJni2.so
+[x86_64] Install        : libtestJni2.so => libs/x86_64/libtestJni2.so
+[mips64] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[mips64] SharedLibrary  : libtestJni2.so
+[mips64] Install        : libtestJni2.so => libs/mips64/libtestJni2.so
+[armeabi-v7a] Compile thumb  : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[armeabi-v7a] SharedLibrary  : libtestJni2.so
+[armeabi-v7a] Install        : libtestJni2.so => libs/armeabi-v7a/libtestJni2.so
+[armeabi] Compile thumb  : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[armeabi] SharedLibrary  : libtestJni2.so
+[armeabi] Install        : libtestJni2.so => libs/armeabi/libtestJni2.so
+[x86] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[x86] SharedLibrary  : libtestJni2.so
+[x86] Install        : libtestJni2.so => libs/x86/libtestJni2.so
+[mips] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[mips] SharedLibrary  : libtestJni2.so
+[mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Install        : libtestJni2.so => libs/arm64-v8a/libtestJni2.so
+[x86_64] Install        : libtestJni2.so => libs/x86_64/libtestJni2.so
+[mips64] Install        : libtestJni2.so => libs/mips64/libtestJni2.so
+[armeabi-v7a] Install        : libtestJni2.so => libs/armeabi-v7a/libtestJni2.so
+[armeabi] Install        : libtestJni2.so => libs/armeabi/libtestJni2.so
+[x86] Install        : libtestJni2.so => libs/x86/libtestJni2.so
+[mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Install        : libtestJni2.so => libs/arm64-v8a/libtestJni2.so
+[x86_64] Install        : libtestJni2.so => libs/x86_64/libtestJni2.so
+[mips64] Install        : libtestJni2.so => libs/mips64/libtestJni2.so
+[armeabi-v7a] Install        : libtestJni2.so => libs/armeabi-v7a/libtestJni2.so
+[armeabi] Install        : libtestJni2.so => libs/armeabi/libtestJni2.so
+[x86] Install        : libtestJni2.so => libs/x86/libtestJni2.so
+[mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Install        : libtestJni2.so => libs/arm64-v8a/libtestJni2.so
+[x86_64] Install        : libtestJni2.so => libs/x86_64/libtestJni2.so
+[mips64] Install        : libtestJni2.so => libs/mips64/libtestJni2.so
+[armeabi-v7a] Install        : libtestJni2.so => libs/armeabi-v7a/libtestJni2.so
+[armeabi] Install        : libtestJni2.so => libs/armeabi/libtestJni2.so
+[x86] Install        : libtestJni2.so => libs/x86/libtestJni2.so
+[mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Install        : libtestJni2.so => libs/arm64-v8a/libtestJni2.so
+[x86_64] Install        : libtestJni2.so => libs/x86_64/libtestJni2.so
+[mips64] Install        : libtestJni2.so => libs/mips64/libtestJni2.so
+[armeabi-v7a] Install        : libtestJni2.so => libs/armeabi-v7a/libtestJni2.so
+[armeabi] Install        : libtestJni2.so => libs/armeabi/libtestJni2.so
+[x86] Install        : libtestJni2.so => libs/x86/libtestJni2.so
+[mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Install        : libtestJni2.so => libs/arm64-v8a/libtestJni2.so
+[x86_64] Install        : libtestJni2.so => libs/x86_64/libtestJni2.so
+[mips64] Install        : libtestJni2.so => libs/mips64/libtestJni2.so
+[armeabi-v7a] Install        : libtestJni2.so => libs/armeabi-v7a/libtestJni2.so
+[armeabi] Install        : libtestJni2.so => libs/armeabi/libtestJni2.so
+[x86] Install        : libtestJni2.so => libs/x86/libtestJni2.so
+[mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Install        : libtestJni2.so => libs/arm64-v8a/libtestJni2.so
+[x86_64] Install        : libtestJni2.so => libs/x86_64/libtestJni2.so
+[mips64] Install        : libtestJni2.so => libs/mips64/libtestJni2.so
+[armeabi-v7a] Install        : libtestJni2.so => libs/armeabi-v7a/libtestJni2.so
+[armeabi] Install        : libtestJni2.so => libs/armeabi/libtestJni2.so
+[x86] Install        : libtestJni2.so => libs/x86/libtestJni2.so
+[mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Install        : libtestJni2.so => libs/arm64-v8a/libtestJni2.so
+[x86_64] Install        : libtestJni2.so => libs/x86_64/libtestJni2.so
+[mips64] Install        : libtestJni2.so => libs/mips64/libtestJni2.so
+[armeabi-v7a] Install        : libtestJni2.so => libs/armeabi-v7a/libtestJni2.so
+[armeabi] Install        : libtestJni2.so => libs/armeabi/libtestJni2.so
+[x86] Install        : libtestJni2.so => libs/x86/libtestJni2.so
+[mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Install        : libtestJni2.so => libs/arm64-v8a/libtestJni2.so
+[x86_64] Install        : libtestJni2.so => libs/x86_64/libtestJni2.so
+[mips64] Install        : libtestJni2.so => libs/mips64/libtestJni2.so
+[armeabi-v7a] Install        : libtestJni2.so => libs/armeabi-v7a/libtestJni2.so
+[armeabi] Install        : libtestJni2.so => libs/armeabi/libtestJni2.so
+[x86] Install        : libtestJni2.so => libs/x86/libtestJni2.so
+[mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Install        : libtestJni2.so => libs/arm64-v8a/libtestJni2.so
+[x86_64] Install        : libtestJni2.so => libs/x86_64/libtestJni2.so
+[mips64] Install        : libtestJni2.so => libs/mips64/libtestJni2.so
+[armeabi-v7a] Install        : libtestJni2.so => libs/armeabi-v7a/libtestJni2.so
+[armeabi] Install        : libtestJni2.so => libs/armeabi/libtestJni2.so
+[x86] Install        : libtestJni2.so => libs/x86/libtestJni2.so
+[mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_updateIntArray':
+jni/testJni2.c:110:2: warning: passing argument 4 of '(*env)->GetIntArrayRegion' makes integer from pointer without a cast
+  (*env)->GetIntArrayRegion(array, 0, 5, nativeArray);
+  ^
+jni/testJni2.c:110:2: note: expected 'jsize' but argument is of type 'jint *'
+jni/testJni2.c:110:2: error: too few arguments to function '(*env)->GetIntArrayRegion'
+jni/testJni2.c:111:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for (int var = 0; var < 5; ++var) {
+  ^
+jni/testJni2.c:111:2: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+jni/testJni2.c:113:3: warning: too many arguments for format [-Wformat-extra-args]
+   LOGD(TAG, "nativeArray[%d]:%d\n", var, nativeArray[var]);
+   ^
+make: *** [obj/local/arm64-v8a/objs/testJni2/testJni2.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_updateIntArray':
+jni/testJni2.c:110:2: warning: passing argument 4 of '(*env)->GetIntArrayRegion' makes integer from pointer without a cast
+  (*env)->GetIntArrayRegion(array, 0, 5, nativeArray);
+  ^
+jni/testJni2.c:110:2: note: expected 'jsize' but argument is of type 'jint *'
+jni/testJni2.c:110:2: error: too few arguments to function '(*env)->GetIntArrayRegion'
+jni/testJni2.c:115:3: warning: too many arguments for format [-Wformat-extra-args]
+   LOGD(TAG, "nativeArray[%d]:%d\n", var, nativeArray[var]);
+   ^
+make: *** [obj/local/arm64-v8a/objs/testJni2/testJni2.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_updateIntArray':
+jni/testJni2.c:117:3: warning: too many arguments for format [-Wformat-extra-args]
+   LOGD(TAG, "nativeArray[%d]:%d\n", var, nativeArray[var]);
+   ^
+[arm64-v8a] SharedLibrary  : libtestJni2.so
+[arm64-v8a] Install        : libtestJni2.so => libs/arm64-v8a/libtestJni2.so
+[x86_64] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_updateIntArray':
+jni/testJni2.c:117:3: warning: too many arguments for format [-Wformat-extra-args]
+   LOGD(TAG, "nativeArray[%d]:%d\n", var, nativeArray[var]);
+   ^
+[x86_64] SharedLibrary  : libtestJni2.so
+[x86_64] Install        : libtestJni2.so => libs/x86_64/libtestJni2.so
+[mips64] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_updateIntArray':
+jni/testJni2.c:117:3: warning: too many arguments for format [-Wformat-extra-args]
+   LOGD(TAG, "nativeArray[%d]:%d\n", var, nativeArray[var]);
+   ^
+[mips64] SharedLibrary  : libtestJni2.so
+[mips64] Install        : libtestJni2.so => libs/mips64/libtestJni2.so
+[armeabi-v7a] Compile thumb  : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_updateIntArray':
+jni/testJni2.c:117:3: warning: too many arguments for format [-Wformat-extra-args]
+   LOGD(TAG, "nativeArray[%d]:%d\n", var, nativeArray[var]);
+   ^
+[armeabi-v7a] SharedLibrary  : libtestJni2.so
+[armeabi-v7a] Install        : libtestJni2.so => libs/armeabi-v7a/libtestJni2.so
+[armeabi] Compile thumb  : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_updateIntArray':
+jni/testJni2.c:117:3: warning: too many arguments for format [-Wformat-extra-args]
+   LOGD(TAG, "nativeArray[%d]:%d\n", var, nativeArray[var]);
+   ^
+[armeabi] SharedLibrary  : libtestJni2.so
+[armeabi] Install        : libtestJni2.so => libs/armeabi/libtestJni2.so
+[x86] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_updateIntArray':
+jni/testJni2.c:117:3: warning: too many arguments for format [-Wformat-extra-args]
+   LOGD(TAG, "nativeArray[%d]:%d\n", var, nativeArray[var]);
+   ^
+[x86] SharedLibrary  : libtestJni2.so
+[x86] Install        : libtestJni2.so => libs/x86/libtestJni2.so
+[mips] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_updateIntArray':
+jni/testJni2.c:117:3: warning: too many arguments for format [-Wformat-extra-args]
+   LOGD(TAG, "nativeArray[%d]:%d\n", var, nativeArray[var]);
+   ^
+[mips] SharedLibrary  : libtestJni2.so
+[mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Install        : libtestJni2.so => libs/arm64-v8a/libtestJni2.so
+[x86_64] Install        : libtestJni2.so => libs/x86_64/libtestJni2.so
+[mips64] Install        : libtestJni2.so => libs/mips64/libtestJni2.so
+[armeabi-v7a] Install        : libtestJni2.so => libs/armeabi-v7a/libtestJni2.so
+[armeabi] Install        : libtestJni2.so => libs/armeabi/libtestJni2.so
+[x86] Install        : libtestJni2.so => libs/x86/libtestJni2.so
+[mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[arm64-v8a] SharedLibrary  : libtestJni2.so
+[arm64-v8a] Install        : libtestJni2.so => libs/arm64-v8a/libtestJni2.so
+[x86_64] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[x86_64] SharedLibrary  : libtestJni2.so
+[x86_64] Install        : libtestJni2.so => libs/x86_64/libtestJni2.so
+[mips64] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[mips64] SharedLibrary  : libtestJni2.so
+[mips64] Install        : libtestJni2.so => libs/mips64/libtestJni2.so
+[armeabi-v7a] Compile thumb  : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[armeabi-v7a] SharedLibrary  : libtestJni2.so
+[armeabi-v7a] Install        : libtestJni2.so => libs/armeabi-v7a/libtestJni2.so
+[armeabi] Compile thumb  : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[armeabi] SharedLibrary  : libtestJni2.so
+[armeabi] Install        : libtestJni2.so => libs/armeabi/libtestJni2.so
+[x86] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[x86] SharedLibrary  : libtestJni2.so
+[x86] Install        : libtestJni2.so => libs/x86/libtestJni2.so
+[mips] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[mips] SharedLibrary  : libtestJni2.so
+[mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Install        : libtestJni2.so => libs/arm64-v8a/libtestJni2.so
+[x86_64] Install        : libtestJni2.so => libs/x86_64/libtestJni2.so
+[mips64] Install        : libtestJni2.so => libs/mips64/libtestJni2.so
+[armeabi-v7a] Install        : libtestJni2.so => libs/armeabi-v7a/libtestJni2.so
+[armeabi] Install        : libtestJni2.so => libs/armeabi/libtestJni2.so
+[x86] Install        : libtestJni2.so => libs/x86/libtestJni2.so
+[mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Install        : libtestJni2.so => libs/arm64-v8a/libtestJni2.so
+[x86_64] Install        : libtestJni2.so => libs/x86_64/libtestJni2.so
+[mips64] Install        : libtestJni2.so => libs/mips64/libtestJni2.so
+[armeabi-v7a] Install        : libtestJni2.so => libs/armeabi-v7a/libtestJni2.so
+[armeabi] Install        : libtestJni2.so => libs/armeabi/libtestJni2.so
+[x86] Install        : libtestJni2.so => libs/x86/libtestJni2.so
+[mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[arm64-v8a] SharedLibrary  : libtestJni2.so
+[arm64-v8a] Install        : libtestJni2.so => libs/arm64-v8a/libtestJni2.so
+[x86_64] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[x86_64] SharedLibrary  : libtestJni2.so
+[x86_64] Install        : libtestJni2.so => libs/x86_64/libtestJni2.so
+[mips64] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[mips64] SharedLibrary  : libtestJni2.so
+[mips64] Install        : libtestJni2.so => libs/mips64/libtestJni2.so
+[armeabi-v7a] Compile thumb  : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[armeabi-v7a] SharedLibrary  : libtestJni2.so
+[armeabi-v7a] Install        : libtestJni2.so => libs/armeabi-v7a/libtestJni2.so
+[armeabi] Compile thumb  : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[armeabi] SharedLibrary  : libtestJni2.so
+[armeabi] Install        : libtestJni2.so => libs/armeabi/libtestJni2.so
+[x86] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[x86] SharedLibrary  : libtestJni2.so
+[x86] Install        : libtestJni2.so => libs/x86/libtestJni2.so
+[mips] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[mips] SharedLibrary  : libtestJni2.so
+[mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[arm64-v8a] SharedLibrary  : libtestJni2.so
+[arm64-v8a] Install        : libtestJni2.so => libs/arm64-v8a/libtestJni2.so
+[x86_64] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[x86_64] SharedLibrary  : libtestJni2.so
+[x86_64] Install        : libtestJni2.so => libs/x86_64/libtestJni2.so
+[mips64] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[mips64] SharedLibrary  : libtestJni2.so
+[mips64] Install        : libtestJni2.so => libs/mips64/libtestJni2.so
+[armeabi-v7a] Compile thumb  : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[armeabi-v7a] SharedLibrary  : libtestJni2.so
+[armeabi-v7a] Install        : libtestJni2.so => libs/armeabi-v7a/libtestJni2.so
+[armeabi] Compile thumb  : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[armeabi] SharedLibrary  : libtestJni2.so
+[armeabi] Install        : libtestJni2.so => libs/armeabi/libtestJni2.so
+[x86] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[x86] SharedLibrary  : libtestJni2.so
+[x86] Install        : libtestJni2.so => libs/x86/libtestJni2.so
+[mips] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:33:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s",buf);//logcat看不到
+   ^
+[mips] SharedLibrary  : libtestJni2.so
+[mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:31:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s", buf); //logcat看不到
+   ^
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_updateIntArray':
+jni/testJni2.c:120:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for (int var = 0; var < length; ++var) {
+  ^
+jni/testJni2.c:120:2: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+make: *** [obj/local/arm64-v8a/objs/testJni2/testJni2.o] Error 1
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:31:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s", buf); //logcat看不到
+   ^
+[arm64-v8a] SharedLibrary  : libtestJni2.so
+[arm64-v8a] Install        : libtestJni2.so => libs/arm64-v8a/libtestJni2.so
+[x86_64] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:31:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s", buf); //logcat看不到
+   ^
+[x86_64] SharedLibrary  : libtestJni2.so
+[x86_64] Install        : libtestJni2.so => libs/x86_64/libtestJni2.so
+[mips64] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:31:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s", buf); //logcat看不到
+   ^
+[mips64] SharedLibrary  : libtestJni2.so
+[mips64] Install        : libtestJni2.so => libs/mips64/libtestJni2.so
+[armeabi-v7a] Compile thumb  : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:31:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s", buf); //logcat看不到
+   ^
+[armeabi-v7a] SharedLibrary  : libtestJni2.so
+[armeabi-v7a] Install        : libtestJni2.so => libs/armeabi-v7a/libtestJni2.so
+[armeabi] Compile thumb  : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:31:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s", buf); //logcat看不到
+   ^
+[armeabi] SharedLibrary  : libtestJni2.so
+[armeabi] Install        : libtestJni2.so => libs/armeabi/libtestJni2.so
+[x86] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:31:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s", buf); //logcat看不到
+   ^
+[x86] SharedLibrary  : libtestJni2.so
+[x86] Install        : libtestJni2.so => libs/x86/libtestJni2.so
+[mips] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:31:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s", buf); //logcat看不到
+   ^
+[mips] SharedLibrary  : libtestJni2.so
+[mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Install        : libtestJni2.so => libs/arm64-v8a/libtestJni2.so
+[x86_64] Install        : libtestJni2.so => libs/x86_64/libtestJni2.so
+[mips64] Install        : libtestJni2.so => libs/mips64/libtestJni2.so
+[armeabi-v7a] Install        : libtestJni2.so => libs/armeabi-v7a/libtestJni2.so
+[armeabi] Install        : libtestJni2.so => libs/armeabi/libtestJni2.so
+[x86] Install        : libtestJni2.so => libs/x86/libtestJni2.so
+[mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:31:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s", buf); //logcat看不到
+   ^
+[arm64-v8a] SharedLibrary  : libtestJni2.so
+[arm64-v8a] Install        : libtestJni2.so => libs/arm64-v8a/libtestJni2.so
+[x86_64] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:31:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s", buf); //logcat看不到
+   ^
+[x86_64] SharedLibrary  : libtestJni2.so
+[x86_64] Install        : libtestJni2.so => libs/x86_64/libtestJni2.so
+[mips64] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:31:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s", buf); //logcat看不到
+   ^
+[mips64] SharedLibrary  : libtestJni2.so
+[mips64] Install        : libtestJni2.so => libs/mips64/libtestJni2.so
+[armeabi-v7a] Compile thumb  : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:31:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s", buf); //logcat看不到
+   ^
+[armeabi-v7a] SharedLibrary  : libtestJni2.so
+[armeabi-v7a] Install        : libtestJni2.so => libs/armeabi-v7a/libtestJni2.so
+[armeabi] Compile thumb  : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:31:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s", buf); //logcat看不到
+   ^
+[armeabi] SharedLibrary  : libtestJni2.so
+[armeabi] Install        : libtestJni2.so => libs/armeabi/libtestJni2.so
+[x86] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:31:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s", buf); //logcat看不到
+   ^
+[x86] SharedLibrary  : libtestJni2.so
+[x86] Install        : libtestJni2.so => libs/x86/libtestJni2.so
+[mips] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:31:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s", buf); //logcat看不到
+   ^
+[mips] SharedLibrary  : libtestJni2.so
+[mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Install        : libtestJni2.so => libs/arm64-v8a/libtestJni2.so
+[x86_64] Install        : libtestJni2.so => libs/x86_64/libtestJni2.so
+[mips64] Install        : libtestJni2.so => libs/mips64/libtestJni2.so
+[armeabi-v7a] Install        : libtestJni2.so => libs/armeabi-v7a/libtestJni2.so
+[armeabi] Install        : libtestJni2.so => libs/armeabi/libtestJni2.so
+[x86] Install        : libtestJni2.so => libs/x86/libtestJni2.so
+[mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
+
+**** Build Finished ****
+
+**** Build of configuration Default for project testJni2 ****
+
+/Users/cindy/Applications/ndk/android-ndk-r10d/ndk-build all 
+Android NDK: WARNING: APP_PLATFORM android-21 is larger than android:minSdkVersion 8 in ./AndroidManifest.xml    
+[arm64-v8a] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:31:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s", buf); //logcat看不到
+   ^
+[arm64-v8a] SharedLibrary  : libtestJni2.so
+[arm64-v8a] Install        : libtestJni2.so => libs/arm64-v8a/libtestJni2.so
+[x86_64] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:31:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s", buf); //logcat看不到
+   ^
+[x86_64] SharedLibrary  : libtestJni2.so
+[x86_64] Install        : libtestJni2.so => libs/x86_64/libtestJni2.so
+[mips64] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:31:3: warning: incompatible implicit declaration of built-in function 'printf'
+   printf("get string from Activity:%s", buf); //logcat看不到
+   ^
+[mips64] SharedLibrary  : libtestJni2.so
+[mips64] Install        : libtestJni2.so => libs/mips64/libtestJni2.so
+[armeabi-v7a] Compile thumb  : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:31:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s", buf); //logcat看不到
+   ^
+[armeabi-v7a] SharedLibrary  : libtestJni2.so
+[armeabi-v7a] Install        : libtestJni2.so => libs/armeabi-v7a/libtestJni2.so
+[armeabi] Compile thumb  : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:31:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s", buf); //logcat看不到
+   ^
+[armeabi] SharedLibrary  : libtestJni2.so
+[armeabi] Install        : libtestJni2.so => libs/armeabi/libtestJni2.so
+[x86] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:31:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s", buf); //logcat看不到
+   ^
+[x86] SharedLibrary  : libtestJni2.so
+[x86] Install        : libtestJni2.so => libs/x86/libtestJni2.so
+[mips] Compile        : testJni2 <= testJni2.c
+jni/testJni2.c: In function 'Java_com_wilsonflying_testjni2_AccessNative_putStringFromJNI':
+jni/testJni2.c:31:3: warning: incompatible implicit declaration of built-in function 'printf' [enabled by default]
+   printf("get string from Activity:%s", buf); //logcat看不到
+   ^
+[mips] SharedLibrary  : libtestJni2.so
+[mips] Install        : libtestJni2.so => libs/mips/libtestJni2.so
+
+**** Build Finished ****

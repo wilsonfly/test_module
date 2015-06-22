@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 6 elements to &apos;drawable-mdpi&apos;&#x0A;- Original project: &apos;testAnimationProperty&apos;&#x0A;- Destination element: &apos;drawable-mdpi&apos;&#x0A;- Original elements:&#x0A;     f.png&#x0A;     b.png&#x0A;     a.png&#x0A;     e.png&#x0A;     c.png&#x0A;     d.png" description="Copy files" element1="res/drawable-mdpi/f.png" element2="res/drawable-mdpi/b.png" element3="res/drawable-mdpi/a.png" element4="res/drawable-mdpi/e.png" element5="res/drawable-mdpi/c.png" element6="res/drawable-mdpi/d.png" files="6" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1434968219938" target="/testAnimationRayMenu/res/drawable-mdpi" units="0" version="1.0"/>
+</session>

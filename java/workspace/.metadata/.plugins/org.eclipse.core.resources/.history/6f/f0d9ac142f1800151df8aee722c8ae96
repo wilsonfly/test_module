@@ -1,0 +1,7 @@
+package com.wilsonflying.testcontentwriter2;
+
+import java.security.Provider;
+
+public class ReginContentProvider extends Provider {
+
+}

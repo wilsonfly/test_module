@@ -9,70 +9,70 @@ import android.widget.ListView;
 
 public class ListFragment extends android.app.ListFragment {
 
-	boolean dualPane; // ÊÇ·ñÔÚÒ»ÆÁÉÏÍ¬Ê±ÏÔÊ¾ÁĞ±íºÍÏêÏ¸ÄÚÈİ
-	int curCheckPosition = 0; // µ±Ç°Ñ¡ÔñµÄË÷ÒıÎ»ÖÃ
+	boolean dualPane; // æ˜¯å¦åœ¨ä¸€å±ä¸ŠåŒæ—¶æ˜¾ç¤ºåˆ—è¡¨å’Œè¯¦ç»†å†…å®¹
+	int curCheckPosition = 0; // å½“å‰é€‰æ‹©çš„ç´¢å¼•ä½ç½®
 
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
 
 		setListAdapter(new ArrayAdapter<String>(getActivity(),
-				android.R.layout.simple_list_item_checked, Data.TITLES)); // ÎªÁĞ±íÉèÖÃÊÊÅäÆ÷
+				android.R.layout.simple_list_item_checked, Data.TITLES)); // ä¸ºåˆ—è¡¨è®¾ç½®é€‚é…å™¨
 
-		View detailFrame = getActivity().findViewById(R.id.detail); // »ñÈ¡²¼¾ÖÎÄ¼şÖĞÌí¼ÓµÄFrameLayoutÖ¡²¼¾Ö¹ÜÀíÆ÷
+		View detailFrame = getActivity().findViewById(R.id.detail); // è·å–å¸ƒå±€æ–‡ä»¶ä¸­æ·»åŠ çš„FrameLayoutå¸§å¸ƒå±€ç®¡ç†å™¨
 		dualPane = detailFrame != null && 
-				detailFrame.getVisibility() == View.VISIBLE; // ÅĞ¶ÏÊÇ·ñÔÚÒ»ÆÁÉÏÍ¬Ê±ÏÔÊ¾ÁĞ±íºÍÏêÏ¸ÄÚÈİ
+				detailFrame.getVisibility() == View.VISIBLE; // åˆ¤æ–­æ˜¯å¦åœ¨ä¸€å±ä¸ŠåŒæ—¶æ˜¾ç¤ºåˆ—è¡¨å’Œè¯¦ç»†å†…å®¹
 
 		if (savedInstanceState != null) {
-			curCheckPosition = savedInstanceState.getInt("curChoice", 0); // ¸üĞÂµ±Ç°Ñ¡ÔñµÄË÷ÒıÎ»ÖÃ
+			curCheckPosition = savedInstanceState.getInt("curChoice", 0); // æ›´æ–°å½“å‰é€‰æ‹©çš„ç´¢å¼•ä½ç½®
 		}
 
-		if (dualPane) { // Èç¹ûÔÚÒ»ÆÁÉÏÍ¬Ê±ÏÔÊ¾ÁĞ±íºÍÏêÏ¸ÄÚÈİ
-			getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE); // ÉèÖÃÁĞ±íÎªµ¥Ñ¡Ä£Ê½
-			showDetails(curCheckPosition); // ÏÔÊ¾ÏêÏ¸ÄÚÈİ
+		if (dualPane) { // å¦‚æœåœ¨ä¸€å±ä¸ŠåŒæ—¶æ˜¾ç¤ºåˆ—è¡¨å’Œè¯¦ç»†å†…å®¹
+			getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE); // è®¾ç½®åˆ—è¡¨ä¸ºå•é€‰æ¨¡å¼
+			showDetails(curCheckPosition); // æ˜¾ç¤ºè¯¦ç»†å†…å®¹
 		}
 	}
 
-	// ÖØĞ´onSaveInstanceState()·½·¨£¬±£´æµ±Ç°Ñ¡ÖĞµÄÁĞ±íÏîµÄË÷ÒıÖµ
+	// é‡å†™onSaveInstanceState()æ–¹æ³•ï¼Œä¿å­˜å½“å‰é€‰ä¸­çš„åˆ—è¡¨é¡¹çš„ç´¢å¼•å€¼
 	@Override
 	public void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
 		outState.putInt("curChoice", curCheckPosition);
 	}
 
-	// ÖØĞ´onListItemClick()·½·¨
+	// é‡å†™onListItemClick()æ–¹æ³•
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id) {
-		showDetails(position); // µ÷ÓÃshowDetails()·½·¨ÏÔÊ¾ÏêÏ¸ÄÚÈİ
+		showDetails(position); // è°ƒç”¨showDetails()æ–¹æ³•æ˜¾ç¤ºè¯¦ç»†å†…å®¹
 	}
 
 	void showDetails(int index) {
-		curCheckPosition = index; // ¸üĞÂ±£´æµ±Ç°Ë÷ÒıÎ»ÖÃµÄ±äÁ¿µÄÖµÎªµ±Ç°Ñ¡ÖĞÖµ
+		curCheckPosition = index; // æ›´æ–°ä¿å­˜å½“å‰ç´¢å¼•ä½ç½®çš„å˜é‡çš„å€¼ä¸ºå½“å‰é€‰ä¸­å€¼
 
-		if (dualPane) { // µ±ÔÚÒ»ÆÁÉÏÍ¬Ê±ÏÔÊ¾ÁĞ±íºÍÏêÏ¸ÄÚÈİÊ±
+		if (dualPane) { // å½“åœ¨ä¸€å±ä¸ŠåŒæ—¶æ˜¾ç¤ºåˆ—è¡¨å’Œè¯¦ç»†å†…å®¹æ—¶
 
-			getListView().setItemChecked(index, true); // ÉèÖÃÑ¡ÖĞÁĞ±íÏîÎªÑ¡ÖĞ×´Ì¬
+			getListView().setItemChecked(index, true); // è®¾ç½®é€‰ä¸­åˆ—è¡¨é¡¹ä¸ºé€‰ä¸­çŠ¶æ€
 
 			DetailFragment details = (DetailFragment) getFragmentManager()
-					.findFragmentById(R.id.detail); // »ñÈ¡ÓÃÓÚÏÔÊ¾ÏêÏ¸ÄÚÈİµÄFragment
-			if (details == null || details.getShownIndex() != index) { // Èç¹ûÈç¹û
-				details = DetailFragment.newInstance(index); // ´´½¨Ò»¸öĞÂµÄDetailFragmentÊµÀıÓÃÓÚÏÔÊ¾µ±Ç°Ñ¡ÔñÏî¶ÔÓ¦µÄÏêÏ¸ÄÚÈİ
+					.findFragmentById(R.id.detail); // è·å–ç”¨äºæ˜¾ç¤ºè¯¦ç»†å†…å®¹çš„Fragment
+			if (details == null || details.getShownIndex() != index) { // å¦‚æœå¦‚æœ
+				details = DetailFragment.newInstance(index); // åˆ›å»ºä¸€ä¸ªæ–°çš„DetailFragmentå®ä¾‹ç”¨äºæ˜¾ç¤ºå½“å‰é€‰æ‹©é¡¹å¯¹åº”çš„è¯¦ç»†å†…å®¹
 
-				// ÒªÔÚactivityÖĞ¹ÜÀífragment, ĞèÒªÊ¹ÓÃFragmentManager
+				// è¦åœ¨activityä¸­ç®¡ç†fragment, éœ€è¦ä½¿ç”¨FragmentManager
 				FragmentTransaction ft = getFragmentManager()
-						.beginTransaction();// »ñµÃÒ»¸öFragmentTransactionµÄÊµÀı
-				ft.replace(R.id.detail, details); // Ìæ»»Ô­À´ÏÔÊ¾µÄÏêÏ¸ÄÚÈİ
-				ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE); // ÉèÖÃ×ª»»Ğ§¹û
-				ft.commit(); // Ìá½»ÊÂÎñ
+						.beginTransaction();// è·å¾—ä¸€ä¸ªFragmentTransactionçš„å®ä¾‹
+				ft.replace(R.id.detail, details); // æ›¿æ¢åŸæ¥æ˜¾ç¤ºçš„è¯¦ç»†å†…å®¹
+				ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE); // è®¾ç½®è½¬æ¢æ•ˆæœ
+				ft.commit(); // æäº¤äº‹åŠ¡
 			}
 
-		} else { // ÔÚÒ»ÆÁÉÏÖ»ÄÜÏÔÊ¾ÁĞ±í»òÏêÏ¸ÄÚÈİÖĞµÄÒ»¸öÄÚÈİÊ±
+		} else { // åœ¨ä¸€å±ä¸Šåªèƒ½æ˜¾ç¤ºåˆ—è¡¨æˆ–è¯¦ç»†å†…å®¹ä¸­çš„ä¸€ä¸ªå†…å®¹æ—¶
 
-			// Ê¹ÓÃÒ»¸öĞÂµÄActivityÏÔÊ¾ÏêÏ¸ÄÚÈİ
+			// ä½¿ç”¨ä¸€ä¸ªæ–°çš„Activityæ˜¾ç¤ºè¯¦ç»†å†…å®¹
 			Intent intent = new Intent(getActivity(),
-					MainActivity.DetailActivity.class); // ´´½¨Ò»¸öIntent¶ÔÏó
-			intent.putExtra("index", index); // ÉèÖÃÒ»¸öÒª´«µİµÄ²ÎÊı
-			startActivity(intent); // ¿ªÆôÒ»¸öÖ¸¶¨µÄActivity
+					MainActivity.DetailActivity.class); // åˆ›å»ºä¸€ä¸ªIntentå¯¹è±¡
+			intent.putExtra("index", index); // è®¾ç½®ä¸€ä¸ªè¦ä¼ é€’çš„å‚æ•°
+			startActivity(intent); // å¼€å¯ä¸€ä¸ªæŒ‡å®šçš„Activity
 		}
 	}
 

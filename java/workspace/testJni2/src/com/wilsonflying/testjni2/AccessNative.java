@@ -9,6 +9,9 @@ public class AccessNative {
 	public native double getSum(int x, double y);
 	public native void callBackVoid();
 	public native void GetMemVar();
+	public native int[] updateIntArray(int[] array);
+	public native int[] calculateIntArray(int[] array);
+
 	
 	public static void showToast(){
 		new MainActivity().getmHandler().sendEmptyMessage(MainActivity.getSHOW_TOAST());

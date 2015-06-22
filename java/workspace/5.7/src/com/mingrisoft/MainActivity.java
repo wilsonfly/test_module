@@ -8,28 +8,28 @@ public class MainActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main); // ÉèÖÃÊ¹ÓÃµÄ²¼¾ÖÄÚÈİ
+		setContentView(R.layout.main); // è®¾ç½®ä½¿ç”¨çš„å¸ƒå±€å†…å®¹
 
 	}
 
-	// ´´½¨Ò»¸ö¼Ì³ĞActivityµÄÄÚ²¿Àà£¬ÓÃÓÚÔÚÊÖ»ú½çÃæÖĞ£¬Í¨¹ıActivityÏÔÊ¾ÏêÏ¸ÄÚÈİ
+	// åˆ›å»ºä¸€ä¸ªç»§æ‰¿Activityçš„å†…éƒ¨ç±»ï¼Œç”¨äºåœ¨æ‰‹æœºç•Œé¢ä¸­ï¼Œé€šè¿‡Activityæ˜¾ç¤ºè¯¦ç»†å†…å®¹
 	public static class DetailActivity extends Activity {
 
 		@Override
 		protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
-			// ÅĞ¶ÏÊÇ·ñÎªºáÆÁ£¬Èç¹ûÎªºáÆÁ£¬Ôò½áÊøµ±Ç°Activity£¬×¼±¸Ê¹ÓÃFragmentÏÔÊ¾ÏêÏ¸ÄÚÈİ
+			// åˆ¤æ–­æ˜¯å¦ä¸ºæ¨ªå±ï¼Œå¦‚æœä¸ºæ¨ªå±ï¼Œåˆ™ç»“æŸå½“å‰Activityï¼Œå‡†å¤‡ä½¿ç”¨Fragmentæ˜¾ç¤ºè¯¦ç»†å†…å®¹
 			if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
-				finish(); // ½áÊøµ±Ç°Activity
+				finish(); // ç»“æŸå½“å‰Activity
 				return;
 			}
 
 			if (savedInstanceState == null) { //
-				// ÔÚ³õÊ¼»¯Ê±²åÈëÒ»¸öÏÔÊ¾ÏêÏ¸ÄÚÈİµÄFragment
-				DetailFragment details = new DetailFragment();// ÊµÀı»¯DetailFragmentµÄ¶ÔÏó
-				details.setArguments(getIntent().getExtras()); // ÉèÖÃÒª´«µİµÄ²ÎÊı
+				// åœ¨åˆå§‹åŒ–æ—¶æ’å…¥ä¸€ä¸ªæ˜¾ç¤ºè¯¦ç»†å†…å®¹çš„Fragment
+				DetailFragment details = new DetailFragment();// å®ä¾‹åŒ–DetailFragmentçš„å¯¹è±¡
+				details.setArguments(getIntent().getExtras()); // è®¾ç½®è¦ä¼ é€’çš„å‚æ•°
 				getFragmentManager().beginTransaction()
-						.add(android.R.id.content, details).commit(); // Ìí¼ÓÒ»¸öÏÔÊ¾ÏêÏ¸ÄÚÈİµÄFragment
+						.add(android.R.id.content, details).commit(); // æ·»åŠ ä¸€ä¸ªæ˜¾ç¤ºè¯¦ç»†å†…å®¹çš„Fragment
 			}
 		}
 	}

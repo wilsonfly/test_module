@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;region.db&apos; to &apos;assets&apos;&#x0A;- Original project: &apos;RegionContentProvider&apos;&#x0A;- Destination element: &apos;assets&apos;&#x0A;- Original element: &apos;region.db&apos;" description="Copy file" element1="assets/region.db" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1434903695473" target="/testContentWriter2/assets" units="0" version="1.0"/>
+</session>

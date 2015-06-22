@@ -27,8 +27,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:singleLine="true"
-            android:ems="6" >
+            android:ems="6"
+            android:singleLine="true" >
 
             <requestFocus />
         </EditText>
@@ -51,9 +51,9 @@
 
     <Button
         android:id="@+id/btn_callBackVoid"
-        android:onClick="onClickFun"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="onClickFun"
         android:text="native中调用java方法显示toast" />
 
     <Button
@@ -62,5 +62,19 @@
         android:layout_height="wrap_content"
         android:onClick="onClickFun"
         android:text="native 获取java类成员变量值" />
+
+    <Button
+        android:id="@+id/btn_updateIntArray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickFun"
+        android:text="传递数组到native，各加3后返回" />
+
+    <Button
+        android:id="@+id/btn_calculteIntArray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickFun"
+        android:text="传递数组到native，各加3后返回，不改变原数组" />
 
 </LinearLayout>

@@ -47,6 +47,22 @@ JNIEXPORT void JNICALL Java_com_wilsonflying_testjni2_AccessNative_callBackVoid
 JNIEXPORT void JNICALL Java_com_wilsonflying_testjni2_AccessNative_GetMemVar
   (JNIEnv *, jobject);
 
+/*
+ * Class:     com_wilsonflying_testjni2_AccessNative
+ * Method:    updateIntArray
+ * Signature: ([I)[I
+ */
+JNIEXPORT jintArray JNICALL Java_com_wilsonflying_testjni2_AccessNative_updateIntArray
+  (JNIEnv *, jobject, jintArray);
+
+/*
+ * Class:     com_wilsonflying_testjni2_AccessNative
+ * Method:    calculateIntArray
+ * Signature: ([I)[I
+ */
+JNIEXPORT jintArray JNICALL Java_com_wilsonflying_testjni2_AccessNative_calculateIntArray
+  (JNIEnv *, jobject, jintArray);
+
 #ifdef __cplusplus
 }
 #endif
