@@ -21,32 +21,32 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
-	private Button button1; // ÉùÃ÷Ò»¸ö¡°Ö±½Ó·ÃÎÊ¡±°´Å¥¶ÔÏó
-	private Button button2; // ÉùÃ÷Ò»¸ö¡°µÇÂ¼ºó·ÃÎÊ¡±°´Å¥¶ÔÏó
-	private Handler handler; // ÉùÃ÷Ò»¸öHandler¶ÔÏó
-	private String result = ""; // ÉùÃ÷Ò»¸ö´ú±íÏÔÊ¾ÄÚÈİµÄ×Ö·û´®
-	private TextView resultTV; // ÉùÃ÷Ò»¸öÏÔÊ¾½á¹ûµÄÎÄ±¾¿ò¶ÔÏó
-	public static HttpClient httpclient; // ÉùÃ÷Ò»¸ö¾²Ì¬µÄÈ«¾ÖµÄHttpClient¶ÔÏó
+	private Button button1; // å£°æ˜ä¸€ä¸ªâ€œç›´æ¥è®¿é—®â€æŒ‰é’®å¯¹è±¡
+	private Button button2; // å£°æ˜ä¸€ä¸ªâ€œç™»å½•åè®¿é—®â€æŒ‰é’®å¯¹è±¡
+	private Handler handler; // å£°æ˜ä¸€ä¸ªHandlerå¯¹è±¡
+	private String result = ""; // å£°æ˜ä¸€ä¸ªä»£è¡¨æ˜¾ç¤ºå†…å®¹çš„å­—ç¬¦ä¸²
+	private TextView resultTV; // å£°æ˜ä¸€ä¸ªæ˜¾ç¤ºç»“æœçš„æ–‡æœ¬æ¡†å¯¹è±¡
+	public static HttpClient httpclient; // å£°æ˜ä¸€ä¸ªé™æ€çš„å…¨å±€çš„HttpClientå¯¹è±¡
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		httpclient = new DefaultHttpClient(); // ´´½¨HttpClient¶ÔÏó
-		resultTV = (TextView) findViewById(R.id.result); // »ñÈ¡ÏÔÊ¾½á¹ûµÄTextView×é¼ş
-		button1 = (Button) findViewById(R.id.button1); // »ñÈ¡¡°·ÃÎÊÒ³Ãæ¡±°´Å¥×é¼ş
-		// Îª°´Å¥Ìí¼Óµ¥»÷ÊÂ¼ş¼àÌıÆ÷
+		httpclient = new DefaultHttpClient(); // åˆ›å»ºHttpClientå¯¹è±¡
+		resultTV = (TextView) findViewById(R.id.result); // è·å–æ˜¾ç¤ºç»“æœçš„TextViewç»„ä»¶
+		button1 = (Button) findViewById(R.id.button1); // è·å–â€œè®¿é—®é¡µé¢â€æŒ‰é’®ç»„ä»¶
+		// ä¸ºæŒ‰é’®æ·»åŠ å•å‡»äº‹ä»¶ç›‘å¬å™¨
 		button1.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				// ´´½¨Ò»¸öĞÂÏß³Ì£¬ÓÃÓÚÏò·şÎñÆ÷·¢ËÍÒ»¸öGETÇëÇó
+				// åˆ›å»ºä¸€ä¸ªæ–°çº¿ç¨‹ï¼Œç”¨äºå‘æœåŠ¡å™¨å‘é€ä¸€ä¸ªGETè¯·æ±‚
 				new Thread(new Runnable() {
 					public void run() {
 						access();
-						Message m = handler.obtainMessage(); // »ñÈ¡Ò»¸öMessage
-						handler.sendMessage(m); // ·¢ËÍÏûÏ¢
+						Message m = handler.obtainMessage(); // è·å–ä¸€ä¸ªMessage
+						handler.sendMessage(m); // å‘é€æ¶ˆæ¯
 					}
-				}).start(); // ¿ªÆôÏß³Ì
+				}).start(); // å¼€å¯çº¿ç¨‹
 
 			}
 		});
@@ -54,19 +54,19 @@ public class MainActivity extends Activity {
 			@Override
 			public void handleMessage(Message msg) {
 				if (result != null) {
-					resultTV.setText(result); // ÏÔÊ¾»ñµÃµÄ½á¹û
+					resultTV.setText(result); // æ˜¾ç¤ºè·å¾—çš„ç»“æœ
 				}
 				super.handleMessage(msg);
 			}
 		};
-		button2 = (Button) findViewById(R.id.button2);	//»ñÈ¡¡°ÓÃ»§µÇÂ¼¡±°´Å¥
+		button2 = (Button) findViewById(R.id.button2);	//è·å–â€œç”¨æˆ·ç™»å½•â€æŒ‰é’®
 		button2.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				Intent intent = new Intent(MainActivity.this,
-						LoginActivity.class); // ´´½¨Intent¶ÔÏó
-				startActivityForResult(intent, 0x11); // Æô¶¯ĞÂµÄActivity
+						LoginActivity.class); // åˆ›å»ºIntentå¯¹è±¡
+				startActivityForResult(intent, 0x11); // å¯åŠ¨æ–°çš„Activity
 			}
 		});
 	}
@@ -74,27 +74,27 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		if (requestCode == 0x11 && resultCode == 0x11) { // ÅĞ¶ÏÊÇ·ñÎª´ı´¦ÀíµÄ½á¹û
-			Bundle bundle = data.getExtras(); // »ñÈ¡´«µİµÄÊı¾İ°ü
+		if (requestCode == 0x11 && resultCode == 0x11) { // åˆ¤æ–­æ˜¯å¦ä¸ºå¾…å¤„ç†çš„ç»“æœ
+			Bundle bundle = data.getExtras(); // è·å–ä¼ é€’çš„æ•°æ®åŒ…
 			result = bundle.getString("result");
-			resultTV.setText(result); // ÏÔÊ¾»ñµÃµÄ½á¹û
+			resultTV.setText(result); // æ˜¾ç¤ºè·å¾—çš„ç»“æœ
 		}
 	}
 
 	public void access() {
-		String target = "http://192.168.1.66:8081/login/index.jsp"; // ÒªÌá½»µÄÄ¿±êµØÖ·
+		String target = "http://192.168.1.66:8081/login/index.jsp"; // è¦æäº¤çš„ç›®æ ‡åœ°å€
 
-		HttpGet httpRequest = new HttpGet(target); // ´´½¨HttpGet¶ÔÏó
+		HttpGet httpRequest = new HttpGet(target); // åˆ›å»ºHttpGetå¯¹è±¡
 		HttpResponse httpResponse;
 		try {
-			httpResponse = httpclient.execute(httpRequest); // Ö´ĞĞHttpClientÇëÇó
+			httpResponse = httpclient.execute(httpRequest); // æ‰§è¡ŒHttpClientè¯·æ±‚
 			if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
-				result = EntityUtils.toString(httpResponse.getEntity()); // »ñÈ¡·µ»ØµÄ×Ö·û´®
+				result = EntityUtils.toString(httpResponse.getEntity()); // è·å–è¿”å›çš„å­—ç¬¦ä¸²
 			} else {
-				result = "ÇëÇóÊ§°Ü£¡";
+				result = "è¯·æ±‚å¤±è´¥ï¼";
 			}
 		} catch (ClientProtocolException e) {
-			e.printStackTrace(); // Êä³öÒì³£ĞÅÏ¢
+			e.printStackTrace(); // è¾“å‡ºå¼‚å¸¸ä¿¡æ¯
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

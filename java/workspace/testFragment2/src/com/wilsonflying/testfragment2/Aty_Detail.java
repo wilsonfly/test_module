@@ -16,7 +16,7 @@ public class Aty_Detail extends Activity {
 			return;
 		}
 		
-		if(savedInstanceState != null){
+		if(savedInstanceState == null){
 			DetailFragment fg = new DetailFragment();
 			fg.setArguments(getIntent().getExtras());
 			getFragmentManager().beginTransaction().add(android.R.id.content, fg).commit();//content是什么？

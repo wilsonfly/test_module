@@ -27,6 +27,8 @@ public class LeftFragment extends ListFragment {
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
 				android.R.layout.simple_list_item_single_choice, Data.TITILES);
 		
+		setListAdapter(adapter);
+		
 		View detailFragment = getActivity().findViewById(R.id.fl_detail);
 		isDualPane = detailFragment != null && detailFragment.getVisibility() == View.VISIBLE;
 		if(isDualPane){
