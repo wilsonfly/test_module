@@ -6,20 +6,20 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="isDualPane" key="selection"/>
+		<item value="Base64" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="base64"/>
+			<item value="result"/>
+			<item value="send"/>
 			<item value="isDualPane"/>
 			<item value="getListView"/>
 			<item value="detailfragment"/>
 			<item value="getShownIndex"/>
 			<item value="wrap_content"/>
-			<item value="toast"/>
-			<item value="iv"/>
-			<item value="mOrder"/>
 		</list>
 		<list key="replacehistory">
 			<item value="50dp"/>

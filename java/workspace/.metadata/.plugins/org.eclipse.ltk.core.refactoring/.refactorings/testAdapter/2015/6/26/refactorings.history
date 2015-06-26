@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;ListCellData.java&apos; to &apos;testHttp/src/com.wilsonflying.testhttp&apos;&#x0A;- Original project: &apos;testAdapter&apos;&#x0A;- Destination element: &apos;testHttp/src/com.wilsonflying.testhttp&apos;&#x0A;- Original element: &apos;com.wilsonflying.testadapter.ListCellData.java&apos;" description="Copy compilation unit" destination="=testHttp/src&lt;com.wilsonflying.testhttp" element1="/src&lt;com.wilsonflying.testadapter{ListCellData.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1435330659209" units="1" version="1.0"/>
+</session>
