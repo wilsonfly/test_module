@@ -1,18 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF"
     android:orientation="vertical" >
-
- <!--    <TextView
-        android:id="@+id/tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" /> -->
-
+    
+<!--     android:background="#FFF" 如果没有这个重新设置背景的动作的话，显示的数字内容会叠加起来，很快就成了一片黑了 -->
+<!-- 
     <EditText
         android:id="@+id/et"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
-    </EditText>
+    </EditText> -->
+    
+   	<TextView 
+   	    android:id="@+id/tv"
+   	    android:layout_width="match_parent"
+   	    android:layout_height="wrap_content"/>
 
 </LinearLayout>

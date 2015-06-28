@@ -1,0 +1,28 @@
+package com.wilsonflying.testcontentreaderregion;
+
+import android.app.Activity;
+import android.content.ContentResolver;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+
+
+public class MainActivity extends Activity {
+
+	private static final String AUTHORITY = "com.wilsonflying.regincontentprovider";
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    public void onClickShowAll(View view){
+    	ContentResolver resolver = getContentResolver();
+    	Uri uri = Uri.parse(AUTHORITY);
+    }
+ 
+    public void onClickShowShandong(View view){
+    	
+    }
+}
