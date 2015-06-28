@@ -19,6 +19,13 @@
         android:onClick="onClickShowShandong"
         android:text="显示山东省的城市" />
 
+    <Button
+        android:id="@+id/btnQueryWeifang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickQueryWeifang"
+        android:text="查询山东潍坊" />
+
     <ListView
         android:id="@+id/lv"
         android:layout_width="match_parent"
