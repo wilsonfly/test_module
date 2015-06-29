@@ -1,8 +1,0 @@
-package com.wilsonflying.testfragment2;
-
-public class Data {
-
-	public static final String[] TITILES = {
-		"灵魂战车2","变形金刚3:月黑之时","敢死队2"
-	}
-}

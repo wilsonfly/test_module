@@ -1,7 +1,0 @@
-package com.wilsonflying.testfragment2;
-
-import android.app.Activity;
-
-public class Aty_Detail extends Activity {
-
-}
