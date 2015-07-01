@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.wilsonflying.testinstallapk.MainActivity" >
+
+    <Button
+        android:id="@+id/btnInstall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickBtn"
+        android:text="安装apk" />
+
+    <Button
+        android:id="@+id/btnInstallSilent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickBtn"
+        android:text="静默安装apk" />
+
+    <Button
+        android:id="@+id/btnUninstall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickBtn"
+        android:text="卸载apk" />
+
+    <Button
+        android:id="@+id/btnUninstallSilent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickBtn"
+        android:text="静默卸载apk" />
+
+    <Button
+        android:id="@+id/btnGetCaller"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickBtn"
+        android:text="获取调用者-getCallingUid" />
+
+    <Button
+        android:id="@+id/btnGetStack"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickBtn"
+        android:text="获取调用栈" />
+
+    <Button
+        android:id="@+id/btnGetRunning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickBtn"
+        android:text="获取正在运行的apk" />
+
+</LinearLayout>
