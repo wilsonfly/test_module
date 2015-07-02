@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.wilsonflying.testhttp2.MainActivity" >
+
+    <Button
+        android:id="@+id/btnGetPicPost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickGetPic"
+        android:text="Handler的post方式" />
+
+    <Button
+        android:id="@+id/btnGetPicMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickGetPic"
+        android:text="Handler的sendMessage方式" />
+
+    <Button
+        android:id="@+id/btnAsyncTask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickGetPic"
+        android:text="使用AsyncTask获取图片" />
+
+    <Button
+        android:id="@+id/btnAsyncTaskProgress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickGetPic"
+        android:text="使用AsyncTask获取图片,带有进度条" />
+
+    <TextView
+        android:id="@+id/tvMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="点击按钮更新下面图片" />
+
+    <ImageView
+        android:id="@+id/ivToShow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_launcher" />
+
+</LinearLayout>
