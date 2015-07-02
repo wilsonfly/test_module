@@ -16,13 +16,16 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
     }
 
-    public void onClick(View view){
+    public void onClickBtn(View view){
     	switch (view.getId()) {
-		case R.id.btn_showlistview:
-			Intent intent = new Intent(MainActivity.this, Aty_listview.class);
+		case R.id.btnShowListView:
+			Intent intent = new Intent(MainActivity.this, ShowListViewAty.class);
 			startActivity(intent);
 			break;
-
+		case R.id.btnShowListView2:
+			Intent intent2 = new Intent(MainActivity.this, ShowListViewAty2.class);
+			startActivity(intent2);
+			break;
 		default:
 			break;
 		}
