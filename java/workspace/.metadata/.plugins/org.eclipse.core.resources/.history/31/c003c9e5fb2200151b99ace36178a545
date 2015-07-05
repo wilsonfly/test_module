@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btn_showBottomFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick_showBottomFragment"
+        android:text="打开动态fragment，并传参" />
+    
+    <Button
+        android:id="@+id/btn_showBottomFragmentStatic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClick_showBottomFragment"
+        android:text="打开静态fragment，并传参" />
+
+    <LinearLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <fragment
+        android:id="@+id/fragDynamic"
+        android:layout_width="match_parent" 
+        android:layout_height="wrap_content"
+        android:name="com.wilsonflying.transArgument.BottomFragmentStatic">
+    </fragment>
+
+</LinearLayout>

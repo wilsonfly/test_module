@@ -1,0 +1,22 @@
+package com.wilsonflying.testannotation;
+
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.ViewById;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.ListView;
+
+@EActivity(R.layout.activity_forth)
+public class ForthAty extends Activity {
+
+	@ViewById(R.id.lvNum)
+	ListView lvNum;
+	
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+	}
+}

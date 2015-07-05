@@ -1,0 +1,32 @@
+package com.wilsonflying.testannotation;
+
+import org.androidannotations.annotations.Background;
+import org.androidannotations.annotations.Click;
+import org.androidannotations.annotations.EActivity;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
+
+@EActivity(R.layout.activity_second)
+public class SecondAty extends Activity {
+
+	private final String TAG = "SecondAty";
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		Log.d(TAG, "SecondAty :"+Thread.currentThread().getId());
+	}
+	
+	@Click(R.id.btnDoBackgroud)
+	public void testBackground(){
+		doSomethingBackgroud();
+	}
+	
+	@Background
+	public void doSomethingBackgroud(){
+		Log.d(TAG, "doSomethingBackgroud :"+Thread.currentThread().getId());
+	}
+}

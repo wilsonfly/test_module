@@ -11,24 +11,17 @@ import android.widget.Toast;
 
 public class TopFragment extends Fragment implements OnClickListener{
 
-	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
-//		return super.onCreateView(inflater, container, savedInstanceState);
-		
-		View view = inflater.inflate(R.layout.layout_topfragment, null);
-//		view.setOnClickListener(this);
+	private onTopButtonClickLister listener;
 	
-		view.findViewById(R.id.btn_topfragment).setOnClickListener(this);
-		return view;
+	public interface onTopButtonClickLister{
+		public void onClickEvent(String info);
 	}
 
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		if(listener != null){
-			listener.onClick("Info From TopFragment");
+			listener.onClickEvent("Info From TopFragment");
 		}
 	}
 	
@@ -42,9 +35,17 @@ public class TopFragment extends Fragment implements OnClickListener{
 		super.onAttach(activity);
 	}
 	
-	public interface onTopButtonClickLister{
-		public void onClick(String info);
-	}
-	private onTopButtonClickLister listener;
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+//		return super.onCreateView(inflater, container, savedInstanceState);
+		
+		View view = inflater.inflate(R.layout.layout_topfragment, null);
+//		view.setOnClickListener(this);
 	
+		view.findViewById(R.id.btn_topfragment).setOnClickListener(this);
+		return view;
+	}
+
 }

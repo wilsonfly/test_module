@@ -59,7 +59,7 @@ public class LeftFragment extends ListFragment {
 			trans.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
 			trans.commit();
 		}else{
-			Intent intent = new Intent(getActivity(), Aty_Detail.class);
+			Intent intent = new Intent(getActivity(), DetailAty.class);
 			intent.putExtra("index", position);
 			startActivity(intent);
 		}

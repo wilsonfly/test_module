@@ -47,7 +47,7 @@ public class LeftFragment extends Fragment implements OnItemClickListener {
 			
 			TextView tv = (TextView) getActivity().findViewById(R.id.tv_rightFragment);
 			if(tv == null){
-				Intent intent = new Intent(getActivity(), Aty_Detail.class);
+				Intent intent = new Intent(getActivity(), DetailAty.class);
 				intent.putExtra("detailInfo", data_s);
 				startActivity(intent);
 			}else{

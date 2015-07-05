@@ -17,12 +17,11 @@ public class MainActivity extends Activity implements onTopButtonClickLister{
     }
 
 	@Override
-	public void onClick(String info) {
+	public void onClickEvent(String info) {
 		// TODO Auto-generated method stub
 		Toast.makeText(MainActivity.this, "info:"+info+"MainActivity will do something", Toast.LENGTH_SHORT).show();
 		BottomFragment fragment = (BottomFragment) getFragmentManager().findFragmentById(R.id.fragment_bottom);
 		fragment.updateText("update text from MainActivity");
 	}
-
 
 }

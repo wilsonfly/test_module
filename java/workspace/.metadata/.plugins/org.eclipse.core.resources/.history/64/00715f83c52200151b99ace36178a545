@@ -1,0 +1,16 @@
+package com.wilsonflying.testannotation;
+
+import org.androidannotations.annotations.EActivity;
+
+import android.app.Activity;
+import android.os.Bundle;
+
+@EActivity
+public class SecondAty extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+	}
+}

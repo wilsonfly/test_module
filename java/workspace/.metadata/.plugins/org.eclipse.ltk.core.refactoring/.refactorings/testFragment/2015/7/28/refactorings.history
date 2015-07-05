@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.wilsonflying.testfragment.RightFragment&apos; to &apos;DetailFragment&apos;&#x0A;- Original project: &apos;testFragment&apos;&#x0A;- Original element: &apos;com.wilsonflying.testfragment.RightFragment&apos;&#x0A;- Renamed element: &apos;com.wilsonflying.testfragment.DetailFragment&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;RightFragment&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.wilsonflying.testfragment{RightFragment.java[RightFragment" matchStrategy="1" name="DetailFragment" qualified="false" references="true" similarDeclarations="false" stamp="1436082488869" textual="false" version="1.0"/>
+</session>

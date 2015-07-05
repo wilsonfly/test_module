@@ -1,0 +1,28 @@
+package com.wilsonflying.testannotation;
+
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.Extra;
+import org.androidannotations.annotations.ViewById;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.TextView;
+
+@EActivity(R.layout.activity_second)
+public class ThirdAty extends Activity {
+
+	@Extra(MainActivity.n)
+	TextView tvName;
+	@ViewById
+	TextView tvAge;
+	
+	public initView(){
+		tvName.
+	}
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+	}
+}

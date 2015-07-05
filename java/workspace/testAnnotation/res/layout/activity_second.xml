@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tvSecondAty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This is SecondAty" />
+
+    <Button
+        android:id="@+id/btnDoBackgroud"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="在新线程打个印" />
+
+    <Button
+        android:id="@+id/btnDoUiThread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="更新UI" />
+
+</LinearLayout>

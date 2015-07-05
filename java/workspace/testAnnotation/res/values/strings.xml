@@ -4,5 +4,6 @@
     <string name="app_name">testAnnotation</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="updated_text_content">来自Uithread更新的内容</string>
 
 </resources>

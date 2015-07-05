@@ -21,12 +21,13 @@ public class MainActivity extends Activity implements OnBackStackChangedListener
 	}
 
 	private void NewFragment(boolean toAdd) {
+		MyFragment fragment = new MyFragment();
 		FragmentManager manager = getFragmentManager();
 		FragmentTransaction trans = manager.beginTransaction();
-		MyFragment fragment = new MyFragment();
 		trans.add(R.id.fragment_container, fragment);
 		if(toAdd){
-			trans.addToBackStack(String.valueOf(getFragmentManager().getBackStackEntryCount() + 1));
+//			trans.addToBackStack(String.valueOf(getFragmentManager().getBackStackEntryCount() + 1));//no1
+			trans.addToBackStack(null);//no2
 		}
 		trans.commit();
 		manager.addOnBackStackChangedListener(this);
@@ -42,7 +43,7 @@ public class MainActivity extends Activity implements OnBackStackChangedListener
 	public void onClickPrePage(View v){
 		FragmentManager manager = getFragmentManager();
 		manager.popBackStack();
-		//fragmentManager.popBackStackImmediate("1",FragmentManager.POP_BACK_STACK_INCLUSIVE);
+		//manager.popBackStackImmediate("1",FragmentManager.POP_BACK_STACK_INCLUSIVE);
 	}
 	
 	public void onClickNextPage(View v){

@@ -16,6 +16,6 @@
         android:layout_width="0px"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        class="com.wilsonflying.testfragment.RightFragment" />
+        class="com.wilsonflying.testfragment.DetailFragment" />
 
 </LinearLayout>

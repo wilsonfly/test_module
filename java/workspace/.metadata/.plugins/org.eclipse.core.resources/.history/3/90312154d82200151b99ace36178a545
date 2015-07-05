@@ -1,0 +1,49 @@
+package com.wilsonflying.testannotation;
+
+import org.androidannotations.annotations.Background;
+import org.androidannotations.annotations.Click;
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.ViewById;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.support.annotation.UiThread;
+import android.util.Log;
+import android.widget.TextView;
+
+@EActivity(R.layout.activity_second)
+public class SecondAty extends Activity {
+
+	private final String TAG = "SecondAty";
+	
+	@ViewById(R.id.tvSecondAty)
+	TextView tvSecondAty;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		Log.d(TAG, "SecondAty :"+Thread.currentThread().getId());
+	}
+	
+	@Click(R.id.btnDoBackgroud)
+	public void testBackground(){
+		doSomethingBackgroud();
+	}
+	
+	@Click(R.id.btnDoBackgroud)
+	public void testUIThread(){
+		doSomethingUIThread();
+	}
+	
+	@UiThread
+	private void doSomethingUIThread() {
+		// TODO Auto-generated method stub
+		tvSecondAty.setText("Call UiThread 更新内容");
+	}
+
+	@Background
+	public void doSomethingBackgroud(){
+		Log.d(TAG, "doSomethingBackgroud :"+Thread.currentThread().getId());
+	}
+}
