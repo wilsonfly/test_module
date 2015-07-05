@@ -417,7 +417,7 @@ int id action_menu_presenter 0x7f090006
 int id action_mode_bar 0x7f09003d
 int id action_mode_bar_stub 0x7f09003c
 int id action_mode_close_button 0x7f090025
-int id action_settings 0x7f090055
+int id action_settings 0x7f090056
 int id activity_chooser_view_content 0x7f090026
 int id alertTitle 0x7f090030
 int id always 0x7f090019
@@ -485,6 +485,7 @@ int id textSpacerNoButtons 0x7f090033
 int id title 0x7f09002c
 int id title_template 0x7f09002f
 int id topPanel 0x7f09002e
+int id tvShowInfoStatic 0x7f090055
 int id tv_showInfo 0x7f090053
 int id up 0x7f090001
 int id useLogo 0x7f090013

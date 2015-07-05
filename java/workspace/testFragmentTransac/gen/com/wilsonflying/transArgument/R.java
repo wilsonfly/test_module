@@ -1917,7 +1917,7 @@ containing a value of this type.
         public static final int action_mode_bar=0x7f09003d;
         public static final int action_mode_bar_stub=0x7f09003c;
         public static final int action_mode_close_button=0x7f090025;
-        public static final int action_settings=0x7f090055;
+        public static final int action_settings=0x7f090056;
         public static final int activity_chooser_view_content=0x7f090026;
         public static final int alertTitle=0x7f090030;
         public static final int always=0x7f090019;
@@ -1985,6 +1985,7 @@ containing a value of this type.
         public static final int title=0x7f09002c;
         public static final int title_template=0x7f09002f;
         public static final int topPanel=0x7f09002e;
+        public static final int tvShowInfoStatic=0x7f090055;
         public static final int tv_showInfo=0x7f090053;
         public static final int up=0x7f090001;
         public static final int useLogo=0x7f090013;

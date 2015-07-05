@@ -28,13 +28,12 @@ public class BottomFragmentStatic extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.layout_static, null);
-		final TextView tv = (TextView) view.findViewById(R.id.tvShowInfoStatic);
+		TextView tv = view.findViewById(R.id.tvShowInfoStatic);
 		view.findViewById(R.id.btnGetAgument).setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				tv.setText(getDescription());
 				Toast.makeText(getActivity(), "getdescription:"+getDescription(), Toast.LENGTH_SHORT).show();
 			}
 		});

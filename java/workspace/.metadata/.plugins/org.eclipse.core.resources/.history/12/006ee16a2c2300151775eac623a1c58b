@@ -8,11 +8,11 @@
         android:id="@+id/btnGetAgument"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:onClick="onClickStatic"
         android:text="获取传给此静态fragment的参数" />
-<!--         android:onClick="onClickStatic" -->
 
     <TextView
-        android:id="@+id/tvShowInfoStatic"
+        android:id="@+id/tv_showInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="静态Fragment"/>

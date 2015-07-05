@@ -12,7 +12,7 @@
 <!--         android:onClick="onClickStatic" -->
 
     <TextView
-        android:id="@+id/tvShowInfoStatic"
+        android:id="@+id/tv_showInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="静态Fragment"/>

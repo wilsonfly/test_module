@@ -1,7 +1,0 @@
-package com.wilsonflying.testfragmentbackstack;
-
-import android.app.Fragment;
-
-public class MyFragment extends Fragment {
-
-}

@@ -11,13 +11,6 @@
         android:onClick="onClick_showBottomFragment"
         android:text="打开动态fragment，并传参" />
 
-    <LinearLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
-    </LinearLayout>
-    
     <fragment
         android:id="@+id/fragStatic"
         android:name="com.wilsonflying.transArgument.BottomFragmentStatic"
@@ -25,5 +18,11 @@
         android:layout_height="wrap_content" >
     </fragment>
 
+    <LinearLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+    </LinearLayout>
 
 </LinearLayout>
