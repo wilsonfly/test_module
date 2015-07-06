@@ -50,30 +50,30 @@ public class ListView_ext_adapter extends BaseAdapter {
 		LayoutInflater inflater = LayoutInflater.from(getTheContext());
 		
 		//======终极版，使用了convertView(避免每次new 一个View)及viewHolder(避免每次去findViewById)======//
-//		ViewHolder viewHolder;
-//		if(convertView == null){
-//			convertView = inflater.inflate(R.layout.layout_celldata_listview_ext, null);
-//			
-//			viewHolder = new ViewHolder();
-//			viewHolder.setImageView((ImageView) convertView.findViewById(R.id.imageview));
-//			viewHolder.setTv_name((TextView) convertView.findViewById(R.id.tv_name));
-//			viewHolder.setTv_des((TextView) convertView.findViewById(R.id.tv_description));
-//			convertView.setTag(viewHolder);
-//		}else{
-//			viewHolder = (ViewHolder) convertView.getTag();
-//		}
-//		
-//		cellData_listview_ext celldata = (cellData_listview_ext) getItem(position);
-//		
-//		ImageView image = viewHolder.getImageView();
-//		TextView tv_name = viewHolder.getTv_name();
-//		TextView tv_des = viewHolder.getTv_des();
-//		
-//		image.setImageResource(celldata.getIconId());
-//		tv_name.setText(celldata.getName());
-//		tv_des.setText(celldata.getDescription());
-//		
-//		return convertView;
+		ViewHolder viewHolder;
+		if(convertView == null){
+			convertView = inflater.inflate(R.layout.layout_celldata_listview_ext, null);
+			
+			viewHolder = new ViewHolder();
+			viewHolder.setImageView((ImageView) convertView.findViewById(R.id.imageview));
+			viewHolder.setTv_name((TextView) convertView.findViewById(R.id.tv_name));
+			viewHolder.setTv_des((TextView) convertView.findViewById(R.id.tv_description));
+			convertView.setTag(viewHolder);
+		}else{
+			viewHolder = (ViewHolder) convertView.getTag();
+		}
+		
+		cellData_listview_ext celldata = (cellData_listview_ext) getItem(position);
+		
+		ImageView image = viewHolder.getImageView();
+		TextView tv_name = viewHolder.getTv_name();
+		TextView tv_des = viewHolder.getTv_des();
+		
+		image.setImageResource(celldata.getIconId());
+		tv_name.setText(celldata.getName());
+		tv_des.setText(celldata.getDescription());
+		
+		return convertView;
 		//======终极版，使用了convertView(避免每次new 一个View)及viewHolder(避免每次去findViewById)======//
 
 		//======继续进阶，使用了convertView(避免每次new 一个View)======//
@@ -117,20 +117,20 @@ public class ListView_ext_adapter extends BaseAdapter {
 		//======进阶，其实没有必要每次新建一个变量，完全可以使用converView，无论其是否为空======//
 
 		//======性能最糟糕的情况======//
-		View view = new View(getTheContext());
-		view = (LinearLayout) inflater.inflate(R.layout.layout_celldata_listview_ext, null);
-		
-		cellData_listview_ext celldata = (cellData_listview_ext) getItem(position);
-		
-		ImageView image = (ImageView) view.findViewById(R.id.imageview);
-		TextView tv_name = (TextView) view.findViewById(R.id.tv_name);
-		TextView tv_des = (TextView) view.findViewById(R.id.tv_description);
-		
-		image.setImageResource(celldata.getIconId());
-		tv_name.setText(celldata.getName());
-		tv_des.setText(celldata.getDescription());
-		
-		return view;
+//		View view = new View(getTheContext());
+//		view = (LinearLayout) inflater.inflate(R.layout.layout_celldata_listview_ext, null);
+//		
+//		cellData_listview_ext celldata = (cellData_listview_ext) getItem(position);
+//		
+//		ImageView image = (ImageView) view.findViewById(R.id.imageview);
+//		TextView tv_name = (TextView) view.findViewById(R.id.tv_name);
+//		TextView tv_des = (TextView) view.findViewById(R.id.tv_description);
+//		
+//		image.setImageResource(celldata.getIconId());
+//		tv_name.setText(celldata.getName());
+//		tv_des.setText(celldata.getDescription());
+//		
+//		return view;
 		//======性能最糟糕的情况======//
 
 	}

@@ -89,13 +89,13 @@ public class MainActivity extends Activity {
 			@Override
 			public void onStopTrackingTouch(SeekBar seekBar) {
 				// TODO Auto-generated method stub
-				Toast.makeText(MainActivity.this, "½áÊøÒ»´Î", Toast.LENGTH_SHORT).show();
+				Toast.makeText(MainActivity.this, "ç»“æŸè°ƒèŠ‚seekbar", Toast.LENGTH_SHORT).show();
 			}
 			
 			@Override
 			public void onStartTrackingTouch(SeekBar seekBar) {
 				// TODO Auto-generated method stub
-				Toast.makeText(MainActivity.this, "¿ªÊ¼µ÷½Úseekbar", Toast.LENGTH_SHORT).show();
+				Toast.makeText(MainActivity.this, "å¼€å§‹è°ƒèŠ‚seekbar", Toast.LENGTH_SHORT).show();
 
 			}
 			
@@ -103,7 +103,7 @@ public class MainActivity extends Activity {
 			public void onProgressChanged(SeekBar seekBar, int progress,
 					boolean fromUser) {
 				// TODO Auto-generated method stub
-				tv_seekbar.setText("seekbarµ±Ç°Î»ÖÃ£º"+progress);
+				tv_seekbar.setText("seekbarå½“å‰ä½ç½®ï¼š"+progress);
 			}
 		});
 		
@@ -114,7 +114,7 @@ public class MainActivity extends Activity {
 			public void onRatingChanged(RatingBar ratingBar, float rating,
 					boolean fromUser) {
 				// TODO Auto-generated method stub
-				Toast.makeText(MainActivity.this, "ÆÀ·Ö£º"+rating+"¿ÅĞÇ", Toast.LENGTH_SHORT).show();
+				Toast.makeText(MainActivity.this, "è¯„ä»·"+rating+"é¢—æ˜Ÿ", Toast.LENGTH_SHORT).show();
 			}
 		});
 	}

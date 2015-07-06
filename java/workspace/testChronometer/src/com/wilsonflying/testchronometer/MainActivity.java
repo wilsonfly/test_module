@@ -20,7 +20,7 @@ public class MainActivity extends Activity {
 		clock = (Chronometer) findViewById(R.id.chronometer);
 		clock.setBase(SystemClock.elapsedRealtime());
 
-		clock.setFormat("¼ÆÊ±£º%s");
+		clock.setFormat("è®¡æ—¶%s");
 		lastTime = (int) SystemClock.elapsedRealtime();
 		started = false;
 	}

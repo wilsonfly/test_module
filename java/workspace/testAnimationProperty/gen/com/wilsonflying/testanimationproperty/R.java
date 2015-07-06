@@ -41,11 +41,11 @@ public final class R {
         public static final int btn_move7=0x7f080007;
         public static final int btn_tweenMove=0x7f080000;
         public static final int iv=0x7f080008;
-        public static final int iv_a=0x7f080009;
-        public static final int iv_b=0x7f08000a;
-        public static final int iv_c=0x7f08000b;
-        public static final int iv_d=0x7f08000c;
-        public static final int iv_e=0x7f08000d;
+        public static final int iv_a=0x7f08000d;
+        public static final int iv_b=0x7f080009;
+        public static final int iv_c=0x7f08000a;
+        public static final int iv_d=0x7f08000b;
+        public static final int iv_e=0x7f08000c;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
