@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <dimen name="title_left_margin">40dp</dimen> 
-    <dimen name="setitem_left_margin">60dp</dimen> 
-    <dimen name="setitem_text1">340dp</dimen>
-    <dimen name="setitem_text2">350dp</dimen>
-    <dimen name="setitem_height">54dp</dimen>
-    <dimen name="about_item_height">39dp</dimen>
-</resources>
