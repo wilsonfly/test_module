@@ -18,5 +18,12 @@
         android:layout_height="wrap_content"
         android:onClick="onClickBtn"
         android:text="显示listview,使用布局中LayoutAnimation" />
+    
+    <Button
+        android:id="@+id/btnShowFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickBtn"
+        android:text="显示fragment" />
 
 </LinearLayout>

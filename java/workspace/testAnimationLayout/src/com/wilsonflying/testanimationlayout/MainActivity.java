@@ -26,6 +26,10 @@ public class MainActivity extends Activity {
 			Intent intent2 = new Intent(MainActivity.this, ShowListViewAty2.class);
 			startActivity(intent2);
 			break;
+		case R.id.btnShowFragment:
+			Intent intent3 = new Intent(MainActivity.this, ShowFragment.class);
+			startActivity(intent3);
+			break;
 		default:
 			break;
 		}

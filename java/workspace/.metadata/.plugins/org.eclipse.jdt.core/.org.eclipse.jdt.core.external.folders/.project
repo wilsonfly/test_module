@@ -15,6 +15,11 @@
 			<location>/Users/cindy/Applications/adt-bundle-mac-x86_64-20140702/sdk/sources/android-19</location>
 		</link>
 		<link>
+			<name>.link1</name>
+			<type>2</type>
+			<location>/Users/cindy/Applications/adt-bundle-mac-x86_64-20131030/sdk/sources/android-20</location>
+		</link>
+		<link>
 			<name>.link3</name>
 			<type>2</type>
 			<location>/Users/cindy/Applications/adt-bundle-mac-x86_64-20140702/sdk/sources/android-21</location>
