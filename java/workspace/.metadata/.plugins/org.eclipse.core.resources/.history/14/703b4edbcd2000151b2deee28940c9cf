@@ -1,8 +1,0 @@
-package com.wilsonflying.testanimationlayout;
-
-import android.app.Activity;
-
-
-public class ShowListViewAty2 extends Activity {
-
-}

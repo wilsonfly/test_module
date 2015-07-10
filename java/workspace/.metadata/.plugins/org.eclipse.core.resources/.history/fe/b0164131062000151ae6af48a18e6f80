@@ -1,7 +1,0 @@
-package com.wilsonflying.testjpush;
-
-import android.app.Activity;
-
-public class HandleNotification extends Activity {
-
-}
