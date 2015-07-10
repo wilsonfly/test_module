@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.wilsonflying.testanimationlayout2.R.id"/>
-<fullyQualifiedTypeName name="android.graphics.LinearGradient"/>
 <fullyQualifiedTypeName name="android.widget.ArrayAdapter"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testanimationlayout.ShowListViewAty2"/>
@@ -42,7 +40,6 @@
 <fullyQualifiedTypeName name="android.support.annotation.StringRes"/>
 <fullyQualifiedTypeName name="org.androidannotations.annotations.res.StringRes"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testfragment.DetailAty"/>
-<fullyQualifiedTypeName name="android.util.Log"/>
 <fullyQualifiedTypeName name="com.wilsonflying.transArgument.R"/>
 <fullyQualifiedTypeName name="com.wilsonflying.transArgument.BottomFragmentStatic"/>
 <fullyQualifiedTypeName name="android.widget.Toast"/>
@@ -60,4 +57,7 @@
 <fullyQualifiedTypeName name="com.wilsonflying.testanimationlayout.ShowFragment"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testanimationlayout.R.layout"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testanimationlayout.ShowFragment.MyFragment"/>
+<fullyQualifiedTypeName name="java.lang.Runnable"/>
+<fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
 </qualifiedTypeNameHistroy>
