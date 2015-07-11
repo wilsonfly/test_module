@@ -1,10 +1,8 @@
 package com.wilsonflying.testanimation;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.animation.ScaleAnimation;
+import android.support.v7.app.ActionBarActivity;
+import android.view.View;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -14,7 +12,16 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         
         setContentView(R.layout.activity_main);
+        
+        
     }
 
- 
+    public void onClickBtn(View view){
+    
+//    	view.startAnimation(new MyAnimation());
+    	
+    	MyAnimationTrans myAnim = new MyAnimationTrans();
+    	myAnim.setDuration(300);
+    	view.startAnimation(myAnim);
+    }
 }

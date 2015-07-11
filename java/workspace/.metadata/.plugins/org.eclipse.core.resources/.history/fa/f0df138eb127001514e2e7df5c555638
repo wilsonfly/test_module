@@ -1,0 +1,7 @@
+package com.wilsonflying.testanimation;
+
+import android.view.animation.Animation;
+
+public class MyAnimation extends Animation {
+
+}

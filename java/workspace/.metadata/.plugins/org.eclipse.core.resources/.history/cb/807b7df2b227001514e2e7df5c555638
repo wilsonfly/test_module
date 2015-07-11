@@ -1,0 +1,29 @@
+package com.wilsonflying.testanimation;
+
+import android.graphics.Matrix;
+import android.view.animation.Animation;
+import android.view.animation.Transformation;
+
+public class MyAnimationTrans extends Animation {
+
+//	@Override
+//	public void initialize(int width, int height, int parentWidth,
+//			int parentHeight) {
+//		// TODO Auto-generated method stub
+//		super.initialize(width, height, parentWidth, parentHeight);
+//	}
+	
+	@Override
+	protected void applyTransformation(float interpolatedTime, Transformation t) {
+		// TODO Auto-generated method stub
+		
+//		t.getMatrix().setTranslate((float) (Math.sin(interpolatedTime*10)*50), 0);
+		t.getMatrix().setRotate(20,50%, 50%);
+//		t.getMatrix().setRotate(-20);
+		Matrix m = new Matrix();
+		m.
+		super.applyTransformation(interpolatedTime, t);
+	}
+	
+	
+}
