@@ -56,12 +56,15 @@ public class MainActivity extends Activity {
 						if (xrp.getEventType() == XmlResourceParser.START_TAG) {
 							String tag = xrp.getName();
 							if (tag.equals("customer")) {
-								sb.append("name: " + xrp.getAttributeValue(0)
-										+ " ");
-								sb.append("phone: " + xrp.getAttributeValue(1)
-										+ " ");
-								sb.append("email: " + xrp.getAttributeValue(2)
-										+ " ");
+								//方法一：
+//								sb.append("name: " + xrp.getAttributeValue(0) + " ");
+//								sb.append("phone: " + xrp.getAttributeValue(1) + " ");
+//								sb.append("email: " + xrp.getAttributeValue(2) + " ");
+								//方法二：
+								sb.append("name: " + xrp.getAttributeValue(null, "name") + " ");
+								sb.append("phone: " + xrp.getAttributeValue(null, "email") + " ");
+								sb.append("email: " + xrp.getAttributeValue(null, "tel") + " ");
+								
 								sb.append("\n");
 							}
 						}

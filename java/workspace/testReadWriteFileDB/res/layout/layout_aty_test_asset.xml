@@ -16,4 +16,10 @@
         android:layout_height="wrap_content"
         android:hint="@string/hint_read" />
 
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/abc_ab_share_pack_mtrl_alpha" />
+
 </LinearLayout>

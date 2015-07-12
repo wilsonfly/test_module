@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ff999999"
+    android:background="#f999"
     android:orientation="vertical" >
 
     <com.jeremyfeinstein.slidingmenu.lib.SlidingMenu
@@ -11,9 +11,11 @@
         android:layout_height="match_parent" >
 
         <Button
+            android:id="@+id/btnSlidingNo1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:onClick="onClickBtn"
+            android:text="Button1" />
     </com.jeremyfeinstein.slidingmenu.lib.SlidingMenu>
 
 </LinearLayout>

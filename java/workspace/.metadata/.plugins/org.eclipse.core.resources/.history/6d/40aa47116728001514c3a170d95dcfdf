@@ -1,0 +1,26 @@
+package com.wilsonflying.testsurfaceview;
+
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+
+public class ChildRect extends Container{
+
+	private Paint paint = null;
+	
+	public ChildRect() {
+		// TODO Auto-generated constructor stub
+		paint = new Paint();
+		paint.setColor(Color.BLUE);
+	}
+	
+	@Override
+	public void drawChildView(Canvas canvas) {
+		// TODO Auto-generated method stub
+		super.drawChildView(canvas);
+		canvas.drawRect(0, 0, 100, 100, paint);
+		
+//		this.setY(getY() + 2);
+	}
+
+}

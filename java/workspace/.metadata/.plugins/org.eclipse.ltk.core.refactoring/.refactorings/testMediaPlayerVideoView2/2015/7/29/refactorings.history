@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.wilsonflying.playvideo&apos; to &apos;com.wilsonflying.playvideovidioview2&apos;&#x0A;- Original project: &apos;testMediaPlayer3&apos;&#x0A;- Original element: &apos;testMediaPlayer3/src/com.wilsonflying.playvideo&apos;&#x0A;- Renamed element: &apos;testMediaPlayer3/src/com.wilsonflying.playvideovidioview2&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.wilsonflying.playvideo&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;com.wilsonflying.playvideo" name="com.wilsonflying.playvideovidioview2" qualified="false" references="true" stamp="1436702320756" textual="false" version="1.0"/>
+</session>

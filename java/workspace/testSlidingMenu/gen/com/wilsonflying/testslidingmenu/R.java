@@ -1068,7 +1068,7 @@ containing a value of this type.
         public static final int abs__title=0x7f040021;
         public static final int abs__up=0x7f040002;
         public static final int action_settings=0x7f04003b;
-        public static final int container=0x7f040038;
+        public static final int btnSlidingNo1=0x7f040039;
         public static final int disableHome=0x7f040010;
         public static final int edit_query=0x7f04002c;
         public static final int fullscreen=0x7f040009;
@@ -1083,7 +1083,7 @@ containing a value of this type.
         public static final int showCustom=0x7f040012;
         public static final int showHome=0x7f040013;
         public static final int showTitle=0x7f040014;
-        public static final int slidingmenu=0x7f040039;
+        public static final int slidingmenu=0x7f040038;
         public static final int slidingmenumain=0x7f04003a;
         public static final int tabMode=0x7f04000f;
         public static final int useLogo=0x7f040015;

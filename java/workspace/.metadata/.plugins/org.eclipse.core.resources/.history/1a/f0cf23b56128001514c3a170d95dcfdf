@@ -1,0 +1,8 @@
+package com.wilsonflying.testsurfaceview;
+
+import java.util.List;
+
+public class Container {
+
+	private List<Container> chrildren = null;
+}

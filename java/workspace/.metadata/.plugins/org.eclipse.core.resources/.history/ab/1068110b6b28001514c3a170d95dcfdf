@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/color_chi" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/color_cheng" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/color_huang" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/color_lv" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/color_qing" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/color_lan" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/color_zi" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/color_hei" />
+
+</LinearLayout>
