@@ -1,7 +1,0 @@
-package com.wilsonflying.testpulltorefreshheader;
-
-import android.widget.ListView;
-
-public class RefreshLIstView extends ListView {
-
-}

@@ -14,7 +14,7 @@ public class MainActivity extends Activity {
 //	private ListView lv;
 	private RefreshListView lv;
 	private ArrayAdapter<String> adapter;
-	
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

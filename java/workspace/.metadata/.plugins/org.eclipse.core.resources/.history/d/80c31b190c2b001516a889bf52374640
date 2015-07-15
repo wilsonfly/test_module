@@ -1,0 +1,71 @@
+package com.wilsonflying.testpulltorefreshheader;
+
+import android.content.Context;
+import android.util.AttributeSet;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListView;
+
+public class RefreshListView extends ListView {
+
+	private View header;
+	private int headerHeight;
+
+	public RefreshListView(Context context) {
+		super(context);
+		// TODO Auto-generated constructor stub
+		initView(context);
+	}
+
+	public RefreshListView(Context context, AttributeSet attrs) {
+		super(context, attrs);
+		// TODO Auto-generated constructor stub
+		initView(context);
+
+	}
+
+	public RefreshListView(Context context, AttributeSet attrs, int defStyleAttr) {
+		super(context, attrs, defStyleAttr);
+		// TODO Auto-generated constructor stub
+		initView(context);
+
+	}
+
+	public void initView(Context context) {
+		LayoutInflater inflater = LayoutInflater.from(context);
+		header = inflater.inflate(R.layout.layout_header, null);
+
+		headerHeight = header.getMeasuredHeight();
+		MeasureView(header);
+		setTopPadding(-headerHeight);
+
+		this.addHeaderView(header);
+	}
+
+	//通知父布局，header占用的宽/高
+	public void MeasureView(View view){
+		ViewGroup.LayoutParams param = view.getLayoutParams();
+		if(param == null){
+			param = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+			
+		}
+		
+		int width = ViewGroup.getChildMeasureSpec(0, 0, param.width);
+		int height;
+		int tmpHeight = param.height;
+		if(tmpHeight > 0){
+			height = MeasureSpec.makeMeasureSpec(tmpHeight, MeasureSpec.EXACTLY);
+		}else{
+			height = MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED);
+		}
+		view.measure(width, height);
+	}
+	
+	//设置header的top位置为其高度的负值，达到隐藏的效果
+	public void setTopPadding(int topPadding) {
+		header.setPadding(header.getPaddingLeft(), topPadding,
+				header.getPaddingRight(), header.getPaddingBottom());
+		header.invalidate();
+	}
+}
