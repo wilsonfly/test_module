@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.wilsonflying.DefineMyView.R.layout"/>
-<fullyQualifiedTypeName name="com.wilsonflying.DefineMyView.MainActivity"/>
-<fullyQualifiedTypeName name="com.wilsonflying.DefineMyView.ShowMyViewAty"/>
-<fullyQualifiedTypeName name="com.wilsonflying.DefineMyView.R.id"/>
-<fullyQualifiedTypeName name="com.wilsonflying.DefineMyView.ShowMyRotatingViewAty"/>
 <fullyQualifiedTypeName name="com.handmark.pulltorefresh.library.PullToRefreshListView"/>
-<fullyQualifiedTypeName name="android.widget.Adapter"/>
-<fullyQualifiedTypeName name="android.widget.ArrayAdapter"/>
 <fullyQualifiedTypeName name="android.R.anim"/>
-<fullyQualifiedTypeName name="android.R.layout"/>
-<fullyQualifiedTypeName name="android.widget.ListView"/>
 <fullyQualifiedTypeName name="com.handmark.pulltorefresh.library.PullToRefreshBase.OnRefreshListener"/>
 <fullyQualifiedTypeName name="android.os.AsyncTask"/>
 <fullyQualifiedTypeName name="java.lang.Void"/>
@@ -60,4 +51,13 @@
 <fullyQualifiedTypeName name="com.wilsonflying.testslidingmenu.R.id"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testslidingmenu.MainActivity"/>
 <fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="android.widget.Adapter"/>
+<fullyQualifiedTypeName name="android.widget.ListView"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testpulltorefreshheader.R.id"/>
+<fullyQualifiedTypeName name="android.R"/>
+<fullyQualifiedTypeName name="android.R.layout"/>
+<fullyQualifiedTypeName name="android.widget.ArrayAdapter"/>
+<fullyQualifiedTypeName name="android.view.LayoutInflater"/>
+<fullyQualifiedTypeName name="android.content.Context"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testpulltorefreshheader.R.layout"/>
 </qualifiedTypeNameHistroy>
