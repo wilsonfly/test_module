@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.wilsonflying.testsurfaceview.MyViewNO1"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testsurfaceview.R"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testsurfaceview.R.id"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testsurfaceview.MainActivity"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testsurfaceview.ShowViewNo1Aty"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="android.graphics.Paint"/>
 <fullyQualifiedTypeName name="android.view.SurfaceHolder.Callback"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testsurfaceview.Container"/>
@@ -37,14 +30,12 @@
 <fullyQualifiedTypeName name="android.net.Uri"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testslidingmenu.R.id"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testslidingmenu.MainActivity"/>
-<fullyQualifiedTypeName name="android.widget.Toast"/>
 <fullyQualifiedTypeName name="android.widget.Adapter"/>
 <fullyQualifiedTypeName name="android.widget.ListView"/>
 <fullyQualifiedTypeName name="android.R"/>
 <fullyQualifiedTypeName name="android.R.layout"/>
 <fullyQualifiedTypeName name="android.widget.ArrayAdapter"/>
 <fullyQualifiedTypeName name="android.view.LayoutInflater"/>
-<fullyQualifiedTypeName name="android.content.Context"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testpulltorefreshheader.R.layout"/>
 <fullyQualifiedTypeName name="android.view.ViewGroup.LayoutParams"/>
 <fullyQualifiedTypeName name="android.view.ViewGroup"/>
@@ -54,10 +45,19 @@
 <fullyQualifiedTypeName name="android.widget.AbsListView.OnScrollListener"/>
 <fullyQualifiedTypeName name="android.view.MotionEvent"/>
 <fullyQualifiedTypeName name="android.support.v4.widget.Space"/>
-<fullyQualifiedTypeName name="android.widget.TextView"/>
 <fullyQualifiedTypeName name="android.widget.ImageView"/>
 <fullyQualifiedTypeName name="android.widget.ProgressBar"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testpulltorefreshheader.R.id"/>
 <fullyQualifiedTypeName name="android.view.View"/>
 <fullyQualifiedTypeName name="android.view.animation.RotateAnimation"/>
+<fullyQualifiedTypeName name="android.widget.TextView"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testpulltorefreshheader.R.id"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testpulltorefreshheader.MainActivity"/>
+<fullyQualifiedTypeName name="android.content.Context"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="java.lang.Runnable"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="android.os.Looper"/>
+<fullyQualifiedTypeName name="android.os.Handler"/>
 </qualifiedTypeNameHistroy>

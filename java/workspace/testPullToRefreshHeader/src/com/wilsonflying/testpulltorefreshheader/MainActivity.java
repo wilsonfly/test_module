@@ -22,10 +22,10 @@ public class MainActivity extends Activity {
         
         lv = (RefreshListView) findViewById(R.id.lv);
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
-        adapter.add("hello 001");
-        adapter.add("hello 002");
-        adapter.add("hello 003");
-        adapter.add("hello 004");
+        for (int i = 0; i < 30; i++) {
+        	adapter.add("item "+i);
+		}
+     
         
         lv.setAdapter(adapter);
         

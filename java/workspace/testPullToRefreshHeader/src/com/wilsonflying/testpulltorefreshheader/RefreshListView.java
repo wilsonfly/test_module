@@ -1,6 +1,11 @@
 package com.wilsonflying.testpulltorefreshheader;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+
 import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.v4.widget.Space;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -15,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class RefreshListView extends ListView implements OnScrollListener {
 
@@ -22,17 +28,22 @@ public class RefreshListView extends ListView implements OnScrollListener {
 	private View header;
 	private int headerHeight;
 	private int firstVisibleItem;
+	
 	private boolean isMarked;// 标记，当前在listview最顶端按下的
 	private int startY;// 按下时的Y值
 
 	private int pressedState;// 当前按下状态
-	private final int NONE = 0;
+	private final int NONE = 0;//正常状态
 	private final int PULL = 1;
 	private final int RELEASE = 2;
 	private final int REFRESHING = 3;
 
 	private int scrollState;
+	
+	private Context context;
 
+	private Handler handler = new Handler();
+	
 	public RefreshListView(Context context) {
 		super(context);
 		// TODO Auto-generated constructor stub
@@ -62,7 +73,11 @@ public class RefreshListView extends ListView implements OnScrollListener {
 		Log.d(TAG, "headerHeight:" + headerHeight);
 		setTopPadding(-headerHeight);
 
+		this.context = context;
+		
 		this.addHeaderView(header);
+		this.setOnScrollListener(this);
+		
 	}
 
 	// 通知父布局，header占用的宽/高
@@ -105,6 +120,7 @@ public class RefreshListView extends ListView implements OnScrollListener {
 	public void onScroll(AbsListView view, int firstVisibleItem,
 			int visibleItemCount, int totalItemCount) {
 		// TODO Auto-generated method stub
+		this.firstVisibleItem = firstVisibleItem;
 	}
 
 	@Override
@@ -115,8 +131,8 @@ public class RefreshListView extends ListView implements OnScrollListener {
 			if (firstVisibleItem == 0) {
 				isMarked = true;
 				startY = (int) ev.getY();
+				refreshViewByState();
 			}
-			refreshViewByState();
 			break;
 		case MotionEvent.ACTION_MOVE:
 			onMove(ev);
@@ -124,11 +140,12 @@ public class RefreshListView extends ListView implements OnScrollListener {
 		case MotionEvent.ACTION_UP:
 			if (pressedState == RELEASE) {
 				pressedState = REFRESHING;
+				refreshViewByState();
 			} else if (pressedState == PULL) {
 				pressedState = NONE;
 				isMarked = false;
+				refreshViewByState();
 			}
-			refreshViewByState();
 			break;
 
 		default:
@@ -137,26 +154,26 @@ public class RefreshListView extends ListView implements OnScrollListener {
 		return super.onTouchEvent(ev);
 	}
 
-	// 判断移动过程中的操作
+	//处理移动过程中的状态
 	public void onMove(MotionEvent ev) {
 		if (!isMarked) {
 			return;
 		}
 
 		int tmpY = (int) ev.getY();
-		int space = tmpY = startY;
-		int topPadding = space - headerHeight;
+		int position = tmpY - startY;
+		int topPadding = position - headerHeight;
 
 		switch (pressedState) {
 		case NONE:
-			if (space > 0) {
+			if (position > 0) {
 				pressedState = PULL;
 				refreshViewByState();
 			}
 			break;
 		case PULL:
 			setTopPadding(topPadding);
-			if (space > headerHeight + 30
+			if (position > headerHeight + 30
 					&& scrollState == SCROLL_STATE_TOUCH_SCROLL) {
 				pressedState = RELEASE;
 				refreshViewByState();
@@ -165,15 +182,16 @@ public class RefreshListView extends ListView implements OnScrollListener {
 		case RELEASE:
 			setTopPadding(topPadding);
 
-			if (space < headerHeight + 30) {
+			if (position < headerHeight + 30) {
 				pressedState = PULL;
+				refreshViewByState();
 			}
 
-			if (space <= 0) {
+			if (position <= 0) {
 				pressedState = NONE;
 				isMarked = false;
+				refreshViewByState();
 			}
-			refreshViewByState();
 			break;
 		case REFRESHING:
 
@@ -184,49 +202,98 @@ public class RefreshListView extends ListView implements OnScrollListener {
 		}
 	}
 
-	// 触屏根据状态改名界面显示
+	// 触屏根据状态改变界面显示
 	public void refreshViewByState() {
 
-		TextView tip = (TextView) findViewById(R.id.tip);
-		ImageView img = (ImageView) findViewById(R.id.arrow);
+		TextView tvTip = (TextView) findViewById(R.id.tvTip);
+		ImageView imgArrow = (ImageView) findViewById(R.id.ivArrow);
 		ProgressBar progress = (ProgressBar) findViewById(R.id.progressbar);
 		RotateAnimation anim = new RotateAnimation(0, 180,
 				RotateAnimation.RELATIVE_TO_SELF, 0.5f,
 				RotateAnimation.RELATIVE_TO_SELF, 0.5f);
 		anim.setDuration(500);
+		anim.setFillAfter(true);
+		
 		RotateAnimation anim2 = new RotateAnimation(180, 0,
 				RotateAnimation.RELATIVE_TO_SELF, 0.5f,
 				RotateAnimation.RELATIVE_TO_SELF, 0.5f);
 		anim2.setDuration(500);
+		anim2.setFillAfter(true);
 
 		switch (pressedState) {
 		case NONE:
 			setTopPadding(-headerHeight);
-			img.clearAnimation();
+			
+			imgArrow.clearAnimation();
 			break;
 		case PULL:
-			img.setVisibility(View.VISIBLE);
+			imgArrow.setVisibility(View.VISIBLE);
 			progress.setVisibility(View.GONE);
-			tip.setText("下拉可以刷新");
-
-			img.startAnimation(anim2);
+			tvTip.setText("下拉可以刷新");
+			
+			imgArrow.clearAnimation();
+			imgArrow.startAnimation(anim2);
 			break;
 		case RELEASE:
-			img.setVisibility(View.VISIBLE);
+			imgArrow.setVisibility(View.VISIBLE);
 			progress.setVisibility(View.GONE);
-			tip.setText("松开进行刷新");
-			img.startAnimation(anim2);
+			tvTip.setText("松开进行刷新");
+			
+			imgArrow.clearAnimation();
+			imgArrow.startAnimation(anim);
 
 			break;
 		case REFRESHING:
-			img.setVisibility(View.GONE);
+			setTopPadding(50);
+			
+			imgArrow.setVisibility(View.GONE);
 			progress.setVisibility(View.VISIBLE);
-			tip.setText("正在刷新...");
-			img.clearAnimation();
+			tvTip.setText("正在刷新...");
+			
+			imgArrow.clearAnimation();
+			
+			new Thread(){
+				public void run() {
+					try {
+						Thread.sleep(3000);
+					} catch (InterruptedException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+
+					handler.postDelayed(new Runnable() {
+						
+						@Override
+						public void run() {
+							// TODO Auto-generated method stub
+								refreshComplete();
+								Toast.makeText(context, "更新完毕", Toast.LENGTH_SHORT).show();
+							
+						}
+					}, 3000);
+					
+				};
+				
+			}.start();
+			
+			
 			break;
 
 		default:
 			break;
 		}
+	}
+	
+	//设置刷新完成后的状态
+	public void refreshComplete(){
+		pressedState = NONE;
+		isMarked = false;
+		refreshViewByState();
+		
+		TextView tvUpdateTime = (TextView) findViewById(R.id.tvUpdateTime);
+		SimpleDateFormat format = new SimpleDateFormat("yyyy年MM月dd日 hh:mm:ss");
+		Date date = new Date(System.currentTimeMillis());
+		String time = format.format(date);
+		tvUpdateTime.setText(time);
 	}
 }
