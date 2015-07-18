@@ -1,0 +1,52 @@
+package com.wilsonflying.testdb;
+
+import android.app.Activity;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+
+
+public class MainActivity extends Activity {
+
+	private final String TAG = "testdb";
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        
+ 
+    }
+
+    public void onClickBtn(View view){
+        useSQL();
+    }
+    
+    
+    public void useSQL(){
+    	SQLiteDatabase db = openOrCreateDatabase("usrInfo.db", MODE_PRIVATE, null);
+    	db.execSQL("create table if not exists usrtb(_id integer primary key autoincrement, name text not null, age integer not null, sex text not null)");
+    	db.execSQL("insert into usrtb(name, age, sex) values('xiaodou', 18, '女')");
+    	db.execSQL("insert into usrtb(name, age, sex) values('xiaodou2', 19, '女')");
+    	
+    	Cursor c = db.rawQuery("select * from usrtb", null);
+    	if(c!=null){
+    		
+    		while(c.moveToNext()){
+    			Log.d(TAG, "_id:"+""+c.getInt(c.getColumnIndex("_id")));
+    			Log.d(TAG, "name:"+""+c.getString(c.getColumnIndex("name")));
+    			Log.d(TAG, "age:"+""+c.getInt(c.getColumnIndex("age")));
+    			Log.d(TAG, "sex:"+""+c.getString(c.getColumnIndex("sex")));
+    			Log.d(TAG, "==============================");
+    		}
+    		
+    		c.close();
+    	}
+    	
+    	db.close();
+    }
+ 
+
+}
