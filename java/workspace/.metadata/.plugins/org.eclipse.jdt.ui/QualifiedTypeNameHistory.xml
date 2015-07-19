@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="com.wilsonflying.testtextview.R.array"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testtextview.TestStyleAty"/>
-<fullyQualifiedTypeName name="android.graphics.Bitmap"/>
-<fullyQualifiedTypeName name="android.graphics.BitmapFactory"/>
-<fullyQualifiedTypeName name="com.wilsonflying.testreadwrite.R.id"/>
-<fullyQualifiedTypeName name="com.wilsonflying.playsound.R.raw"/>
-<fullyQualifiedTypeName name="android.media.MediaPlayer"/>
-<fullyQualifiedTypeName name="com.wilsonflying.playVideoByUri.MainActivity"/>
 <fullyQualifiedTypeName name="com.wilsonflying.playMusic.R.id"/>
 <fullyQualifiedTypeName name="android.os.Environment"/>
 <fullyQualifiedTypeName name="java.io.File"/>
@@ -30,10 +22,8 @@
 <fullyQualifiedTypeName name="android.widget.ImageView"/>
 <fullyQualifiedTypeName name="android.widget.ProgressBar"/>
 <fullyQualifiedTypeName name="android.view.animation.RotateAnimation"/>
-<fullyQualifiedTypeName name="android.widget.TextView"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testpulltorefreshheader.R.id"/>
 <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
-<fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testpulltorefreshheader.MainActivity"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
 <fullyQualifiedTypeName name="android.os.Looper"/>
@@ -47,12 +37,10 @@
 <fullyQualifiedTypeName name="android.content.Context"/>
 <fullyQualifiedTypeName name="android.view.LayoutInflater"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testpulltorefreshfooter.R.layout"/>
-<fullyQualifiedTypeName name="android.view.View"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testpulltorefreshfooter.R.id"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testpulltorefreshfooter.LoadListView.ILoadListener"/>
 <fullyQualifiedTypeName name="android.database.Cursor"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
-<fullyQualifiedTypeName name="android.util.Log"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testdb.MySqliteOpenHelper"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testdb.MainActivity"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testaidlcallback.IMyCallBack"/>
@@ -60,4 +48,16 @@
 <fullyQualifiedTypeName name="com.wilsonflying.testaidlcallback.MainActivity"/>
 <fullyQualifiedTypeName name="android.widget.Toast"/>
 <fullyQualifiedTypeName name="com.wilsonflying.testaidlcallback.R.id"/>
+<fullyQualifiedTypeName name="android.view.View"/>
+<fullyQualifiedTypeName name="android.widget.TextView"/>
+<fullyQualifiedTypeName name="com.wilsonflying.testcontentresolver.R.id"/>
+<fullyQualifiedTypeName name="android.content.ContentResolver"/>
+<fullyQualifiedTypeName name="android.content.ContentValues"/>
+<fullyQualifiedTypeName name="android.provider.ContactsContract.RawContacts"/>
+<fullyQualifiedTypeName name="android.content.ContentUris"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="android.provider.ContactsContract.CommonDataKinds.StructuredName"/>
+<fullyQualifiedTypeName name="android.provider.ContactsContract.Data"/>
+<fullyQualifiedTypeName name="android.provider.ContactsContract.CommonDataKinds.Phone"/>
 </qualifiedTypeNameHistroy>
