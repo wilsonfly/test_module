@@ -1,7 +1,0 @@
-package com.wilsonflying.testsurfaceview;
-
-import android.view.SurfaceView;
-
-public class MyViewNO1 extends SurfaceView {
-
-}

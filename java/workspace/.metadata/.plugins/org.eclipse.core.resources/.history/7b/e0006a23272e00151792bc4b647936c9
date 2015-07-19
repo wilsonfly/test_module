@@ -1,0 +1,9 @@
+
+package com.wilsonflying.testaidlcallback;
+
+interface IMyService{
+
+	int add(int a, int b);
+	void registerCallBack(IMyCallBack cb);
+	void invokeCallBack();
+}

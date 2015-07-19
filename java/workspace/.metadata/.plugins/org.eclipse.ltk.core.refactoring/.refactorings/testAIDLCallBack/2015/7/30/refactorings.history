@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;IMyService.aidl&apos; to &apos;IMyService.aidl&apos;&#x0A;- Original project: &apos;testAIDLCallBack&apos;&#x0A;- Destination element: &apos;IMyService.aidl&apos;&#x0A;- Original element: &apos;IMyService.aidl&apos;" description="Copy file" element1="src/com/wilsonflying/testaidlcallback/IMyService.aidl" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1437317824586" target="/testAIDLCallBack/src/com/wilsonflying/testaidlcallback/IMyService.aidl" units="0" version="1.0"/>
+</session>
