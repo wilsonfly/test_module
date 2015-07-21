@@ -22,42 +22,42 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		int[] imageId = new int[] { R.drawable.img01, R.drawable.img02,
-				R.drawable.img03, R.drawable.img04, R.drawable.img05 }; // ¶¨Òå²¢³õÊ¼»¯±£´æÍ¼Æ¬idµÄÊı×é
-		final String[] title = new String[] { "³ÌĞò¹ÜÀí", "±£ÃÜÉèÖÃ", "°²È«ÉèÖÃ", "ÓÊ¼şÉèÖÃ",
-				"ÁåÉùÉèÖÃ" }; // ¶¨Òå²¢³õÊ¼»¯±£´æÁĞ±íÏîÎÄ×ÖµÄÊı×é
-		List<Map<String, Object>> listItems = new ArrayList<Map<String, Object>>(); // ´´½¨Ò»¸ölist¼¯ºÏ
-		// Í¨¹ıforÑ­»·½«Í¼Æ¬idºÍÁĞ±íÏîÎÄ×Ö·Åµ½MapÖĞ£¬²¢Ìí¼Óµ½list¼¯ºÏÖĞ
+				R.drawable.img03, R.drawable.img04, R.drawable.img05 }; // å®šä¹‰å¹¶åˆå§‹åŒ–ä¿å­˜å›¾ç‰‡idçš„æ•°ç»„
+		final String[] title = new String[] { "ç¨‹åºç®¡ç†", "ä¿å¯†è®¾ç½®", "å®‰å…¨è®¾ç½®", "é‚®ä»¶è®¾ç½®",
+				"é“ƒå£°è®¾ç½®" }; // å®šä¹‰å¹¶åˆå§‹åŒ–ä¿å­˜åˆ—è¡¨é¡¹æ–‡å­—çš„æ•°ç»„
+		List<Map<String, Object>> listItems = new ArrayList<Map<String, Object>>(); // åˆ›å»ºä¸€ä¸ªlisté›†åˆ
+		// é€šè¿‡forå¾ªç¯å°†å›¾ç‰‡idå’Œåˆ—è¡¨é¡¹æ–‡å­—æ”¾åˆ°Mapä¸­ï¼Œå¹¶æ·»åŠ åˆ°listé›†åˆä¸­
 		for (int i = 0; i < imageId.length; i++) {
-			Map<String, Object> map = new HashMap<String, Object>(); // ÊµÀı»¯Map¶ÔÏó
+			Map<String, Object> map = new HashMap<String, Object>(); // å®ä¾‹åŒ–Mapå¯¹è±¡
 			map.put("image", imageId[i]);
 			map.put("title", title[i]);
-			listItems.add(map); // ½«map¶ÔÏóÌí¼Óµ½List¼¯ºÏÖĞ
+			listItems.add(map); // å°†mapå¯¹è±¡æ·»åŠ åˆ°Listé›†åˆä¸­
 		}
 
 		final SimpleAdapter adapter = new SimpleAdapter(this, listItems,
 				R.layout.items, new String[] { "title", "image" }, new int[] {
-						R.id.title, R.id.image }); // ´´½¨SimpleAdapter
-		// ´øÁĞ±íµÄ¶Ô»°¿ò
-		Button button1 = (Button) findViewById(R.id.button1); // »ñÈ¡²¼¾ÖÎÄ¼şÖĞÌí¼ÓµÄ°´Å¥
+						R.id.title, R.id.image }); // åˆ›å»ºSimpleAdapter
+		// å¸¦åˆ—è¡¨çš„å¯¹è¯æ¡†
+		Button button1 = (Button) findViewById(R.id.button1); // è·å–å¸ƒå±€æ–‡ä»¶ä¸­æ·»åŠ çš„æŒ‰é’®
 		button1.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				Builder builder = new AlertDialog.Builder(MainActivity.this);
-				builder.setIcon(R.drawable.advise); // ÉèÖÃ¶Ô»°¿òµÄÍ¼±ê
-				builder.setTitle("ÉèÖÃ£º"); // ÉèÖÃ¶Ô»°¿òµÄ±êÌâ
-				// Ìí¼ÓÁĞ±íÏî
+				builder.setIcon(R.drawable.advise); // è®¾ç½®å¯¹è¯æ¡†çš„å›¾æ ‡
+				builder.setTitle("è®¾ç½®ï¼š"); // è®¾ç½®å¯¹è¯æ¡†çš„æ ‡é¢˜
+				// æ·»åŠ åˆ—è¡¨é¡¹
 				builder.setAdapter(adapter, new OnClickListener() {
 
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						Toast.makeText(MainActivity.this,
-								"ÄúÑ¡ÔñÁË[ " + title[which]+" ]", Toast.LENGTH_SHORT)
+								"æ‚¨é€‰æ‹©äº†[ " + title[which]+" ]", Toast.LENGTH_SHORT)
 								.show();
 
 					}
 				});
-				builder.create().show(); // ´´½¨¶Ô»°¿ò²¢ÏÔÊ¾
+				builder.create().show(); // åˆ›å»ºå¯¹è¯æ¡†å¹¶æ˜¾ç¤º
 			}
 		});
 

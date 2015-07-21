@@ -80,6 +80,7 @@ public class CommunicateBetweenThreads extends Activity implements OnClickListen
 		case com.wilsonflying.testHandlerThread.R.id.button_stop:
 			//handler.removeMessages(1);
 			handler.removeMessages(TO_MASTER);
+			threadHandler.removeMessages(TO_SLAVE);
 			break;
 		default:
 			break;

@@ -21,7 +21,7 @@ public class MainActivity extends Activity {
 			
 			public void run() {
 				
-				Handler handler = new Handler();
+//				Handler handler = new Handler();
 				
 				tv.setText("updae text in NoneUiThread!!!");//will succeed!
 				//activity 有个viewRootImpl此时还没有创建出来，是在onResume中创建出来，而又是在onCreate之后被调用。

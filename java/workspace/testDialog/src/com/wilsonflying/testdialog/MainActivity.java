@@ -19,9 +19,9 @@ public class MainActivity extends Activity {
 		super.onCreate(param);
 		setContentView(R.layout.my_layout);
 
-		// ÏÔÊ¾´øÈ¡Ïû¡¢ÖĞÁ¢ºÍÈ·¶¨°´Å¥µÄ¶Ô»°¿ò
+		// æ˜¾ç¤ºå¸¦å–æ¶ˆã€ä¸­ç«‹å’Œç¡®å®šæŒ‰é’®çš„å¯¹è¯æ¡†
 		Button button1 = (Button) findViewById(R.id.button1);
-		button1.setOnClickListener(new View.OnClickListener() {//Ìí¼ÓViewÀàÏŞ¶¨£¬¸údialogµÄlistenser³åÍ»
+		button1.setOnClickListener(new View.OnClickListener() {//æ·»åŠ Viewç±»é™å®šï¼Œè·Ÿdialogçš„listenserå†²çª
 
 			@Override
 			public void onClick(View v) {
@@ -29,35 +29,35 @@ public class MainActivity extends Activity {
 				AlertDialog dialog = new AlertDialog.Builder(MainActivity.this)
 						.create();
 				dialog.setIcon(R.drawable.advise);
-				dialog.setTitle("ÎÒµÄÏµÍ³ÌáÊ¾");
-				dialog.setMessage("ÊÇ·ñÒªÍË³ö£¿");
+				dialog.setTitle("æˆ‘çš„ç³»ç»Ÿæç¤º");
+				dialog.setMessage("æ˜¯å¦è¦é€€å‡ºï¼Ÿ");
 
 				Log.i("testdailog", "button1 listener");
-				dialog.setButton(DialogInterface.BUTTON_NEGATIVE,"²»", new DialogInterface.OnClickListener() {//ÌáÊ¾ĞÅÏ¢²»ÌáÊ¾importÄ³¸öÀà»òÕß·½·¨µÄÊ±ºò£¬Ö±½ÓÌí¼ÓÀàÃû³ÆÀ´ÏŞ¶¨£¬²»ÒÀÀµÌáÊ¾
+				dialog.setButton(DialogInterface.BUTTON_NEGATIVE,"ä¸", new DialogInterface.OnClickListener() {//æç¤ºä¿¡æ¯ä¸æç¤ºimportæŸä¸ªç±»æˆ–è€…æ–¹æ³•çš„æ—¶å€™ï¼Œç›´æ¥æ·»åŠ ç±»åç§°æ¥é™å®šï¼Œä¸ä¾èµ–æç¤º
 
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						Toast.makeText(MainActivity.this, "Äúµ¥»÷ÁËÈ¡Ïû°´Å¥",
+						Toast.makeText(MainActivity.this, "æ‚¨å•å‡»äº†å–æ¶ˆæŒ‰é’®",
 								Toast.LENGTH_SHORT).show();
 
 					}
 				});
 				
-				dialog.setButton(DialogInterface.BUTTON_NEUTRAL, "¾¹È»ÓĞÖĞÁ¢°´Å¥", new DialogInterface.OnClickListener() {
+				dialog.setButton(DialogInterface.BUTTON_NEUTRAL, "ç«Ÿç„¶æœ‰ä¸­ç«‹æŒ‰é’®", new DialogInterface.OnClickListener() {
 					
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						// TODO Auto-generated method stub
-						Toast.makeText(MainActivity.this, "Äúµ¥»÷ÁËÖĞÁ¢°´Å¥",Toast.LENGTH_SHORT).show();
+						Toast.makeText(MainActivity.this, "æ‚¨å•å‡»äº†ä¸­ç«‹æŒ‰é’®",Toast.LENGTH_SHORT).show();
 					}
 				});
 
-				dialog.setButton(DialogInterface.BUTTON_POSITIVE, "È·¶¨", new DialogInterface.OnClickListener() {
+				dialog.setButton(DialogInterface.BUTTON_POSITIVE, "ç¡®å®š", new DialogInterface.OnClickListener() {
 					
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						// TODO Auto-generated method stub
-						Toast.makeText(MainActivity.this, "Äúµ¥»÷ÁËÈ·¶¨°´Å¥£¬¼´½«ÍË³ö£¡",Toast.LENGTH_SHORT).show();
+						Toast.makeText(MainActivity.this, "æ‚¨å•å‡»äº†ç¡®å®šæŒ‰é’®ï¼Œå³å°†é€€å‡ºï¼",Toast.LENGTH_SHORT).show();
 						try {
 							Thread.sleep(800);
 						} catch (InterruptedException e) {
@@ -80,7 +80,7 @@ public class MainActivity extends Activity {
 				final String[] items = new String[] { "item1", "item2", "item3", "item4","item5" };
 				Builder builder = new AlertDialog.Builder(MainActivity.this);
 				builder.setIcon(R.drawable.advise);
-				builder.setTitle("Ñ¡ÔñÏî");
+				builder.setTitle("é€‰æ‹©é¡¹");
 				builder.setItems(items, new DialogInterface.OnClickListener() {
 					
 					@Override
@@ -103,7 +103,7 @@ public class MainActivity extends Activity {
 				final String[] items = new String[] { "item1", "item2", "item3", "item4","item5" };
 				Builder builder = new Builder(MainActivity.this);
 				builder.setIcon(R.drawable.advise);
-				builder.setTitle("µ¥Ñ¡Ïî");
+				builder.setTitle("å•é€‰é¡¹");
 				builder.setSingleChoiceItems(items, 0, new DialogInterface.OnClickListener() {
 					
 					@Override
@@ -113,7 +113,7 @@ public class MainActivity extends Activity {
 
 					}
 				});
-				builder.setPositiveButton("È·¶¨", null);
+				builder.setPositiveButton("ç¡®å®š", null);
 				builder.create().show();
 			}
 		});
@@ -125,12 +125,12 @@ public class MainActivity extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				final String[] items = new String[] { "item1", "item2", "item3", "item4","item5" };
-				//Boolean[] checkedItems = new Boolean[]{true, false, true,false,false};//ÄÚ²¿¶¨Òå¸Ã±äÁ¿»áÓĞ±¨´í£ºCannot refer to a non-final variable checkedItems inside an inner class defined in a different method
+				//Boolean[] checkedItems = new Boolean[]{true, false, true,false,false};//å†…éƒ¨å®šä¹‰è¯¥å˜é‡ä¼šæœ‰æŠ¥é”™ï¼šCannot refer to a non-final variable checkedItems inside an inner class defined in a different method
 				checkedItems = new boolean[]{true, false, true,false,false};
 
 				Builder builder = new Builder(MainActivity.this);
 				builder.setIcon(R.drawable.advise);
-				builder.setTitle("¶àÑ¡Ïî");
+				builder.setTitle("å¤šé€‰é¡¹");
 				builder.setMultiChoiceItems(items, checkedItems, new DialogInterface.OnMultiChoiceClickListener() {
 					
 					@Override
@@ -139,7 +139,7 @@ public class MainActivity extends Activity {
 						checkedItems[which] = isChecked;
 					}
 				});	
-				builder.setPositiveButton("È·¶¨", new DialogInterface.OnClickListener() {
+				builder.setPositiveButton("ç¡®å®š", new DialogInterface.OnClickListener() {
 					
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
@@ -151,7 +151,7 @@ public class MainActivity extends Activity {
 							}
 						}
 						if(!"".equals(result)){
-							Toast.makeText(MainActivity.this, "Ñ¡ÖĞÁËÕâĞ©£º"+result, Toast.LENGTH_SHORT).show();
+							Toast.makeText(MainActivity.this, "é€‰ä¸­äº†è¿™äº›ï¼š"+result, Toast.LENGTH_SHORT).show();
 						}
 					}
 				});
