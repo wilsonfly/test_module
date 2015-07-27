@@ -1,7 +1,0 @@
-
-package com.wilsonflying.testaidlcallback;
-
-interface IMyCallBack{
-
-	int add(int a, int b);
-}
