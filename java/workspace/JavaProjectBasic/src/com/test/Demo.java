@@ -19,6 +19,20 @@ public class Demo {
 		}
 		
 		System.out.println(all);
+		
+		
+		int a = 1;
+		char b = 'a';
+		b = '女';
+		char c = (char) (a+b);
+		int d = a+b;
+		System.out.println(c);
+		System.out.println(d);
+		
+		double e = 3.0;
+		int f = (int) e;
+		System.out.println();
+		
 	}
 
 }
