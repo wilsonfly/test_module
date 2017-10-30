@@ -43,6 +43,13 @@ public class MainActivity extends Activity {
 			head.offset(100, 20);
 			canvas.drawArc(head, -10, -160, false, paint);//需要RectF类型的参数
 			
+			// test drawArc
+			RectF rhead = new RectF(100, 100, 300, 300);
+			rhead.offset(150, 180);
+			canvas.drawRect(rhead, paint);
+			paint.setColor(0xff00ffff);
+			canvas.drawArc(rhead, 0, 300, true, paint);
+			
 			//眼睛
 			paint.setColor(Color.WHITE);
 			canvas.drawCircle(135, 53, 4, paint);
