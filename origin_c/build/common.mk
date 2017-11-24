@@ -14,6 +14,10 @@ else
 CFLAGS = -DDEBUG
 endif
 
+ifeq ($(firstword $(suffix $(SRC_FILES))),.cpp)
+CC = g++
+endif
+
 INCLUDE_DIR += -I$(LOCAL_PATH)	\
 				-I$(LOCAL_PATH)/../include
 

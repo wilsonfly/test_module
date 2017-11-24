@@ -4,6 +4,7 @@
 
 
 export PATH=$PATH:~/tools
+export PATH=$PATH:~/data/dbus/dbus-1.10.6-install
 #export PATH=$PATH:~/project/config/homebrew/bin
 #export PATH=$PATH:~/Applications/adt-bundle-mac-x86_64-20140702/sdk/platform-tools
 #export PATH=$PATH:~/Applications/ndk/android-ndk-r10d
