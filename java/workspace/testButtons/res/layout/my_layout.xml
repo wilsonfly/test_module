@@ -121,4 +121,12 @@
             android:src="@drawable/button_state" />
     </LinearLayout>
 
+    <ToggleButton 
+        android:id="@+id/toggleButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOn="on"
+        android:textOff="off"
+        android:checked="false"
+        />
 </LinearLayout>

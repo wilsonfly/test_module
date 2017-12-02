@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.ToggleButton;
 //import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.RadioButton;
@@ -97,6 +98,17 @@ public class MainActivity extends Activity {
 				Toast.makeText(MainActivity.this, hobit, Toast.LENGTH_SHORT).show();
 			}
 		});
+		
+		ToggleButton tb = (ToggleButton) findViewById(R.id.toggleButton1);
+		tb.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+			
+			@Override
+			public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+				// TODO Auto-generated method stub
+				Toast.makeText(MainActivity.this, "current status:"+isChecked, Toast.LENGTH_SHORT).show();
+			}
+		});
+		
 	}
 
 	// 此接口是onCreate
@@ -130,5 +142,7 @@ public class MainActivity extends Activity {
 	public void fun_onclick(View v){
 		Toast.makeText(MainActivity.this, "clicked", Toast.LENGTH_SHORT).show();
 	}
+	
+	
 	
 }

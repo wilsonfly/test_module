@@ -36,6 +36,7 @@ public final class R {
         public static final int radiobutton1=0x7f060002;
         public static final int radiobutton2=0x7f060003;
         public static final int radiogroup=0x7f060001;
+        public static final int toggleButton1=0x7f060010;
     }
     public static final class layout {
         public static final int my_layout=0x7f030000;

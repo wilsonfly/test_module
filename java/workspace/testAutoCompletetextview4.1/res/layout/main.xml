@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    >
-<AutoCompleteTextView 
-	android:layout_height="wrap_content" 
-	android:text="" 
-	android:id="@+id/autoCompleteTextView1" 
-	android:completionThreshold="2"
-	android:completionHint="输入搜索内容"	
-	android:layout_weight="7"
-	android:layout_width="wrap_content">
-</AutoCompleteTextView>
-<Button 
-	android:text="搜索" 
-	android:id="@+id/button1" 
-	android:layout_weight="1"
-	android:layout_marginLeft="10px"
-	android:layout_width="wrap_content" 
-	android:layout_height="wrap_content"/>
+    android:orientation="vertical" >
+
+    <!-- android:completionHint="输入搜索内容" -->
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:completionThreshold="2"
+        android:hint="请输入搜索内容吧"
+        android:text="" >
+    </AutoCompleteTextView>
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/multiAutoCompleteTextView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入搜索内容吧"
+        android:text="" >
+
+        <requestFocus />
+    </MultiAutoCompleteTextView>
 
 </LinearLayout>

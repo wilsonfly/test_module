@@ -9,29 +9,34 @@ import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.MultiAutoCompleteTextView;
+import android.widget.MultiAutoCompleteTextView.Tokenizer;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
-	 private static final String[] COUNTRIES = new String[] {
-		 "auto", "autocomplete", "autocompletetext", "autocompletetextview", "autocompletexxxx"};
-	 private  AutoCompleteTextView textView;
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
-        textView=(AutoCompleteTextView)findViewById(R.id.autoCompleteTextView1);	//»ñÈ¡×Ô¶¯Íê³ÉÎÄ±¾¿ò
-        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this, 
-        							android.R.layout.simple_dropdown_item_1line,COUNTRIES); //´´½¨Ò»¸öArrayAdapterÊÊÅäÆ÷
+	private static final String[] COUNTRIES = new String[] { "auto",
+			"autocomplete", "autocompletetext", "autocompletetextview",
+			"autocompletexxxx" };
+	private AutoCompleteTextView textView;
+	private MultiAutoCompleteTextView macTV;
 
-        textView.setAdapter(adapter);	//Îª×Ô¶¯Íê³ÉÎÄ±¾¿òÉèÖÃÊÊÅäÆ÷
-        Button button=(Button)findViewById(R.id.button1);	//»ñÈ¡ËÑË÷°´Å¥
-        //ÎªËÑË÷°´Å¥Ìí¼Óµ¥»÷ÊÂ¼ş¼àÌı
-        button.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Toast.makeText(MainActivity.this, textView.getText().toString(), Toast.LENGTH_SHORT).show();
-			}
-		});
-    }
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.main);
+		/*
+		 * 1.åˆå§‹åŒ–æ§ä»¶ 
+		 * 2.åˆ›å»ºé€‚é…å™¨ 
+		 * 3.å‡†å¤‡æ•°æ®æº 
+		 * 4.å°†textviewè·Ÿadapterç»‘å®š
+		 */
+		textView = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextView1);
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_dropdown_item_1line, COUNTRIES);
+		textView.setAdapter(adapter);
+		
+		macTV = (MultiAutoCompleteTextView) findViewById(R.id.multiAutoCompleteTextView1);
+		macTV.setAdapter(adapter);
+		macTV.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
+	}
 }

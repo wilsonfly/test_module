@@ -1,0 +1,17 @@
+package com.wilson;
+
+public class JavaVMLoadTest {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+private class SuperClass{
+	
+}
