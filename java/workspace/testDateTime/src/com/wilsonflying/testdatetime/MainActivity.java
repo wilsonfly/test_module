@@ -62,7 +62,7 @@ public class MainActivity extends Activity {
 	}
 	
 	public void showTheTime(int year, int month, int day, int hour, int minute){
-		String time = year+"/"+month+"/"+day+" "+hour+":"+minute;
+		String time = year+"/"+(month+1)+"/"+day+" "+hour+":"+minute;
 		Toast.makeText(MainActivity.this, time, Toast.LENGTH_SHORT).show();
 	}
 }

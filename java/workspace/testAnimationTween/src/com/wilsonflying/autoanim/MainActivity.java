@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
 		final Animation translate = AnimationUtils.loadAnimation(this,
 				R.anim.anim_translate);
 		final Animation scale = AnimationUtils.loadAnimation(this,
-				R.anim.animj_scale);
+				R.anim.anim_scale);
 		final Animation alpha = AnimationUtils.loadAnimation(this,
 				R.anim.anim_alpha);
 

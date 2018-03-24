@@ -6,22 +6,24 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="provider" key="selection"/>
+		<item value="SubClass3" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
+			<item value="SubClass"/>
+			<item value="SuperClass"/>
 			<item value="provider"/>
 			<item value="handler"/>
 			<item value="Handler"/>
 			<item value="anim"/>
 			<item value="firstVisibleItem"/>
 			<item value="addhead"/>
-			<item value="button_pause"/>
-			<item value="mc"/>
 		</list>
 		<list key="replacehistory">
+			<item value="SubClass3"/>
+			<item value="SuperClass3"/>
 			<item value="50"/>
 			<item value="20sp"/>
 			<item value="50dp"/>
@@ -30,7 +32,7 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
 		<item value="265" key="DIALOG_WIDTH"/>
-		<item value="1|.Helvetica Neue DeskInterface|11.0|0|COCOA|1|.HelveticaNeueDeskInterface-Regular" key="DIALOG_FONT_NAME"/>
+		<item value="1|.SF NS Text|11.0|0|COCOA|1|.SFNSText" key="DIALOG_FONT_NAME"/>
 		<item value="399" key="DIALOG_HEIGHT"/>
 		<item value="1015" key="DIALOG_X_ORIGIN"/>
 		<item value="132" key="DIALOG_Y_ORIGIN"/>

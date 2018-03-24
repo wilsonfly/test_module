@@ -27,7 +27,7 @@ public class DetailFragment extends Fragment {
 		
 		ScrollView view = new ScrollView(getActivity());
 		TextView tv = new TextView(getActivity());
-		int index = getArguments().getInt("index", 0);
+		int index = getArguments().getInt("index", 0);//读取DetailAty.onCreate中commit transaction之前setArgument传过来的index参数
 		tv.setText(Data.DETAILS[index]);
 		tv.setPadding(10, 10, 10, 10);
 		

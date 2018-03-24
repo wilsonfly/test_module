@@ -109,7 +109,7 @@ public class MainActivity extends Activity {
 			//画个圆圈
 			Path path = new Path();
 			path.addCircle(50, 180, 30, Direction.CW);
-			canvas.drawPath(path, paint);
+//			canvas.drawPath(path, paint);
 			
 			//几条折线
 			path.reset();

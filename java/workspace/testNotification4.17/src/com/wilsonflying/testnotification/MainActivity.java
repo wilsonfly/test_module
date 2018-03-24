@@ -21,18 +21,16 @@ import android.widget.SimpleAdapter;
 import android.widget.TableRow;
 
 public class MainActivity extends Activity {
-	final int NOTIFYID_1 = 123; // µÚÒ»¸öÍ¨ÖªµÄID
-	private String user="ÄäÃû";	//ÓÃ»§Ãû
-	private NotificationManager notificationManager;	//¶¨ÒåÍ¨Öª¹ÜÀíÆ÷¶ÔÏó
+	final int NOTIFYID_1 = 123; // ç¬¬ä¸€ä¸ªç™»å½•çš„ID
+	private String user="åŒ¿å";	//ç”¨æˆ·å
+	private NotificationManager notificationManager;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
-		// »ñÈ¡Í¨Öª¹ÜÀíÆ÷£¬ÓÃÓÚ·¢ËÍÍ¨Öª
 		notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-		Button button1 = (Button) findViewById(R.id.button1); // »ñÈ¡¡°µÇÂ¼¡±°´Å¥
-		// Îª¡°µÇÂ¼¡±°´Å¥Ìí¼Óµ¥»÷ÊÂ¼ş¼àÌıÆ÷
+		Button button1 = (Button) findViewById(R.id.button1); //è·å–ç™»å½•æŒ‰é’®
 		button1.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -41,64 +39,62 @@ public class MainActivity extends Activity {
 				if(!"".equals(etUser.getText())){
 					user=etUser.getText().toString();
 				}
-				sendNotification(); // ·¢ËÍÍ¨Öª
+				sendNotification();
 
 			}
 		});
 
-		Button button2 = (Button) findViewById(R.id.button2); // »ñÈ¡¡°ÍË³ö¡±°´Å¥
-		// Îª¡°ÍË³ö¡±°´Å¥Ìí¼Óµ¥»÷ÊÂ¼ş¼àÌıÆ÷
+		Button button2 = (Button) findViewById(R.id.button2);
 		button2.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				notificationManager.cancel(NOTIFYID_1); // Çå³ıÍ¨Öª
-				((TableRow)findViewById(R.id.tableRow1)).setVisibility(View.VISIBLE);	//ÈÃ²¼¾ÖÖĞµÄµÚÒ»ĞĞÏÔÊ¾
-				((TableRow)findViewById(R.id.tableRow2)).setVisibility(View.VISIBLE);	//ÈÃ²¼¾ÖÖĞµÄµÚ¶şĞĞÏÔÊ¾
-				((Button)findViewById(R.id.button1)).setText("µÇÂ¼");	//¸Ä±ä¡°¸ü¸ÄµÇÂ¼×´Ì¬¡±°´Å¥ÉÏÏÔÊ¾µÄÎÄ×Ö
+				notificationManager.cancel(NOTIFYID_1);
+				((TableRow)findViewById(R.id.tableRow1)).setVisibility(View.VISIBLE);
+				((TableRow)findViewById(R.id.tableRow2)).setVisibility(View.VISIBLE);
+				((Button)findViewById(R.id.button1)).setText("ç™»å½•");
 			}
 		});
 	}
 
-	// ·¢ËÍÍ¨Öª
+	//å‘é€é€šçŸ¥
 	private void sendNotification() {
 		Builder builder = new AlertDialog.Builder(MainActivity.this);
-		builder.setIcon(R.drawable.advise); // ÉèÖÃ¶Ô»°¿òµÄÍ¼±ê
-		builder.setTitle("ÎÒµÄµÇÂ¼×´Ì¬£º"); // ÉèÖÃ¶Ô»°¿òµÄ±êÌâ
+		builder.setIcon(R.drawable.advise);
+		builder.setTitle("æˆ‘çš„ç™»å½•çŠ¶æ€");
 
 		final int[] imageId = new int[] { R.drawable.img1, R.drawable.img2,
-				R.drawable.img3, R.drawable.img4 }; // ¶¨Òå²¢³õÊ¼»¯±£´æÍ¼Æ¬idµÄÊı×é
-		final String[] title = new String[] { "ÔÚÏß", "ÒşÉí", "Ã¦ÂµÖĞ", "ÀëÏß" }; // ¶¨Òå²¢³õÊ¼»¯±£´æÁĞ±íÏîÎÄ×ÖµÄÊı×é
-		List<Map<String, Object>> listItems = new ArrayList<Map<String, Object>>(); // ´´½¨Ò»¸ölist¼¯ºÏ
-		// Í¨¹ıforÑ­»·½«Í¼Æ¬idºÍÁĞ±íÏîÎÄ×Ö·Åµ½MapÖĞ£¬²¢Ìí¼Óµ½list¼¯ºÏÖĞ
+				R.drawable.img3, R.drawable.img4 };
+		final String[] title = new String[] { "åœ¨çº¿", "éšèº«", "å¿™ç¢Œä¸­", "ç¦»çº¿" };
+		List<Map<String, Object>> listItems = new ArrayList<Map<String, Object>>();
 		for (int i = 0; i < imageId.length; i++) {
-			Map<String, Object> map = new HashMap<String, Object>(); // ÊµÀı»¯Map¶ÔÏó
+			Map<String, Object> map = new HashMap<String, Object>();
 			map.put("image", imageId[i]);
 			map.put("title", title[i]);
-			listItems.add(map); // ½«map¶ÔÏóÌí¼Óµ½List¼¯ºÏÖĞ
+			listItems.add(map);
 		}
 		final SimpleAdapter adapter = new SimpleAdapter(MainActivity.this,
 				listItems, R.layout.items, new String[] { "title", "image" },
-				new int[] { R.id.title, R.id.image }); // ´´½¨SimpleAdapter
+				new int[] { R.id.title, R.id.image });
 
 		builder.setAdapter(adapter, new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				Notification notify = new Notification(); // ´´½¨Ò»¸öNotification¶ÔÏó
+				Notification notify = new Notification();
 				notify.icon = imageId[which];
 				notify.tickerText = title[which];
-				notify.when = System.currentTimeMillis(); // ÉèÖÃ·¢ËÍÊ±¼ä
-				notify.defaults = Notification.DEFAULT_SOUND; // ÉèÖÃÄ¬ÈÏÉùÒô
+				notify.when = System.currentTimeMillis();
+				notify.defaults = Notification.DEFAULT_SOUND;
 				notify.setLatestEventInfo(MainActivity.this, user,
-						title[which], null);// ÉèÖÃÊÂ¼şĞÅÏ¢
-				notificationManager.notify(NOTIFYID_1, notify); // Í¨¹ıÍ¨Öª¹ÜÀíÆ÷·¢ËÍÍ¨Öª
-				((TableRow)findViewById(R.id.tableRow1)).setVisibility(View.INVISIBLE);	//ÈÃ²¼¾ÖÖĞµÄµÚÒ»ĞĞ²»ÏÔÊ¾
-				((TableRow)findViewById(R.id.tableRow2)).setVisibility(View.INVISIBLE);	//ÈÃ²¼¾ÖÖĞµÄµÚ¶şĞĞ²»ÏÔÊ¾
-				((Button)findViewById(R.id.button1)).setText("¸ü¸ÄµÇÂ¼×´Ì¬");	//¸Ä±ä¡°µÇÂ¼¡±°´Å¥ÉÏÏÔÊ¾µÄÎÄ×Ö
+						title[which], null);//è®¾ç½®äº‹ä»¶ä¿¡æ¯
+				notificationManager.notify(NOTIFYID_1, notify);
+				((TableRow)findViewById(R.id.tableRow1)).setVisibility(View.INVISIBLE);	//å¸ƒå±€ä¸­çš„ç¬¬ä¸€è¡Œä¸æ˜¾ç¤º
+				((TableRow)findViewById(R.id.tableRow2)).setVisibility(View.INVISIBLE);	//ä¸å±…ä¸­çš„ç¬¬äºŒè¡Œä¸æ˜¾ç¤º
+				((Button)findViewById(R.id.button1)).setText("æ›´æ”¹ç™»å½•çŠ¶æ€");	//æ”¹å˜â€œç™»å½•â€æŒ‰é’®ä¸Šæ˜¾ç¤ºçš„æ–‡å­—
 			}
 		});
 
-		builder.create().show(); // ´´½¨¶Ô»°¿ò²¢ÏÔÊ¾
+		builder.create().show();
 
 	}
 

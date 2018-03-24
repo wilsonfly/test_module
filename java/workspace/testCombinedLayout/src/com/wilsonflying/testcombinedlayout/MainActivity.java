@@ -24,7 +24,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Toast.makeText(MainActivity.this, "½øÈëÓÎÏ·", Toast.LENGTH_SHORT)
+				Toast.makeText(MainActivity.this, "è¿›å…¥æ¸¸æˆ", Toast.LENGTH_SHORT)
 						.show();
 			}
 		});
@@ -38,7 +38,7 @@ public class MainActivity extends Activity {
 		// images[2] = (ImageView) findViewById(R.id.imagebutton_help);
 		// images[3] = (ImageView) findViewById(R.id.imagebutton_board);
 		// final String[] toastText = new String[]
-		// {"ÓÎÏ·ÉèÖÃ","ÍË³öÓÎÏ·","°ïÖúĞÅÏ¢","ÅÅĞĞ°ñĞÅÏ¢"};
+		// {"è®¾ç½®","é€€å‡º","å¸®åŠ©","é£äº‘æ¦œ"};
 		//
 		// for( int i=0;i < 4; i++){
 		// images[i].setOnClickListener(new OnClickListener() {
@@ -47,7 +47,7 @@ public class MainActivity extends Activity {
 		// public void onClick(View v) {
 		// // TODO Auto-generated method stub
 		// Toast.makeText(MainActivity.this, toastText[i],
-		// Toast.LENGTH_SHORT).show();//text ĞèÒªfinalÀàĞÍ²ÎÊı£¬Ê¹ÓÃ±äÁ¿iÔÚ´Ë±¨´í
+		// Toast.LENGTH_SHORT).show();
 		// }
 		// });
 		// }
@@ -58,7 +58,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Toast.makeText(MainActivity.this, "ÓÎÏ·ÉèÖÃ", Toast.LENGTH_SHORT)
+				Toast.makeText(MainActivity.this, "è®¾ç½®", Toast.LENGTH_SHORT)
 						.show();
 			}
 		});
@@ -69,7 +69,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Toast.makeText(MainActivity.this, "ÍË³öÓÎÏ·", Toast.LENGTH_SHORT)
+				Toast.makeText(MainActivity.this, "é€€å‡º", Toast.LENGTH_SHORT)
 						.show();
 			}
 		});
@@ -80,7 +80,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Toast.makeText(MainActivity.this, "°ïÖúĞÅÏ¢", Toast.LENGTH_SHORT)
+				Toast.makeText(MainActivity.this, "å¸®åŠ©", Toast.LENGTH_SHORT)
 						.show();
 			}
 		});
@@ -91,7 +91,7 @@ public class MainActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Toast.makeText(MainActivity.this, "ÅÅĞĞ°ñĞÅÏ¢", Toast.LENGTH_SHORT)
+				Toast.makeText(MainActivity.this, "é£äº‘æ¦œ", Toast.LENGTH_SHORT)
 						.show();
 			}
 		});

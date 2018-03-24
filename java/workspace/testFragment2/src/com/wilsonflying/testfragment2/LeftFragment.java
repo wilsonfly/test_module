@@ -5,6 +5,7 @@ import android.app.FragmentTransaction;
 import android.app.ListFragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
@@ -19,9 +20,11 @@ public class LeftFragment extends ListFragment {
 	public void onActivityCreated(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onActivityCreated(savedInstanceState);
-
+		Log.i("LeftFragment", "in onAcitivityCreated");
+		
 		if( savedInstanceState != null){
 			currentCheckedPosition = savedInstanceState.getInt("curChecked");
+			Log.i("LeftFragment", "in onAcitivityCreated，savedInstanceState not null,index:"+currentCheckedPosition);
 		}
 		
 		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
@@ -32,6 +35,7 @@ public class LeftFragment extends ListFragment {
 		View detailFragment = getActivity().findViewById(R.id.fl_detail);
 		isDualPane = detailFragment != null && detailFragment.getVisibility() == View.VISIBLE;
 		if(isDualPane){
+			Log.i("LeftFragment", "in onAcitivityCreated,isDualPane,will showDetails");
 			getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
 			showDetails(currentCheckedPosition);
 		}
@@ -42,11 +46,15 @@ public class LeftFragment extends ListFragment {
 	public void onListItemClick(ListView l, View v, int position, long id) {
 		// TODO Auto-generated method stub
 		super.onListItemClick(l, v, position, id);
+		Log.i("LeftFragment", "in onListItemClick");
+
 		showDetails(position);
 	}
 	
 	private void showDetails(int position) {
 		// TODO Auto-generated method stub
+		Log.i("LeftFragment", "in showDetails");
+
 		currentCheckedPosition = position;
 		
 		if(isDualPane){

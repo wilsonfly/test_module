@@ -26,12 +26,14 @@ public class MainActivity extends Activity {
 		
 		for(int i=0; i<imageId.length; i++){
 			Map<String, Object> map = new HashMap<String, Object>();
-			map.put("image", imageId[i]);
 			map.put("title", str[i]);
+			map.put("image", imageId[i]);//put的顺序无所谓
 			listitems.add(map);
 		}
 		
-		SimpleAdapter adapter = new SimpleAdapter(this, listitems, R.layout.items, new String[]{"title","image"}, new int[]{R.id.textview,R.id.image});
+		SimpleAdapter adapter = new SimpleAdapter(this, listitems, R.layout.items, new String[]{"image","title"}, new int[]{R.id.image,R.id.textview});
+//		SimpleAdapter adapter = new SimpleAdapter(this, listitems, R.layout.items, new String[]{"title","image"}, new int[]{R.id.textview,R.id.image});//两个数组中内容顺序无所谓，对应就ok
+//		SimpleAdapter adapter = new SimpleAdapter(this, listitems, R.layout.items, new String[]{"image","title"}, new int[]{R.id.textview,R.id.image});//两个数组中内容顺序不匹配，显示乱码
 		lv.setAdapter(adapter);
 	}
 }

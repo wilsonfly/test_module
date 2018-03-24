@@ -16,10 +16,10 @@ public final class R {
         public static final int anim_pig_runto_left=0x7f040004;
         public static final int anim_pig_runto_right=0x7f040005;
         public static final int anim_rotate=0x7f040006;
-        public static final int anim_translate=0x7f040007;
-        public static final int anim_zoom_in=0x7f040008;
-        public static final int anim_zoom_out=0x7f040009;
-        public static final int animj_scale=0x7f04000a;
+        public static final int anim_scale=0x7f040007;
+        public static final int anim_translate=0x7f040008;
+        public static final int anim_zoom_in=0x7f040009;
+        public static final int anim_zoom_out=0x7f04000a;
     }
     public static final class attr {
     }
