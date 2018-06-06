@@ -13,17 +13,21 @@ build_path="/home/sunhuasheng/project_code/mstar_6a918_branchus"
 input_file=$1
 suffix_name=${input_file##*.}
 prefix_name=${input_file%".$suffix_name"}
+product_name="_918"
 
 #java -jar prebuilts/sdk/tools/lib/signapk.jar build/target/product/security/platform.x509.pem build/target/product/security/platform.pk8 ~/Downloads/GunWorld_unsigned_letv.apk GunWorld_signed_letv.ap
+#java -Xmx2048m -jar out/host/linux-x86/framework/signapk.jar -w build/target/product/security/testkey.x509.pem build/target/product/security/testkey.pk8 /tmp/tmpZg3epF out/target/product/guava/aosp_guava-ota-151201.153643.zip
 
 if [ ${suffix_name} == "zip" ]
 then
     output_file="$prefix_name"_sign.zip
-    cmd="java -Xmx2048m -jar $build_path/prebuilts/sdk/tools/lib/signapk.jar -w $build_path/build/target/product/security/platform.x509.pem $build_path/build/target/product/security/platform.pk8 $input_file $output_file"
+    #cmd="java -Xmx2048m -jar $build_path/prebuilts/sdk/tools/lib/signapk.jar -w $build_path/build/target/product/security/platform.x509.pem $build_path/build/target/product/security/platform.pk8 $input_file $output_file"
+    cmd="java -Xmx2048m -jar $build_path/out/host/linux-x86/framework/signapk.jar -w $build_path/build/target/product/security/testkey.x509.pem $build_path/build/target/product/security/testkey.pk8 $input_file $output_file"
 else if [ ${suffix_name} == "apk" ]
 then
-    output_file="$prefix_name"_sign.apk
+    output_file="$prefix_name"_sign"$product_name".apk
     cmd="java -jar $build_path/prebuilts/sdk/tools/lib/signapk.jar -w $build_path/build/target/product/security/platform.x509.pem $build_path/build/target/product/security/platform.pk8 $input_file $output_file"
+    #cmd="java -jar $build_path/out/host/linux-x86/framework/signapk.jar -w $build_path/build/target/product/security/testkey.x509.pem $build_path/build/target/product/security/testkey.pk8 $input_file $output_file"
 else
     echo "Invalid param,need *.zip/*.apk "
     exit
