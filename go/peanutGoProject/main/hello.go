@@ -11,6 +11,8 @@ func main()  {
 	fmt.Println(3)
 
 	//====begin====
+	fmt.Println("no0 ========")
+
 	s1 := []int{1,2}
 	s2 := []int{3,4}
 	//fmt.Println(append(s1,s2))
@@ -19,6 +21,8 @@ func main()  {
 
 
 	//====begin====
+	fmt.Println("no1 ========")
+
 	var s []int
 	s = append(s,1)
 	fmt.Println(s)
@@ -26,6 +30,8 @@ func main()  {
 
 
 	//====begin====
+	fmt.Println("no2 ========")
+
 	arr := [5]int{1,2,3,4,5}
 	fmt.Printf("arr cap:%d \n", cap(arr))
 
@@ -44,13 +50,17 @@ func main()  {
 
 
 	//====begin====
+	fmt.Println("no3 ========")
+
 	for i:=0;i<5;i++ {
-		defer fmt.Printf("%d ", i)
+		defer fmt.Printf("no3,defer num:%d \n", i)
 	}
 	//====end====
 
 
 	//====begin====
+	fmt.Println("no4 ========")
+
 	domain1 := 1
 	{
 		domain1 := 2
@@ -61,14 +71,8 @@ func main()  {
 
 
 	//====begin====
-	s4 := []string{"one","two","three"}
-	for v := range s4{
-		fmt.Println(v)
-	}
-	//====end====
+	fmt.Println("no5 ========")
 
-
-	//====begin====
 	s3 := []string{"one","two","three"}
 	for i,v := range s3 {
 		fmt.Println(i,v)
@@ -82,22 +86,74 @@ func main()  {
 	//====end====
 
 
-
 	//====begin====
-	type Slice []int
-	func (s *Slice)Add(v int){
-	*s =  s.append(v)
+	fmt.Println("no6 ====")
+	s4 := []string{"one","two","three"}
+	for v := range s4{
+		fmt.Println(v)
 	}
+	//====end====
+
+
+	//====begin====
+	fmt.Println("no7 ====")
+
 	s5 := make(Slice,0)
-	defer s5.Add(1).Add(2)
-	s5.Add(3)
-	fmt.Println(s)
+	defer s5.Add(1).Add(2)   //TODO:??
+	//s5.Add(3)
+	fmt.Println(s5)
 	//====end====
 
 	//====begin====
+	fmt.Println("no8 ========")
+	type student struct {
+		Name string
+		Age int
+	}
+	//m := make(map[string]int)
+	students := []student{
+		{Name:"aa",Age:21},
+		{Name:"bb",Age:31},
+		{Name:"cc",Age:41},
+	}
+	for _,v := range students{
+		fmt.Printf("no8, [%s,%d]\n",v.Name,v.Age)
+		v.Age += 5    //修改的是副本
+		fmt.Printf("no8, [%s,%d] \n",v.Name,v.Age)
+	}
+	for _,v := range students{
+		fmt.Printf("no8, [%s,%d]\n",v.Name,v.Age)
+	}
+
+	for i:=0; i< len(students); i++ {
+		students[i].Age += 5
+	}
+	for _,v := range students{
+		fmt.Printf("no8, [%s,%d]\n",v.Name,v.Age)
+	}
 	//====end====
+
 
 	//====begin====
+	fmt.Println("no9 ========")
+	for i:=0; i<5; i++{
+		go func(){
+			fmt.Printf("no9, %d\n",i)   //555
+		}()
+	}
+	time.Sleep(5)
 	//====end====
 
+
+
+
+	//====begin====
+	fmt.Println("no ========")
+	//====end====
+}
+
+type Slice []int
+func (s *Slice) Add(v int) *Slice {
+	*s = append(*s, v)
+	return s
 }
