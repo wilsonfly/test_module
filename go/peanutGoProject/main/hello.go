@@ -145,7 +145,24 @@ func main()  {
 	//====end====
 
 
+	//====begin====
+	fmt.Println("no10 ========")
+	s6 := make([]int,5)
+	s6 = append(s6, 1,2,3)
+	fmt.Println(s6)
 
+	s7 := make([]int,0)
+	s7 = append(s7, 1,2,3)
+	fmt.Println(s7)
+	//====end====
+
+	//====begin====
+	fmt.Println("no ========")
+	//====end====
+
+	//====begin====
+	fmt.Println("no ========")
+	//====end====
 
 	//====begin====
 	fmt.Println("no ========")
