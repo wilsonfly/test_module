@@ -15,6 +15,7 @@ func getType(i interface{}){
 	}
 }
 
+//还有个例子参见interfaceDemo
 func main() {
 	getType(20)
 	getType("hello world!")
