@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/main/hello.go" line="151" mnemonic="6" />
+    <bookmark url="file://$PROJECT_DIR$/main/hello.go" line="144" mnemonic="6" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="708d8869-2342-40b3-984c-1a278a781d5e" name="Default" comment="" />
@@ -14,14 +14,56 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="hello.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="hello.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main/hello.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
+            <state relative-caret-position="-1536">
+              <caret line="190" column="15" selection-start-line="190" selection-start-column="15" selection-end-line="190" selection-end-column="15" />
               <folding>
                 <element signature="e#38#63#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/panicErrDemo/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+              <folding>
+                <element signature="e#14#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="deferPanic.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/panicErrDemo/deferPanic.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="205">
+              <caret line="28" column="73" selection-start-line="28" selection-start-column="73" selection-end-line="28" selection-end-column="73" />
+              <folding>
+                <element signature="e#14#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/closureDemo/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/stringDemo/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -31,18 +73,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="298">
               <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mapDemo/main.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-              <folding>
-                <element signature="e#14#39#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -64,24 +94,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
               <caret line="8" column="10" lean-forward="true" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="typeSwitch.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/typeSwitch/typeSwitch.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="typeAssert.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/typeAssert/typeAssert.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -143,7 +155,12 @@
         <option value="$PROJECT_DIR$/typeSwitch/typeSwitch.go" />
         <option value="$PROJECT_DIR$/interfaceDemo/main.go" />
         <option value="$PROJECT_DIR$/deferDemo/main.go" />
+        <option value="$PROJECT_DIR$/stringDemo/main.go" />
         <option value="$PROJECT_DIR$/main/hello.go" />
+        <option value="$PROJECT_DIR$/panicErrDemo/main.go" />
+        <option value="$PROJECT_DIR$/closureDemo/main.go" />
+        <option value="$PROJECT_DIR$/closureDemo/tmp.go" />
+        <option value="$PROJECT_DIR$/panicErrDemo/deferPanic.go" />
       </list>
     </option>
   </component>
@@ -175,6 +192,11 @@
             <path>
               <item name="peanutGoProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="peanutGoProject" type="462c0819:PsiDirectoryNode" />
+              <item name="closureDemo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="peanutGoProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="peanutGoProject" type="462c0819:PsiDirectoryNode" />
               <item name="deferDemo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -191,6 +213,16 @@
               <item name="peanutGoProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="peanutGoProject" type="462c0819:PsiDirectoryNode" />
               <item name="mapDemo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="peanutGoProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="peanutGoProject" type="462c0819:PsiDirectoryNode" />
+              <item name="panicErrDemo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="peanutGoProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="peanutGoProject" type="462c0819:PsiDirectoryNode" />
+              <item name="stringDemo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="peanutGoProject" type="b2602c69:ProjectViewProjectNode" />
@@ -246,7 +278,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build hello.go">
+  <component name="RunManager" selected="Go Build.go build deferPanic.go">
+    <configuration name="go build deferPanic.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="peanutGoProject" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/panicErrDemo/deferPanic.go" />
+      <directory value="$PROJECT_DIR$/" />
+    </configuration>
     <configuration name="go build hello.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="peanutGoProject" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -260,60 +300,52 @@
       <working_directory value="$PROJECT_DIR$/" />
       <go_parameters value="-i" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/mapDemo/main.go" />
+      <filePath value="$PROJECT_DIR$/panicErrDemo/main.go" />
       <directory value="$PROJECT_DIR$/" />
     </configuration>
-    <configuration name="go build main.go (2)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build main.go (4)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="peanutGoProject" />
       <working_directory value="$PROJECT_DIR$/" />
       <go_parameters value="-i" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/interfaceDemo/main.go" />
+      <filePath value="$PROJECT_DIR$/closureDemo/main.go" />
       <directory value="$PROJECT_DIR$/" />
     </configuration>
-    <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build tmp.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="peanutGoProject" />
       <working_directory value="$PROJECT_DIR$/" />
       <go_parameters value="-i" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/deferDemo/main.go" />
-      <directory value="$PROJECT_DIR$/" />
-    </configuration>
-    <configuration name="go build typeSwitch.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="peanutGoProject" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <go_parameters value="-i" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/typeSwitch/typeSwitch.go" />
+      <filePath value="$PROJECT_DIR$/closureDemo/tmp.go" />
       <directory value="$PROJECT_DIR$/" />
     </configuration>
     <list>
       <item itemvalue="Go Build.go build hello.go" />
-      <item itemvalue="Go Build.go build main.go" />
       <item itemvalue="Go Build.go build main.go (1)" />
-      <item itemvalue="Go Build.go build main.go (2)" />
-      <item itemvalue="Go Build.go build typeSwitch.go" />
+      <item itemvalue="Go Build.go build main.go (4)" />
+      <item itemvalue="Go Build.go build tmp.go" />
+      <item itemvalue="Go Build.go build deferPanic.go" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build hello.go" />
-        <item itemvalue="Go Build.go build main.go" />
-        <item itemvalue="Go Build.go build main.go (2)" />
-        <item itemvalue="Go Build.go build typeSwitch.go" />
+        <item itemvalue="Go Build.go build deferPanic.go" />
+        <item itemvalue="Go Build.go build tmp.go" />
+        <item itemvalue="Go Build.go build main.go (4)" />
         <item itemvalue="Go Build.go build main.go (1)" />
+        <item itemvalue="Go Build.go build hello.go" />
       </list>
     </recent_temporary>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25767368" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25767368" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32965517" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32827586" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32827586" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32965517" />
@@ -497,13 +529,6 @@
     <entry file="file://$PROJECT_DIR$/../gopl.io/ch1/dup1/main.go" />
     <entry file="file://$PROJECT_DIR$/ReverseStringAchive.go" />
     <entry file="file://$PROJECT_DIR$/reflect/reflect.go" />
-    <entry file="file://$PROJECT_DIR$/main/ReverseString.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hello/hello.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -573,12 +598,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/stringDemo/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/ReverseString.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="12" lean-forward="true" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main/hello.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
+        <state relative-caret-position="-1536">
+          <caret line="190" column="15" selection-start-line="190" selection-start-column="15" selection-end-line="190" selection-end-column="15" />
           <folding>
             <element signature="e#38#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/closureDemo/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="15" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/panicErrDemo/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding>
+            <element signature="e#14#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/closureDemo/tmp.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="39" lean-forward="true" selection-start-line="6" selection-end-line="39" />
+          <folding>
+            <element signature="e#14#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/time/sleep.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/panicErrDemo/deferPanic.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="28" column="73" selection-start-line="28" selection-start-column="73" selection-end-line="28" selection-end-column="73" />
+          <folding>
+            <element signature="e#14#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
