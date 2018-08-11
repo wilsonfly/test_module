@@ -6,6 +6,9 @@ import (
 	"time"
 	"gx/ipfs/QmVmDhyTTUcQXFD1rRQ64fGLMSAoaQvNH3hwuaCFAPq2hy/errors"
 	"runtime/debug"
+	"bytes"
+	"io"
+	"os"
 )
 
 func main() {
@@ -180,15 +183,35 @@ func main() {
 	//====end====
 
 	//====begin====
-	fmt.Println("no ========")
+	fmt.Println("no14 ========")
 	FuncBiBao()
 	FuncBiBao2()
 	//====end====
 
 	//====begin====
-	fmt.Println("no ========")
+	fmt.Println("no15 ========")
 	//testErr()
 	//====end====
+
+	//====begin====
+	fmt.Println("no16 ========")
+	var buf bytes.Buffer
+	buf.Write([]byte("hello"))
+	fmt.Fprintf(&buf,"world") //&buf
+	//fmt.Println(buf)
+	io.Copy(os.Stdout,&buf)  //&buf
+	//====end====
+
+
+	//====begin====
+	fmt.Println("no17 ========")
+	//====end====
+
+
+	//====begin====
+	fmt.Println("no ========")
+	//====end====
+
 
 	//====begin====
 	fmt.Println("no ========")
