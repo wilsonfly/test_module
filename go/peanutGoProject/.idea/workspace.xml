@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/main/hello.go" line="147" mnemonic="6" />
+    <bookmark url="file://$PROJECT_DIR$/main/hello.go" line="150" mnemonic="6" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="708d8869-2342-40b3-984c-1a278a781d5e" name="Default" comment="" />
@@ -14,46 +14,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="embed.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/varTypeDemo/embed.go">
+      <file leaf-file-name="hello.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main/hello.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="embed2.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/varTypeDemo/embed2.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="export.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/varTypeDemo/export.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="18" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="18" />
-              <folding>
-                <element signature="e#14#31#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="75">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/goRoutineDemo/main.go">
+        <entry file="file://$PROJECT_DIR$/logDemo/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="315">
+              <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
               <folding>
-                <element signature="e#14#43#0" expanded="true" />
+                <element signature="e#14#38#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="unMarshal.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jsonDemo/unMarshal.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="344">
+              <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+              <folding>
+                <element signature="e#14#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="unMarshal2.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/jsonDemo/unMarshal2.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="error.log" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/logDemo/error.log">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="goSched.go" pinned="false" current-in-tab="false">
@@ -92,11 +97,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="relayRace.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="relayRace.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/channelDemo/relayRace.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
               <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
+              <folding>
+                <element signature="e#14#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="doTasks.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/channelDemo/doTasks.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="280">
+              <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
               <folding>
                 <element signature="e#14#39#0" expanded="true" />
               </folding>
@@ -170,7 +187,6 @@
         <option value="$PROJECT_DIR$/stringDemo/data.txt" />
         <option value="$PROJECT_DIR$/stringDemo/wordCount.go" />
         <option value="$PROJECT_DIR$/argsDemo/main.go" />
-        <option value="$PROJECT_DIR$/main/hello.go" />
         <option value="$PROJECT_DIR$/methodDemo/main.go" />
         <option value="$PROJECT_DIR$/methodDemo/interfaceImplement.go" />
         <option value="$PROJECT_DIR$/methodDemo/interfaceImplement2.go" />
@@ -187,6 +203,12 @@
         <option value="$PROJECT_DIR$/goRoutineDemo/goSched.go" />
         <option value="$PROJECT_DIR$/channelDemo/playball.go" />
         <option value="$PROJECT_DIR$/channelDemo/relayRace.go" />
+        <option value="$PROJECT_DIR$/channelDemo/doTasks.go" />
+        <option value="$PROJECT_DIR$/main/hello.go" />
+        <option value="$PROJECT_DIR$/logDemo/main.go" />
+        <option value="$PROJECT_DIR$/jsonDemo/main.go" />
+        <option value="$PROJECT_DIR$/jsonDemo/unMarshal.go" />
+        <option value="$PROJECT_DIR$/jsonDemo/unMarshal2.go" />
       </list>
     </option>
   </component>
@@ -249,6 +271,16 @@
               <item name="peanutGoProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="peanutGoProject" type="462c0819:PsiDirectoryNode" />
               <item name="interfaceDemo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="peanutGoProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="peanutGoProject" type="462c0819:PsiDirectoryNode" />
+              <item name="jsonDemo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="peanutGoProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="peanutGoProject" type="462c0819:PsiDirectoryNode" />
+              <item name="logDemo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="peanutGoProject" type="b2602c69:ProjectViewProjectNode" />
@@ -318,11 +350,11 @@
       <recent name="$PROJECT_DIR$/hello" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/jsonDemo" />
       <recent name="$PROJECT_DIR$/algorithem" />
       <recent name="$PROJECT_DIR$/varTypeDemo" />
       <recent name="$PROJECT_DIR$/interfaceDemo" />
       <recent name="$PROJECT_DIR$/methodDemo" />
-      <recent name="$PROJECT_DIR$/main" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -337,13 +369,21 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build relayRace.go">
-    <configuration name="go build goSched.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Build.go build unMarshal2.go">
+    <configuration name="go build doTasks.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="peanutGoProject" />
       <working_directory value="$PROJECT_DIR$/" />
       <go_parameters value="-i" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/goRoutineDemo/goSched.go" />
+      <filePath value="$PROJECT_DIR$/channelDemo/doTasks.go" />
+      <directory value="$PROJECT_DIR$/" />
+    </configuration>
+    <configuration name="go build hello.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="peanutGoProject" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/main/hello.go" />
       <directory value="$PROJECT_DIR$/" />
     </configuration>
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -351,47 +391,39 @@
       <working_directory value="$PROJECT_DIR$/" />
       <go_parameters value="-i" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/goRoutineDemo/main.go" />
+      <filePath value="$PROJECT_DIR$/logDemo/main.go" />
       <directory value="$PROJECT_DIR$/" />
     </configuration>
-    <configuration name="go build playball.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build unMarshal2.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="peanutGoProject" />
       <working_directory value="$PROJECT_DIR$/" />
       <go_parameters value="-i" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/channelDemo/playball.go" />
+      <filePath value="$PROJECT_DIR$/jsonDemo/unMarshal2.go" />
       <directory value="$PROJECT_DIR$/" />
     </configuration>
-    <configuration name="go build primeNumber.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build unMarshal.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="peanutGoProject" />
       <working_directory value="$PROJECT_DIR$/" />
       <go_parameters value="-i" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/main/primeNumber.go" />
-      <directory value="$PROJECT_DIR$/" />
-    </configuration>
-    <configuration name="go build relayRace.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="peanutGoProject" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <go_parameters value="-i" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/channelDemo/relayRace.go" />
+      <filePath value="$PROJECT_DIR$/jsonDemo/unMarshal.go" />
       <directory value="$PROJECT_DIR$/" />
     </configuration>
     <list>
+      <item itemvalue="Go Build.go build doTasks.go" />
+      <item itemvalue="Go Build.go build hello.go" />
       <item itemvalue="Go Build.go build main.go" />
-      <item itemvalue="Go Build.go build primeNumber.go" />
-      <item itemvalue="Go Build.go build goSched.go" />
-      <item itemvalue="Go Build.go build playball.go" />
-      <item itemvalue="Go Build.go build relayRace.go" />
+      <item itemvalue="Go Build.go build unMarshal.go" />
+      <item itemvalue="Go Build.go build unMarshal2.go" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build relayRace.go" />
-        <item itemvalue="Go Build.go build playball.go" />
-        <item itemvalue="Go Build.go build goSched.go" />
+        <item itemvalue="Go Build.go build unMarshal2.go" />
+        <item itemvalue="Go Build.go build unMarshal.go" />
         <item itemvalue="Go Build.go build main.go" />
-        <item itemvalue="Go Build.go build primeNumber.go" />
+        <item itemvalue="Go Build.go build hello.go" />
+        <item itemvalue="Go Build.go build doTasks.go" />
       </list>
     </recent_temporary>
   </component>
@@ -399,7 +431,7 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25767368" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21486267" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Database" order="3" />
@@ -438,31 +470,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/main/hello.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../gopl.io/ch1/dup1/main.go" />
-    <entry file="file://$PROJECT_DIR$/hello/hello.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../gopl.io/ch1/dup1/main.go" />
-    <entry file="file://$PROJECT_DIR$/ReverseStringAchive.go" />
-    <entry file="file://$PROJECT_DIR$/reflect/reflect.go" />
-    <entry file="file://$PROJECT_DIR$/hello/hello.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/go/src/builtin/builtin.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
@@ -611,13 +618,6 @@
           <folding>
             <element signature="e#14#55#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main/hello.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="201" column="35" selection-start-line="201" selection-start-column="35" selection-end-line="201" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -782,13 +782,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/local/go/src/math/rand/rand.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="295" column="5" selection-start-line="295" selection-start-column="5" selection-end-line="295" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/channelDemo/playball.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
@@ -806,6 +799,74 @@
           <folding>
             <element signature="e#14#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/math/rand/rand.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="315" column="5" selection-start-line="315" selection-start-column="5" selection-end-line="315" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/channelDemo/doTasks.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+          <folding>
+            <element signature="e#14#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/hello.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logDemo/error.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jsonDemo/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" selection-start-column="12" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logDemo/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
+          <folding>
+            <element signature="e#14#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/go/src/encoding/json/decode.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="96" column="5" selection-start-line="96" selection-start-column="5" selection-end-line="96" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jsonDemo/unMarshal.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+          <folding>
+            <element signature="e#14#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jsonDemo/unMarshal2.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
         </state>
       </provider>
     </entry>

@@ -1,0 +1,4 @@
+Warning:2018/08/11 15:11:45.394281 main.go:43: something in Error
+Warning:2018/08/11 15:12:06.033988 main.go:43: something in Error
+Error:2018/08/11 15:12:40.259131 main.go:43: something in Error
+Error:2018/08/11 15:13:02.352006 main.go:44: something in Error
