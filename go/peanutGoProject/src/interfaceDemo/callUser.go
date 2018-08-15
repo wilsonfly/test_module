@@ -9,22 +9,39 @@ type ability interface {
 }
 
 type Admin struct {
-	name string
-	age int
+	name  string
+	age   int
 	level string
 }
 
-func (a *Admin)Do(){
-	fmt.Printf("Admin %v @ %v doing some work\n",a.name,a.age)
+func (a *Admin) Do() {
+	fmt.Printf("Admin %v @ %v doing some work\n", a.name, a.age)
 }
 
-func (a *Admin)Dump(){
-	fmt.Println("Admin.name:%v,Admin.age:%v, Admin.level:%v",a.name,a.age,a.level)
+func (a *Admin) Dump() {
+	fmt.Printf("Admin.name:%v,Admin.age:%v, Admin.level:%v\n", a.name, a.age, a.level)
 }
 
 func main() {
-	x := []interface{
-		User.New(),
-		&Admin{name:"HuaSheng",age:19,level:"super"},
+	y := user.New()
+	z := &Admin{
+		name:  "HuaSheng",
+		age:   19,
+		level: "super",
+	}
+	x := []ability{
+		y,
+		z,
+	}
+	fmt.Println(x)
+
+	ab := []ability{
+		user.New(),
+		&Admin{name: "huasheng", age: 19, level: "super"},
+	}
+
+	for _,a := range ab{
+		a.Do()
+		a.Dump()
 	}
 }

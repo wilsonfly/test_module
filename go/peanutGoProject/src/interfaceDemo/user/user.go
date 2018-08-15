@@ -3,21 +3,23 @@ package user
 import "fmt"
 
 type User struct {
-	name string
-	age int
+	Name string
+	Age int
 }
 
 func (u *User)Do(){
-	fmt.Printf("user %v @ %v years old, doing some hard work\n",u.name,u.age)
+	fmt.Printf("user %v @ %v years old, doing some hard work\n",u.Name,u.Age)
 }
 
 func (u *User)Dump(){
-	fmt.Printf("user.name:%v, user.age:%v",u.name,u.age)
+	fmt.Printf("user.name:%v, user.age:%v\n",u.Name,u.Age)
 }
 
 func New() *User{
 	a := User{
-		name:"huasheng"
-		age:18
+		Name:"huasheng",
+		Age:18,
 	}
+
+	return &a
 }
