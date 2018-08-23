@@ -17,6 +17,11 @@ func main() {
 	m["inner"].(map[string]interface{})["var_1"] = "aaa"
 	m["inner"].(map[string]interface{})["var_2"] = "bbb"
 
+	//cannot convert m["inner"] (type interface {}) to type map[string]interface {}: need type assertion
+	//z := map[string]interface{}(m["inner"])
+	y := m["inner"].(map[string]interface{})
+	fmt.Println(y)
+
 	//方法二：字面量
 	m["inner"] = map[string]interface{}{
 		"var_1": "ccc",

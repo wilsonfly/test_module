@@ -9,7 +9,6 @@ import (
 	"bytes"
 	"io"
 	"os"
-	"log"
 )
 
 
@@ -208,7 +207,14 @@ func main() {
 
 	//====begin====
 	fmt.Println("no17 ========")
-
+type user struct {
+	name string
+	age int
+}
+	u := user{name:"huasheng",age:18}
+	fmt.Printf("%v \n",u)
+	fmt.Printf("%+v \n",u)
+	fmt.Printf("%#v \nv",u)
 	//====end====
 
 
