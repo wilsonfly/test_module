@@ -11,8 +11,6 @@ import (
 	"os"
 )
 
-
-
 func main() {
 	fmt.Println("hello world")
 	fmt.Println(3)
@@ -199,35 +197,33 @@ func main() {
 	fmt.Println("no16 ========")
 	var buf bytes.Buffer
 	buf.Write([]byte("hello"))
-	fmt.Fprintf(&buf,"world") //&buf
+	fmt.Fprintf(&buf, "world") //&buf
 	//fmt.Println(buf)
-	io.Copy(os.Stdout,&buf)  //&buf
+	io.Copy(os.Stdout, &buf) //&buf
 	//====end====
-
 
 	//====begin====
 	fmt.Println("no17 ========")
-type user struct {
-	name string
-	age int
-}
-	u := user{name:"huasheng",age:18}
-	fmt.Printf("%v \n",u)
-	fmt.Printf("%+v \n",u)
-	fmt.Printf("%#v \nv",u)
+	type user struct {
+		name string
+		age  int
+	}
+	u := user{name: "huasheng", age: 18}
+	fmt.Printf("%v \n", u)
+	fmt.Printf("%+v \n", u)
+	fmt.Printf("%#v \nv", u)
 	//====end====
 
+	//====begin====
+	fmt.Println("no ========")
+
+	//====end====
 
 	//====begin====
 	fmt.Println("no ========")
 	//====end====
 
-
-	//====begin====
-	fmt.Println("no ========")
-	//====end====
-
-	time.Sleep(3*time.Second)
+	time.Sleep(3 * time.Second)
 }
 
 type Slice []int
@@ -277,19 +273,19 @@ func tryTheThing() (string, error) {
 	return "", ErrDidNotWork
 }
 
-func FuncBiBao(){
-	for i:=0;i<3;i++ {
-		go func(){
-			fmt.Println("funcbibao",i)
+func FuncBiBao() {
+	for i := 0; i < 3; i++ {
+		go func() {
+			fmt.Println("funcbibao", i)
 		}()
 
 	}
 }
-func FuncBiBao2(){
-	for i:=0;i<3;i++ {
-		x := i   //TODO:不是重复声明么？x怎么就有三个不一样的值呢？
-		go func(){
-			fmt.Println("funcbibao2",x)
+func FuncBiBao2() {
+	for i := 0; i < 3; i++ {
+		x := i //TODO:不是重复声明么？x怎么就有三个不一样的值呢？
+		go func() {
+			fmt.Println("funcbibao2", x)
 		}()
 	}
 }
