@@ -14,18 +14,18 @@ func main() {
 	defer sum("2", a, sum("20", a, b))
 	//====end====
 
-
 	//====begin====
 	fmt.Println("no2 ========")
-	fmt.Println("DeferFunc1:",DeferFunc1(1))
-	fmt.Println("DeferFunc2:",DeferFunc2(1))
-	fmt.Println("DeferFunc3:",DeferFunc3(1))
+	fmt.Println("DeferFunc1:", DeferFunc1(1))
+	fmt.Println("DeferFunc2:", DeferFunc2(1))
+	fmt.Println("DeferFunc3:", DeferFunc3(1))
 	//====end====
 
-
-
 	//====begin====
-	fmt.Println("no ========")
+	fmt.Println("no3 ========")
+	for i := 0; i < 5; i++ {
+		defer fmt.Println(i)
+	}
 	//====end====
 }
 

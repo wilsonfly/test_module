@@ -71,6 +71,8 @@ func testConvert() {
 
 	fmt.Println(newPointer, newValue)
 	fmt.Println(thePointer, theValue)
+	fmt.Printf("%v:%T, %v:%T \n",newPointer,newPointer, newValue, newValue)
+	fmt.Printf("%v:%T, %v:%T \n",thePointer,thePointer, theValue, theValue)
 }
 
 //func (u User)oneMysteriousFunc() {
@@ -99,6 +101,7 @@ func getFieldMethod(x interface{}) {
 	}
 
 	//user的方法也需要是exported，否则theType.NumMethod()为0
+	//留意method.Type结果，main.user作为方法的参数
 	fmt.Println("nummethod:", theType.NumMethod())
 	for i := 0; i < theType.NumMethod(); i++ {
 		method := theType.Method(i)
@@ -117,7 +120,7 @@ func setValue() {
 	//通过reflect.ValueOf获取num中的reflect.Value，参数必须是指针才能修改其值
 	theType = reflect.TypeOf(&num)
 	theValue = reflect.ValueOf(&num)
-	//reflect.Value.Elem() 表示获取原始值对应的反射对象，只有原始对象才能修改，当前反射对象是不能修改的
+	//reflect.Value.Elem() 表示获取原始值对应的对象，只有原始对象才能修改，当前反射对象是不能修改的
 	newValue := theValue.Elem()
 	fmt.Println(theType, theValue, theValue.CanSet(), newValue.Type(), newValue.CanSet())
 
