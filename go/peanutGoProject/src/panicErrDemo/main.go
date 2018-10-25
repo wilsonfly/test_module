@@ -8,8 +8,8 @@ import (
 func main() {
 	//fmt.Println(test())
 	//test2()
-	//test3()
-	test4()
+	test3()
+	//test4()
 }
 
 func test() string {

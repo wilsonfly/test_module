@@ -36,6 +36,7 @@ func funcB() {
 			fmt.Println("recover one panic")
 			f := err.(func() string) //type assert
 			fmt.Println(err, f(), reflect.TypeOf(err).Kind().String()) //!!!get the type
+			fmt.Println(err, f(), reflect.TypeOf(err)) //!!!get the type
 		} else {
 			fmt.Println("fatal")
 		}

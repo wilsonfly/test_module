@@ -21,6 +21,7 @@ func (set *threadSafeSet) Iter() <-chan interface{} {
 			ch <- k
 			//fmt.Println("Iter:", k, v)
 
+			//value := v
 			value := v.(string)
 			//println("Iter:", k, v)
 			fmt.Println("Iter:", k, value)
