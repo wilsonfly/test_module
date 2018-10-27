@@ -215,8 +215,18 @@ func main() {
 	//====end====
 
 	//====begin====
-	fmt.Println("no ========")
-
+	fmt.Println("no18 ========")
+	fmt.Println("5^11:",5^11)
+	fmt.Println("11^5:",11^5)
+	fmt.Println("^5:",^5)
+	fmt.Printf("^5:%08b\n",^5)
+	fmt.Println("^11:",^11)
+	fmt.Printf("^11:%08b \n",^11)
+	fmt.Printf("^0x0f:%08b \n",^0x0f)
+	fmt.Println("5&^11:",5&^11)
+	fmt.Println("11&^5:",11&^5)
+	fmt.Println(true || false && false  )  //&&比||优先级要高
+	fmt.Println((true || false) && false  )
 	//====end====
 
 	//====begin====
