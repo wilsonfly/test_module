@@ -7,7 +7,6 @@ import (
 	"bufio"
 	"strings"
 	"io"
-	"gx/ipfs/QmNiJuT8Ja3hMVpBHXv3Q6dwmperaQ6JjLtpMQgMCD7xvx/go-ipfs-util"
 )
 
 func main() {
@@ -16,6 +15,7 @@ func main() {
 	flag.BoolVar(&showInfo, "v", false, "show more info")
 	flag.BoolVar(&force, "f", false, "force copy file even target file exist")
 	flag.Parse()
+	fmt.Println(showInfo, force)
 
 	//fmt.Println(flag.NArg(), len(flag.Args()))
 	if flag.NArg() < 2 {
@@ -28,8 +28,8 @@ func main() {
 
 func CopyFile(src, dst string, showInfo, force bool) {
 	if !force {
-		//if fileExists(dst) {
-		if util.FileExists(dst) {
+		if fileExists(dst) {
+		//if util.FileExists(dst) {
 			fmt.Printf("%s exest, override is ? y/n \n", dst)
 			reader := bufio.NewReader(os.Stdin)
 			content, _, _ := reader.ReadLine()
@@ -49,7 +49,7 @@ func CopyFile(src, dst string, showInfo, force bool) {
 
 func fileExists(file string) bool {
 	_, err := os.Stat(file)
-	return err != nil || os.IsExist(err)
+	return err == nil || os.IsExist(err)
 }
 
 func doCopyFile(src, dst string) {
