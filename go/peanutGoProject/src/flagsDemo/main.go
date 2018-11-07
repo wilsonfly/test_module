@@ -5,6 +5,11 @@ import (
 	"fmt"
 )
 
+/*
+./flagsDemo -name huasheng -age 18
+./flagsDemo -name=huasheng -age=18
+*/
+
 func main() {
 	//sample1()
 	sample2()
