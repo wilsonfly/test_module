@@ -6,6 +6,8 @@ import (
 	"runtime/pprof"
 )
 
+//go tool pprof runtimePprof cpuprofile.prof
+
 func main() {
 
 	f, err := os.Create("./cpuprofile.prof")

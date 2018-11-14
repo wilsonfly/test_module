@@ -8,6 +8,8 @@ import (
 	"fmt"
 )
 
+//go run httpPprof.go &
+//go tool pprof http://localhost:8090/debug/pprof/heap
 func main() {
 	go func(){
 		log.Println(http.ListenAndServe("localhost:8090", nil))
