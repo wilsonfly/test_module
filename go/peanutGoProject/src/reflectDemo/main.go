@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"reflect"
+	"runtime"
 )
 
 //type user struct {
@@ -23,18 +24,24 @@ func main() {
 	u := user{Id: 110, Name: "huasheng", Age: 18}
 	//getFieldMethod(u)
 
-	x := 4
-	switch {
-	case x == 0:
+	x := 5
+	switch x {
+	case 0:
 		testBasic()
-	case x == 1:
+	case 1:
 		testConvert()
-	case x == 2:
+	case 2:
 		getFieldMethod(u)
-	case x == 3:
+	case 3:
 		setValue()
-	case x == 4:
+	case 4:
 		callMethod(u)
+	case 5:
+		getFuncName(targetFunc)
+		getFuncName(func(x interface{}, a, b int) int {
+			fmt.Println(x, a, b)
+			return 0
+		})
 
 	}
 }
@@ -71,8 +78,8 @@ func testConvert() {
 
 	fmt.Println(newPointer, newValue)
 	fmt.Println(thePointer, theValue)
-	fmt.Printf("%v:%T, %v:%T \n",newPointer,newPointer, newValue, newValue)
-	fmt.Printf("%v:%T, %v:%T \n",thePointer,thePointer, theValue, theValue)
+	fmt.Printf("%v:%T, %v:%T \n", newPointer, newPointer, newValue, newValue)
+	fmt.Printf("%v:%T, %v:%T \n", thePointer, thePointer, theValue, theValue)
 }
 
 //func (u User)oneMysteriousFunc() {
@@ -143,6 +150,20 @@ func callMethod(x interface{}) {
 	method.Call(args)
 
 	method2 := theValue.MethodByName("OneFuncWithArgs")
-	args2 := []reflect.Value{reflect.ValueOf(18), reflect.ValueOf("string arg")}
+	args2 := []reflect.Value{reflect.ValueOf(18), reflect.ValueOf("string_arg")}
 	method2.Call(args2)
+}
+
+func targetFunc(x interface{}, a, b int) int {
+	fmt.Println(x, a, b)
+	return 0
+}
+
+func getFuncName(op func(x interface{}, a, b int) int) {
+	p := reflect.ValueOf(op).Pointer()
+	opName := runtime.FuncForPC(p).Name()
+	fmt.Println("will call funcName:", opName)
+
+	result := op(1,2,3)
+	fmt.Println(result)
 }

@@ -13,6 +13,7 @@ func main() {
 
 	if len(os.Args) >= 2 {
 		filename := os.Args[1]
+		SampleCountLineNum2(filename)
 		SampleCountLineNum(filename)
 		return
 	}
@@ -85,6 +86,18 @@ func SampleCountLineNum(filename string) {
 	fmt.Println("line:", line)
 }
 
+func SampleCountLineNum2(filename string) {
+	f, err := os.Open(filename)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	s := bufio.NewScanner(f)
+	for s.Scan(){
+		fmt.Println(s.Text())
+	}
+}
+
 /*
 https://msdn.microsoft.com/zh-cn/library/aa930979.aspx
 
@@ -106,7 +119,7 @@ func SampleReadBitmap() {
 	defer file.Close()
 
 	var headA, headB byte
-	binary.Read(file, binary.LittleEndian, &headA)//windows/linux 小端, mac 大端
+	binary.Read(file, binary.LittleEndian, &headA) //windows/linux 小端, mac 大端
 	binary.Read(file, binary.LittleEndian, &headB)
 	fmt.Println(headA, headB)
 	fmt.Printf("%c,%c \n", headA, headB)
@@ -125,7 +138,6 @@ func SampleReadBitmap() {
 
 }
 
-
 //panic: reflect: reflect.Value.SetUint using value obtained using unexported field
 //type BitmapFileHeader struct {
 //	bfType      uint16
@@ -135,7 +147,6 @@ func SampleReadBitmap() {
 //	bfOffBits   uint32
 //}
 
-
 type BitmapFileHeader struct {
 	Type      uint16
 	Size      uint32
@@ -143,7 +154,6 @@ type BitmapFileHeader struct {
 	Reserved2 uint16
 	OffBits   uint32
 }
-
 
 func SampleReadBitmap2() {
 	file, err := os.Open("src/ioDemo/image.bmp")

@@ -36,7 +36,10 @@ func main() {
 	fmt.Println("no2 ========")
 
 	arr := [5]int{1, 2, 3, 4, 5}
-	fmt.Printf("arr cap:%d \n", cap(arr))
+	fmt.Printf("arr cap:%d, len:%d \n", cap(arr), len(arr))
+
+	arr2 := [...]int{1, 2, 3, 4, 5}
+	fmt.Printf("arr2 cap:%d, len:%d \n", cap(arr2), len(arr2))
 
 	slice := []int{1, 2, 3, 4, 5}
 	fmt.Printf("slice cap:%d \n", cap(slice))
@@ -216,17 +219,17 @@ func main() {
 
 	//====begin====
 	fmt.Println("no18 ========")
-	fmt.Println("5^11:",5^11)
-	fmt.Println("11^5:",11^5)
-	fmt.Println("^5:",^5)
-	fmt.Printf("^5:%08b\n",^5)
-	fmt.Println("^11:",^11)
-	fmt.Printf("^11:%08b \n",^11)
-	fmt.Printf("^0x0f:%08b \n",^0x0f)
-	fmt.Println("5&^11:",5&^11)
-	fmt.Println("11&^5:",11&^5)
-	fmt.Println(true || false && false  )  //&&比||优先级要高
-	fmt.Println((true || false) && false  )
+	fmt.Println("5^11:", 5^11)
+	fmt.Println("11^5:", 11^5)
+	fmt.Println("^5:", ^5)
+	fmt.Printf("^5:%08b\n", ^5)
+	fmt.Println("^11:", ^11)
+	fmt.Printf("^11:%08b \n", ^11)
+	fmt.Printf("^0x0f:%08b \n", ^0x0f)
+	fmt.Println("5&^11:", 5&^11)
+	fmt.Println("11&^5:", 11&^5)
+	fmt.Println(true || false && false) //&&比||优先级要高
+	fmt.Println((true || false) && false)
 	//====end====
 
 	//====begin====
