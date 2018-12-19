@@ -35,11 +35,14 @@ func main() {
 	//====begin====
 	fmt.Println("no2 ========")
 
-	arr := [5]int{1, 2, 3, 4, 5}
-	fmt.Printf("arr cap:%d, len:%d \n", cap(arr), len(arr))
+	arr := [5]int{1, 2, 3, 4}
+	fmt.Printf("arr cap:%d, len:%d, arr:%v\n", cap(arr), len(arr), arr)
 
 	arr2 := [...]int{1, 2, 3, 4, 5}
-	fmt.Printf("arr2 cap:%d, len:%d \n", cap(arr2), len(arr2))
+	fmt.Printf("arr2 cap:%d, len:%d, arr:%v\n", cap(arr2), len(arr2), arr2)
+
+	var arr3  [4][5]int
+	fmt.Println(arr3)
 
 	slice := []int{1, 2, 3, 4, 5}
 	fmt.Printf("slice cap:%d \n", cap(slice))
