@@ -47,6 +47,12 @@ func main() {
 	slice := []int{1, 2, 3, 4, 5}
 	fmt.Printf("slice cap:%d \n", cap(slice))
 
+	slice = append(slice[0:1], slice[2:]...)
+	fmt.Printf("slice after cut,%v\n", slice)
+	for index,data := range slice{
+		fmt.Println(index, data)
+	}
+
 	/*
 	map donot have member:cap
 	m := map[string]int{"a":1,"b":2}

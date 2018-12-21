@@ -54,10 +54,17 @@ func generateBlock(oldBlock Block, NUM int, address string) (Block, error) {
 	newBlock.Timestamp = t.String()
 	newBlock.NUM = NUM
 	newBlock.PrevHash = oldBlock.Hash
-	newBlock.Hash = calculateBlockHash(newBlock)
+	newBlock.Hash = calculateBlockHash(newBlock) //有了reCalculateIndex后，这里的计算就可以不要了，省的计算两遍
 	newBlock.Validator = address
 
 	return newBlock, nil
+}
+
+func reCalculateIndex(block Block, index int) Block{
+	block.Index = index
+	block.Hash = calculateBlockHash(block)
+
+	return block
 }
 
 // SHA256 hasing
@@ -166,7 +173,7 @@ func handleConn(conn net.Conn) {
 
 	// 循环会周期性的打印出最新的区块链信息
 	for {
-		time.Sleep(time.Second * 20)
+		time.Sleep(time.Second *20)
 		mutex.Lock()
 		output, err := json.Marshal(Blockchain)
 		mutex.Unlock()
@@ -214,6 +221,7 @@ func pickWinner() {
 				for i := 0; i < k; i++ {
 					lotteryPool = append(lotteryPool, block.Validator)
 				}
+				fmt.Println("lotteryPool:", lotteryPool)
 			}
 		}
 
@@ -223,11 +231,27 @@ func pickWinner() {
 		lotteryWinner := lotteryPool[r.Intn(len(lotteryPool))]
 
 		// 把获胜者的区块添加到整条区块链上，然后通知所有节点关于胜利者的消息
-		for _, block := range temp {
+		for i, block := range temp {
 			if block.Validator == lotteryWinner {
 				mutex.Lock()
-				Blockchain = append(Blockchain, block)
+				//重新给区块编号
+				recalculateIndexBlock := reCalculateIndex(block, len(Blockchain))
+				Blockchain = append(Blockchain, recalculateIndexBlock)
 				mutex.Unlock()
+
+				fmt.Println("i:", i)
+				fmt.Println("len(temp)", len(temp))
+				fmt.Println("num: ", block.NUM)
+				if len(temp) == 1 {
+					fmt.Println("clear temp")
+					temp = []Block{}
+				}
+
+				//for循环其实只跑一次就break了，i一直为0
+				//从temp中处理了一个块，将它清除出temp
+				if i+1<len(temp) {
+					temp = temp[1:]
+				}
 				for _ = range validators {
 					announcements <- "\nwinning validator: " + lotteryWinner + "\n"
 				}
@@ -236,12 +260,12 @@ func pickWinner() {
 		}
 	}
 
-	mutex.Lock()
-	tempBlocks = []Block{}
-	mutex.Unlock()
+	//还没有处理完所有的tempBlocks
+	//mutex.Lock()
+	//tempBlocks = []Block{}
+	//mutex.Unlock()
 }
 
-//huasheng todo:目前的版本只能处理节点发送的第一条数据
 func main() {
 	err := godotenv.Load()
 	if err != nil {
