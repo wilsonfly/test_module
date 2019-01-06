@@ -76,4 +76,6 @@ func main() {
 		s := mustCompile8.FindAllStringSubmatch(texts[i],-1)
 		fmt.Println(i, s)
 	}
+
+
 }
