@@ -23,46 +23,48 @@ var moduleReg = `<div class="des f-cl" data-v-3c42fade>([^|]+) \| ([0-9]+)岁 \|
 
 func ParseProfile(contents []byte) engine.ParseResult {
 
-	personal := model.Personal{}
+	personA := model.Personal{}
 
 	//compile := regexp.MustCompile(nickNameReg)
 	//submatch := compile.FindSubmatch(contents)
 	//if submatch!= nil {
-	//	personal.Name = string(submatch[1])
+	//	personA.Name = string(submatch[1])
 	//}
-	//fmt.Println(personal.Name)
+	//fmt.Println(personA.Name)
 
 	nickName := commonCompileReg(contents, nickNameRegPreCompile)
-	personal.Name = nickName
-	fmt.Println(nickName)
+	personA.Name = nickName
+	fmt.Println("nickName:", personA.Name)
 
 	//compileID := regexp.MustCompile(idReg)
 	//submatchID := compileID.FindSubmatch(contents)
 	//if submatchID != nil {
-	//	personal.Id = string(submatchID[1])
+	//	personA.Id = string(submatchID[1])
 	//}
-	//fmt.Println(personal.Id)
+	//fmt.Println(personA.Id)
 	id := commonCompileReg(contents, idRegPreCompile)
-	personal.Id = id
-	fmt.Println(id)
+	personA.Id = id
+	fmt.Println("ID:", personA.Id)
 
 	compileModule := regexp.MustCompile(moduleReg)
 	submatchModule := compileModule.FindSubmatch(contents)
 	if submatchModule != nil {
-		personal.Home = string(submatchModule[1])
-		personal.Age, _ = strconv.Atoi(string(submatchModule[2]))
-		personal.Education = string(submatchModule[3])
-		personal.Marriage = string(submatchModule[4])
-		personal.Height, _ = strconv.Atoi(string(submatchModule[5]))
-		personal.Income = string(submatchModule[6])
+		personA.Home = string(submatchModule[1])
+		personA.Age, _ = strconv.Atoi(string(submatchModule[2]))
+		personA.Education = string(submatchModule[3])
+		personA.Marriage = string(submatchModule[4])
+		personA.Height, _ = strconv.Atoi(string(submatchModule[5]))
+		personA.Income = string(submatchModule[6])
 	}
-	fmt.Println("home:", personal.Home)
-	fmt.Println("age:", personal.Age)
-	fmt.Println("education:", personal.Education)
-	fmt.Println("marriage:", personal.Marriage)
-	fmt.Println("height:", personal.Height)
+	fmt.Println("home:", personA.Home)
+	fmt.Println("age:", personA.Age)
+	fmt.Println("education:", personA.Education)
+	fmt.Println("marriage:", personA.Marriage)
+	fmt.Println("height:", personA.Height)
 
-	return engine.NilParser(nil)
+	//result := engine.ParseResult{nil, personA}
+	result := engine.ParseResult{nil, []interface{}{personA}}
+	return result
 }
 
 func commonCompileReg(contents []byte, regexp *regexp.Regexp) string {
