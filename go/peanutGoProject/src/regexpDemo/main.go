@@ -99,7 +99,7 @@ func main() {
 		fmt.Println(err)
 	}
 
-	moduleReg := `<div class="des f-cl" data-v-3c42fade>[^|]+ \| ([0-9]+)岁 \| ([^|]+) \| ([^|]+) \| ([0-9]+)cm \| ([^<]+)</div>`
+	moduleReg := `<div class="des f-cl" data-v-3c42fade>([^|]+) \| ([0-9]+)岁 \| ([^|]+) \| ([^|]+) \| ([0-9]+)cm \| ([^<]+)</div>`
 	compile10 := regexp.MustCompile(moduleReg)
 	all := compile10.FindAll(bytes, -1)
 	for i, s := range all {

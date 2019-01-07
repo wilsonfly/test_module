@@ -54,7 +54,9 @@ func determineEncoding(r io.Reader) encoding.Encoding {
 
 func printCityList(contents []byte) {
 	//<a target="_blank" href="http://www.zhenai.com/zhenghun/tianjin" data-v-4e064b2c>天津</a>
-	compile := regexp.MustCompile(`<a target="_blank" href="(http://www.zhenai.com/zhenghun/[0-9a-z]+)"[^>]+>([^<]+)</a>`)
+	//<a href="http://www.zhenai.com/zhenghun/changchun" data-v-473e2ba0>长春>
+	//compile := regexp.MustCompile(`<a target="_blank" href="(http://www.zhenai.com/zhenghun/[0-9a-z]+)"[^>]+>([^<]+)</a>`)
+	compile := regexp.MustCompile(`<[^>]+href="(http://www.zhenai.com/zhenghun/[0-9a-z]+)"[^>]+>([^<]+)</a>`)
 	all := compile.FindAll(contents, -1)
 	for _, m := range all {
 		fmt.Printf("%s\n", m)
@@ -64,5 +66,7 @@ func printCityList(contents []byte) {
 	for _, m := range submatch {
 		fmt.Printf("url:%s, cityname:%s\n", m[1], m[2])
 	}
+
+	fmt.Println("city num:", len(submatch))
 
 }

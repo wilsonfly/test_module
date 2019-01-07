@@ -6,7 +6,6 @@ import (
 	"io/ioutil"
 	"bufio"
 	"golang.org/x/text/transform"
-	"io"
 	"golang.org/x/text/encoding"
 	"golang.org/x/net/html/charset"
 	"golang.org/x/text/encoding/unicode"
@@ -30,16 +29,17 @@ func Fetch(url string) ([]byte, error) {
 	//可以将中文编码格式转换为参数指定的GBK等编码格式
 	//reader := transform.NewReader(resp.Body, simplifiedchinese.GBK.NewDecoder())
 
-	encoding := determineEncoding(resp.Body)
-	transform.NewReader(resp.Body, encoding.NewDecoder())
+	bodyReader := bufio.NewReader(resp.Body)
+	encoding := determineEncoding(bodyReader)
+	newReader := transform.NewReader(bodyReader, encoding.NewDecoder())
 
-	return ioutil.ReadAll(resp.Body)
+	return ioutil.ReadAll(newReader)
 
 	//fmt.Printf("%s\n", all)
 }
 
-func determineEncoding(r io.Reader) encoding.Encoding {
-	bytes, e := bufio.NewReader(r).Peek(1024)
+func determineEncoding(r *bufio.Reader) encoding.Encoding {
+	bytes, e := r.Peek(1024)
 	if e != nil {
 		fmt.Printf("determineEncoding error: %v", e)
 		return unicode.UTF8
