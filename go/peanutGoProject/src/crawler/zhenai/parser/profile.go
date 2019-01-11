@@ -21,7 +21,9 @@ var idRegPreCompile = regexp.MustCompile(`<div class="id" data-v-5b109fc3>ID：(
 //<div class="des f-cl" data-v-3c42fade>合肥 | 24岁 | 大学本科 | 未婚 | 163cm | 5001-8000元</div>
 var moduleReg = `<div class="des f-cl" data-v-3c42fade>([^|]+) \| ([0-9]+)岁 \| ([^|]+) \| ([^|]+) \| ([0-9]+)cm \| ([^<]+)</div>`
 
-func ParseProfile(contents []byte) engine.ParseResult {
+func ParseProfile(contents []byte, name string) engine.ParseResult {
+
+	fmt.Println("name from arg:", name)//useless arg
 
 	personA := model.Personal{}
 
@@ -61,6 +63,7 @@ func ParseProfile(contents []byte) engine.ParseResult {
 	fmt.Println("education:", personA.Education)
 	fmt.Println("marriage:", personA.Marriage)
 	fmt.Println("height:", personA.Height)
+	fmt.Println("income:", personA.Income)
 
 	//result := engine.ParseResult{nil, personA}
 	result := engine.ParseResult{nil, []interface{}{personA}}

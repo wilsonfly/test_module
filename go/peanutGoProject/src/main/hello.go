@@ -202,7 +202,7 @@ func main() {
 
 	//====begin====
 	fmt.Println("no15 ========")
-	//testErr()
+	testErr()
 	//====end====
 
 	//====begin====
@@ -243,6 +243,7 @@ func main() {
 
 	//====begin====
 	fmt.Println("no ========")
+
 	//====end====
 
 	time.Sleep(3 * time.Second)
@@ -348,6 +349,8 @@ func funcC() error {
 }
 
 func funcD() error {
+	//util.PrintStackTrace()
+
 	// simulation
 	panic("foo")
 	return errors.New("success")
@@ -360,4 +363,5 @@ func testErr() {
 	} else {
 		fmt.Printf("err is %v\\n", err)
 	}
+
 }

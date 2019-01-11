@@ -9,6 +9,7 @@ import (
 	"golang.org/x/text/encoding"
 	"golang.org/x/net/html/charset"
 	"golang.org/x/text/encoding/unicode"
+	"time"
 )
 
 func Fetch(url string) ([]byte, error) {
@@ -18,12 +19,14 @@ func Fetch(url string) ([]byte, error) {
 	}
 	defer resp.Body.Close()
 
+	time.Sleep(30*time.Second)
+
 	//response, _ := httputil.DumpResponse(resp, true)
 	//fmt.Printf("%s", response)
 
 	if resp.StatusCode != http.StatusOK {
 		fmt.Println("Error statuscode ", resp.StatusCode)
-		return nil, fmt.Errorf("Wrong statuscode %d", resp.StatusCode)
+		return nil, fmt.Errorf("Wrong statuscode %d\n", resp.StatusCode)
 	}
 
 	//可以将中文编码格式转换为参数指定的GBK等编码格式
