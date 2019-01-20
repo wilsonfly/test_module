@@ -83,6 +83,7 @@ func (h *HelloWorld) delete(stub shim.ChaincodeStubInterface, args []string) pee
 func (h *HelloWorld) getByRange(stub shim.ChaincodeStubInterface, args []string) peer.Response {
 	fmt.Println("====chaincodeDemo in getByRange")
 
+	//如果GetStateByRange传参startKey/endKey为""，则返回所有内容
 	iterator, err := stub.GetStateByRange(args[0], args[1])
 	if err != nil {
 		return shim.Error(err.Error())
@@ -150,7 +151,7 @@ func (h *HelloWorld) compositeKey(stub shim.ChaincodeStubInterface, args []strin
 func (h *HelloWorld)getQueryResult(stub shim.ChaincodeStubInterface, args []string) peer.Response  {
 	fmt.Println("====chaincodeDemo in getQueryResult")
 
-	iterator, err := stub.GetQueryResult("{\"selector\": {\"sexName\": \"boy\"}}")
+	iterator, err := stub.GetQueryResult("{\"selector\":{\"sexName\":\"girl\"}}")
 	if err != nil {
 		return shim.Error("getqueryresult failed")
 	}

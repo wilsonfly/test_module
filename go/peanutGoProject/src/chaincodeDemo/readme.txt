@@ -24,6 +24,6 @@ peer chaincode invoke -n peanut -c '{"Args":["set","hw5","helloooooo"]}' -C myc
 peer chaincode invoke -n peanut -c '{"Args":["getByRange","hw2","hw5"]}' -C myc
 peer chaincode invoke -n peanut -c '{"Args":["getByRange","hw5","hw2"]}' -C myc
 peer chaincode invoke -n peanut -c '{"Args":["getHistory","hw"]}' -C myc
-peer chaincode invoke -n peanut -c '{"Args":["compositeKey","hw"]}' -C myc
+peer chaincode invoke -n peanut -c '{"Args":["compositeKey"]}' -C myc
 ##fail to call getQueryResult
 peer chaincode invoke -n peanut -c '{"Args":["getQueryResult"]}' -C myc
