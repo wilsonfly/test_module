@@ -1,0 +1,4 @@
+something is wrong
+#0 /letv/workspace/web/exception.php(20): showTrace()
+#1 {main}
+/letv/workspace/web/exception.php:5
