@@ -1,0 +1,140 @@
+➜  /Users/peanut/Downloads >gcc calculate.c -o calculate
+calculate.c:40:11: warning: implicit declaration of function 'time' is invalid in C99 [-Wimplicit-function-declaration]
+    srand(time(NULL));
+          ^
+1 warning generated.
+➜  /Users/peanut/Downloads >./calculate
+请选择四则运算中的一种运算:
+	1.加法
+	2.减法
+	3.乘法
+	4.除法
+	q.退出
+1
+
+请计算：
+494.000000+400.000000=
+
+请输入结果:(保留两位小数)
+894
+恭喜，计算结果正确
+➜  /Users/peanut/Downloads >./calculate
+请选择四则运算中的一种运算:
+	1.加法
+	2.减法
+	3.乘法
+	4.除法
+	q.退出
+2
+
+请计算：
+347.000000-622.000000=
+
+请输入结果:(保留两位小数)
+-275
+恭喜，计算结果正确
+➜  /Users/peanut/Downloads >./calculate
+请选择四则运算中的一种运算:
+	1.加法
+	2.减法
+	3.乘法
+	4.除法
+	q.退出
+3
+
+请计算：
+151.000000*123.000000=
+
+请输入结果:(保留两位小数)
+18573
+恭喜，计算结果正确
+➜  /Users/peanut/Downloads >./calculate
+请选择四则运算中的一种运算:
+	1.加法
+	2.减法
+	3.乘法
+	4.除法
+	q.退出
+4
+
+请计算：
+746.000000/372.000000=
+
+请输入结果:(保留两位小数)
+2.01
+恭喜，计算结果正确
+➜  /Users/peanut/Downloads >
+➜  /Users/peanut/Downloads >./calculate
+请选择四则运算中的一种运算:
+	1.加法
+	2.减法
+	3.乘法
+	4.除法
+	q.退出
+1
+
+请计算：
+550.000000+565.000000=
+
+请输入结果:(保留两位小数)
+111
+抱歉，计算结果不正确，答案是1115.00
+➜  /Users/peanut/Downloads >
+➜  /Users/peanut/Downloads >./calculate
+请选择四则运算中的一种运算:
+	1.加法
+	2.减法
+	3.乘法
+	4.除法
+	q.退出
+2
+
+请计算：
+403.000000-787.000000=
+
+请输入结果:(保留两位小数)
+111
+抱歉，计算结果不正确，答案是-384.00
+➜  /Users/peanut/Downloads >
+➜  /Users/peanut/Downloads >./calculate
+请选择四则运算中的一种运算:
+	1.加法
+	2.减法
+	3.乘法
+	4.除法
+	q.退出
+3
+
+请计算：
+725.000000*926.000000=
+
+请输入结果:(保留两位小数)
+111
+抱歉，计算结果不正确，答案是671350.00
+➜  /Users/peanut/Downloads >
+➜  /Users/peanut/Downloads >./calculate
+请选择四则运算中的一种运算:
+	1.加法
+	2.减法
+	3.乘法
+	4.除法
+	q.退出
+4
+
+请计算：
+466.000000/261.000000=
+
+请输入结果:(保留两位小数)
+111
+抱歉，计算结果不正确，答案是1.79
+➜  /Users/peanut/Downloads >
+➜  /Users/peanut/Downloads >./calculate
+请选择四则运算中的一种运算:
+	1.加法
+	2.减法
+	3.乘法
+	4.除法
+	q.退出
+q
+➜  /Users/peanut/Downloads >
+➜  /U
