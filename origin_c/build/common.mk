@@ -11,7 +11,7 @@ CCSUFIX =cpp
 ifeq ($(SUPPORT_DEBUG),n)
 CFLAGS = 
 else
-CFLAGS = -DDEBUG
+CFLAGS = -DDEBUG -v
 endif
 
 ifeq ($(firstword $(suffix $(SRC_FILES))),.cpp)

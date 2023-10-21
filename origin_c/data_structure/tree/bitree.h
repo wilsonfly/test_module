@@ -15,6 +15,7 @@ void bitree_postorder(bitree *r);
 void bitree_layerorder(bitree *r);
 void bitree_layerorder2(bitree *r);
 void bitree_layerorder3(bitree *r);
+void bitree_layerorder4(bitree *r);
 
 
 #endif

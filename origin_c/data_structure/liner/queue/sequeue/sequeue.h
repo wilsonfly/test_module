@@ -3,7 +3,8 @@
 
 #include <string.h>
 
-#define MAX_NUM (5+1) 
+//1 for blank and 5 for data
+#define MAX_NUM (5+1)
 #define MAX_FILENAME_LEN 32
 
 typedef char* datatype;

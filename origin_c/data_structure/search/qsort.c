@@ -6,7 +6,7 @@
 static void print_data(int* data, int num);
 static void quick_sort(int* data, int size);
 static void sort(int* data, int front, int rear);
-static int sort_round(int* data, int front, int rear);
+static int partition(int* data, int front, int rear);
 
 int main()
 {
@@ -27,7 +27,7 @@ int main()
 	print_data(data,sizeof(data)/sizeof(int));
 }
 
-static int sort_round(int* data, int front, int rear)
+static int partition(int* data, int front, int rear)
 {
 	printf("begin,front:%d, rear:%d \n", front, rear);
 	if( data==NULL || front<0 || rear<0 )
@@ -66,7 +66,7 @@ static void sort(int* data, int front, int rear)
 
 	int pivot=0;
 
-	pivot = sort_round(data, front, rear);
+	pivot = partition(data, front, rear);
 	sort(data, front, pivot-1);
 	sort(data, pivot+1, rear);
 }

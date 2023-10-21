@@ -26,7 +26,7 @@ static int bisearch(int* data, int size, int key)
 	while( front <= rear )/*allowed to get one same position*/
 	{
 		mid = (front+rear)/2;
-		//printf("mid:%d,front:%d,rear:%d\n",mid, front, rear);
+		printf("mid:%d,front:%d,rear:%d\n",mid, front, rear);
 		if(data[mid]<key)
 			front = mid + 1;//front = mid;/*should calculate with 1,otherwise cannot get out when searching a noexist key*/
 		else if(data[mid]>key)

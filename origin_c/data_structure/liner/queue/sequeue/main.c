@@ -15,6 +15,7 @@ int main()
 	sq = sequeue_create();
 	if(sequeue_enqueue(sq, one)) printf("NO.1 enqueue error\n");
 	else printf("%d member left\n",sq->count);
+	sequeue_display(sq);
 
 	if(sequeue_enqueue(sq, two)) printf("NO.2 enqueue error\n");
 	else printf("%d member left\n",sq->count);

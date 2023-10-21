@@ -4,7 +4,7 @@
 
 listnode *linklist_create()
 {
-	listnode *p = (listnode *)malloc(sizeof(listnode));
+	listnode *p = (listnode *)malloc(sizeof(listnode));//head node,not put data in it;
 	p->next = NULL;
 	return p;
 }
@@ -129,7 +129,7 @@ void linklist_display(listnode *L)
 		printf("empty list\n");
 		return;
 	}
-	listnode *p = L->next;
+	listnode *p = L->next;//no data in head node.
 	while(p)
 	{
 		printf("%d ", p->data);

@@ -73,10 +73,12 @@ void sequeue_display(sequeue *sq)
 {
 	if( sq==NULL || sq->front==sq->rear )
 	{
-		printf("empty queue\n");
+		printf("empty queue,nothing to show\n");
 		return;
 	}
 	int i = (sq->front + 1) % MAX_NUM;
+	
+    printf("========begin========\n");
 	while(i != sq->rear)
 	{
 		printf("%s\n", sq->data[i]);
@@ -84,5 +86,6 @@ void sequeue_display(sequeue *sq)
 	}
 	printf("%s\n", sq->data[sq->rear]);
 	printf("%d members in the queue\n",sq->count);
+	printf("=========end========\n");
 }
 

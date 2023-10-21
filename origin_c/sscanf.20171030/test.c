@@ -35,4 +35,14 @@ int main()
 	log("min:%02x", min);
 	log("sec:%02x", sec);
 	log("name_pos:%d", name_pos);
+
+    char* str2 = "a";
+    char* str3 = "8";
+    unsigned int id;
+    sscanf(str2,"%d", &id);
+    log("panelid a->%d",id);
+    sscanf(str2,"%x", &id);
+    log("panelid a->%d",id);
+    sscanf(str3,"%x", &id);
+    log("panelid a->%d",id);
 }

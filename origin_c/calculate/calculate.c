@@ -13,7 +13,6 @@ int main()
     char option,alg;
     double num1,num2,target,result;
     char strResult[16];
-    char strTarget[16];
 
     showUsage();
 

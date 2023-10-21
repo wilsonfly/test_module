@@ -100,3 +100,25 @@ void bitree_layerorder3(bitree *r)
 			a[++rear] = p->right;
 	}
 }
+
+void bitree_layerorder4(bitree *r)
+{
+    bitree* buf[128];
+    bitree* p;
+    int front=0, rear=1;
+    
+    buf[rear] = r;
+
+    while(front != rear)
+    {
+        front++;
+        p = buf[front];
+        printf("%d ",p->data);
+
+        if(p->left)
+            buf[++rear] = p->left;
+        if(p->right)
+            buf[++rear] = p->right;
+
+    }
+}
